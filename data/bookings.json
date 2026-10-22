@@ -1,0 +1,64 @@
+[
+  {
+    "id": "BK-1002",
+    "userId": "usr-101",
+    "bookingType": "phone_callback",
+    "createdAt": "2026-10-17T05:21:46.415Z",
+    "status": "new",
+    "customerName": "Sam Rivera",
+    "plumberPhone": "9059236500",
+    "tradeCompany": "Rivera Electric LLC",
+    "deliveryAddress": "Uppal Main Junction, Hyderabad",
+    "customerLat": 17.4018,
+    "customerLng": 78.5602,
+    "distanceKm": 6.8,
+    "driveTimeMins": 20,
+    "totalPrice": 210,
+    "notes": "Needs 250ft 12/2 Romex wire and 20A single pole breakers delivered to job site within 45 mins."
+  },
+  {
+    "id": "BK-1001",
+    "userId": "usr-101",
+    "bookingType": "image_upload",
+    "createdAt": "2026-10-17T05:01:46.414Z",
+    "status": "packing",
+    "customerName": "Dave Miller (Apex Plumbing)",
+    "plumberPhone": "9059236500",
+    "tradeCompany": "Apex Plumbing Contractors",
+    "deliveryAddress": "LB Nagar Ring Road, Hyderabad",
+    "customerLat": 17.348,
+    "customerLng": 78.551,
+    "distanceKm": 4.2,
+    "driveTimeMins": 14,
+    "totalPrice": 242.5,
+    "paymentMethod": "trade_credit",
+    "geminiAnalysis": {
+      "detectedItems": [
+        {
+          "name": "1/2\" Type L Copper Pipe (10ft)",
+          "estimatedQty": 4,
+          "estimatedUnitPrice": 18.5,
+          "matchedProductId": "p-01",
+          "confidence": 0.95
+        },
+        {
+          "name": "1/2\" Brass PEX Crimp Elbow 90° (10-Pack)",
+          "estimatedQty": 2,
+          "estimatedUnitPrice": 12.99,
+          "matchedProductId": "p-03",
+          "confidence": 0.92
+        },
+        {
+          "name": "Heavy-Duty PVC Cement & Primer Kit",
+          "estimatedQty": 1,
+          "estimatedUnitPrice": 16.8,
+          "matchedProductId": "p-05",
+          "confidence": 0.98
+        }
+      ],
+      "totalEstimatedCost": 119.28,
+      "rawNotes": "Handwritten job list scanned from mobile upload on site."
+    },
+    "notes": "Urgent job site drop-off near East Main St."
+  }
+]

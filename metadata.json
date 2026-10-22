@@ -1,0 +1,9 @@
+{
+  "name": "Minute Materials - Plumbing & Electrical Express",
+  "description": "Minute Materials express material supplier with 10-15 minute delivery, cart checkout, phone ordering, AI image scanning, WhatsApp ordering, and admin management.",
+  "requestFramePermissions": [
+    "geolocation",
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

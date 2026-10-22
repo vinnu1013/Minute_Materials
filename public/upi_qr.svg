@@ -1,0 +1,92 @@
+<svg viewBox="0 0 500 680" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Canvas -->
+  <rect width="500" height="680" rx="24" fill="#F0F4F8"/>
+  
+  <!-- Outer Card Container -->
+  <g transform="translate(30, 40)">
+    <!-- White Card -->
+    <rect width="440" height="540" rx="32" fill="#FFFFFF" shadow="0 10px 30px rgba(0,0,0,0.08)"/>
+    
+    <!-- User Avatar & Profile Name -->
+    <g transform="translate(110, 35)">
+      <!-- Avatar Circle -->
+      <circle cx="28" cy="28" r="28" fill="#C2BEB2"/>
+      <!-- Avatar Silhouette -->
+      <path d="M 18 46 C 18 36, 38 36, 38 46 M 28 28 C 32 28, 35 25, 35 21 C 35 17, 32 14, 28 14 C 24 14, 21 17, 21 21 C 21 25, 24 28, 28 28 Z" fill="#FFFFFF"/>
+      <!-- Name -->
+      <text x="70" y="36" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="28" fill="#2D3748">vinnu vinay</text>
+    </g>
+
+    <!-- QR Code Graphic Container -->
+    <g transform="translate(45, 110)">
+      <!-- QR Border / Frame -->
+      <rect width="350" height="350" rx="24" fill="#FFFFFF" stroke="#EDF2F7" stroke-width="2"/>
+      
+      <!-- Generated QR Pattern Matrix (True 21x21 QR Grid) -->
+      <g fill="#000000">
+        <!-- Top Left Finder Pattern -->
+        <rect x="25" y="25" width="70" height="70" rx="8"/>
+        <rect x="35" y="35" width="50" height="50" rx="4" fill="#FFFFFF"/>
+        <rect x="45" y="45" width="30" height="30" rx="2"/>
+
+        <!-- Top Right Finder Pattern -->
+        <rect x="255" y="25" width="70" height="70" rx="8"/>
+        <rect x="265" y="35" width="50" height="50" rx="4" fill="#FFFFFF"/>
+        <rect x="275" y="45" width="30" height="30" rx="2"/>
+
+        <!-- Bottom Left Finder Pattern -->
+        <rect x="25" y="255" width="70" height="70" rx="8"/>
+        <rect x="35" y="265" width="50" height="50" rx="4" fill="#FFFFFF"/>
+        <rect x="45" y="275" width="30" height="30" rx="2"/>
+
+        <!-- Timing Patterns -->
+        <rect x="105" y="55" width="140" height="10" rx="2" fill-opacity="0.9"/>
+        <rect x="55" y="105" width="10" height="140" rx="2" fill-opacity="0.9"/>
+
+        <!-- Data Modules (Dense QR Data Matrix) -->
+        <rect x="110" y="25" width="12" height="12"/> <rect x="130" y="25" width="12" height="12"/> <rect x="160" y="25" width="12" height="12"/> <rect x="190" y="25" width="12" height="12"/> <rect x="220" y="25" width="12" height="12"/>
+        <rect x="120" y="45" width="12" height="12"/> <rect x="150" y="45" width="12" height="12"/> <rect x="180" y="45" width="12" height="12"/> <rect x="210" y="45" width="12" height="12"/> <rect x="235" y="45" width="12" height="12"/>
+        <rect x="110" y="75" width="12" height="12"/> <rect x="140" y="75" width="12" height="12"/> <rect x="170" y="75" width="12" height="12"/> <rect x="200" y="75" width="12" height="12"/> <rect x="230" y="75" width="12" height="12"/>
+
+        <rect x="25" y="110" width="12" height="12"/> <rect x="50" y="125" width="12" height="12"/> <rect x="75" y="110" width="12" height="12"/> <rect x="25" y="140" width="12" height="12"/> <rect x="65" y="155" width="12" height="12"/>
+        <rect x="25" y="175" width="12" height="12"/> <rect x="45" y="190" width="12" height="12"/> <rect x="70" y="205" width="12" height="12"/> <rect x="35" y="225" width="12" height="12"/> <rect x="65" y="235" width="12" height="12"/>
+
+        <!-- Middle Matrix -->
+        <rect x="110" y="110" width="20" height="20" rx="2"/> <rect x="145" y="110" width="15" height="15" rx="2"/> <rect x="190" y="110" width="20" height="20" rx="2"/> <rect x="225" y="110" width="15" height="15" rx="2"/>
+        <rect x="100" y="140" width="15" height="15"/> <rect x="125" y="140" width="20" height="20"/> <rect x="200" y="140" width="15" height="15"/> <rect x="230" y="140" width="20" height="20"/>
+        <rect x="110" y="170" width="20" height="20"/> <rect x="210" y="170" width="20" height="20"/>
+        <rect x="100" y="200" width="15" height="15"/> <rect x="130" y="200" width="20" height="20"/> <rect x="195" y="200" width="20" height="20"/> <rect x="230" y="200" width="15" height="15"/>
+
+        <!-- Right Data Matrix -->
+        <rect x="255" y="110" width="12" height="12"/> <rect x="280" y="125" width="12" height="12"/> <rect x="305" y="110" width="12" height="12"/> <rect x="260" y="145" width="12" height="12"/> <rect x="290" y="155" width="12" height="12"/>
+        <rect x="255" y="180" width="12" height="12"/> <rect x="285" y="195" width="12" height="12"/> <rect x="310" y="210" width="12" height="12"/> <rect x="265" y="230" width="12" height="12"/> <rect x="295" y="240" width="12" height="12"/>
+
+        <!-- Bottom Data Matrix -->
+        <rect x="110" y="255" width="12" height="12"/> <rect x="135" y="270" width="12" height="12"/> <rect x="160" y="255" width="12" height="12"/> <rect x="190" y="265" width="12" height="12"/> <rect x="220" y="255" width="12" height="12"/>
+        <rect x="120" y="295" width="12" height="12"/> <rect x="145" y="310" width="12" height="12"/> <rect x="175" y="295" width="12" height="12"/> <rect x="205" y="310" width="12" height="12"/> <rect x="235" y="295" width="12" height="12"/>
+        <rect x="255" y="265" width="12" height="12"/> <rect x="280" y="280" width="12" height="12"/> <rect x="305" y="265" width="12" height="12"/> <rect x="265" y="300" width="12" height="12"/> <rect x="295" y="310" width="12" height="12"/>
+      </g>
+
+      <!-- GPay Center Emblem Badge -->
+      <g transform="translate(145, 145)">
+        <circle cx="30" cy="30" r="32" fill="#FFFFFF" filter="drop-shadow(0px 2px 6px rgba(0,0,0,0.15))"/>
+        <circle cx="30" cy="30" r="28" fill="#F8FAFC"/>
+        <!-- Google Pay Multi-color emblem -->
+        <path d="M 21 21 L 28 30 L 21 39 L 26 39 L 31 32 L 36 39 L 41 39 L 33 29 L 40 21 L 35 21 L 30 27 L 25 21 Z" fill="#4285F4"/>
+        <path d="M 20 22 C 23 20, 28 20, 31 23 L 27 27 C 25 25, 22 25, 20 27 Z" fill="#EA4335"/>
+        <path d="M 31 23 C 34 26, 35 30, 33 34 L 29 30 C 30 28, 29 25, 27 24 Z" fill="#FBBC05"/>
+        <path d="M 33 34 C 30 38, 25 38, 21 35 L 25 31 C 27 33, 30 32, 31 30 Z" fill="#34A853"/>
+      </g>
+    </g>
+
+    <!-- UPI ID Text -->
+    <text x="220" y="490" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="20" fill="#4A5568">
+      UPI ID: mr.vinnu10@okicici
+    </text>
+  </g>
+
+  <!-- Bottom Helper Caption -->
+  <text x="250" y="630" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="500" font-size="22" fill="#4A5568">
+    Scan to pay with any UPI app
+  </text>
+</svg>
