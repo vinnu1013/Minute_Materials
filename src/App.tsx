@@ -12,12 +12,32 @@ import { PriceDropModal } from './components/PriceDropModal';
 import { MobileBottomNav } from './components/MobileBottomNav';
 import { Footer } from './components/Footer';
 import { DeliveryAreasModal } from './components/DeliveryAreasModal';
+import { CompanyPages, CompanyPageId } from './components/CompanyPages';
 import { Helmet } from 'react-helmet-async';
 
-import { Product, CartItem, Booking, StoreSettings, StoreConfig, UserLocation } from './types';
+import { Product, CartItem, Booking, StoreSettings } from './types';
 import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS } from './data/initialProducts';
 import { fetchCurrentLocationAddress } from './utils/distance';
 import { ShoppingCart } from 'lucide-react';
+
+function resolvePageFromPath(pathname: string): CompanyPageId {
+  const clean = pathname.toLowerCase().replace(/\/+$/, '') || '/';
+  if (clean === '/about' || clean === '/about-us') return 'about';
+  if (clean === '/categories') return 'categories';
+  if (clean === '/blog') return 'blog';
+  if (clean === '/faqs' || clean === '/faq') return 'faqs';
+  if (clean === '/contact' || clean === '/contact-us') return 'contact';
+  return 'home';
+}
+
+const PAGE_PATHS: Record<CompanyPageId, string> = {
+  home: '/',
+  about: '/about',
+  categories: '/categories',
+  blog: '/blog',
+  faqs: '/faqs',
+  contact: '/contact',
+};
 
 export default function App() {
   const [products, setProducts] = useState<Product[]>(() => {
@@ -34,9 +54,19 @@ export default function App() {
       const saved = localStorage.getItem('instant_supply_settings');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.adminPin === 'Vinnu1013' || !parsed.adminPin) {
+        if (parsed.adminPin !== '9059236500') {
           parsed.adminPin = '9059236500';
         }
+        if (parsed.helplineNumber === '9059236500') {
+          parsed.helplineNumber = '8332869926';
+        }
+        if (parsed.whatsappNumber === '9059236500') {
+          parsed.whatsappNumber = '8332869926';
+        }
+        if (parsed.activeDeliveryNotice && parsed.activeDeliveryNotice.includes('9059236500')) {
+          parsed.activeDeliveryNotice = parsed.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
+        }
+        parsed.gstPercentage = 0;
         return { ...INITIAL_STORE_SETTINGS, ...parsed };
       }
       return INITIAL_STORE_SETTINGS;
@@ -133,10 +163,30 @@ export default function App() {
   
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
+  const [activePage, setActivePage] = useState<CompanyPageId>(() => {
+    if (typeof window === 'undefined') return 'home';
+    return resolvePageFromPath(window.location.pathname);
+  });
 
-  // Check URL route for /admin
+  const handleNavigatePage = (page: CompanyPageId, skipScroll = false) => {
+    setActivePage(page);
+    if (isAdmin) {
+      setIsAdmin(false);
+    }
+    if (typeof window !== 'undefined') {
+      const targetPath = PAGE_PATHS[page];
+      if (window.location.pathname !== targetPath) {
+        window.history.pushState(null, '', targetPath);
+      }
+      if (!skipScroll) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+  };
+
+  // Check URL route for /admin and Company subpages
   useEffect(() => {
-    const checkAdminRoute = () => {
+    const syncRouteFromUrl = () => {
       const path = window.location.pathname.toLowerCase();
       const hash = window.location.hash.toLowerCase();
       const search = window.location.search.toLowerCase();
@@ -150,22 +200,28 @@ export default function App() {
         search.includes('admin=true')
       ) {
         setShowAdminPinModal(true);
+        return;
       }
+
+      setActivePage(resolvePageFromPath(window.location.pathname));
     };
 
-    checkAdminRoute();
+    syncRouteFromUrl();
 
-    window.addEventListener('popstate', checkAdminRoute);
-    window.addEventListener('hashchange', checkAdminRoute);
+    window.addEventListener('popstate', syncRouteFromUrl);
+    window.addEventListener('hashchange', syncRouteFromUrl);
     return () => {
-      window.removeEventListener('popstate', checkAdminRoute);
-      window.removeEventListener('hashchange', checkAdminRoute);
+      window.removeEventListener('popstate', syncRouteFromUrl);
+      window.removeEventListener('hashchange', syncRouteFromUrl);
     };
   }, []);
 
   // Handle Search submit
   const handleSearchSubmit = (term: string) => {
     setSearchTerm(term);
+    if (term.trim() && activePage !== 'home') {
+      handleNavigatePage('home', true);
+    }
   };
 
   // Sync cart to localStorage
@@ -309,9 +365,10 @@ export default function App() {
 
   // Quick WhatsApp for individual product
   const handleOpenWhatsAppForProduct = (product: Product) => {
-    const text = `Hi Minute Materials, I need an urgent quote & express delivery for: ${product.name} (SKU: ${product.sku}, $${product.price.toFixed(2)}/${product.unit}). Please confirm stock & dispatch time!`;
-    const cleanPhone = storeSettings.whatsappNumber.replace(/[^0-9]/g, '');
-    window.open(`https://wa.me/${cleanPhone || '18005557586'}?text=${encodeURIComponent(text)}`, '_blank');
+    const text = `Hi Minute Materials, I need an urgent quote & express delivery for: ${product.name} (SKU: ${product.sku}, ₹${product.price.toFixed(2)}/${product.unit}). Please confirm stock & dispatch time!`;
+    const cleanPhone = (storeSettings.whatsappNumber || '8332869926').replace(/[^0-9]/g, '');
+    const formattedPhone = cleanPhone.startsWith('91') ? cleanPhone : `91${cleanPhone}`;
+    window.open(`https://wa.me/${formattedPhone}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
   // Admin Operations
@@ -471,7 +528,18 @@ export default function App() {
 
   const currentOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://minutematerials.com';
   const canonicalUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : 'https://minutematerials.com';
-  const pageTitle = activeCategory && activeCategory !== 'all'
+
+  const companyTitles: Record<Exclude<CompanyPageId, 'home'>, string> = {
+    about: 'About Us - Minute Materials (15-30 Min Jobsite Supply)',
+    categories: 'Material Categories - Minute Materials Hyderabad',
+    blog: 'Contractor Blog & Sizing Guides - Minute Materials',
+    faqs: 'FAQs - Minute Materials Express Delivery',
+    contact: 'Contact Us & Hub Location - Minute Materials',
+  };
+
+  const pageTitle = activePage !== 'home'
+    ? companyTitles[activePage]
+    : activeCategory && activeCategory !== 'all'
     ? `Minute Materials - ${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Supplies (15-30 Min Site Delivery)`
     : 'Minute Materials - Express Jobsite Electrical & Plumbing Supply';
 
@@ -524,7 +592,7 @@ export default function App() {
             "url": canonicalUrl,
             "logo": `${currentOrigin}/Logo.jpg`,
             "description": "Minute Materials provides rapid 15-30 minute jobsite delivery for plumbing, electrical, and hardware materials across Hyderabad.",
-            "telephone": storeSettings.helplineNumber || "+919059236500",
+            "telephone": storeSettings.helplineNumber || "+918332869926",
             "address": {
               "@type": "PostalAddress",
               "streetAddress": storeSettings.depotAddress || "Chinthalkunta / LB Nagar Ring Road",
@@ -566,6 +634,11 @@ export default function App() {
           setActiveCategory={setActiveCategory}
           showPinModal={showAdminPinModal}
           setShowPinModal={setShowAdminPinModal}
+          onNavigateHome={() => {
+            setActiveCategory('all');
+            setSearchTerm('');
+            handleNavigatePage('home');
+          }}
         />
 
         {/* ADMIN DASHBOARD VIEW (If Admin Active) */}
@@ -580,8 +653,32 @@ export default function App() {
             onBulkUpdatePrices={handleBulkUpdatePrices}
             onUpdateBookingStatus={handleUpdateBookingStatus}
             onUpdateStoreSettings={handleUpdateStoreSettings}
-            onCloseAdmin={() => setIsAdmin(false)}
+            onCloseAdmin={() => {
+              setIsAdmin(false);
+              if (typeof window !== 'undefined') {
+                window.history.replaceState(null, '', PAGE_PATHS[activePage]);
+              }
+            }}
           />
+        ) : activePage !== 'home' ? (
+          <main>
+            <CompanyPages
+              activePage={activePage}
+              onNavigatePage={handleNavigatePage}
+              onSelectCatalogCategory={(cat, query = '') => {
+                setActiveCategory(cat);
+                setSearchTerm(query);
+                handleNavigatePage('home', true);
+                setTimeout(() => {
+                  window.scrollTo({ top: 360, behavior: 'smooth' });
+                }, 60);
+              }}
+              onOpenBookingMode={handleOpenBookingMode}
+              onOpenLocationModal={() => setIsLocationModalOpen(true)}
+              products={products}
+              storeSettings={storeSettings}
+            />
+          </main>
         ) : (
           <main>
             {/* Hero Banner */}
@@ -609,13 +706,27 @@ export default function App() {
       {/* Comprehensive Custom Jobsite Footer */}
       <Footer
         onSelectCategory={(cat) => {
-          setActiveCategory(cat.toLowerCase());
-          window.scrollTo({ top: 380, behavior: 'smooth' });
+          const normalized = cat.toLowerCase();
+          if (normalized === 'painting') {
+            setActiveCategory('all');
+            setSearchTerm('paint');
+          } else if (normalized === 'hardware') {
+            setActiveCategory('fasteners');
+            setSearchTerm('');
+          } else {
+            setActiveCategory(normalized);
+            setSearchTerm('');
+          }
+          handleNavigatePage('home', true);
+          setTimeout(() => {
+            window.scrollTo({ top: 380, behavior: 'smooth' });
+          }, 60);
         }}
+        onNavigatePage={handleNavigatePage}
+        activePage={activePage}
         onOpenUploadModal={() => setActiveBookingModal('image_upload')}
         onOpenCallModal={() => setActiveBookingModal('phone_callback')}
         onOpenLocationModal={() => setIsLocationModalOpen(true)}
-        onOpenAdminModal={() => setIsAdmin(true)}
         storeConfig={{
           callNumber: storeSettings.helplineNumber,
           emergencyCallNumber: storeSettings.helplineNumber,
@@ -743,6 +854,7 @@ export default function App() {
       <MobileBottomNav
         cartCount={cartTotalItems}
         onOpenCart={() => setIsCartOpen(true)}
+        onNavigateHome={() => handleNavigatePage('home')}
         onOpenBookingMode={handleOpenBookingMode}
         onOpenPriceDrops={() => setIsPriceDropOpen(true)}
         priceDropCount={priceDropCount}

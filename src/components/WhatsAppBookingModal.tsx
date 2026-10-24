@@ -91,9 +91,7 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
     const deliveryFee = subtotal > 0 ? (isFree ? 0 : (storeSettings.deliveryFeeExpress ?? 15)) : 0;
     const platformFee = subtotal > 0 ? (storeSettings.platformFee ?? 5) : 0;
     const handlingFee = subtotal > 0 ? (storeSettings.handlingFee ?? 10) : 0;
-    const gstPercentage = storeSettings.gstPercentage ?? 18;
-    const gstAmount = (subtotal * gstPercentage) / 100;
-    const total = subtotal + deliveryFee + platformFee + handlingFee + gstAmount;
+    const total = subtotal + deliveryFee + platformFee + handlingFee;
 
     const itemsText = customItemList || (cartItems.length > 0
       ? cartItems.map(item => `• ${item.quantity}x ${item.product.name} (₹${item.product.price.toFixed(2)})`).join('\n')
@@ -115,7 +113,6 @@ ${itemsText}
 • Delivery Fee: ${isFree ? 'FREE (Orders ₹199+)' : `₹${deliveryFee.toFixed(2)}`}
 • Platform Fee: ₹${platformFee.toFixed(2)}
 • Handling Charges: ₹${handlingFee.toFixed(2)}
-• GST / Taxes: ₹${gstAmount.toFixed(2)}
 *TOTAL DUE: ₹${total.toFixed(2)}*
 
 💳 *PAYMENT DETAILS:*
@@ -125,13 +122,13 @@ ${itemsText}
 
 🚚 *Delivery Mode:* ${deliveryUrgency}
 ----------------------------------------
-Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '9059236500'})`;
+Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '8332869926'})`;
   };
 
   const whatsappMessageText = constructWhatsAppMessage();
 
   // Clean WhatsApp phone number (remove +, spaces, dashes)
-  const cleanPhone = (storeSettings.whatsappNumber || '9059236500').replace(/[^0-9]/g, '');
+  const cleanPhone = (storeSettings.whatsappNumber || '8332869926').replace(/[^0-9]/g, '');
   const targetNumber = cleanPhone.startsWith('91') ? cleanPhone : `91${cleanPhone}`;
   const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(whatsappMessageText)}`;
 
@@ -283,7 +280,7 @@ Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '9059236
               </label>
               <input
                 type="tel"
-                placeholder={userRole === 'plumber_electrician' ? 'e.g. 9059236500' : 'e.g. 9876543210'}
+                placeholder={userRole === 'plumber_electrician' ? 'e.g. 8332869926' : 'e.g. 9876543210'}
                 value={plumberPhone}
                 onChange={(e) => {
                   setPlumberPhone(e.target.value);

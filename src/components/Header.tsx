@@ -30,6 +30,7 @@ interface HeaderProps {
   setActiveCategory: (cat: string) => void;
   showPinModal?: boolean;
   setShowPinModal?: (show: boolean) => void;
+  onNavigateHome?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -44,7 +45,8 @@ export const Header: React.FC<HeaderProps> = ({
   activeCategory,
   setActiveCategory,
   showPinModal: externalShowPinModal,
-  setShowPinModal: externalSetShowPinModal
+  setShowPinModal: externalSetShowPinModal,
+  onNavigateHome
 }) => {
   const [internalShowPinModal, setInternalShowPinModal] = useState(false);
   const showPinModal = externalShowPinModal !== undefined ? externalShowPinModal : internalShowPinModal;
@@ -87,7 +89,7 @@ export const Header: React.FC<HeaderProps> = ({
     };
   }, []);
 
-  const showAdminButton = isAdmin || showPinModal || isUrlAdmin;
+  const showAdminButton = isAdmin;
 
   const [recentSearches, setRecentSearches] = useState<string[]>(() => {
     try {
@@ -148,9 +150,24 @@ export const Header: React.FC<HeaderProps> = ({
     stopListening
   } = useVoiceSearch((text) => setSearchTerm(text));
 
+  const handleClosePinModal = () => {
+    setShowPinModal(false);
+    setEnteredPin('');
+    setPinError(false);
+    if (
+      typeof window !== 'undefined' &&
+      (window.location.pathname.toLowerCase().includes('admin') ||
+        window.location.hash.toLowerCase().includes('admin'))
+    ) {
+      window.history.replaceState(null, '', '/');
+    }
+  };
+
   const handleAdminAuth = (e: React.FormEvent) => {
     e.preventDefault();
-    if (enteredPin === storeSettings.adminPin || enteredPin === '9059236500') {
+    const cleanEntered = enteredPin.trim();
+    const configuredPin = (storeSettings?.adminPin || '9059236500').trim();
+    if (cleanEntered === '9059236500' || cleanEntered === configuredPin) {
       setShowPinModal(false);
       setEnteredPin('');
       setPinError(false);
@@ -221,7 +238,16 @@ export const Header: React.FC<HeaderProps> = ({
           
           {/* 1. Logo & Brand (Top Left, Larger) */}
           <div className="flex items-center gap-1.5 shrink-0">
-            <a href="/" className="flex items-center hover:scale-[1.02] transition-transform">
+            <a
+              href="/"
+              onClick={(e) => {
+                if (onNavigateHome) {
+                  e.preventDefault();
+                  onNavigateHome();
+                }
+              }}
+              className="flex items-center hover:scale-[1.02] transition-transform"
+            >
               <Logo size="xl" showContainer={true} />
             </a>
           </div>
@@ -444,7 +470,7 @@ export const Header: React.FC<HeaderProps> = ({
         <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-slate-900 border border-slate-700 rounded-2xl max-w-sm w-full p-6 text-white shadow-2xl relative">
             <button
-              onClick={() => setShowPinModal(false)}
+              onClick={handleClosePinModal}
               className="absolute top-4 right-4 text-slate-400 hover:text-white"
             >
               <X className="w-5 h-5" />
@@ -455,7 +481,7 @@ export const Header: React.FC<HeaderProps> = ({
               </div>
               <div>
                 <h3 className="font-bold text-lg text-white">Store Admin Login</h3>
-                <p className="text-xs text-slate-400">Enter PIN to edit prices & bookings</p>
+                <p className="text-xs text-slate-400">Enter password to manage prices &amp; bookings</p>
               </div>
             </div>
 
@@ -483,7 +509,7 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="flex gap-2">
                 <button
                   type="button"
-                  onClick={() => setShowPinModal(false)}
+                  onClick={handleClosePinModal}
                   className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 py-2 rounded-lg text-sm font-semibold transition"
                 >
                   Cancel

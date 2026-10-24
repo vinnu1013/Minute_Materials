@@ -4,6 +4,7 @@ import { Store, ShoppingCart } from 'lucide-react';
 interface MobileBottomNavProps {
   cartCount: number;
   onOpenCart: () => void;
+  onNavigateHome?: () => void;
   onOpenBookingMode?: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => void;
   onOpenPriceDrops?: () => void;
   priceDropCount?: number;
@@ -14,6 +15,7 @@ interface MobileBottomNavProps {
 export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   cartCount,
   onOpenCart,
+  onNavigateHome,
 }) => {
   const [activeTab, setActiveTab] = useState<'catalog' | 'cart'>('catalog');
 
@@ -23,7 +25,11 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       <button
         onClick={() => {
           setActiveTab('catalog');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (onNavigateHome) {
+            onNavigateHome();
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         }}
         className={`flex-1 flex flex-col items-center gap-1 py-1 rounded-xl transition ${
           activeTab === 'catalog' ? 'text-amber-600 font-extrabold' : 'text-slate-500 hover:text-slate-900'

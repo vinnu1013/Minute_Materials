@@ -352,7 +352,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2.5 sm:gap-3 lg:gap-4">
+        <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5 sm:gap-3 lg:gap-4">
           {displayedProducts.map((product) => {
             const isAdded = addedIds[product.id];
             const qtyInCart = getCartQuantity(product.id);
@@ -360,11 +360,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             return (
               <div
                 key={product.id}
-                className="bg-white border border-slate-200/60 hover:border-amber-400/80 rounded-xl p-2.5 flex flex-col justify-between transition duration-200 hover:shadow-md relative group shadow-sm"
+                className="bg-white border border-slate-200/60 hover:border-amber-400/80 rounded-xl p-1.5 sm:p-2.5 flex flex-col justify-between transition duration-200 hover:shadow-md relative group shadow-sm"
               >
                 {/* Product Header Badge */}
                 <div>
-                  <div className="relative mb-2 bg-slate-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center border border-slate-200/40">
+                  <div className="relative mb-1.5 sm:mb-2 bg-slate-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center border border-slate-200/40">
                     {product.image && product.image.trim() !== '' ? (
                       <img
                         src={product.image}
@@ -372,11 +372,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
-                      <div className="flex flex-col items-center justify-center p-2 text-center">
-                        <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-0.5 text-amber-500 text-sm shadow-sm">
+                      <div className="flex flex-col items-center justify-center p-1 sm:p-2 text-center">
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-0.5 text-amber-500 text-xs sm:text-sm shadow-sm">
                           {product.category === 'plumbing' ? '💧' : product.category === 'electrical' ? '⚡' : '🔧'}
                         </div>
-                        <span className="text-[8px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-wider">
+                        <span className="text-[7px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-wider">
                           {product.category}
                         </span>
                       </div>
@@ -385,7 +385,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                     {/* Trade Favorite Badge (ONLY if set by Admin) */}
                     {product.popular && (
                       <div className="absolute top-1 left-1 flex flex-col gap-1">
-                        <span className="bg-amber-500 text-slate-950 text-[7px] sm:text-[8px] font-extrabold uppercase px-1.5 py-0.5 rounded shadow">
+                        <span className="bg-amber-500 text-slate-950 text-[6px] sm:text-[8px] font-extrabold uppercase px-1 sm:px-1.5 py-0.5 rounded shadow">
                           ★ Favorite
                         </span>
                       </div>
@@ -404,7 +404,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                             className="bg-amber-500 hover:bg-amber-400 text-slate-950 p-1 rounded shadow font-bold text-xs flex items-center gap-1 transition"
                             title="Edit Price & Stock"
                           >
-                            <Edit2 className="w-3 h-3" />
+                            <Edit2 className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             <span className="text-[8px] font-bold hidden sm:inline">Edit</span>
                           </button>
                         )}
@@ -418,7 +418,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                             className="bg-rose-600 hover:bg-rose-500 text-white p-1 rounded shadow font-bold text-xs flex items-center gap-1 transition"
                             title={`Remove ${product.name}`}
                           >
-                            <Trash2 className="w-3 h-3" />
+                            <Trash2 className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                             <span className="text-[8px] font-bold hidden sm:inline">Remove</span>
                           </button>
                         )}
@@ -426,11 +426,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                     )}
                   </div>
 
-                  <div className="space-y-1">
-                    <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate">
+                  <div className="space-y-0.5 sm:space-y-1">
+                    <span className="text-[7px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate">
                       {product.category} {product.subcategory ? `• ${product.subcategory}` : ''}
                     </span>
-                    <h3 className="font-bold text-xs text-slate-900 leading-snug line-clamp-2 min-h-[2rem]">
+                    <h3 className="font-bold text-[10px] sm:text-xs text-slate-900 leading-tight sm:leading-snug line-clamp-2 min-h-[1.75rem] sm:min-h-[2rem]">
                       {product.name}
                     </h3>
 
@@ -443,7 +443,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
                     {/* Admin Only Info: HSN Code & Part Code */}
                     {isAdmin && (product.hsnCode || product.partCode) && (
-                      <div className="mt-1 pt-1 border-t border-slate-200 text-[8px] text-amber-700 font-mono flex flex-wrap gap-x-1.5">
+                      <div className="mt-1 pt-1 border-t border-slate-200 text-[7px] sm:text-[8px] text-amber-700 font-mono flex flex-wrap gap-x-1">
                         {product.hsnCode && <span>HSN: {product.hsnCode}</span>}
                         {product.partCode && <span>Part: {product.partCode}</span>}
                       </div>
@@ -452,39 +452,39 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 </div>
 
                 {/* Price & Action Row (Price Stack + Cart Button in same row for desktop/laptop) */}
-                <div className="mt-2.5 pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                <div className="mt-1.5 sm:mt-2.5 pt-1.5 sm:pt-2 border-t border-slate-100 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-1.5 sm:gap-2">
                   
                   {/* Price Stack: Discounted Selling Price ABOVE Actual MRP Price */}
                   <div className="flex flex-col justify-center min-w-0">
                     {/* Line 1 (ABOVE): Discounted Selling Price */}
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-sm sm:text-base font-black font-mono text-slate-900 leading-none">
+                    <div className="flex items-baseline gap-0.5 sm:gap-1 flex-wrap">
+                      <span className="text-xs sm:text-base font-black font-mono text-slate-900 leading-none">
                         ₹{product.price.toFixed(2)}
                       </span>
-                      <span className="text-[9px] sm:text-[10px] text-slate-500 font-semibold">
+                      <span className="text-[8px] sm:text-[10px] text-slate-500 font-semibold">
                         /{product.unit}
                       </span>
                     </div>
 
                     {/* Line 2 (BELOW): Actual MRP Price & Savings badge */}
-                    <div className="flex items-center gap-1 mt-1 flex-wrap">
+                    <div className="flex items-center gap-1 mt-0.5 sm:mt-1 flex-wrap">
                       {product.originalPrice && product.originalPrice > product.price ? (
                         <>
-                          <span className="text-[9px] sm:text-[10px] text-slate-400 line-through font-mono">
+                          <span className="text-[8px] sm:text-[10px] text-slate-400 line-through font-mono">
                             ₹{product.originalPrice.toFixed(2)}
                           </span>
-                          <span className="text-[8px] font-extrabold text-emerald-700 bg-emerald-50 px-1 py-0.2 rounded border border-emerald-200">
+                          <span className="text-[7px] sm:text-[8px] font-extrabold text-emerald-700 bg-emerald-50 px-1 py-0.2 rounded border border-emerald-200">
                             {Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100)}% OFF
                           </span>
                         </>
                       ) : (
-                        <span className="text-[8px] text-slate-400 font-medium">
+                        <span className="text-[7px] sm:text-[8px] text-slate-400 font-medium">
                           Best Price
                         </span>
                       )}
 
                       {product.stockStatus !== 'in_stock' && (
-                        <span className={`text-[8px] font-bold px-1 py-0.2 rounded border ${
+                        <span className={`text-[7px] sm:text-[8px] font-bold px-1 py-0.2 rounded border ${
                           product.stockStatus === 'low_stock'
                             ? 'bg-amber-100 text-amber-800 border-amber-300'
                             : 'bg-rose-100 text-rose-800 border-rose-300'
@@ -499,26 +499,26 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   <div className="shrink-0">
                     {qtyInCart > 0 ? (
                       /* Quantity Counter Stepper Button when item is in cart */
-                      <div className="flex items-center bg-slate-950 text-white rounded-lg p-0.5 shadow-sm border border-slate-800">
+                      <div className="flex items-center justify-between w-full sm:w-auto bg-slate-950 text-white rounded-lg p-0.5 shadow-sm border border-slate-800">
                         <button
                           type="button"
                           onClick={() => onUpdateQuantity ? onUpdateQuantity(product.id, -1) : onAddToCart(product, -1)}
-                          className="w-6 h-6 rounded-md bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-extrabold text-xs transition"
+                          className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-extrabold text-xs transition"
                           title="Decrease item count in cart"
                         >
-                          <Minus className="w-3 h-3 stroke-[3]" />
+                          <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
                         </button>
-                        <span className="px-2 font-black font-mono text-xs text-amber-400 min-w-[22px] text-center">
+                        <span className="px-1 sm:px-2 font-black font-mono text-[10px] sm:text-xs text-amber-400 min-w-[18px] sm:min-w-[22px] text-center">
                           {qtyInCart}
                         </span>
                         <button
                           type="button"
                           onClick={() => onAddToCart(product, 1)}
                           disabled={product.stockStatus === 'out_of_stock'}
-                          className="w-6 h-6 rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-xs transition disabled:opacity-40"
+                          className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 flex items-center justify-center font-extrabold text-xs transition disabled:opacity-40"
                           title="Increase item count in cart"
                         >
-                          <Plus className="w-3 h-3 stroke-[3]" />
+                          <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
                         </button>
                       </div>
                     ) : (
@@ -526,7 +526,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       <button
                         onClick={() => handleAddWithFeedback(product)}
                         disabled={product.stockStatus === 'out_of_stock'}
-                        className={`w-full sm:w-auto py-1.5 px-3 rounded-lg text-xs font-black flex items-center justify-center gap-1.5 transition shadow-sm ${
+                        className={`w-full sm:w-auto py-1 sm:py-1.5 px-1.5 sm:px-3 rounded-lg text-[10px] sm:text-xs font-black flex items-center justify-center gap-1 sm:gap-1.5 transition shadow-sm ${
                           isAdded
                             ? 'bg-emerald-600 text-white'
                             : product.stockStatus === 'out_of_stock'
@@ -534,7 +534,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                             : 'bg-amber-500 hover:bg-amber-400 text-slate-950 active:scale-95'
                         }`}
                       >
-                        {isAdded ? <Check className="w-3.5 h-3.5" /> : <ShoppingCart className="w-3.5 h-3.5 stroke-[2.5]" />}
+                        {isAdded ? <Check className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> : <ShoppingCart className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />}
                         <span>{isAdded ? 'Added' : '+ Add'}</span>
                       </button>
                     )}

@@ -202,7 +202,7 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
 
   // Construct WhatsApp URL
   const getWhatsAppUrl = (bookingIdOverride?: string) => {
-    const rawNumber = storeSettings?.whatsappNumber || storeSettings?.helplineNumber || '9059236500';
+    const rawNumber = storeSettings?.whatsappNumber || storeSettings?.helplineNumber || '8332869926';
     const cleanPhone = rawNumber.replace(/[^0-9]/g, '');
     const targetNumber = cleanPhone.startsWith('91') ? cleanPhone : (cleanPhone.length === 10 ? `91${cleanPhone}` : cleanPhone);
 
@@ -447,7 +447,7 @@ Sent via Express Supplier Portal (${targetNumber})`;
                       <input
                         type="tel"
                         required
-                        placeholder="e.g. +91 9059236500"
+                        placeholder="e.g. +91 8332869926"
                         value={plumberPhone}
                         onChange={(e) => {
                           setPlumberPhone(e.target.value);
@@ -492,7 +492,7 @@ Sent via Express Supplier Portal (${targetNumber})`;
                     <input
                       type="tel"
                       required
-                      placeholder="e.g. +91 9059236500"
+                      placeholder="e.g. +91 8332869926"
                       value={plumberPhone}
                       onChange={(e) => {
                         setPlumberPhone(e.target.value);

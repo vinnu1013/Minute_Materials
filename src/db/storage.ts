@@ -201,7 +201,24 @@ class DatabaseManager {
 
   // --- STORE SETTINGS DATA OPERATIONS ---
   public async getStoreSettings(): Promise<StoreSettings> {
-    return loadDiskJson<StoreSettings>(SETTINGS_FILE, INITIAL_STORE_SETTINGS);
+    const loaded = loadDiskJson<StoreSettings>(SETTINGS_FILE, INITIAL_STORE_SETTINGS);
+    let changed = false;
+    if (loaded.helplineNumber === '9059236500') {
+      loaded.helplineNumber = '8332869926';
+      changed = true;
+    }
+    if (loaded.whatsappNumber === '9059236500') {
+      loaded.whatsappNumber = '8332869926';
+      changed = true;
+    }
+    if (loaded.activeDeliveryNotice && loaded.activeDeliveryNotice.includes('9059236500')) {
+      loaded.activeDeliveryNotice = loaded.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
+      changed = true;
+    }
+    if (changed) {
+      saveDiskJson(SETTINGS_FILE, loaded);
+    }
+    return loaded;
   }
 
   public async updateStoreSettings(updates: Partial<StoreSettings>): Promise<StoreSettings> {

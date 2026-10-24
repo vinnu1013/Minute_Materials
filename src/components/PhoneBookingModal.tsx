@@ -205,7 +205,7 @@ export const PhoneBookingModal: React.FC<PhoneBookingModalProps> = ({
                 <input
                   type="tel"
                   required
-                  placeholder={userRole === 'plumber_electrician' ? 'e.g. +91 9059236500' : 'e.g. +91 9876543210'}
+                  placeholder={userRole === 'plumber_electrician' ? 'e.g. +91 8332869926' : 'e.g. +91 9876543210'}
                   value={plumberPhone}
                   onChange={(e) => setPlumberPhone(e.target.value)}
                   className="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-emerald-500 placeholder:text-slate-400 font-mono font-semibold"

@@ -1,51 +1,50 @@
 import React from 'react';
 import {
   Phone,
-  MessageCircle,
   MapPin,
   Clock,
   AlertTriangle,
   ExternalLink,
-  Lock,
   Camera
 } from 'lucide-react';
 import { DELIVERY_AREAS } from '../data/areas';
 import { StoreConfig, UserLocation } from '../types';
 import { generateDirectWhatsAppChatUrl } from '../utils/whatsapp';
+import { CompanyPageId } from './CompanyPages';
+import {
+  WhatsAppGlyph,
+  WhatsAppBadgeIcon,
+  InstagramBadgeIcon,
+  CallBadgeIcon,
+  GmailBadgeIcon,
+} from './BrandIcons';
 
 interface FooterProps {
   onSelectCategory: (category: string) => void;
+  onNavigatePage: (page: CompanyPageId) => void;
+  activePage?: CompanyPageId;
   onOpenUploadModal: () => void;
   onOpenCallModal: () => void;
   onOpenLocationModal: () => void;
-  onOpenAdminModal: () => void;
+  onOpenAdminModal?: () => void;
   storeConfig: StoreConfig;
   location: UserLocation;
 }
 
 export const Footer: React.FC<FooterProps> = ({
   onSelectCategory,
+  onNavigatePage,
+  activePage = 'home',
   onOpenUploadModal,
   onOpenCallModal,
   onOpenLocationModal,
-  onOpenAdminModal,
   storeConfig,
-  location,
 }) => {
-  const handleSocialClick = (platform: string) => {
-    if (platform === 'whatsapp') {
-      window.open(generateDirectWhatsAppChatUrl(storeConfig.whatsappNumber), '_blank');
-    } else {
-      try {
-        alert(`Follow Minute Materials on ${platform} for daily contractor discount codes and bulk rates!`);
-      } catch {
-        console.log(`Follow Minute Materials on ${platform} for daily contractor discount codes and bulk rates!`);
-      }
-    }
-  };
+  const callPhone = storeConfig.callNumber || '8332869926';
+  const whatsappUrl = generateDirectWhatsAppChatUrl(storeConfig.whatsappNumber);
 
   return (
-    <footer className="bg-navy-950 text-white pt-10 pb-20 sm:pb-12 border-t border-navy-800" style={{ backgroundColor: '#07182E' }}>
+    <footer className="bg-[#07182E] text-white pt-10 pb-20 sm:pb-12 border-t border-navy-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 space-y-10">
         {/* Top Row: Brand & Emergency Hotline */}
         <div className="p-6 rounded-2xl bg-gradient-to-r from-orange-600 to-amber-600 text-white flex flex-col md:flex-row items-center justify-between gap-4 shadow-xl">
@@ -73,13 +72,14 @@ export const Footer: React.FC<FooterProps> = ({
             >
               <Phone className="w-4 h-4" /> Call: {storeConfig.emergencyCallNumber || storeConfig.callNumber}
             </a>
-            <button
-              type="button"
-              onClick={() => handleSocialClick('whatsapp')}
-              className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm rounded-xl transition flex items-center gap-2 cursor-pointer"
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2.5 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md transition flex items-center gap-2 cursor-pointer"
             >
-              <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Hotline
-            </button>
+              <WhatsAppGlyph className="w-4 h-4" /> WhatsApp Hotline
+            </a>
           </div>
         </div>
 
@@ -143,39 +143,36 @@ export const Footer: React.FC<FooterProps> = ({
                   <MapPin className="w-3.5 h-3.5 text-orange-400" /> Delivery Areas & Live Timings
                 </button>
               </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={onOpenAdminModal}
-                  className="hover:text-orange-400 transition flex items-center gap-1.5 text-left text-slate-400 cursor-pointer"
-                >
-                  <Lock className="w-3.5 h-3.5" /> Store Manager Admin Login
-                </button>
-              </li>
             </ul>
           </div>
 
-          {/* Col 3: Service Links */}
+          {/* Col 3: Company */}
           <div className="space-y-3">
             <h4 className="text-white text-sm font-bold uppercase tracking-wider border-b border-navy-800 pb-2">
-              Service Links
+              Company
             </h4>
             <ul className="space-y-2">
-              <li className="flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> 15-30 Min Jobsite Express Delivery
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> Bulk Contractor & Builder Rates
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> Emergency Early-Morning & Night Dispatch
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> 100% Genuine ISI Branded Guarantee
-              </li>
-              <li className="flex items-center gap-1.5">
-                <span className="text-emerald-400 font-bold">✓</span> Cash / UPI on Delivery (No Advance)
-              </li>
+              {(
+                [
+                  { label: 'About us', page: 'about' },
+                  { label: 'Categories', page: 'categories' },
+                  { label: 'Blog', page: 'blog' },
+                  { label: 'FAQs', page: 'faqs' },
+                  { label: 'Contact us', page: 'contact' },
+                ] as const
+              ).map((item) => (
+                <li key={item.page}>
+                  <button
+                    type="button"
+                    onClick={() => onNavigatePage(item.page)}
+                    className={`hover:text-orange-400 transition flex items-center gap-1.5 cursor-pointer ${
+                      activePage === item.page ? 'text-orange-400 font-bold' : ''
+                    }`}
+                  >
+                    <span className="text-orange-500 font-bold">›</span> {item.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -198,56 +195,60 @@ export const Footer: React.FC<FooterProps> = ({
                 </span>
               </p>
               <p className="flex items-center gap-2">
-                <MessageCircle className="w-4 h-4 text-emerald-400 shrink-0" />
+                <WhatsAppGlyph className="w-4 h-4 text-[#25D366] shrink-0" />
                 <span>
                   <strong>WhatsApp:</strong> +{storeConfig.whatsappNumber}
                 </span>
               </p>
             </div>
 
-            {/* Social Media Links */}
+            {/* Connect with Us - Authentic Original Brand Logos */}
             <div className="pt-2">
-              <p className="font-bold text-white mb-2">Connect with Us:</p>
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => handleSocialClick('whatsapp')}
-                  className="w-8 h-8 rounded-lg bg-emerald-600 hover:bg-emerald-500 flex items-center justify-center text-white transition cursor-pointer"
-                  title="WhatsApp"
+              <p className="font-bold text-white mb-2.5">Connect with Us:</p>
+              <div className="flex items-center gap-2.5">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-sm cursor-pointer"
+                  title="Chat on WhatsApp"
+                  aria-label="Chat on WhatsApp"
                 >
-                  <MessageCircle className="w-4 h-4 fill-current" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSocialClick('Instagram')}
-                  className="w-8 h-8 rounded-lg bg-gradient-to-tr from-amber-500 via-pink-600 to-purple-600 hover:opacity-90 flex items-center justify-center text-white transition font-bold text-xs cursor-pointer"
-                  title="Instagram"
+                  <WhatsAppBadgeIcon className="w-9 h-9" />
+                </a>
+                <a
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-sm cursor-pointer"
+                  title="Follow on Instagram"
+                  aria-label="Follow on Instagram"
                 >
-                  IG
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSocialClick('Facebook')}
-                  className="w-8 h-8 rounded-lg bg-blue-600 hover:bg-blue-500 flex items-center justify-center text-white transition font-bold text-xs cursor-pointer"
-                  title="Facebook"
+                  <InstagramBadgeIcon className="w-9 h-9" />
+                </a>
+                <a
+                  href={`tel:${callPhone}`}
+                  className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-sm cursor-pointer"
+                  title={`Call Us: ${callPhone}`}
+                  aria-label={`Call Us at ${callPhone}`}
                 >
-                  FB
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleSocialClick('Twitter / X')}
-                  className="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-white transition font-bold text-xs cursor-pointer"
-                  title="Twitter / X"
+                  <CallBadgeIcon className="w-9 h-9" />
+                </a>
+                <a
+                  href="mailto:mr.vinnu10@gmail.com"
+                  className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-sm cursor-pointer"
+                  title="Email Us on Gmail (mr.vinnu10@gmail.com)"
+                  aria-label="Email Us on Gmail"
                 >
-                  X
-                </button>
+                  <GmailBadgeIcon className="w-9 h-9" />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
         {/* Live Delivery Hub Coverage Grid */}
-        <div className="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3" style={{ backgroundColor: 'rgba(15, 23, 42, 0.6)' }}>
+        <div className="p-4 sm:p-5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-3">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/80 pb-3">
             <div className="flex items-center gap-2 text-white font-bold text-xs sm:text-sm">
               <Clock className="w-4 h-4 text-orange-400" />

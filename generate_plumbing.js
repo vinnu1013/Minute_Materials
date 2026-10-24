@@ -458,7 +458,7 @@ export const INITIAL_STORE_SETTINGS: StoreSettings = {
   deliveryFeeStandard: 5.00,
   minOrderFreeDelivery: 199.00,
   activeDeliveryNotice: '⚠️ Website under building stage! Please book strictly via WhatsApp or Phone: 9059236500 | 10 to 15 Min Express Delivery',
-  adminPin: 'SnapSupply10',
+  adminPin: '9059236500',
   depotLat: 17.343629,
   depotLng: 78.554161,
   depotAddress: 'SnapSupply Express Hub'

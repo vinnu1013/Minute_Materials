@@ -923,17 +923,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   </div>
 
                   <div>
-                    <label className="block font-bold text-slate-300 mb-1">GST Percentage (%)</label>
-                    <input
-                      type="number"
-                      value={settingsForm.gstPercentage ?? 18}
-                      onChange={(e) => setSettingsForm(prev => ({ ...prev, gstPercentage: Number(e.target.value) }))}
-                      onBlur={() => onUpdateStoreSettings(settingsForm)}
-                      className="w-full bg-slate-800 border border-slate-700 text-white font-mono font-bold px-3 py-2 rounded-lg focus:border-amber-400 outline-none"
-                    />
-                  </div>
-
-                  <div>
                     <label className="block font-bold text-slate-300 mb-1">Min Order for FREE Delivery (₹)</label>
                     <input
                       type="number"

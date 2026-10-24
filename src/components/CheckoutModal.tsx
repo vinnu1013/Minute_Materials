@@ -28,7 +28,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
 }) => {
   const [userRole, setUserRole] = useState<UserRole>(currentUser?.userRole || 'plumber_electrician');
   const [customerName, setCustomerName] = useState(currentUser?.name || '');
-  const [plumberPhone, setPlumberPhone] = useState(currentUser?.phone || '9059236500');
+  const [plumberPhone, setPlumberPhone] = useState(currentUser?.phone || '8332869926');
   
   // Recipient Details Selection (Me vs Others)
   const [recipientType, setRecipientType] = useState<'me' | 'others'>('me');
@@ -65,10 +65,9 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   // Handling Fee: 5/-
   const handlingFee = 5;
 
-  const gstPercentage = Number(storeSettings?.gstPercentage) ?? 18;
-  const gstAmount = (subtotal * gstPercentage) / 100;
+  const gstAmount = 0;
 
-  const totalPrice = subtotal + deliveryFee + platformFee + handlingFee + gstAmount;
+  const totalPrice = subtotal + deliveryFee + platformFee + handlingFee;
 
   const handleGetCurrentLocation = async () => {
     setIsLocating(true);
@@ -158,7 +157,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       ].filter(Boolean).join(', ');
 
       // Build formatted material list & bill for WhatsApp
-      const cleanStorePhone = (storeSettings.whatsappNumber || storeSettings.helplineNumber || '9059236500').replace(/\D/g, '');
+      const cleanStorePhone = (storeSettings.whatsappNumber || storeSettings.helplineNumber || '8332869926').replace(/\D/g, '');
       const whatsappTarget = cleanStorePhone.length === 10 ? `91${cleanStorePhone}` : cleanStorePhone;
 
       const itemsListFormatted = validItems
@@ -185,7 +184,6 @@ ${itemsListFormatted}
 • Subtotal: ₹${subtotal.toFixed(2)}
 • Platform Fee: ₹${platformFee.toFixed(2)}
 • Handling Fee: ₹${handlingFee.toFixed(2)}
-• GST (${gstPercentage}%): ₹${gstAmount.toFixed(2)}
 ----------------------------------------
 *TOTAL AMOUNT PAYABLE: ₹${totalPrice.toFixed(2)}*
 ----------------------------------------
@@ -253,7 +251,7 @@ Please confirm material availability & dispatch express courier immediately!`;
     e.preventDefault();
 
     const activeCustomerName = customerName.trim() || currentUser?.name || 'Trade Account';
-    const activePlumberPhone = plumberPhone.trim() || currentUser?.phone || '9059236500';
+    const activePlumberPhone = plumberPhone.trim() || currentUser?.phone || '8332869926';
     const cleanDigits = activePlumberPhone.trim().replace(/\D/g, '');
     const digits = cleanDigits.length > 10 && cleanDigits.startsWith('91') ? cleanDigits.slice(-10) : cleanDigits;
     if (!/^[6-9]\d{9}$/.test(digits)) {
@@ -332,7 +330,7 @@ Please confirm material availability & dispatch express courier immediately!`;
                 <span>⏱️ Live Dispatching</span>
               </div>
               <p className="text-slate-700">
-                Your material order &amp; detailed bill breakdown have been formatted and sent to our WhatsApp order helpline (<strong>9059236500</strong>). Our team will confirm material packing and dispatch express courier immediately.
+                Your material order &amp; detailed bill breakdown have been formatted and sent to our WhatsApp order helpline (<strong>{storeSettings.whatsappNumber || '8332869926'}</strong>). Our team will confirm material packing and dispatch express courier immediately.
               </p>
               <div className="text-slate-500 pt-2 border-t border-slate-200 space-y-1">
                 <div>Recipient: <strong className="text-slate-900">{finalRecipientName}</strong></div>
@@ -397,7 +395,7 @@ Please confirm material availability & dispatch express courier immediately!`;
                 <span>Express WhatsApp Order Dispatch</span>
               </div>
               <p className="text-[11px] text-amber-800">
-                Clicking <strong>Confirm &amp; Place Order</strong> will automatically send your materials list and bill breakdown to WhatsApp (<strong>9059236500</strong>) for instant delivery confirmation.
+                Clicking <strong>Confirm &amp; Place Order</strong> will automatically send your materials list and bill breakdown to WhatsApp (<strong>{storeSettings.whatsappNumber || '8332869926'}</strong>) for instant delivery confirmation.
               </p>
             </div>
 
@@ -519,11 +517,6 @@ Please confirm material availability & dispatch express courier immediately!`;
               <div className="flex justify-between text-slate-700">
                 <span>Handling Charges:</span>
                 <span className="font-mono font-bold text-slate-900">₹{handlingFee.toFixed(2)}</span>
-              </div>
-
-              <div className="flex justify-between text-slate-700">
-                <span>GST / Taxes ({gstPercentage}%):</span>
-                <span className="font-mono font-bold text-slate-900">₹{gstAmount.toFixed(2)}</span>
               </div>
 
               <div className="flex justify-between text-sm font-black text-slate-900 pt-2 border-t border-slate-200">

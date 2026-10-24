@@ -59,7 +59,7 @@ const INITIAL_USERS: UserAccount[] = [
     id: 'usr-101',
     name: 'Vinnu Contractor',
     email: 'mr.vinnu10@gmail.com',
-    phone: '9059236500',
+    phone: '8332869926',
     tradeCompany: 'Vinnu Plumbing & Electricals',
     address: 'LB Nagar Ring Road Junction, Hyderabad',
     lat: 17.3480,
@@ -81,7 +81,7 @@ const INITIAL_COMPLAINTS: Array<{
   {
     id: 'CMP-102984',
     name: 'Vinnu Contractor',
-    phone: '9059236500',
+    phone: '8332869926',
     orderId: 'BK-1001',
     category: 'wrong_material',
     description: 'Received 1/2 inch fittings instead of 3/4 inch.',
@@ -98,7 +98,7 @@ const INITIAL_BOOKINGS: Booking[] = [
     createdAt: new Date(Date.now() - 1000 * 60 * 35).toISOString(),
     status: 'packing',
     customerName: 'Dave Miller (Apex Plumbing)',
-    plumberPhone: '9059236500',
+    plumberPhone: '8332869926',
     tradeCompany: 'Apex Plumbing Contractors',
     deliveryAddress: 'LB Nagar Ring Road, Hyderabad',
     customerLat: 17.3480,
@@ -125,7 +125,7 @@ const INITIAL_BOOKINGS: Booking[] = [
     createdAt: new Date(Date.now() - 1000 * 60 * 15).toISOString(),
     status: 'new',
     customerName: 'Sam Rivera',
-    plumberPhone: '9059236500',
+    plumberPhone: '8332869926',
     tradeCompany: 'Rivera Electric LLC',
     deliveryAddress: 'Uppal Main Junction, Hyderabad',
     customerLat: 17.4018,
@@ -145,6 +145,18 @@ let storeSettings: StoreSettings = {
 };
 if (storeSettings.adminPin === 'Vinnu1013' || !storeSettings.adminPin) {
   storeSettings.adminPin = '9059236500';
+  saveJsonFile(SETTINGS_FILE, storeSettings);
+}
+if (
+  storeSettings.helplineNumber === '9059236500' ||
+  storeSettings.whatsappNumber === '9059236500' ||
+  (storeSettings.activeDeliveryNotice && storeSettings.activeDeliveryNotice.includes('9059236500'))
+) {
+  if (storeSettings.helplineNumber === '9059236500') storeSettings.helplineNumber = '8332869926';
+  if (storeSettings.whatsappNumber === '9059236500') storeSettings.whatsappNumber = '8332869926';
+  if (storeSettings.activeDeliveryNotice) {
+    storeSettings.activeDeliveryNotice = storeSettings.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
+  }
   saveJsonFile(SETTINGS_FILE, storeSettings);
 }
 
@@ -324,8 +336,8 @@ async function startServer() {
   // Auth Routes
   app.post('/api/auth/send-otp', (req, res) => {
     const { phone } = req.body;
-    const cleanPhone = (phone || '9059236500').toString().trim().replace(/\D/g, '');
-    const userPhone = cleanPhone.length >= 10 ? cleanPhone.slice(-10) : '9059236500';
+    const cleanPhone = (phone || '8332869926').toString().trim().replace(/\D/g, '');
+    const userPhone = cleanPhone.length >= 10 ? cleanPhone.slice(-10) : '8332869926';
     
     // Generate secure 6-digit OTP code
     const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
@@ -335,16 +347,16 @@ async function startServer() {
     otpStore[userPhone] = { otp: generatedOtp, expiresAt };
     otpStore[`91${userPhone}`] = { otp: generatedOtp, expiresAt };
 
-    console.log(`[WhatsApp Gateway +91 9059236500] Sending OTP ${generatedOtp} to +91 ${userPhone}`);
+    console.log(`[WhatsApp Gateway +91 8332869926] Sending OTP ${generatedOtp} to +91 ${userPhone}`);
 
     // Return response with whatsappUrl for direct WhatsApp opening
     const whatsappMessage = `Hi Minute Materials, please send my 6-digit OTP verification code for mobile +91 ${userPhone}`;
-    const whatsappUrl = `https://wa.me/919059236500?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappUrl = `https://wa.me/918332869926?text=${encodeURIComponent(whatsappMessage)}`;
 
     res.json({
       success: true,
-      message: `OTP request registered from Business WhatsApp (+91 9059236500) for +91 ${userPhone}.`,
-      senderNumber: '9059236500',
+      message: `OTP request registered from Business WhatsApp (+91 8332869926) for +91 ${userPhone}.`,
+      senderNumber: '8332869926',
       recipientPhone: userPhone,
       whatsappUrl
     });
