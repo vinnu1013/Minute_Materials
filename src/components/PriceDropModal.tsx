@@ -23,7 +23,7 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
   );
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm overflow-y-auto p-2 sm:p-4 md:p-6 flex items-start sm:items-center justify-center min-h-screen">
+    <div className="fixed inset-0 z-50 bg-slate-900/35 backdrop-blur-sm overflow-y-auto p-2 sm:p-4 md:p-6 flex items-start sm:items-center justify-center min-h-screen">
       <div className="bg-white border border-slate-200 rounded-2xl max-w-4xl lg:max-w-5xl w-full p-4 sm:p-6 text-slate-900 shadow-2xl relative my-auto sm:my-8 max-h-[92vh] flex flex-col">
         
         {/* Header */}

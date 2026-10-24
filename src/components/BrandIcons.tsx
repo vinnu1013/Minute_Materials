@@ -84,7 +84,7 @@ export const CallBadgeIcon: React.FC<IconProps> = ({ className = 'w-9 h-9' }) =>
  */
 export const GmailBadgeIcon: React.FC<IconProps> = ({ className = 'w-9 h-9' }) => (
   <svg viewBox="0 0 48 48" className={className} aria-hidden="true">
-    <rect width="48" height="48" rx="11" fill="#FFFFFF" />
+    <rect x="0.75" y="0.75" width="46.5" height="46.5" rx="10.5" fill="#FFFFFF" stroke="#E2E8F0" strokeWidth="1.5" />
     <g transform="translate(6, 10.5) scale(0.409)">
       <path fill="#4285F4" d="M6 66h14V32L0 17v43c0 3.32 2.69 6 6 6" />
       <path fill="#34A853" d="M68 66h14c3.32 0 6-2.69 6-6V17L68 32" />

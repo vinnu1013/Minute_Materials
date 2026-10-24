@@ -108,7 +108,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm flex justify-end">
+    <div className="fixed inset-0 z-50 bg-slate-900/35 backdrop-blur-sm flex justify-end">
       <div className="bg-white border-l border-slate-200 text-slate-900 w-full max-w-md h-full flex flex-col justify-between shadow-2xl">
         
         {/* Cart Header */}

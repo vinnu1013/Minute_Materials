@@ -306,14 +306,14 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
           {/* Subcategory Pills bar */}
           {availableSubcategories.length > 0 && (
-            <div className="pt-2 border-t border-slate-800/80 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
-              <span className="text-[10px] text-slate-400 font-bold uppercase shrink-0">Quick Type:</span>
+            <div className="pt-2 border-t border-slate-200 flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+              <span className="text-[10px] text-slate-500 font-bold uppercase shrink-0">Quick Type:</span>
               <button
                 onClick={() => setSelectedSubcategory('all')}
-                className={`px-2 py-0.5 rounded text-[10px] font-extrabold whitespace-nowrap transition ${
+                className={`px-2 py-0.5 rounded text-[10px] font-extrabold whitespace-nowrap transition border ${
                   selectedSubcategory === 'all'
-                    ? 'bg-amber-500 text-slate-950 font-black'
-                    : 'bg-slate-800 text-slate-400 hover:text-white'
+                    ? 'bg-amber-500 text-slate-950 border-amber-400 font-black'
+                    : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 All
@@ -322,10 +322,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 <button
                   key={sub}
                   onClick={() => setSelectedSubcategory(sub)}
-                  className={`px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap transition ${
+                  className={`px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap transition border ${
                     selectedSubcategory === sub
-                      ? 'bg-amber-500 text-slate-950 font-extrabold'
-                      : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-white'
+                      ? 'bg-amber-500 text-slate-950 border-amber-400 font-extrabold'
+                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100 hover:text-slate-900'
                   }`}
                 >
                   {sub}
@@ -338,15 +338,15 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
       {/* Catalog Grid */}
       {displayedProducts.length === 0 ? (
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl p-8 sm:p-12 text-center text-slate-400 space-y-3">
-          <Filter className="w-10 h-10 sm:w-12 sm:h-12 mx-auto stroke-1 opacity-40 text-amber-400" />
-          <h3 className="text-base sm:text-lg font-bold text-white">No materials match your search filter</h3>
+        <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-12 text-center text-slate-600 space-y-3">
+          <Filter className="w-10 h-10 sm:w-12 sm:h-12 mx-auto stroke-1 opacity-60 text-amber-500" />
+          <h3 className="text-base sm:text-lg font-bold text-slate-900">No materials match your search filter</h3>
           <p className="text-xs text-slate-500">Try searching for broader terms like "pipe", "wire", "elbow", "breaker", or clear filters.</p>
           <button
             onClick={() => {
               setActiveCategory('all');
             }}
-            className="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-4 py-2 rounded-lg text-xs mt-2"
+            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs mt-2 transition shadow-xs"
           >
             Clear Filters
           </button>
@@ -499,16 +499,16 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   <div className="shrink-0">
                     {qtyInCart > 0 ? (
                       /* Quantity Counter Stepper Button when item is in cart */
-                      <div className="flex items-center justify-between w-full sm:w-auto bg-slate-950 text-white rounded-lg p-0.5 shadow-sm border border-slate-800">
+                      <div className="flex items-center justify-between w-full sm:w-auto bg-amber-50 text-slate-900 rounded-lg p-0.5 shadow-xs border border-amber-300">
                         <button
                           type="button"
                           onClick={() => onUpdateQuantity ? onUpdateQuantity(product.id, -1) : onAddToCart(product, -1)}
-                          className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-slate-800 hover:bg-slate-700 text-amber-400 flex items-center justify-center font-extrabold text-xs transition"
+                          className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-white hover:bg-amber-100 text-amber-700 border border-amber-200 flex items-center justify-center font-extrabold text-xs transition"
                           title="Decrease item count in cart"
                         >
                           <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
                         </button>
-                        <span className="px-1 sm:px-2 font-black font-mono text-[10px] sm:text-xs text-amber-400 min-w-[18px] sm:min-w-[22px] text-center">
+                        <span className="px-1 sm:px-2 font-black font-mono text-[10px] sm:text-xs text-slate-900 min-w-[18px] sm:min-w-[22px] text-center">
                           {qtyInCart}
                         </span>
                         <button
@@ -550,41 +550,41 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
       {/* Admin Delete Item Confirmation Modal */}
       {catalogProductToDelete && (
-        <div className="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-rose-500/40 rounded-2xl max-w-md w-full p-6 text-white shadow-2xl relative space-y-4 animate-scale-up">
+        <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-white border border-rose-200 rounded-2xl max-w-md w-full p-6 text-slate-900 shadow-2xl relative space-y-4 animate-scale-up">
             <button
               type="button"
               onClick={() => setCatalogProductToDelete(null)}
-              className="absolute top-4 right-4 text-slate-400 hover:text-white"
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-700 bg-slate-100 p-1 rounded-lg transition"
             >
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-3 text-rose-400">
-              <div className="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center shrink-0 border border-rose-500/30">
-                <AlertTriangle className="w-5 h-5 text-rose-400" />
+            <div className="flex items-center gap-3 text-rose-600">
+              <div className="w-10 h-10 rounded-full bg-rose-50 flex items-center justify-center shrink-0 border border-rose-200">
+                <AlertTriangle className="w-5 h-5 text-rose-600" />
               </div>
               <div>
-                <h3 className="font-extrabold text-base text-white">Remove Item from Catalog?</h3>
-                <p className="text-xs text-rose-300">Admin Live Deletion</p>
+                <h3 className="font-extrabold text-base text-slate-900">Remove Item from Catalog?</h3>
+                <p className="text-xs text-rose-600 font-semibold">Admin Live Deletion</p>
               </div>
             </div>
 
             {/* Product Summary */}
-            <div className="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center gap-3">
+            <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3">
               <img
                 src={catalogProductToDelete.image || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600'}
                 alt={catalogProductToDelete.name}
-                className="w-12 h-12 rounded-lg object-cover bg-white shrink-0 border border-slate-700"
+                className="w-12 h-12 rounded-lg object-cover bg-white shrink-0 border border-slate-200"
               />
               <div className="min-w-0 flex-1">
-                <p className="font-bold text-xs text-white truncate">{catalogProductToDelete.name}</p>
-                <p className="text-[10px] text-slate-400 font-mono">SKU: {catalogProductToDelete.sku} • ₹{catalogProductToDelete.price.toFixed(2)}/{catalogProductToDelete.unit}</p>
-                <p className="text-[10px] text-amber-400 uppercase font-bold">{catalogProductToDelete.category}</p>
+                <p className="font-bold text-xs text-slate-900 truncate">{catalogProductToDelete.name}</p>
+                <p className="text-[10px] text-slate-500 font-mono">SKU: {catalogProductToDelete.sku} • ₹{catalogProductToDelete.price.toFixed(2)}/{catalogProductToDelete.unit}</p>
+                <p className="text-[10px] text-amber-600 uppercase font-bold">{catalogProductToDelete.category}</p>
               </div>
             </div>
 
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs text-slate-600 leading-relaxed">
               Are you sure you want to permanently delete this unwanted material item from the live catalog?
             </p>
 
@@ -592,7 +592,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               <button
                 type="button"
                 onClick={() => setCatalogProductToDelete(null)}
-                className="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-300 py-2.5 rounded-xl text-xs font-bold transition"
+                className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-2.5 rounded-xl text-xs font-bold transition"
               >
                 Cancel
               </button>

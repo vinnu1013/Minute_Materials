@@ -454,34 +454,34 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
       {activePage === 'about' && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-12">
           {/* Hero Intro */}
-          <section className="bg-slate-950 text-white rounded-2xl p-6 sm:p-10 lg:p-12 shadow-sm">
-            <p className="text-xs font-bold uppercase tracking-widest text-amber-400">
+          <section className="bg-gradient-to-br from-amber-50 via-white to-orange-50/60 border border-amber-200/80 text-slate-900 rounded-2xl p-6 sm:p-10 lg:p-12 shadow-xs">
+            <p className="text-xs font-bold uppercase tracking-widest text-amber-700">
               About Minute Materials · Hyderabad
             </p>
-            <h1 className="text-2xl sm:text-4xl font-black tracking-tight mt-2 max-w-3xl leading-tight">
+            <h1 className="text-2xl sm:text-4xl font-black tracking-tight mt-2 max-w-3xl leading-tight text-slate-900">
               Built to Keep Active Construction &amp; Repair Sites Moving Without Material Delays.
             </h1>
-            <p className="text-slate-300 text-sm sm:text-base mt-4 max-w-2xl leading-relaxed">
+            <p className="text-slate-600 text-sm sm:text-base mt-4 max-w-2xl leading-relaxed">
               Minute Materials is Hyderabad’s rapid jobsite supply network for plumbers, electricians, civil contractors, and homeowners. Operating out of our central dispatch hub at Chinthalkunta / LB Nagar Ring Road, we deliver genuine ISI-certified plumbing, electrical, and hardware supplies straight to your site gate in 15 to 30 minutes.
             </p>
 
             {/* Key Operational Metrics Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 mt-8 border-t border-slate-800">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 mt-8 border-t border-amber-200/70">
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-amber-400">15–30 Min</div>
-                <div className="text-xs text-slate-400 mt-1">Express Hub Dispatch ETA</div>
+                <div className="text-2xl sm:text-3xl font-black text-amber-600">15–30 Min</div>
+                <div className="text-xs text-slate-500 mt-1">Express Hub Dispatch ETA</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white">100% ISI</div>
-                <div className="text-xs text-slate-400 mt-1">Authorized Brand Inventory</div>
+                <div className="text-2xl sm:text-3xl font-black text-slate-900">100% ISI</div>
+                <div className="text-xs text-slate-500 mt-1">Authorized Brand Inventory</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white">6 AM – 11 PM</div>
-                <div className="text-xs text-slate-400 mt-1">7-Day Shift Coverage</div>
+                <div className="text-2xl sm:text-3xl font-black text-slate-900">6 AM – 11 PM</div>
+                <div className="text-xs text-slate-500 mt-1">7-Day Shift Coverage</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-emerald-400">₹0 Advance</div>
-                <div className="text-xs text-slate-400 mt-1">Cash or UPI at Site Gate</div>
+                <div className="text-2xl sm:text-3xl font-black text-emerald-600">₹0 Advance</div>
+                <div className="text-xs text-slate-500 mt-1">Cash or UPI at Site Gate</div>
               </div>
             </div>
           </section>
@@ -590,9 +590,9 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
               <button
                 type="button"
                 onClick={() => onOpenBookingMode('image_upload')}
-                className="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm rounded-xl transition flex items-center gap-2 cursor-pointer"
+                className="px-5 py-2.5 bg-white hover:bg-amber-50 text-slate-900 border border-slate-300 hover:border-amber-400 font-bold text-xs sm:text-sm rounded-xl transition flex items-center gap-2 cursor-pointer"
               >
-                <Camera className="w-4 h-4 text-amber-400" /> Upload Handwritten Slip
+                <Camera className="w-4 h-4 text-amber-600" /> Upload Handwritten Slip
               </button>
               <button
                 type="button"
@@ -626,9 +626,9 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
             <button
               type="button"
               onClick={() => onSelectCatalogCategory('all', '')}
-              className="self-start md:self-auto px-4 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold rounded-xl transition flex items-center gap-2 cursor-pointer"
+              className="self-start md:self-auto px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs sm:text-sm font-black rounded-xl transition flex items-center gap-2 shadow-xs cursor-pointer"
             >
-              <Layers className="w-4 h-4 text-amber-400" /> View Full Catalog ({products.length} Items)
+              <Layers className="w-4 h-4 text-slate-950" /> View Full Catalog ({products.length} Items)
             </button>
           </div>
 
@@ -653,7 +653,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                   <div>
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-11 h-11 rounded-xl bg-slate-950 text-amber-400 flex items-center justify-center shrink-0">
+                        <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-700 border border-amber-200 flex items-center justify-center shrink-0">
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
@@ -719,12 +719,12 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
           </div>
 
           {/* Custom / Unlisted Material Banner */}
-          <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="bg-amber-50 border border-amber-200 text-slate-900 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-lg font-black">
+              <h3 className="text-lg font-black text-slate-900">
                 Need Painting Supplies, Sealants, or Special-Order Fittings?
               </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
                 Our Chinthalkunta / LB Nagar warehouse stocks rollers, primers, waterproofing compounds, heavy gate valves, and custom reducers ready for same-trip dispatch.
               </p>
             </div>
@@ -995,10 +995,10 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
           </div>
 
           {/* Direct Support Strip */}
-          <div className="bg-slate-900 text-white rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="bg-amber-50 border border-amber-200 text-slate-900 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <h3 className="font-bold text-base">Still need help with a specific fitting or site order?</h3>
-              <p className="text-xs text-slate-300 mt-0.5">
+              <h3 className="font-bold text-base text-slate-900">Still need help with a specific fitting or site order?</h3>
+              <p className="text-xs text-slate-600 mt-0.5">
                 Speak directly with our Chinthalkunta / LB Nagar dispatch desk.
               </p>
             </div>
@@ -1012,7 +1012,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
               <button
                 type="button"
                 onClick={() => onNavigatePage('contact')}
-                className="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs sm:text-sm rounded-xl transition cursor-pointer"
+                className="px-4 py-2 bg-white hover:bg-slate-100 text-slate-900 border border-slate-300 font-bold text-xs sm:text-sm rounded-xl transition cursor-pointer"
               >
                 Contact Us Page →
               </button>
@@ -1041,68 +1041,68 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Left Column: Direct Dispatch Channels & Hub Address */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="bg-slate-950 text-white rounded-2xl p-6 space-y-5">
+              <div className="bg-white border border-slate-200 text-slate-900 rounded-2xl p-6 space-y-5 shadow-xs">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-wider text-amber-400">
+                  <p className="text-xs font-bold uppercase tracking-wider text-amber-600">
                     Immediate Jobsite Hotline
                   </p>
-                  <h2 className="text-lg font-black mt-1">Direct Dispatch Channels</h2>
+                  <h2 className="text-lg font-black text-slate-900 mt-1">Direct Dispatch Channels</h2>
                 </div>
 
                 <div className="space-y-3 text-sm">
                   <a
                     href={`tel:${storeSettings.helplineNumber}`}
-                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 transition"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-amber-50/60 border border-slate-200 hover:border-amber-300 transition"
                   >
                     <div className="flex items-center gap-3">
                       <CallBadgeIcon className="w-9 h-9 shrink-0" />
                       <div>
-                        <span className="text-xs text-slate-400 block">Express Dispatch Phone</span>
-                        <span className="font-black text-white">{storeSettings.helplineNumber}</span>
+                        <span className="text-xs text-slate-500 block">Express Dispatch Phone</span>
+                        <span className="font-black text-slate-900">{storeSettings.helplineNumber}</span>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-amber-400">Call Now →</span>
+                    <span className="text-xs font-bold text-amber-600">Call Now →</span>
                   </a>
 
                   <a
                     href={generateDirectWhatsAppChatUrl(storeSettings.whatsappNumber)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 transition"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/60 border border-slate-200 hover:border-emerald-300 transition"
                   >
                     <div className="flex items-center gap-3">
                       <WhatsAppBadgeIcon className="w-9 h-9 shrink-0" />
                       <div>
-                        <span className="text-xs text-slate-400 block">WhatsApp Slip &amp; Quote Desk</span>
-                        <span className="font-black text-white">+{storeSettings.whatsappNumber}</span>
+                        <span className="text-xs text-slate-500 block">WhatsApp Slip &amp; Quote Desk</span>
+                        <span className="font-black text-slate-900">+{storeSettings.whatsappNumber}</span>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-emerald-400">Chat →</span>
+                    <span className="text-xs font-bold text-emerald-600">Chat →</span>
                   </a>
 
                   <a
                     href="mailto:mr.vinnu10@gmail.com"
-                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 transition"
+                    className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-blue-50/50 border border-slate-200 hover:border-blue-300 transition"
                   >
                     <div className="flex items-center gap-3">
                       <GmailBadgeIcon className="w-9 h-9 shrink-0" />
                       <div>
-                        <span className="text-xs text-slate-400 block">Gmail Support &amp; Bulk Quotes</span>
-                        <span className="font-black text-white">mr.vinnu10@gmail.com</span>
+                        <span className="text-xs text-slate-500 block">Gmail Support &amp; Bulk Quotes</span>
+                        <span className="font-black text-slate-900">mr.vinnu10@gmail.com</span>
                       </div>
                     </div>
-                    <span className="text-xs font-bold text-sky-400">Email →</span>
+                    <span className="text-xs font-bold text-blue-600">Email →</span>
                   </a>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800">
-                  <p className="text-xs font-bold text-slate-300 mb-2.5">Connect with Us:</p>
+                <div className="pt-3 border-t border-slate-200">
+                  <p className="text-xs font-bold text-slate-700 mb-2.5">Connect with Us:</p>
                   <div className="flex items-center gap-2.5">
                     <a
                       href={generateDirectWhatsAppChatUrl(storeSettings.whatsappNumber)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform"
+                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-xs"
                       title="WhatsApp"
                       aria-label="WhatsApp"
                     >
@@ -1112,7 +1112,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                       href="https://www.instagram.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform"
+                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-xs"
                       title="Instagram"
                       aria-label="Instagram"
                     >
@@ -1120,7 +1120,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                     </a>
                     <a
                       href={`tel:${storeSettings.helplineNumber}`}
-                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform"
+                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-xs"
                       title={`Call ${storeSettings.helplineNumber}`}
                       aria-label="Call Us"
                     >
@@ -1128,7 +1128,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                     </a>
                     <a
                       href="mailto:mr.vinnu10@gmail.com"
-                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform"
+                      className="rounded-xl hover:scale-105 active:scale-95 transition-transform shadow-xs"
                       title="Gmail (mr.vinnu10@gmail.com)"
                       aria-label="Email via Gmail"
                     >
@@ -1137,18 +1137,18 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-slate-800 space-y-3 text-xs sm:text-sm text-slate-300">
+                <div className="pt-4 border-t border-slate-200 space-y-3 text-xs sm:text-sm text-slate-600">
                   <div className="flex items-start gap-2.5">
-                    <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-1" />
+                    <MapPin className="w-4 h-4 text-amber-600 shrink-0 mt-1" />
                     <div>
-                      <strong className="text-white block">Main Express Hub:</strong>
+                      <strong className="text-slate-900 block">Main Express Hub:</strong>
                       {storeSettings.depotAddress || 'Chinthalkunta / LB Nagar Ring Road, Hyderabad, Telangana 500074'}
                     </div>
                   </div>
                   <div className="flex items-start gap-2.5">
-                    <Clock className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+                    <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                     <div>
-                      <strong className="text-white block">Dispatch Hours:</strong>
+                      <strong className="text-slate-900 block">Dispatch Hours:</strong>
                       Monday – Sunday: 6:00 AM to 11:00 PM (Early-morning &amp; night emergency runs supported)
                     </div>
                   </div>

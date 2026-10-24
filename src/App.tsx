@@ -747,13 +747,13 @@ export default function App() {
           <button
             type="button"
             onClick={() => setIsCartOpen(true)}
-            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-2xl flex items-center gap-2 border-2 border-slate-900 sm:border-amber-300 transition-all hover:scale-105 active:scale-95 group text-xs sm:text-sm"
+            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-black px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-xl shadow-2xl flex items-center gap-2 border-2 border-amber-600/40 sm:border-amber-300 transition-all hover:scale-105 active:scale-95 group text-xs sm:text-sm"
             title="Open View Cart"
           >
             <div className="relative flex items-center gap-1">
               <ShoppingCart className="w-4 h-4 sm:w-5 sm:h-5 fill-slate-950 stroke-slate-950" />
               {cartTotalItems > 0 && (
-                <span className="bg-slate-950 text-amber-400 font-black text-[9px] sm:text-[10px] min-w-[18px] h-4.5 px-1 rounded-full flex items-center justify-center border border-amber-400 shadow">
+                <span className="bg-white text-slate-900 font-black text-[9px] sm:text-[10px] min-w-[18px] h-4.5 px-1 rounded-full flex items-center justify-center border border-amber-600/30 shadow-xs">
                   {cartTotalItems}
                 </span>
               )}
