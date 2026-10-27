@@ -1,7 +1,8 @@
 import path from 'path';
 import fs from 'fs';
-import { Product, StoreSettings, Booking, UserAccount } from '../types';
+import { Product, StoreSettings, Booking, UserAccount, CategoryConfig } from '../types';
 import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS } from '../data/initialProducts';
+import { DEFAULT_CATEGORIES } from '../data/categories';
 
 const DATA_DIR = path.join(process.cwd(), 'data');
 if (!fs.existsSync(DATA_DIR)) {
@@ -13,6 +14,7 @@ if (!fs.existsSync(DATA_DIR)) {
 }
 
 const PRODUCTS_FILE = path.join(DATA_DIR, 'products.json');
+const CATEGORIES_FILE = path.join(DATA_DIR, 'categories.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'storeSettings.json');
 const BOOKINGS_FILE = path.join(DATA_DIR, 'bookings.json');
 const COMPLAINTS_FILE = path.join(DATA_DIR, 'complaints.json');
@@ -101,6 +103,7 @@ class DatabaseManager {
       saveDiskJson(PRODUCTS_FILE, enrichedProducts);
     }
 
+    loadDiskJson<CategoryConfig[]>(CATEGORIES_FILE, [...DEFAULT_CATEGORIES]);
     loadDiskJson<StoreSettings>(SETTINGS_FILE, { ...INITIAL_STORE_SETTINGS });
     loadDiskJson<Booking[]>(BOOKINGS_FILE, []);
     loadDiskJson<ComplaintRecord[]>(COMPLAINTS_FILE, []);
@@ -184,6 +187,66 @@ class DatabaseManager {
     const deleted = filtered.length !== list.length;
     saveDiskJson(PRODUCTS_FILE, filtered);
     return deleted;
+  }
+
+  public async addProductsBatch(newItems: Product[]): Promise<Product[]> {
+    const list = loadDiskJson<Product[]>(PRODUCTS_FILE, INITIAL_PRODUCTS);
+    const combined = [...newItems, ...list];
+    saveDiskJson(PRODUCTS_FILE, combined);
+    return combined;
+  }
+
+  public async updateProductsBatch(updatedItems: Product[]): Promise<Product[]> {
+    const list = loadDiskJson<Product[]>(PRODUCTS_FILE, INITIAL_PRODUCTS);
+    const byId = new Map(updatedItems.map(p => [p.id, p]));
+    const merged = list.map(existing => {
+      const incoming = byId.get(existing.id);
+      return incoming ? { ...existing, ...incoming } : existing;
+    });
+    saveDiskJson(PRODUCTS_FILE, merged);
+    return merged;
+  }
+
+  public async deleteProductsBatch(ids: string[]): Promise<Product[]> {
+    const idSet = new Set(ids);
+    const list = loadDiskJson<Product[]>(PRODUCTS_FILE, INITIAL_PRODUCTS);
+    const remaining = list.filter(p => !idSet.has(p.id));
+    saveDiskJson(PRODUCTS_FILE, remaining);
+    return remaining;
+  }
+
+  // --- CATEGORIES DATA OPERATIONS ---
+  public async getCategories(): Promise<CategoryConfig[]> {
+    return loadDiskJson<CategoryConfig[]>(CATEGORIES_FILE, DEFAULT_CATEGORIES);
+  }
+
+  public async saveCategories(categoriesList: CategoryConfig[]): Promise<CategoryConfig[]> {
+    saveDiskJson(CATEGORIES_FILE, categoriesList);
+    return categoriesList;
+  }
+
+  public async reassignCategoryProducts(
+    fromCategory: string,
+    action: 'reassign' | 'delete',
+    toCategory?: string
+  ): Promise<Product[]> {
+    const list = loadDiskJson<Product[]>(PRODUCTS_FILE, INITIAL_PRODUCTS);
+    const cleanFrom = (fromCategory || '').toLowerCase();
+    const cleanTo = (toCategory || '').toLowerCase();
+
+    let next: Product[];
+    if (action === 'delete') {
+      next = list.filter(p => (p.category || '').toLowerCase() !== cleanFrom);
+    } else if (cleanTo) {
+      next = list.map(p =>
+        (p.category || '').toLowerCase() === cleanFrom ? { ...p, category: cleanTo } : p
+      );
+    } else {
+      next = list;
+    }
+
+    saveDiskJson(PRODUCTS_FILE, next);
+    return next;
   }
 
   public async bulkUpdatePrices(

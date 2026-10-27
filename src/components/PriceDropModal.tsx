@@ -1,8 +1,23 @@
 import React, { useState, useMemo } from 'react';
-import { X, TrendingDown, Tag, ShoppingCart, Flame, Plus, Minus } from 'lucide-react';
-import { Product, CartItem } from '../types';
+import {
+  X,
+  TrendingDown,
+  Tag,
+  ShoppingCart,
+  Flame,
+  Plus,
+  Minus,
+  Droplets,
+  Zap,
+  Fan,
+  Lightbulb,
+  Wrench,
+  Package,
+} from 'lucide-react';
+import { Product, CartItem, CategoryConfig } from '../types';
 import { groupProductsByBaseName } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
+import { getCategoryDisplayName } from '../data/categories';
 
 interface PriceDropModalProps {
   isOpen: boolean;
@@ -12,6 +27,7 @@ interface PriceDropModalProps {
   cartItems?: CartItem[];
   onUpdateQuantity?: (productId: string, delta: number) => void;
   onOpenWhatsAppForProduct?: (product: Product) => void;
+  categories?: CategoryConfig[];
 }
 
 export const PriceDropModal: React.FC<PriceDropModalProps> = ({
@@ -22,6 +38,7 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
   cartItems = [],
   onUpdateQuantity,
   onOpenWhatsAppForProduct,
+  categories,
 }) => {
   const [activeSizeGroupKey, setActiveSizeGroupKey] = useState<string | null>(null);
 
@@ -122,12 +139,20 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                             />
                           ) : (
                             <div className="flex flex-col items-center justify-center p-2 text-center">
-                              <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-1 text-amber-500 text-sm shadow-sm">
-                                {product.category === 'plumbing'
-                                  ? '💧'
-                                  : product.category === 'electrical'
-                                  ? '⚡'
-                                  : '🔧'}
+                              <div className="w-8 h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-1 text-amber-600 shadow-sm">
+                                {product.category === 'plumbing' ? (
+                                  <Droplets className="w-4 h-4" />
+                                ) : product.category === 'electrical' ? (
+                                  <Zap className="w-4 h-4" />
+                                ) : product.category === 'fans' ? (
+                                  <Fan className="w-4 h-4" />
+                                ) : product.category === 'lights' ? (
+                                  <Lightbulb className="w-4 h-4" />
+                                ) : product.category === 'tools' ? (
+                                  <Wrench className="w-4 h-4" />
+                                ) : (
+                                  <Package className="w-4 h-4" />
+                                )}
                               </div>
                             </div>
                           )}
@@ -142,7 +167,7 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                         </div>
 
                         <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate mb-0.5">
-                          {product.category}
+                          {getCategoryDisplayName(product.category, categories)}
                           {hasMultipleSizes ? ` · ${group.variants.length} sizes` : ''}
                         </span>
                         <h4 className="font-bold text-slate-900 text-[11px] sm:text-sm leading-tight line-clamp-2 mb-1">

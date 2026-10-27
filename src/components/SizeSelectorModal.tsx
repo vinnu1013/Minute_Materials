@@ -7,10 +7,16 @@ import {
   MessageSquare,
   Edit2,
   Trash2,
-  Check,
+  Droplets,
+  Zap,
+  Fan,
+  Lightbulb,
+  Wrench,
+  Package,
 } from 'lucide-react';
-import { Product, CartItem } from '../types';
+import { Product, CartItem, CategoryConfig } from '../types';
 import { ProductGroup, getVariantSizeLabel } from '../utils/productGrouping';
+import { getCategoryDisplayName } from '../data/categories';
 
 interface SizeSelectorModalProps {
   group: ProductGroup | null;
@@ -21,8 +27,19 @@ interface SizeSelectorModalProps {
   onOpenWhatsAppForProduct?: (product: Product) => void;
   highlightedVariantIds?: Set<string>;
   isAdmin?: boolean;
-  onQuickEditPrice?: (product: Product) => void;
+  onQuickEditPrice?: (product?: Product) => void;
   onRequestDeleteProduct?: (product: Product) => void;
+  categories?: CategoryConfig[];
+}
+
+function renderCategoryFallbackIcon(category: string) {
+  const cat = (category || '').toLowerCase();
+  if (cat === 'plumbing') return <Droplets className="w-5 h-5 text-amber-600" />;
+  if (cat === 'electrical') return <Zap className="w-5 h-5 text-amber-600" />;
+  if (cat === 'fans') return <Fan className="w-5 h-5 text-amber-600" />;
+  if (cat === 'lights') return <Lightbulb className="w-5 h-5 text-amber-600" />;
+  if (cat === 'tools') return <Wrench className="w-5 h-5 text-amber-600" />;
+  return <Package className="w-5 h-5 text-amber-600" />;
 }
 
 export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
@@ -36,6 +53,7 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
   isAdmin = false,
   onQuickEditPrice,
   onRequestDeleteProduct,
+  categories,
 }) => {
   useEffect(() => {
     if (!group) return;
@@ -58,18 +76,6 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
 
   const primaryVariant =
     group.variants.find((v) => v.image && v.image.trim() !== '') || group.variants[0];
-
-  const totalSelectedUnits = group.variants.reduce(
-    (sum, variant) => sum + getCartQuantity(variant.id),
-    0
-  );
-  const selectedVariantCount = group.variants.filter(
-    (variant) => getCartQuantity(variant.id) > 0
-  ).length;
-  const groupSubtotal = group.variants.reduce((sum, variant) => {
-    const qty = getCartQuantity(variant.id);
-    return sum + (variant.price > 0 ? variant.price * qty : 0);
-  }, 0);
 
   return (
     <div
@@ -94,18 +100,14 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
                   className="w-full h-full object-cover"
                 />
               ) : (
-                <span className="text-lg">
-                  {group.category === 'plumbing'
-                    ? '💧'
-                    : group.category === 'electrical'
-                    ? '⚡'
-                    : '🔧'}
-                </span>
+                renderCategoryFallbackIcon(group.category)
               )}
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium truncate">
-                <span className="capitalize text-amber-700 font-semibold">{group.category}</span>
+                <span className="text-amber-700 font-semibold">
+                  {getCategoryDisplayName(group.category, categories)}
+                </span>
                 {group.subcategory && (
                   <>
                     <span aria-hidden="true">·</span>
@@ -187,12 +189,6 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
 
                   <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-0.5 flex-wrap">
                     <span>Per {variant.unit}</span>
-                    {variant.partCode && (
-                      <>
-                        <span aria-hidden="true">·</span>
-                        <span className="font-mono tabular-nums">Part #{variant.partCode}</span>
-                      </>
-                    )}
                     {isAdmin && variant.hsnCode && (
                       <>
                         <span aria-hidden="true">·</span>
@@ -316,40 +312,6 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
               </div>
             );
           })}
-        </div>
-
-        {/* Sticky Footer */}
-        <div className="px-4 sm:px-5 py-3.5 border-t border-slate-200 bg-slate-50 flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            {totalSelectedUnits > 0 ? (
-              <div>
-                <div className="text-xs font-semibold text-slate-600">
-                  {selectedVariantCount} {selectedVariantCount === 1 ? 'size' : 'sizes'} ·{' '}
-                  {totalSelectedUnits} {totalSelectedUnits === 1 ? 'item' : 'items'} in cart
-                </div>
-                <div className="text-sm sm:text-base font-extrabold text-slate-900 font-mono tabular-nums">
-                  ₹{groupSubtotal.toFixed(2)}
-                </div>
-              </div>
-            ) : (
-              <div className="text-xs text-slate-500">
-                Choose one or more sizes above to add to your order
-              </div>
-            )}
-          </div>
-
-          <button
-            type="button"
-            onClick={onClose}
-            className={`min-h-[42px] px-5 py-2 rounded-xl text-xs sm:text-sm font-extrabold flex items-center justify-center gap-1.5 transition shrink-0 ${
-              totalSelectedUnits > 0
-                ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 shadow-sm'
-                : 'bg-slate-900 hover:bg-slate-800 text-white'
-            }`}
-          >
-            {totalSelectedUnits > 0 && <Check className="w-4 h-4 stroke-[2.5]" />}
-            <span>{totalSelectedUnits > 0 ? 'Done' : 'Close'}</span>
-          </button>
         </div>
       </div>
     </div>

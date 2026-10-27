@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Product, CartItem } from '../types';
+import { Product, CartItem, CategoryConfig } from '../types';
 import {
   ShoppingCart,
   MessageSquare,
@@ -12,14 +12,21 @@ import {
   Trash2,
   AlertTriangle,
   X,
+  Droplets,
+  Zap,
+  Fan,
+  Lightbulb,
+  Wrench,
+  Package,
+  Layers,
 } from 'lucide-react';
-import {
-  groupProductsByBaseName,
-} from '../utils/productGrouping';
+import { groupProductsByBaseName } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
+import { DEFAULT_CATEGORIES, getCategoryDisplayName } from '../data/categories';
 
 interface ProductCatalogProps {
   products: Product[];
+  categories?: CategoryConfig[];
   onAddToCart: (product: Product, quantity: number) => void;
   onUpdateQuantity?: (productId: string, delta: number) => void;
   cartItems?: CartItem[];
@@ -28,13 +35,27 @@ interface ProductCatalogProps {
   setSearchTerm?: (term: string) => void;
   activeCategory: string;
   setActiveCategory: (cat: string) => void;
+  activeSubcategory?: string;
+  setActiveSubcategory?: (sub: string) => void;
   isAdmin: boolean;
-  onQuickEditPrice?: (product: Product) => void;
+  onQuickEditPrice?: (product?: Product) => void;
   onDeleteProduct?: (productId: string) => void;
+}
+
+function getCategoryIcon(categoryId: string, className = 'w-3.5 h-3.5') {
+  const cat = (categoryId || '').toLowerCase();
+  if (cat === 'all') return <Layers className={className} />;
+  if (cat === 'plumbing') return <Droplets className={className} />;
+  if (cat === 'electrical') return <Zap className={className} />;
+  if (cat === 'fans') return <Fan className={className} />;
+  if (cat === 'lights') return <Lightbulb className={className} />;
+  if (cat === 'tools') return <Wrench className={className} />;
+  return <Package className={className} />;
 }
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   products,
+  categories = DEFAULT_CATEGORIES,
   onAddToCart,
   onUpdateQuantity,
   cartItems = [],
@@ -43,6 +64,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   setSearchTerm,
   activeCategory,
   setActiveCategory,
+  activeSubcategory: externalSubcategory,
+  setActiveSubcategory: setExternalSubcategory,
   isAdmin,
   onQuickEditPrice,
   onDeleteProduct,
@@ -54,7 +77,10 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
   // Category-specific Filter States
   const [isFilterOpen, setIsFilterOpen] = useState(false);
-  const [selectedSubcategory, setSelectedSubcategory] = useState('all');
+  const [internalSubcategory, setInternalSubcategory] = useState('all');
+  const selectedSubcategory = externalSubcategory !== undefined ? externalSubcategory : internalSubcategory;
+  const setSelectedSubcategory = setExternalSubcategory || setInternalSubcategory;
+
   const [stockFilter, setStockFilter] = useState<'all' | 'in_stock' | 'low_stock'>('all');
   const [priceRange, setPriceRange] = useState<'all' | 'under_50' | '50_200' | '200_500' | 'above_500'>('all');
 
@@ -80,22 +106,52 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     }, 5000);
   };
 
-  // Dynamically extract available subcategories for the ACTIVE CATEGORY ONLY
-  const categoryProducts =
-    activeCategory === 'all'
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+  // Merge configured subcategories for the active category with any subcategories on products
+  const activeCategoryConfig = useMemo(
+    () => categories.find((c) => c.id.toLowerCase() === activeCategory.toLowerCase()),
+    [categories, activeCategory]
+  );
 
-  const availableSubcategories = Array.from(
-    new Set(categoryProducts.map((p) => p.subcategory).filter(Boolean))
-  ).sort();
+  const categoryProducts = useMemo(
+    () =>
+      activeCategory === 'all'
+        ? products
+        : products.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase()),
+    [products, activeCategory]
+  );
+
+  const availableSubcategories = useMemo(() => {
+    const ordered: string[] = [];
+    const seen = new Set<string>();
+    const addSub = (s?: string) => {
+      const clean = (s || '').trim();
+      if (!clean) return;
+      const lower = clean.toLowerCase();
+      if (!seen.has(lower)) {
+        seen.add(lower);
+        ordered.push(clean);
+      }
+    };
+
+    if (activeCategory === 'all') {
+      categories.forEach((c) => c.subcategories.forEach(addSub));
+      products.forEach((p) => addSub(p.subcategory));
+    } else {
+      activeCategoryConfig?.subcategories.forEach(addSub);
+      categoryProducts.forEach((p) => addSub(p.subcategory));
+    }
+    return ordered;
+  }, [activeCategory, activeCategoryConfig, categories, categoryProducts, products]);
 
   // Reset selectedSubcategory if activeCategory changes and current subcategory is not in new list
   useEffect(() => {
-    if (selectedSubcategory !== 'all' && !availableSubcategories.includes(selectedSubcategory)) {
+    if (
+      selectedSubcategory !== 'all' &&
+      !availableSubcategories.some((s) => s.toLowerCase() === selectedSubcategory.toLowerCase())
+    ) {
       setSelectedSubcategory('all');
     }
-  }, [activeCategory, availableSubcategories, selectedSubcategory]);
+  }, [activeCategory, availableSubcategories, selectedSubcategory, setSelectedSubcategory]);
 
   const hasActiveFilters =
     selectedSubcategory !== 'all' || stockFilter !== 'all' || priceRange !== 'all';
@@ -110,9 +166,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const allGroups = useMemo(() => groupProductsByBaseName(products), [products]);
 
   const matchesProductCriteria = (product: Product): boolean => {
-    const matchesCategory = activeCategory === 'all' || product.category === activeCategory;
+    const matchesCategory =
+      activeCategory === 'all' || product.category.toLowerCase() === activeCategory.toLowerCase();
     const matchesSubcategory =
-      selectedSubcategory === 'all' || product.subcategory === selectedSubcategory;
+      selectedSubcategory === 'all' ||
+      (product.subcategory || '').toLowerCase() === selectedSubcategory.toLowerCase();
 
     const matchesStock =
       stockFilter === 'all' ||
@@ -185,64 +243,45 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       ? sortedGroups.slice(0, 60)
       : sortedGroups;
 
-  const categoryTitle =
-    activeCategory === 'plumbing'
-      ? '💧 Plumbing'
-      : activeCategory === 'electrical'
-      ? '⚡ Electrical'
-      : activeCategory === 'tools'
-      ? '🔧 Tools & Testers'
-      : '📦 All Materials';
+  const categoryTitle = getCategoryDisplayName(activeCategory, categories);
 
   return (
     <section id="product-catalog" className="w-full px-2 sm:px-4 lg:px-6 py-6 sm:py-8">
       {/* Category Bar, Filter Toggle & Sort Controls */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-4">
-        {/* Categories */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-3">
+        {/* Dynamic Main Categories */}
         <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
           <button
+            type="button"
             onClick={() => handleCategoryClick('all')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition border ${
+            className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap shrink-0 transition border flex items-center gap-1.5 cursor-pointer ${
               activeCategory === 'all'
-                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/20'
+                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-sm'
                 : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
             }`}
           >
-            All Materials
+            {getCategoryIcon('all', 'w-3.5 h-3.5')}
+            <span>All Materials</span>
           </button>
 
-          <button
-            onClick={() => handleCategoryClick('plumbing')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition border ${
-              activeCategory === 'plumbing'
-                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/20'
-                : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
-            }`}
-          >
-            💧 Plumbing
-          </button>
-
-          <button
-            onClick={() => handleCategoryClick('electrical')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition border ${
-              activeCategory === 'electrical'
-                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/20'
-                : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
-            }`}
-          >
-            ⚡ Electrical
-          </button>
-
-          <button
-            onClick={() => handleCategoryClick('tools')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition border ${
-              activeCategory === 'tools'
-                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/20'
-                : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
-            }`}
-          >
-            🔧 Tools & Testers
-          </button>
+          {categories.map((cat) => {
+            const isSelected = activeCategory.toLowerCase() === cat.id.toLowerCase();
+            return (
+              <button
+                key={cat.id}
+                type="button"
+                onClick={() => handleCategoryClick(cat.id)}
+                className={`px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap shrink-0 transition border flex items-center gap-1.5 cursor-pointer ${
+                  isSelected
+                    ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-sm'
+                    : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
+                }`}
+              >
+                {getCategoryIcon(cat.id, 'w-3.5 h-3.5')}
+                <span>{cat.name}</span>
+              </button>
+            );
+          })}
         </div>
 
         {/* Right Controls: Reduced Size Filter Toggle & Compact Sort Selector */}
@@ -282,6 +321,40 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         </div>
       </div>
 
+      {/* Immediate Subcategory Bar when a Main Category is selected */}
+      {activeCategory !== 'all' && availableSubcategories.length > 0 && (
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 mb-4 border-b border-slate-100 scrollbar-none">
+          <button
+            type="button"
+            onClick={() => setSelectedSubcategory('all')}
+            className={`px-2.5 py-1 rounded-md text-[11px] font-bold whitespace-nowrap shrink-0 transition cursor-pointer ${
+              selectedSubcategory === 'all'
+                ? 'bg-slate-900 text-white'
+                : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+            }`}
+          >
+            All {categoryTitle}
+          </button>
+          {availableSubcategories.map((sub) => {
+            const isSubActive = selectedSubcategory.toLowerCase() === sub.toLowerCase();
+            return (
+              <button
+                key={sub}
+                type="button"
+                onClick={() => setSelectedSubcategory(sub)}
+                className={`px-2.5 py-1 rounded-md text-[11px] font-bold whitespace-nowrap shrink-0 transition cursor-pointer ${
+                  isSubActive
+                    ? 'bg-slate-900 text-white'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+                }`}
+              >
+                {sub}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {/* Category-Specific Filter Panel */}
       {isFilterOpen && (
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-6 shadow-md space-y-4 animate-in fade-in duration-200">
@@ -291,8 +364,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               <h3 className="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-wider">
                 {categoryTitle} Filter Options
               </h3>
-              <span className="text-[10px] text-slate-600 bg-slate-200 px-2 py-0.5 rounded-full border border-slate-300">
-                {availableSubcategories.length} item types available
+              <span className="text-xs text-slate-500">
+                · {availableSubcategories.length} subcategories
               </span>
             </div>
 
@@ -404,23 +477,43 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       {/* Catalog Grid */}
       {displayedGroups.length === 0 ? (
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 sm:p-12 text-center text-slate-600 space-y-3">
-          <Filter className="w-10 h-10 sm:w-12 sm:h-12 mx-auto stroke-1 opacity-60 text-amber-500" />
+          <div className="w-12 h-12 mx-auto rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center">
+            {getCategoryIcon(activeCategory, 'w-6 h-6')}
+          </div>
           <h3 className="text-base sm:text-lg font-bold text-slate-900">
-            No materials match your search filter
+            {searchTerm || hasActiveFilters
+              ? 'No materials match your current filter'
+              : `No materials added in ${categoryTitle}${
+                  selectedSubcategory !== 'all' ? ` · ${selectedSubcategory}` : ''
+                } yet`}
           </h3>
-          <p className="text-xs text-slate-500">
-            Try searching for broader terms like "pipe", "wire", "elbow", "breaker", or clear filters.
+          <p className="text-xs text-slate-500 max-w-md mx-auto">
+            {searchTerm || hasActiveFilters
+              ? 'Try searching for broader terms or reset your selected filters.'
+              : 'Browse another category or contact our dispatch helpline for immediate stock availability.'}
           </p>
-          <button
-            onClick={() => {
-              setActiveCategory('all');
-              clearAllFilters();
-              if (setSearchTerm) setSearchTerm('');
-            }}
-            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs mt-2 transition shadow-xs"
-          >
-            Clear Filters
-          </button>
+          <div className="flex items-center justify-center gap-2 pt-1 flex-wrap">
+            <button
+              type="button"
+              onClick={() => {
+                setActiveCategory('all');
+                clearAllFilters();
+                if (setSearchTerm) setSearchTerm('');
+              }}
+              className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs transition shadow-xs cursor-pointer"
+            >
+              View All Materials
+            </button>
+            {isAdmin && onQuickEditPrice && (
+              <button
+                type="button"
+                onClick={() => onQuickEditPrice()}
+                className="bg-slate-900 hover:bg-slate-800 text-white font-bold px-4 py-2 rounded-lg text-xs transition cursor-pointer"
+              >
+                + Add Materials in Admin
+              </button>
+            )}
+          </div>
         </div>
       ) : (
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5 sm:gap-3 lg:gap-4">
@@ -469,15 +562,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       />
                     ) : (
                       <div className="flex flex-col items-center justify-center p-1 sm:p-2 text-center">
-                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-0.5 text-amber-500 text-xs sm:text-sm shadow-sm">
-                          {product.category === 'plumbing'
-                            ? '💧'
-                            : product.category === 'electrical'
-                            ? '⚡'
-                            : '🔧'}
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white border border-slate-200 flex items-center justify-center mb-0.5 text-amber-600 shadow-sm">
+                          {getCategoryIcon(product.category, 'w-3.5 h-3.5 sm:w-4 sm:h-4')}
                         </div>
                         <span className="text-[7px] sm:text-[9px] font-bold text-slate-500 uppercase tracking-wider">
-                          {product.category}
+                          {getCategoryDisplayName(product.category, categories)}
                         </span>
                       </div>
                     )}
@@ -559,7 +648,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
                   <div className="space-y-0.5 sm:space-y-1">
                     <span className="text-[7px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate">
-                      {product.category} {product.subcategory ? `· ${product.subcategory}` : ''}
+                      {getCategoryDisplayName(product.category, categories)}{' '}
+                      {product.subcategory ? `· ${product.subcategory}` : ''}
                     </span>
                     <h3 className="font-bold text-[10px] sm:text-xs text-slate-900 leading-tight sm:leading-snug line-clamp-2 min-h-[1.75rem] sm:min-h-[2rem]">
                       {hasMultipleSizes ? group.baseName : product.name}
@@ -787,6 +877,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             highlightedVariantIds={highlightedIds}
             isAdmin={isAdmin}
             onQuickEditPrice={onQuickEditPrice}
+            categories={categories}
             onRequestDeleteProduct={
               onDeleteProduct ? (variant) => setCatalogProductToDelete(variant) : undefined
             }
@@ -820,24 +911,27 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
             {/* Product Summary */}
             <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3">
-              <img
-                src={
-                  catalogProductToDelete.image ||
-                  'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&q=80&w=600'
-                }
-                alt={catalogProductToDelete.name}
-                className="w-12 h-12 rounded-lg object-cover bg-white shrink-0 border border-slate-200"
-              />
+              {catalogProductToDelete.image && catalogProductToDelete.image.trim() !== '' ? (
+                <img
+                  src={catalogProductToDelete.image}
+                  alt={catalogProductToDelete.name}
+                  className="w-12 h-12 rounded-lg object-cover bg-white shrink-0 border border-slate-200"
+                />
+              ) : (
+                <div className="w-12 h-12 rounded-lg bg-white shrink-0 border border-slate-200 flex items-center justify-center text-amber-600">
+                  {getCategoryIcon(catalogProductToDelete.category, 'w-5 h-5')}
+                </div>
+              )}
               <div className="min-w-0 flex-1">
                 <p className="font-bold text-xs text-slate-900 truncate">
                   {catalogProductToDelete.name}
                 </p>
                 <p className="text-[10px] text-slate-500 font-mono">
-                  SKU: {catalogProductToDelete.sku} • ₹{catalogProductToDelete.price.toFixed(2)}/
+                  SKU: {catalogProductToDelete.sku} · ₹{catalogProductToDelete.price.toFixed(2)}/
                   {catalogProductToDelete.unit}
                 </p>
                 <p className="text-[10px] text-amber-600 uppercase font-bold">
-                  {catalogProductToDelete.category}
+                  {getCategoryDisplayName(catalogProductToDelete.category, categories)}
                 </p>
               </div>
             </div>

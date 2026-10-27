@@ -8,7 +8,8 @@ import {
   Camera
 } from 'lucide-react';
 import { DELIVERY_AREAS } from '../data/areas';
-import { StoreConfig, UserLocation } from '../types';
+import { StoreConfig, UserLocation, CategoryConfig } from '../types';
+import { DEFAULT_CATEGORIES } from '../data/categories';
 import { generateDirectWhatsAppChatUrl } from '../utils/whatsapp';
 import { CompanyPageId } from './CompanyPages';
 import {
@@ -29,6 +30,7 @@ interface FooterProps {
   onOpenAdminModal?: () => void;
   storeConfig: StoreConfig;
   location: UserLocation;
+  categories?: CategoryConfig[];
 }
 
 export const Footer: React.FC<FooterProps> = ({
@@ -39,6 +41,7 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenCallModal,
   onOpenLocationModal,
   storeConfig,
+  categories = DEFAULT_CATEGORIES,
 }) => {
   const callPhone = storeConfig.callNumber || '8332869926';
   const whatsappUrl = generateDirectWhatsAppChatUrl(storeConfig.whatsappNumber);
@@ -91,19 +94,23 @@ export const Footer: React.FC<FooterProps> = ({
               Material Categories
             </h4>
             <ul className="space-y-2">
-              {[
-                'Plumbing',
-                'Electrical',
-                'Painting',
-                'Hardware',
-              ].map((cat) => (
-                <li key={cat}>
+              <li>
+                <button
+                  type="button"
+                  onClick={() => onSelectCategory('all')}
+                  className="hover:text-orange-400 transition flex items-center gap-1.5 cursor-pointer"
+                >
+                  <span className="text-orange-500 font-bold">›</span> All Materials
+                </button>
+              </li>
+              {categories.map((cat) => (
+                <li key={cat.id}>
                   <button
                     type="button"
-                    onClick={() => onSelectCategory(cat)}
+                    onClick={() => onSelectCategory(cat.id)}
                     className="hover:text-orange-400 transition flex items-center gap-1.5 cursor-pointer"
                   >
-                    <span className="text-orange-500 font-bold">›</span> {cat} Supplies
+                    <span className="text-orange-500 font-bold">›</span> {cat.name}
                   </button>
                 </li>
               ))}

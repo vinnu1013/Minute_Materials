@@ -19,9 +19,13 @@ import {
   Zap,
   Hammer,
   Package,
-  BookOpen
+  BookOpen,
+  Fan,
+  Lightbulb,
+  Droplets,
 } from 'lucide-react';
-import { Product, StoreSettings } from '../types';
+import { Product, StoreSettings, CategoryConfig } from '../types';
+import { DEFAULT_CATEGORIES } from '../data/categories';
 import { generateDirectWhatsAppChatUrl } from '../utils/whatsapp';
 import {
   WhatsAppBadgeIcon,
@@ -35,11 +39,12 @@ export type CompanyPageId = 'home' | 'about' | 'categories' | 'blog' | 'faqs' | 
 interface CompanyPagesProps {
   activePage: Exclude<CompanyPageId, 'home'>;
   onNavigatePage: (page: CompanyPageId) => void;
-  onSelectCatalogCategory: (category: string, searchQuery?: string) => void;
+  onSelectCatalogCategory: (category: string, searchQuery?: string, subcategory?: string) => void;
   onOpenBookingMode: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => void;
   onOpenLocationModal: () => void;
   products: Product[];
   storeSettings: StoreSettings;
+  categories?: CategoryConfig[];
 }
 
 interface BlogPost {
@@ -286,7 +291,8 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
   onOpenBookingMode,
   onOpenLocationModal,
   products,
-  storeSettings
+  storeSettings,
+  categories = DEFAULT_CATEGORIES,
 }) => {
   // Blog reader state
   const [selectedTopic, setSelectedTopic] = useState<'All' | BlogPost['topic']>('All');
@@ -355,45 +361,29 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
     }
   };
 
-  // Compute live category stats from actual store catalog
-  const categoryDefinitions = [
-    {
-      id: 'plumbing',
-      title: 'Plumbing Supplies',
-      code: 'plumbing',
-      icon: Wrench,
-      summary: 'CPVC, UPVC & copper pipes, brass elbows, ball valves, solvent cements, PTFE tapes, and sanitary fittings.',
-      catalogCategory: 'plumbing',
-      searchOverride: ''
-    },
-    {
-      id: 'electrical',
-      title: 'Electrical Supplies',
-      code: 'electrical',
-      icon: Zap,
-      summary: 'FRLS multistrand copper wires, MCBs, RCCBs, modular switches, PVC conduits, and distribution boxes.',
-      catalogCategory: 'electrical',
-      searchOverride: ''
-    },
-    {
-      id: 'tools',
-      title: 'Tools & Jobsite Gear',
-      code: 'tools',
-      icon: Hammer,
-      summary: 'Pipe wrenches, multimeters, crimpers, hacksaws, spirit levels, drill bits, and safety equipment.',
-      catalogCategory: 'tools',
-      searchOverride: ''
-    },
-    {
-      id: 'fasteners',
-      title: 'Hardware & Fasteners',
-      code: 'fasteners',
-      icon: Package,
-      summary: 'Wall plugs, GI pipe clamps, anchor bolts, self-tapping screws, sealants, and mounting brackets.',
-      catalogCategory: 'fasteners',
-      searchOverride: ''
-    }
-  ];
+  // Compute live category stats from configured categories & store catalog
+  const getIconForCategory = (catId: string) => {
+    const c = catId.toLowerCase();
+    if (c === 'plumbing') return Droplets;
+    if (c === 'electrical') return Zap;
+    if (c === 'fans') return Fan;
+    if (c === 'lights') return Lightbulb;
+    if (c === 'tools') return Wrench;
+    if (c === 'fasteners') return Hammer;
+    return Package;
+  };
+
+  const categoryDefinitions = categories.map((cat) => ({
+    id: cat.id,
+    title: cat.name,
+    code: cat.id,
+    icon: getIconForCategory(cat.id),
+    summary:
+      cat.description ||
+      `Genuine wholesale ${cat.name.toLowerCase()} materials and accessories ready for rapid 15–30 minute jobsite delivery.`,
+    catalogCategory: cat.id,
+    configuredSubcategories: cat.subcategories || [],
+  }));
 
   const activeBlogPost = activePostId ? BLOG_POSTS.find(p => p.id === activePostId) || null : null;
 
@@ -636,14 +626,26 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {categoryDefinitions.map(dept => {
               const Icon = dept.icon;
-              const deptProducts = products.filter(p => p.category === dept.catalogCategory);
+              const deptProducts = products.filter(
+                p => p.category.toLowerCase() === dept.catalogCategory.toLowerCase()
+              );
               const inStockCount = deptProducts.filter(p => p.stockStatus !== 'out_of_stock').length;
-              const subcategories = Array.from(
-                new Set(deptProducts.map(p => p.subcategory).filter(Boolean))
-              ).sort();
-              const minPrice = deptProducts.length > 0
-                ? Math.min(...deptProducts.map(p => p.price))
-                : 0;
+              const subSet = new Set<string>();
+              const subcategories: string[] = [];
+              const addSub = (s?: string) => {
+                const clean = (s || '').trim();
+                if (!clean) return;
+                const key = clean.toLowerCase();
+                if (!subSet.has(key)) {
+                  subSet.add(key);
+                  subcategories.push(clean);
+                }
+              };
+              dept.configuredSubcategories.forEach(addSub);
+              deptProducts.forEach(p => addSub(p.subcategory));
+
+              const positivePrices = deptProducts.filter(p => p.price > 0).map(p => p.price);
+              const minPrice = positivePrices.length > 0 ? Math.min(...positivePrices) : 0;
 
               return (
                 <div
@@ -674,21 +676,25 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                     {subcategories.length > 0 && (
                       <div className="mt-5 pt-4 border-t border-slate-100">
                         <p className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2.5">
-                          Subcategories in Stock
+                          Subcategories
                         </p>
                         <div className="flex flex-wrap gap-x-4 gap-y-2">
                           {subcategories.map(sub => {
-                            const count = deptProducts.filter(p => p.subcategory === sub).length;
+                            const count = deptProducts.filter(
+                              p => (p.subcategory || '').toLowerCase() === sub.toLowerCase()
+                            ).length;
                             return (
                               <button
                                 key={sub}
                                 type="button"
-                                onClick={() => onSelectCatalogCategory(dept.catalogCategory, sub)}
+                                onClick={() => onSelectCatalogCategory(dept.catalogCategory, '', sub)}
                                 className="text-xs font-semibold text-slate-700 hover:text-amber-600 transition flex items-center gap-1 cursor-pointer"
                               >
                                 <span className="text-amber-500 font-bold">›</span>
                                 <span>{sub}</span>
-                                <span className="text-slate-400 font-normal">({count})</span>
+                                {count > 0 && (
+                                  <span className="text-slate-400 font-normal">({count})</span>
+                                )}
                               </button>
                             );
                           })}
@@ -700,7 +706,7 @@ export const CompanyPages: React.FC<CompanyPagesProps> = ({
                   <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
                     <button
                       type="button"
-                      onClick={() => onSelectCatalogCategory(dept.catalogCategory, '')}
+                      onClick={() => onSelectCatalogCategory(dept.catalogCategory, '', 'all')}
                       className="text-xs sm:text-sm font-black text-slate-900 hover:text-amber-600 flex items-center gap-1.5 transition cursor-pointer"
                     >
                       Browse {dept.title} <ArrowRight className="w-4 h-4" />

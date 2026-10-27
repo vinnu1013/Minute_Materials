@@ -1,4 +1,27 @@
-export type ProductCategory = 'plumbing' | 'electrical' | 'tools' | 'fasteners';
+export type ProductCategory = string;
+
+export type ProductUnit =
+  | 'piece'
+  | 'unit'
+  | 'ea'
+  | 'ft'
+  | 'box'
+  | 'pack'
+  | 'roll'
+  | 'meter'
+  | 'set'
+  | 'pair'
+  | 'coil'
+  | 'kg'
+  | 'ltr'
+  | string;
+
+export interface CategoryConfig {
+  id: string;
+  name: string;
+  subcategories: string[];
+  description?: string;
+}
 
 export type StockStatus = 'in_stock' | 'low_stock' | 'out_of_stock';
 
@@ -11,7 +34,9 @@ export interface Product {
   subcategory: string;
   price: number;
   originalPrice?: number;
-  unit: 'unit' | 'ea' | 'ft' | 'box' | 'pack' | 'roll' | 'meter' | 'set';
+  unit: ProductUnit;
+  brand?: string;
+  fastDelivery?: boolean;
   stockStatus: StockStatus;
   stockCount: number;
   sku: string;

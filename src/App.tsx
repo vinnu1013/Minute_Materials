@@ -15,8 +15,9 @@ import { DeliveryAreasModal } from './components/DeliveryAreasModal';
 import { CompanyPages, CompanyPageId } from './components/CompanyPages';
 import { Helmet } from 'react-helmet-async';
 
-import { Product, CartItem, Booking, StoreSettings } from './types';
+import { Product, CartItem, Booking, StoreSettings, CategoryConfig } from './types';
 import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS, CATALOG_VERSION } from './data/initialProducts';
+import { DEFAULT_CATEGORIES, CATEGORIES_VERSION, getCategoryDisplayName } from './data/categories';
 import { fetchCurrentLocationAddress } from './utils/distance';
 import { groupProductsByBaseName } from './utils/productGrouping';
 import { ShoppingCart } from 'lucide-react';
@@ -53,6 +54,25 @@ export default function App() {
       return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
     } catch {
       return INITIAL_PRODUCTS;
+    }
+  });
+
+  const [categories, setCategories] = useState<CategoryConfig[]>(() => {
+    try {
+      const savedCatVersion = localStorage.getItem('instant_supply_categories_version');
+      if (savedCatVersion !== CATEGORIES_VERSION) {
+        localStorage.setItem('instant_supply_categories_version', CATEGORIES_VERSION);
+        localStorage.setItem('instant_supply_categories', JSON.stringify(DEFAULT_CATEGORIES));
+        return DEFAULT_CATEGORIES;
+      }
+      const saved = localStorage.getItem('instant_supply_categories');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) return parsed;
+      }
+      return DEFAULT_CATEGORIES;
+    } catch {
+      return DEFAULT_CATEGORIES;
     }
   });
 
@@ -170,6 +190,7 @@ export default function App() {
   
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
+  const [activeSubcategory, setActiveSubcategory] = useState('all');
   const [activePage, setActivePage] = useState<CompanyPageId>(() => {
     if (typeof window === 'undefined') return 'home';
     return resolvePageFromPath(window.location.pathname);
@@ -267,19 +288,36 @@ export default function App() {
     }
   }, [products]);
 
-  // Fetch live products, settings, and bookings from Express backend
+  // Sync categories to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('instant_supply_categories', JSON.stringify(categories));
+    } catch (e) {
+      console.error('Failed to save categories to localStorage', e);
+    }
+  }, [categories]);
+
+  // Fetch live products, categories, settings, and bookings from Express backend
   const fetchData = async () => {
     try {
-      const [prodRes, settingsRes, bookingsRes] = await Promise.all([
+      const [prodRes, catRes, settingsRes, bookingsRes] = await Promise.all([
         fetch('/api/products'),
+        fetch('/api/categories'),
         fetch('/api/store-settings'),
         fetch('/api/bookings')
       ]);
 
       if (prodRes.ok) {
         const prodData = await prodRes.json();
-        if (Array.isArray(prodData) && prodData.length > 0) {
+        if (Array.isArray(prodData)) {
           setProducts(prodData);
+        }
+      }
+
+      if (catRes.ok) {
+        const catData = await catRes.json();
+        if (Array.isArray(catData)) {
+          setCategories(catData);
         }
       }
 
@@ -449,6 +487,179 @@ export default function App() {
     }
   };
 
+  const handleAddProductsBatch = async (items: Array<Partial<Product>>) => {
+    if (!items || items.length === 0) return;
+    try {
+      const res = await fetch('/api/products/batch', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ products: items })
+      });
+      const data = await res.json();
+      if (res.ok && Array.isArray(data.products)) {
+        setProducts(data.products);
+        try {
+          localStorage.setItem('instant_supply_products', JSON.stringify(data.products));
+        } catch (e) {}
+        return;
+      }
+    } catch (e) {
+      console.error('Failed batch product creation via API, falling back to local:', e);
+    }
+
+    // Fallback optimistic insertion if offline
+    const now = Date.now();
+    const createdLocal: Product[] = items.map((item, idx) => ({
+      id: `prod-${now}-${idx}-${Math.random().toString(36).slice(2, 6)}`,
+      name: item.name || 'New Material',
+      sku: item.sku || `SKU-${now}-${idx}`,
+      category: item.category || 'plumbing',
+      subcategory: item.subcategory || 'General',
+      price: Number(item.price) || 0,
+      originalPrice: item.originalPrice ? Number(item.originalPrice) : undefined,
+      unit: item.unit || 'piece',
+      brand: item.brand || 'Standard ISI',
+      stockStatus: item.stockStatus || 'in_stock',
+      stockCount: item.stockCount !== undefined ? Number(item.stockCount) : 100,
+      fastDelivery: item.fastDelivery ?? true,
+      image: item.image || '',
+      description: item.description || '',
+      popular: Boolean(item.popular),
+      baseName: item.baseName,
+      sizeLabel: item.sizeLabel,
+    }));
+    setProducts(prev => {
+      const next = [...createdLocal, ...prev];
+      try {
+        localStorage.setItem('instant_supply_products', JSON.stringify(next));
+      } catch (e) {}
+      return next;
+    });
+  };
+
+  const handleUpdateProductsBatch = async (updatedList: Product[]) => {
+    if (!updatedList || updatedList.length === 0) return;
+    const mapById = new Map(updatedList.map(p => [p.id, p]));
+    setProducts(prev => {
+      const next = prev.map(p => mapById.get(p.id) || p);
+      try {
+        localStorage.setItem('instant_supply_products', JSON.stringify(next));
+      } catch (e) {}
+      return next;
+    });
+
+    try {
+      const res = await fetch('/api/products/batch', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ products: updatedList })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.products)) {
+          setProducts(data.products);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to batch update products via API:', e);
+    }
+  };
+
+  const handleDeleteProductsBatch = async (ids: string[]) => {
+    if (!ids || ids.length === 0) return;
+    const idSet = new Set(ids);
+    setProducts(prev => {
+      const next = prev.filter(p => !idSet.has(p.id));
+      try {
+        localStorage.setItem('instant_supply_products', JSON.stringify(next));
+      } catch (e) {}
+      return next;
+    });
+    setCart(prev => prev.filter(item => !idSet.has(item.product.id)));
+
+    try {
+      const res = await fetch('/api/products/bulk-delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ids })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.products)) {
+          setProducts(data.products);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to bulk delete products via API:', e);
+    }
+  };
+
+  const handleUpdateCategories = async (nextCategories: CategoryConfig[]) => {
+    setCategories(nextCategories);
+    if (
+      activeCategory !== 'all' &&
+      !nextCategories.some(c => c.id.toLowerCase() === activeCategory.toLowerCase())
+    ) {
+      setActiveCategory('all');
+      setActiveSubcategory('all');
+    }
+
+    try {
+      const res = await fetch('/api/categories', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ categories: nextCategories })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.categories)) {
+          setCategories(data.categories);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to save categories via API:', e);
+    }
+  };
+
+  const handleReassignCategory = async (
+    fromCategory: string,
+    action: 'reassign' | 'delete',
+    toCategory?: string
+  ) => {
+    const cleanFrom = fromCategory.toLowerCase();
+    const cleanTo = (toCategory || '').toLowerCase();
+
+    if (action === 'delete') {
+      const removedIds = new Set(
+        products.filter(p => (p.category || '').toLowerCase() === cleanFrom).map(p => p.id)
+      );
+      setProducts(prev => prev.filter(p => (p.category || '').toLowerCase() !== cleanFrom));
+      setCart(prev => prev.filter(item => !removedIds.has(item.product.id)));
+    } else if (cleanTo) {
+      setProducts(prev =>
+        prev.map(p =>
+          (p.category || '').toLowerCase() === cleanFrom ? { ...p, category: cleanTo } : p
+        )
+      );
+    }
+
+    try {
+      const res = await fetch('/api/categories/reassign', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fromCategory, action, toCategory })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (Array.isArray(data.products)) {
+          setProducts(data.products);
+        }
+      }
+    } catch (e) {
+      console.error('Failed to reassign category products via API:', e);
+    }
+  };
+
   const handleBulkUpdatePrices = async (category: string, percentageChange: number) => {
     const factor = 1 + percentageChange / 100;
     setProducts(prev => {
@@ -550,8 +761,8 @@ export default function App() {
   const pageTitle = activePage !== 'home'
     ? companyTitles[activePage]
     : activeCategory && activeCategory !== 'all'
-    ? `Minute Materials - ${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)} Supplies (15-30 Min Site Delivery)`
-    : 'Minute Materials - Express Jobsite Electrical & Plumbing Supply';
+    ? `Minute Materials - ${getCategoryDisplayName(activeCategory, categories)} Supplies (15-30 Min Site Delivery)`
+    : 'Minute Materials - Express Jobsite Electrical, Plumbing, Fans, Lights & Tools Supply';
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
@@ -646,6 +857,7 @@ export default function App() {
           setShowPinModal={setShowAdminPinModal}
           onNavigateHome={() => {
             setActiveCategory('all');
+            setActiveSubcategory('all');
             setSearchTerm('');
             handleNavigatePage('home');
           }}
@@ -655,11 +867,17 @@ export default function App() {
         {isAdmin ? (
           <AdminPanel
             products={products}
+            categories={categories}
             bookings={bookings}
             storeSettings={storeSettings}
             onUpdateProduct={handleUpdateProduct}
             onDeleteProduct={handleDeleteProduct}
             onAddProduct={handleAddProduct}
+            onAddProductsBatch={handleAddProductsBatch}
+            onUpdateProductsBatch={handleUpdateProductsBatch}
+            onDeleteProductsBatch={handleDeleteProductsBatch}
+            onUpdateCategories={handleUpdateCategories}
+            onReassignCategory={handleReassignCategory}
             onBulkUpdatePrices={handleBulkUpdatePrices}
             onUpdateBookingStatus={handleUpdateBookingStatus}
             onUpdateStoreSettings={handleUpdateStoreSettings}
@@ -675,8 +893,9 @@ export default function App() {
             <CompanyPages
               activePage={activePage}
               onNavigatePage={handleNavigatePage}
-              onSelectCatalogCategory={(cat, query = '') => {
+              onSelectCatalogCategory={(cat, query = '', sub = 'all') => {
                 setActiveCategory(cat);
+                setActiveSubcategory(sub || 'all');
                 setSearchTerm(query);
                 handleNavigatePage('home', true);
                 setTimeout(() => {
@@ -686,6 +905,7 @@ export default function App() {
               onOpenBookingMode={handleOpenBookingMode}
               onOpenLocationModal={() => setIsLocationModalOpen(true)}
               products={products}
+              categories={categories}
               storeSettings={storeSettings}
             />
           </main>
@@ -697,6 +917,7 @@ export default function App() {
             {/* Product Catalog */}
             <ProductCatalog
               products={products}
+              categories={categories}
               onAddToCart={handleAddToCart}
               onUpdateQuantity={handleUpdateCartQuantity}
               cartItems={cart}
@@ -705,6 +926,8 @@ export default function App() {
               setSearchTerm={setSearchTerm}
               activeCategory={activeCategory}
               setActiveCategory={setActiveCategory}
+              activeSubcategory={activeSubcategory}
+              setActiveSubcategory={setActiveSubcategory}
               isAdmin={isAdmin}
               onQuickEditPrice={() => setIsAdmin(true)}
               onDeleteProduct={handleDeleteProduct}
@@ -715,18 +938,12 @@ export default function App() {
 
       {/* Comprehensive Custom Jobsite Footer */}
       <Footer
+        categories={categories}
         onSelectCategory={(cat) => {
           const normalized = cat.toLowerCase();
-          if (normalized === 'painting') {
-            setActiveCategory('all');
-            setSearchTerm('paint');
-          } else if (normalized === 'hardware') {
-            setActiveCategory('fasteners');
-            setSearchTerm('');
-          } else {
-            setActiveCategory(normalized);
-            setSearchTerm('');
-          }
+          setActiveCategory(normalized);
+          setActiveSubcategory('all');
+          setSearchTerm('');
           handleNavigatePage('home', true);
           setTimeout(() => {
             window.scrollTo({ top: 380, behavior: 'smooth' });
@@ -780,6 +997,7 @@ export default function App() {
         isOpen={isPriceDropOpen}
         onClose={() => setIsPriceDropOpen(false)}
         products={products}
+        categories={categories}
         onAddToCart={handleAddToCart}
         cartItems={cart}
         onUpdateQuantity={handleUpdateCartQuantity}

@@ -249,6 +249,50 @@ async function startServer() {
     }
   });
 
+  // Get All Categories
+  app.get('/api/categories', async (req, res) => {
+    try {
+      const cats = await dbManager.getCategories();
+      res.json(cats);
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // Update Categories & Subcategories (Add / Rename / Reorder / Remove)
+  app.put('/api/categories', async (req, res) => {
+    try {
+      const incoming = Array.isArray(req.body) ? req.body : req.body?.categories;
+      if (!Array.isArray(incoming)) {
+        res.status(400).json({ error: 'Expected array of categories' });
+        return;
+      }
+      const saved = await dbManager.saveCategories(incoming);
+      res.json({ success: true, categories: saved });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // Reassign or Delete Products in a Removed Category
+  app.post('/api/categories/reassign', async (req, res) => {
+    try {
+      const { fromCategory, action, toCategory } = req.body || {};
+      if (!fromCategory || (action !== 'reassign' && action !== 'delete')) {
+        res.status(400).json({ error: 'Invalid category reassign payload' });
+        return;
+      }
+      const updatedProducts = await dbManager.reassignCategoryProducts(
+        fromCategory,
+        action,
+        toCategory
+      );
+      res.json({ success: true, products: updatedProducts });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
   // Get All Products
   app.get('/api/products', async (req, res) => {
     try {
@@ -262,12 +306,78 @@ async function startServer() {
   // Full Catalog Sync / Batch Save
   app.put('/api/products', async (req, res) => {
     try {
-      if (Array.isArray(req.body) && req.body.length > 0) {
+      if (Array.isArray(req.body)) {
         await dbManager.saveAllProducts(req.body);
         res.json({ success: true, count: req.body.length });
       } else {
-        res.status(400).json({ error: 'Expected non-empty array of products' });
+        res.status(400).json({ error: 'Expected array of products' });
       }
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // Batch Create Products (Multi-Size Variants or Bulk Paste Table)
+  app.post('/api/products/batch', async (req, res) => {
+    try {
+      const rawItems = Array.isArray(req.body) ? req.body : req.body?.products;
+      if (!Array.isArray(rawItems) || rawItems.length === 0) {
+        res.status(400).json({ error: 'Expected non-empty array of products' });
+        return;
+      }
+      const now = Date.now();
+      const created: Product[] = rawItems.map((item: Partial<Product>, idx: number) => ({
+        id: item.id || `p-${now}-${idx}-${Math.random().toString(36).slice(2, 6)}`,
+        name: item.name || 'New Material',
+        baseName: item.baseName,
+        sizeLabel: item.sizeLabel,
+        category: item.category || 'plumbing',
+        subcategory: item.subcategory || 'General',
+        price: Number(item.price) || 0,
+        originalPrice: item.originalPrice !== undefined ? Number(item.originalPrice) : undefined,
+        unit: item.unit || 'piece',
+        brand: item.brand,
+        fastDelivery: item.fastDelivery ?? true,
+        stockStatus: item.stockStatus || 'in_stock',
+        stockCount: item.stockCount !== undefined ? Number(item.stockCount) : 100,
+        sku: item.sku || `SKU-${now}-${idx}`,
+        description: item.description || '',
+        image: item.image || '',
+        popular: Boolean(item.popular),
+        specifications: item.specifications,
+      }));
+      const allProducts = await dbManager.addProductsBatch(created);
+      res.status(201).json({ success: true, addedCount: created.length, products: allProducts });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // Batch Update Products (Group Size Manager / Inline Multi-Save)
+  app.put('/api/products/batch', async (req, res) => {
+    try {
+      const rawItems = Array.isArray(req.body) ? req.body : req.body?.products;
+      if (!Array.isArray(rawItems) || rawItems.length === 0) {
+        res.status(400).json({ error: 'Expected non-empty array of products' });
+        return;
+      }
+      const allProducts = await dbManager.updateProductsBatch(rawItems);
+      res.json({ success: true, products: allProducts });
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
+  // Bulk Delete Products (Delete Entire Multi-Size Group)
+  app.post('/api/products/bulk-delete', async (req, res) => {
+    try {
+      const ids = Array.isArray(req.body?.ids) ? req.body.ids : [];
+      if (ids.length === 0) {
+        res.status(400).json({ error: 'Expected non-empty array of product ids' });
+        return;
+      }
+      const allProducts = await dbManager.deleteProductsBatch(ids);
+      res.json({ success: true, deletedCount: ids.length, products: allProducts });
     } catch (err: any) {
       res.status(500).json({ error: err.message });
     }
@@ -294,6 +404,7 @@ async function startServer() {
     try {
       const newProduct: Product = {
         id: `p-${Date.now()}`,
+        stockCount: 100,
         ...req.body
       };
       await dbManager.addProduct(newProduct);
