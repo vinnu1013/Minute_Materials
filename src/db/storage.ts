@@ -81,8 +81,26 @@ class DatabaseManager {
   private lastConnectedAt: string = new Date().toISOString();
 
   constructor() {
-    // Ensure all data files are initialized on startup
-    loadDiskJson<Product[]>(PRODUCTS_FILE, [...INITIAL_PRODUCTS]);
+    // Ensure all data files are initialized on startup and backfill size-grouping metadata if missing
+    const loadedProducts = loadDiskJson<Product[]>(PRODUCTS_FILE, [...INITIAL_PRODUCTS]);
+    const initialById = new Map(INITIAL_PRODUCTS.map(p => [p.id, p]));
+    let needsMetadataSave = false;
+    const enrichedProducts = loadedProducts.map(p => {
+      const ref = initialById.get(p.id);
+      if (ref && (!p.baseName || (ref.sizeLabel && !p.sizeLabel))) {
+        needsMetadataSave = true;
+        return {
+          ...p,
+          baseName: p.baseName || ref.baseName,
+          sizeLabel: p.sizeLabel || ref.sizeLabel,
+        };
+      }
+      return p;
+    });
+    if (needsMetadataSave) {
+      saveDiskJson(PRODUCTS_FILE, enrichedProducts);
+    }
+
     loadDiskJson<StoreSettings>(SETTINGS_FILE, { ...INITIAL_STORE_SETTINGS });
     loadDiskJson<Booking[]>(BOOKINGS_FILE, []);
     loadDiskJson<ComplaintRecord[]>(COMPLAINTS_FILE, []);
@@ -178,7 +196,7 @@ class DatabaseManager {
     let updatedCount = 0;
 
     const updatedList = list.map(p => {
-      if (!category || category === 'all' || p.category === category) {
+      if ((!category || category === 'all' || p.category === category) && p.price > 0) {
         let newPrice = p.price * factor;
         if (roundToNearestQuarter) {
           newPrice = Math.round(newPrice * 4) / 4;

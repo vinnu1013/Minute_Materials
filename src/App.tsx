@@ -16,8 +16,9 @@ import { CompanyPages, CompanyPageId } from './components/CompanyPages';
 import { Helmet } from 'react-helmet-async';
 
 import { Product, CartItem, Booking, StoreSettings } from './types';
-import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS } from './data/initialProducts';
+import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS, CATALOG_VERSION } from './data/initialProducts';
 import { fetchCurrentLocationAddress } from './utils/distance';
+import { groupProductsByBaseName } from './utils/productGrouping';
 import { ShoppingCart } from 'lucide-react';
 
 function resolvePageFromPath(pathname: string): CompanyPageId {
@@ -42,6 +43,12 @@ const PAGE_PATHS: Record<CompanyPageId, string> = {
 export default function App() {
   const [products, setProducts] = useState<Product[]>(() => {
     try {
+      const savedVersion = localStorage.getItem('instant_supply_catalog_version');
+      if (savedVersion !== CATALOG_VERSION) {
+        localStorage.setItem('instant_supply_catalog_version', CATALOG_VERSION);
+        localStorage.setItem('instant_supply_products', JSON.stringify(INITIAL_PRODUCTS));
+        return INITIAL_PRODUCTS;
+      }
       const saved = localStorage.getItem('instant_supply_products');
       return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
     } catch {
@@ -303,13 +310,15 @@ export default function App() {
     return () => clearInterval(interval);
   }, [isAdmin]);
 
-  // Count active price drop deals
-  const priceDropCount = products.filter(p => p.originalPrice && p.originalPrice > p.price).length;
+  // Count active grouped price drop deals
+  const priceDropCount = groupProductsByBaseName(
+    products.filter(p => p.originalPrice && p.originalPrice > p.price && p.price > 0)
+  ).length;
 
   // Cart operations
   const handleAddToCart = (product: Product, quantity = 1) => {
     if (!product || !product.id || product.id.startsWith('custom-')) {
-      alert('Only catalog-listed products can be added to the cart.');
+      console.warn('Only catalog-listed products can be added to the cart.');
       return;
     }
 
@@ -365,7 +374,8 @@ export default function App() {
 
   // Quick WhatsApp for individual product
   const handleOpenWhatsAppForProduct = (product: Product) => {
-    const text = `Hi Minute Materials, I need an urgent quote & express delivery for: ${product.name} (SKU: ${product.sku}, ₹${product.price.toFixed(2)}/${product.unit}). Please confirm stock & dispatch time!`;
+    const priceLabel = product.price > 0 ? `, ₹${product.price.toFixed(2)}/${product.unit}` : '';
+    const text = `Hi Minute Materials, I need an urgent quote & express delivery for: ${product.name} (SKU: ${product.sku}${priceLabel}). Please confirm stock & dispatch time!`;
     const cleanPhone = (storeSettings.whatsappNumber || '8332869926').replace(/[^0-9]/g, '');
     const formattedPhone = cleanPhone.startsWith('91') ? cleanPhone : `91${cleanPhone}`;
     window.open(`https://wa.me/${formattedPhone}?text=${encodeURIComponent(text)}`, '_blank');
@@ -443,7 +453,7 @@ export default function App() {
     const factor = 1 + percentageChange / 100;
     setProducts(prev => {
       const next = prev.map(p => {
-        if (category === 'all' || p.category === category) {
+        if ((category === 'all' || p.category === category) && p.price > 0) {
           const newPrice = Math.round(p.price * factor * 100) / 100;
           return { ...p, originalPrice: p.price, price: Math.max(0.5, newPrice) };
         }
@@ -771,6 +781,9 @@ export default function App() {
         onClose={() => setIsPriceDropOpen(false)}
         products={products}
         onAddToCart={handleAddToCart}
+        cartItems={cart}
+        onUpdateQuantity={handleUpdateCartQuantity}
+        onOpenWhatsAppForProduct={handleOpenWhatsAppForProduct}
       />
       
       {/* 1. Cart Drawer */}

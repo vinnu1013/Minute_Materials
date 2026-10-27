@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+const CATALOG_VERSION = '2026-10-26-plumbing-v3';
+
+// Complete 549 unique plumbing rows transcribed from /public/assets/aistudio/image_749e0de4.png
+// Columns: Product Name | HSN Code | Size (Inch) | Size (cm) | Part No. | MRP Rs. / Pc
 const rawData = `Elbow 90°	3917	½	1.5	2225701	15
 Elbow 90°	3917	¾	2	2225702	16.5
 Elbow 90°	3917	1	2.5	2225703	35
@@ -197,12 +201,12 @@ Brass Elbow Long	3917	¾ x ½	2.0 x 1.5	2229102	176
 3 in 1 Mixer Adaptor All Top (7")	3917	1 x ½	2.5 x 1.5	2222005	435.5
 3 in 1 Mixer Adaptor Top and Bottom (7")	3917	¾ x ½	2.0 x 1.5	2222107	357
 3 in 1 Mixer Adaptor Top and Bottom (7")	3917	1 x ½	2.5 x 1.5	2222105	435.5
-Top and Side (7")	3917	¾ x ½	2.0 x 1.5	2222207	357
-Top and Side (7")	3917	1 x ½	2.5 x 1.5	2222205	435.5
-Hot Up and Cold Down (7")	3917	¾ x ½	2.0 x 1.5	2222017	357
-Hot Up and Cold Down (7")	3917	1 x ½	2.5 x 1.5	2222015	435.5
-Hot Side and Cold Down (7")	3917	¾ x ½	2.0 x 1.5	2222027	357
-Hot Side and Cold Down (7")	3917	1 x ½	2.5 x 1.5	2222025	435.5
+3 in 1 Mixer Adaptor Top and Side (7")	3917	¾ x ½	2.0 x 1.5	2222207	357
+3 in 1 Mixer Adaptor Top and Side (7")	3917	1 x ½	2.5 x 1.5	2222205	435.5
+3 in 1 Mixer Adaptor Hot Up and Cold Down (7")	3917	¾ x ½	2.0 x 1.5	2222017	357
+3 in 1 Mixer Adaptor Hot Up and Cold Down (7")	3917	1 x ½	2.5 x 1.5	2222015	435.5
+3 in 1 Mixer Adaptor Hot Side and Cold Down (7")	3917	¾ x ½	2.0 x 1.5	2222027	357
+3 in 1 Mixer Adaptor Hot Side and Cold Down (7")	3917	1 x ½	2.5 x 1.5	2222025	435.5
 3 in 1 Mixer Adaptor With MABT Top	3917	¾ x ½	2.0 x 1.5	2221407	565
 3 in 1 Mixer Adaptor With MABT Bottom	3917	¾ x ½	2.0 x 1.5	2221507	565
 3 in 1 Mixer Adaptor With MABT Top and Side	3917	¾ x ½	2.0 x 1.5	2221607	565
@@ -255,36 +259,243 @@ Step Over Bend	3917	1	2.5	2227103	151.5
 Step Over Bend	3917	1 ¼	3.2	2227104	272
 Step Over Bend	3917	1 ½ (F)	4	2227105	254
 Step Over Bend	3917	2 (F)	5	2227106	604.5
-Short Bend	3917	½	1.5	-	500
-Short Bend	3917	¾	2	-	300
-Short Bend	3917	1	2.5	-	200
-Short Bend	3917	1 ¼	3.2	-	150
-Short Bend	3917	1 ½	4	-	100
-Short Bend	3917	2	5	-	50
-Sweep Bend - Socket at Both Sides	3917	¾	2	-	600
-Sweep Bend - Socket at Both Sides	3917	1	2.5	-	300
-Sweep Bend - Socket at Both Sides	3917	1 ¼	3.2	-	180
-Flange with Gasket - End Cap Open	3917	1	2.5	-	90
-Flange with Gasket - End Cap Open	3917	1 ¼	3.2	-	60
-Flange with Gasket - End Cap Open	3917	1 ½	4	-	40
-Flange with Gasket - End Cap Open	3917	2	5	-	30
-Flange with Gasket - End Cap Closed	3917	1	2.5	-	100
-Flange with Gasket - End Cap Closed	3917	1 ¼	3.2	-	80
-Flange with Gasket - End Cap Closed	3917	1 ½	4	-	70
-Flange with Gasket - End Cap Closed	3917	2	5	-	50
-1 Step CPVC Yellow Medium Solvent Cement	3506	0.5 oz	15 ml Tube	4081099	500
-1 Step CPVC Yellow Medium Solvent Cement	3506	1 oz	29.5 ml Tube	4081100	240
-1 Step CPVC Yellow Medium Solvent Cement	3506	2 oz	59 ml Tube	4081101	144
-1 Step CPVC Yellow Medium Solvent Cement	3506	2 oz	59 ml Tin	4081106	384
-1 Step CPVC Yellow Medium Solvent Cement	3506	4 oz	118 ml Tin	4081102	192
-1 Step CPVC Yellow Medium Solvent Cement	3506	8 oz	237 ml Tin	4081103	96
-1 Step CPVC Yellow Medium Solvent Cement	3506	16 oz	473 ml Tin	4081104	24
-1 Step CPVC Yellow Medium Solvent Cement	3506	32 oz	946 ml Tin	4081105	24
-2 Step CPVC Heavy Duty Orange Solvent Cement	3506	4 oz	118 ml Tin	4081201	192
-2 Step CPVC Heavy Duty Orange Solvent Cement	3506	8 oz	237 ml Tin	4081202	96
-2 Step CPVC Heavy Duty Orange Solvent Cement	3506	16 oz	473 ml Tin	4081203	24
-2 Step CPVC Heavy Duty Orange Solvent Cement	3506	32 oz	946 ml Tin	4081204	24
+Short Bend	3917	½	1.5	2227001	23
+Short Bend	3917	¾	2	2227002	40
+Short Bend	3917	1	2.5	2227003	67
+Short Bend	3917	1 ¼	3.2	2227004	99
+Short Bend	3917	1 ½	4	2227005	131.5
+Short Bend	3917	2	5	2227006	274
+Sweep Bend - Socket at Both Sides	3917	¾	2	2227008	41
+Sweep Bend - Socket at Both Sides	3917	1	2.5	2227007	71.5
+Sweep Bend - Socket at Both Sides	3917	1 ¼	3.2	2227009	116
+Flange with Gasket - End Cap Open	3917	1	2.5	2228497	268.5
+Flange with Gasket - End Cap Open	3917	1 ¼	3.2	2228498	329
+Flange with Gasket - End Cap Open	3917	1 ½	4	2228499	431
+Flange with Gasket - End Cap Open	3917	2	5	2228500	626
+Flange with Gasket - End Cap Closed	3917	1	2.5	2228597	275
+Flange with Gasket - End Cap Closed	3917	1 ¼	3.2	2228598	336
+Flange with Gasket - End Cap Closed	3917	1 ½	4	2228599	445
+Flange with Gasket - End Cap Closed	3917	2	5	2228600	631
+Long Concealed Valve Quarter Turn - Triangle	3917	½	-	2221101	854
+Long Concealed Valve Quarter Turn - Square	3917	½	-	2221102	854
+Long Concealed Valve Quarter Turn - Round	3917	½	-	2221103	1003
+Long Concealed Valve Quarter Turn - Plastic (CP)	3917	½	-	2221105	1003
+Long Concealed Valve Full Turn - Triangle	3917	½	-	2221111	854
+Long Concealed Valve Full Turn - Square	3917	½	-	2221112	854
+Long Concealed Valve Full Turn - Round	3917	½	-	2221113	1003
+Long Concealed Valve Full Turn - Plastic (CP)	3917	½	-	2221116	1003
+Long Concealed Valve Quarter Turn - Triangle	3917	¾	-	2221201	883
+Long Concealed Valve Quarter Turn - Square	3917	¾	-	2221202	883
+Long Concealed Valve Quarter Turn - Round	3917	¾	-	2221203	1018.5
+Long Concealed Valve Quarter Turn - Plastic (CP)	3917	¾	-	2221206	1018.5
+Long Concealed Valve Full Turn - Triangle	3917	¾	-	2221211	882
+Long Concealed Valve Full Turn - Square	3917	¾	-	2221212	882
+Long Concealed Valve Full Turn - Round	3917	¾	-	2221213	1018.5
+Long Concealed Valve Full Turn - Plastic (CP)	3917	¾	-	2221216	1018.5
+Long Concealed Valve Quarter Turn - Triangle	3917	1	-	2221301	1229.5
+Long Concealed Valve Quarter Turn - Square	3917	1	-	2221302	1229.5
+Long Concealed Valve Quarter Turn - Round	3917	1	-	2221303	1403
+Long Concealed Valve Quarter Turn - Plastic (CP)	3917	1	-	2221306	1461
+Long Concealed Valve Full Turn - Triangle	3917	1	-	2221311	1222.5
+Long Concealed Valve Full Turn - Square	3917	1	-	2221312	1222.5
+Long Concealed Valve Full Turn - Round	3917	1	-	2221313	1397
+Long Concealed Valve Full Turn - Plastic (CP)	3917	1	-	2221316	1455.5
+Short Concealed Valve Quarter Turn - Triangle	3917	½	-	2221121	762.5
+Short Concealed Valve Quarter Turn - Square	3917	½	-	2221122	762.5
+Short Concealed Valve Quarter Turn - Round	3917	½	-	2221123	911
+Short Concealed Valve Quarter Turn - Plastic (CP)	3917	½	-	2221126	911
+Short Concealed Valve Full Turn - Triangle	3917	½	-	2221131	762.5
+Short Concealed Valve Full Turn - Square	3917	½	-	2221132	762.5
+Short Concealed Valve Full Turn - Round	3917	½	-	2221133	911
+Short Concealed Valve Full Turn - Plastic (CP)	3917	½	-	2221136	911
+Short Concealed Valve Quarter Turn - Triangle	3917	¾	-	2221221	791
+Short Concealed Valve Quarter Turn - Square	3917	¾	-	2221222	791
+Short Concealed Valve Quarter Turn - Round	3917	¾	-	2221223	939
+Short Concealed Valve Quarter Turn - Plastic (CP)	3917	¾	-	2221226	939
+Short Concealed Valve Full Turn - Triangle	3917	¾	-	2221231	791
+Short Concealed Valve Full Turn - Square	3917	¾	-	2221232	791
+Short Concealed Valve Full Turn - Round	3917	¾	-	2221233	939
+Short Concealed Valve Full Turn - Plastic (CP)	3917	¾	-	2221236	939
+Short Concealed Valve Quarter Turn - Triangle	3917	1	-	2221321	1115.5
+Short Concealed Valve Quarter Turn - Square	3917	1	-	2221322	1115.5
+Short Concealed Valve Quarter Turn - Round	3917	1	-	2221323	1288.5
+Short Concealed Valve Quarter Turn - Plastic (CP)	3917	1	-	2221326	1346
+Short Concealed Valve Full Turn - Triangle	3917	1	-	2221331	1090.5
+Short Concealed Valve Full Turn - Square	3917	1	-	2221332	1090.5
+Short Concealed Valve Full Turn - Round	3917	1	-	2221333	1263
+Short Concealed Valve Full Turn - Plastic (CP)	3917	1	-	2221336	1321.5
+Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob	3917	½	1.5	2221701	580.5
+Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob	3917	¾	2	2221702	561
+Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob	3917	1	2.5	2221703	858
+Single Lever Concealed Diverter (Tap & Shower)	3917	¾	2	2221411	2764.5
+Single Lever Concealed Diverter (Tap & Shower)	3917	¾	2	2221412	4474
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2224131	1121.5
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2224132	1376
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2224133	1158
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2226131	1512
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2226132	1638
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2226133	1664
+Single Lever Concealed Diverter (Shower)	3917	¾	2	2221421	1834.5
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2225131	1070.5
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2225132	1325
+Front Plates For Single Lever Concealed Diverter	7307	-	-	2221453	957.5
+Concealed Flush Valve	3917	1 ¼ x 1 ¼	3.2 x 3.2	2221804	2815
+Concealed Flush Valve	3917	1 ½ x 1 ¼	4.0 x 3.2	2221810	2937
+Y - Strainer	3917	1	2.5	2226113	1317
+Y - Strainer	3917	1 ¼	3.2	2226114	2345
+Water Hammer Arrestor - Type A	8481	½ x ½ x ½	1.5 x 1.5 x 1.5	2226531	2047.5
+Water Hammer Arrestor - Type B	8481	¾ x ¾ x ¾	2.0 x 2.0 x 2.0	2226532	2895.5
+Plastic Clamp	3917	½	1.5	2222201	3.5
+Plastic Clamp	3917	¾	2	2222202	4
+Plastic Clamp	3917	1	2.5	2222203	5
+Plastic Clamp	3917	1 ¼	3.2	2222204	8
+Plastic Clamp	3917	1 ½	4	2222205	9.5
+Plastic Clamp	3917	2	5	2222206	13
+SS Clamp	8308	½	1.5	3823007	11.5
+SS Clamp	8308	¾	2	3823008	11.5
+SS Clamp	8308	1	2.5	3823009	12.5
+SS Clamp	8308	1 ¼	3.2	3823010	13
+SS Clamp	8308	1 ½	4	3823011	16
+SS Clamp	8308	2	5	3823012	19.5
+Powder Coated Metal Clamp	8308	½	1.5	3822007	8
+Powder Coated Metal Clamp	8308	¾	2	3822008	8.5
+Powder Coated Metal Clamp	8308	1	2.5	3822009	10.5
+Powder Coated Metal Clamp	8308	1 ¼	3.2	3822010	10.5
+Powder Coated Metal Clamp	8308	1 ½	4	3822011	11.5
+Powder Coated Metal Clamp	8308	2	5	3822012	13
+Rubber Washer - Tank Nipple	4016	½	1.5	2223611	7
+Rubber Washer - Tank Nipple	4016	¾	2	2223612	8
+Rubber Washer - Tank Nipple	4016	1	2.5	2223613	8.5
+Rubber Washer - Tank Nipple	4016	1 ¼	3.2	2223614	8.5
+Rubber Washer - Tank Nipple	4016	1 ½	4	2223615	8.5
+Rubber Washer - Tank Nipple	4016	2	5	2223616	13
+Rubber Washer - Union	4016	½	1.5	3825901	1.5
+Rubber Washer - Union	4016	¾	2	3825902	2.5
+Rubber Washer - Union	4016	1	2.5	3825903	3.5
+Rubber Washer - Union	4016	1 ¼	3.2	3825904	3.5
+Rubber Washer - Union	4016	1 ½	4	3825905	4
+Rubber Washer - Union	4016	2	5	3825906	6
+Rubber Washer - FAPT	4016	½	1.5	3825401	1.5
+Rubber Washer - FAPT	4016	¾	2	2225412	1.5
+Rubber Washer - FAPT	4016	1	2.5	2225413	1.5
+Rubber Washer - FAPT	4016	1 ¼	3.2	2225414	7
+Rubber Washer - FAPT	4016	1 ½	4	2225415	7
+Rubber Washer - FAPT	4016	2	5	2225416	11.5
+1 Step CPVC Yellow Medium Solvent Cement	3506	0.5 oz	15 ml Tube	4081099	64.5
+1 Step CPVC Yellow Medium Solvent Cement	3506	1 oz	29.5 ml Tube	4081100	91
+1 Step CPVC Yellow Medium Solvent Cement	3506	2 oz	59 ml Tube	4081101	129
+1 Step CPVC Yellow Medium Solvent Cement	3506	2 oz	59 ml Tin	4081106	133
+1 Step CPVC Yellow Medium Solvent Cement	3506	4 oz	118 ml Tin	4081102	208.5
+1 Step CPVC Yellow Medium Solvent Cement	3506	8 oz	237 ml Tin	4081103	354
+1 Step CPVC Yellow Medium Solvent Cement	3506	16 oz	473 ml Tin	4081104	641.5
+1 Step CPVC Yellow Medium Solvent Cement	3506	32 oz	946 ml Tin	4081105	1238.5
+2 Step CPVC Heavy Duty Orange Solvent Cement	3506	4 oz	118 ml Tin	4081201	229
+2 Step CPVC Heavy Duty Orange Solvent Cement	3506	8 oz	237 ml Tin	4081202	389.5
+2 Step CPVC Heavy Duty Orange Solvent Cement	3506	16 oz	473 ml Tin	4081203	705.5
+2 Step CPVC Heavy Duty Orange Solvent Cement	3506	32 oz	946 ml Tin	4081204	1363
 Purple Primer Solvent Cement	3506	8 oz	237 ml Tin	4071503	96
+Solvent Cement - Brush	3917	-	-	1810052	-
+CPVC Pipes (SCH 40 - 3 mtr)	3917	2 ½	6.5	2129201	1089.50 /mtr
+CPVC Pipes (SCH 40 - 5 mtr)	3917	2 ½	6.5	2129211	1089.50/mtr
+CPVC Pipes (SCH 40 - 3 mtr)	3917	3	8	2129202	1450.50 /mtr
+CPVC Pipes (SCH 40 - 5 mtr)	3917	3	8	2129212	1450.50 /mtr
+CPVC Pipes (SCH 40 - 3 mtr)	3917	4	10	2129203	2150.00 /mtr
+CPVC Pipes (SCH 40 - 5 mtr)	3917	4	10	2129213	2150.00/mtr
+CPVC Pipes (SCH 40 - 3 mtr)	3917	6	15	2129204	3944.50 /mtr
+CPVC Pipes (SCH 40 - 5 mtr)	3917	6	15	2129214	3944.50 /mtr
+CPVC Pipes (SCH 80 - 3 mtr)	3917	2 ½	6.5	2129301	1450/mtr
+CPVC Pipes (SCH 80 - 5 mtr)	3917	2 ½	6.5	2129311	1450/mtr
+CPVC Pipes (SCH 80 - 3 mtr)	3917	3	8	2129302	1984/mtr
+CPVC Pipes (SCH 80 - 5 mtr)	3917	3	8	2129312	1984/mtr
+CPVC Pipes (SCH 80 - 3 mtr)	3917	4	10	2129303	2891.5/mtr
+CPVC Pipes (SCH 80 - 5 mtr)	3917	4	10	2129313	2891.5/mtr
+CPVC Pipes (SCH 80 - 3 mtr)	3917	6	15	2129304	6182.00 /mtr
+CPVC Pipes (SCH 80 - 5 mtr)	3917	6	15	2129314	6182.00 /mtr
+Elbow 90° (SCH 40)	3917	2 ½	6.5	2228211	526
+Elbow 90° (SCH 40)	3917	3	8	2228212	776
+Elbow 90° (SCH 40)	3917	4	10	2228213	1274.5
+Elbow 90° (SCH 40)	3917	6	15	2228214	3894.5
+Elbow 90° (SCH 80)	3917	2 ½	6.5	2228201	908.5
+Elbow 90° (SCH 80)	3917	3	8	2228202	1327.5
+Elbow 90° (SCH 80)	3917	4	10	2228203	2256
+Elbow 90° (SCH 80)	3917	6	15	x	x
+Tee 90° (SCH 40)	3917	2 ½	6.5	2228311	744.5
+Tee 90° (SCH 40)	3917	3	8	2228312	1125.5
+Tee 90° (SCH 40)	3917	4	10	2228313	2066
+Tee 90° (SCH 40)	3917	6	15	2228314	5132.5
+Tee 90° (SCH 80)	3917	2 ½	6.5	2228301	1223
+Tee 90° (SCH 80)	3917	3	8	2228302	1819
+Tee 90° (SCH 80)	3917	4	10	2228303	3043.5
+Tee 90° (SCH 80)	3917	6	15	x	x
+Coupler (SCH 40)	3917	2 ½	6.5	2228111	338.5
+Coupler (SCH 40)	3917	3	8	2228112	468
+Coupler (SCH 40)	3917	4	10	2228113	735
+Coupler (SCH 40)	3917	6	15	2228114	1957
+Coupler (SCH 80)	3917	2 ½	6.5	2228101	564.5
+Coupler (SCH 80)	3917	3	8	2228102	806
+Coupler (SCH 80)	3917	4	10	2228103	1234.5
+Coupler (SCH 80)	3917	6	15	x	x
+End Cap (SCH 40)	3917	2 ½	6.5	x	x
+End Cap (SCH 40)	3917	3	8	x	x
+End Cap (SCH 40)	3917	4	10	x	x
+End Cap (SCH 40)	3917	6	15	2228714	1617.5
+End Cap (SCH 80)	3917	2 ½	6.5	2228701	351.5
+End Cap (SCH 80)	3917	3	8	2228702	517.5
+End Cap (SCH 80)	3917	4	10	2228703	899
+End Cap (SCH 80)	3917	6	15	x	x
+Flange with Gasket - End Cap Open	3917	2 ½	6.5	x	-
+Flange with Gasket - End Cap Open	3917	3	8	x	-
+Flange with Gasket - End Cap Open	3917	4	10	x	-
+Flange with Gasket - End Cap Open	3917	6	15	2228514	-
+Flange with Gasket - End Cap Closed	3917	2 ½	6.5	x	-
+Flange with Gasket - End Cap Closed	3917	3	8	x	-
+Flange with Gasket - End Cap Closed	3917	4	10	x	-
+Flange with Gasket - End Cap Closed	3917	6	15	2228614	-
+Rubber Gasket for Flange	4016	1	2.5	1190080	-
+Rubber Gasket for Flange	4016	1 ¼	3.2	1190081	-
+Rubber Gasket for Flange	4016	1 ½	4	1190082	-
+Rubber Gasket for Flange	4016	2	5	1190083	-
+Rubber Gasket for Flange	4016	2 ½	6.5	1190084	-
+Rubber Gasket for Flange	4016	3	8	1190085	-
+Rubber Gasket for Flange	4016	4	10	1190086	-
+Rubber Gasket for Flange	4016	6	15	1190087	-
+Short Bend (SCH 40 & 80)	3917	2 ½	6.5	2227201	-
+Short Bend (SCH 40 & 80)	3917	3	8	2227202	-
+Short Bend (SCH 40 & 80)	3917	4	10	2227203	-
+Short Bend (SCH 40 & 80)	3917	6	15	-	-
+Reducer Coupler (SCH 40 & 80)	3917	2 ½ x ¾	6.5 x 2.0	2224622	-
+Reducer Coupler (SCH 40 & 80)	3917	2 ½ x 1	6.5 x 2.5	2224623	-
+Reducer Coupler (SCH 40 & 80)	3917	2 ½ x 1 ¼	6.5 x 3.2	2224624	-
+Reducer Coupler (SCH 40 & 80)	3917	2 ½ x 1 ½	6.5 x 4.0	2224625	-
+Reducer Coupler (SCH 40 & 80)	3917	2 ½ x 2	6.5 x 5.0	2224616	-
+Reducer Coupler (SCH 40 & 80)	3917	3 x 2	8.0 x 5.0	2224620	-
+Reducer Coupler (SCH 40 & 80)	3917	3 x 2 ½	8.0 x 6.5	2224617	-
+Reducer Tee (SCH 40 & 80)	3917	2 ½ x ¾	6.5 x 2.0	2221922	-
+Reducer Tee (SCH 40 & 80)	3917	2 ½ x 1	6.5 x 2.5	2221923	-
+Reducer Tee (SCH 40 & 80)	3917	2 ½ x 1 ¼	6.5 x 3.2	2221924	-
+Reducer Tee (SCH 40 & 80)	3917	2 ½ x 1 ½	6.5 x 4.0	2221925	-
+Reducer Tee (SCH 40 & 80)	3917	2 ½ x 2	6.5 x 5.0	2224919	-
+Reducer Tee (SCH 40 & 80)	3917	3 x 2	8.0 x 5.0	2224923	-
+Reducer Tee (SCH 40 & 80)	3917	3 x 2 ½	8.0 x 6.5	2224920	-
+Female Adapter Plastic Threaded - FAPT (SCH 80)	3917	2 ½	6.5	-	-
+Female Adapter Plastic Threaded - FAPT (SCH 80)	3917	3	8	-	-
+Female Adapter Plastic Threaded - FAPT (SCH 80)	3917	4	10	-	-
+Male Adapter Plastic Threaded - MAPT (SCH 80)	3917	2 ½	6.5	-	-
+Male Adapter Plastic Threaded - MAPT (SCH 80)	3917	3	8	-	-
+Male Adapter Plastic Threaded - MAPT (SCH 80)	3917	4	10	-	-
+Bushings (SCH 80)	3917	2 ½ x 2 (CTS)	6.5 x 5.0	-	-
+Bushings (SCH 80)	3917	3 x 2 (CTS)	8.0 x 5.0	-	-
+Bushings (SCH 80)	3917	3 x 2 ½	8.0 x 6.5	-	-
+Bushings (SCH 80)	3917	4 x 2 (CTS)	10.0 x 5.0	-	-
+Bushings (SCH 80)	3917	4 x 2 ½	10.0 x 6.5	-	-
+Bushings (SCH 80)	3917	4 x 3	10.0 x 8.0	-	-
+Bushings (SCH 40)	3917	6 x 2	15.0 x 5.0	2228419	-
+Bushings (SCH 40)	3917	6 x 2 ½	15.0 x 6.5	2228420	-
+Bushings (SCH 40)	3917	6 x 3	15.0 x 8.0	2228417	-
+Bushings (SCH 40)	3917	6 x 4	15.0 x 10.0	2228418	-
+Elbow 45° (SCH 80)	3917	2 ½	6.5	2228001	795
+Elbow 45° (SCH 80)	3917	3	8	2228002	1128.5
+Elbow 45° (SCH 80)	3917	4	10	2228003	2034.5
 Union (SCH 80)	3917	2 ½	6.5	2229002	1209
 Union (SCH 80)	3917	3	8	2229003	1648
 Union (SCH 80)	3917	4	10	2229004	2569.5
@@ -346,84 +557,148 @@ YS Hex Nut (Spares for Diverter)	8207	1 ¼	3.2	2593104	299`;
 
 const lines = rawData.split('\n').filter(l => l.trim().length > 0);
 
-function getPlumbingImage(name) {
-  const lower = name.toLowerCase();
-  if (lower.includes('elbow')) {
-    return '/elbow_fitting.jpg';
-  } else if (lower.includes('tee')) {
-    return 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('coupler') || lower.includes('coupling')) {
-    return 'https://images.unsplash.com/photo-1584992236310-6edddc08acff?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('adapter') || lower.includes('mapt') || lower.includes('fapt') || lower.includes('fta') || lower.includes('mta')) {
-    return 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('union')) {
-    return 'https://images.unsplash.com/photo-1542013936693-884638332954?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('cap') || lower.includes('plug')) {
-    return 'https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('nipple')) {
-    return 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('valve')) {
-    return 'https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('cement') || lower.includes('solvent') || lower.includes('glue')) {
-    return 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=400';
-  } else if (lower.includes('pipe')) {
-    return 'https://images.unsplash.com/photo-1541888946425-d0fbb186a5b3?auto=format&fit=crop&q=80&w=400';
+function getSubcategory(baseName) {
+  const lower = baseName.toLowerCase();
+  if (lower.startsWith('cpvc pipes')) return 'CPVC Pipes';
+  if (lower.includes('solvent cement')) return 'Solvent Cements';
+  if (lower.includes('spares for diverter') || lower === 'ball valve - handle' || lower === 'body in cpvc' || lower === 'brass mechanism' || lower === 'extension tube' || lower === 'knobs' || lower === 'ceramic disc' || lower.includes('allen key') || lower.includes('grub screw') || lower.includes('screw with washer') || lower.includes('red & blue buttons')) {
+    return 'Spares & Accessories';
   }
-  return 'https://images.unsplash.com/photo-1581092162384-8987c1d64718?auto=format&fit=crop&q=80&w=400';
+  if (lower.includes('clamp') && !lower.includes('brass elbow')) return 'Clamps, Flanges & Washers';
+  if (lower.includes('flange') || lower.includes('rubber gasket') || lower.includes('rubber washer') || lower === 'tee holder' || lower === 'elbow holder' || lower.includes('ss bolts')) {
+    return 'Clamps, Flanges & Washers';
+  }
+  if (lower.includes('valve') || lower.includes('diverter') || lower.includes('strainer') || lower.includes('arrestor')) {
+    return 'Valves & Diverters';
+  }
+  if (lower.includes('elbow') || lower.includes('bend') || lower.includes('expansion loop')) {
+    return 'Elbows & Bends';
+  }
+  if (lower.includes('tee') || lower.includes('coupler') || lower.includes('bushing')) {
+    return 'Tees & Couplers';
+  }
+  return 'Adapters, Unions & Nipples';
 }
 
-const plumbingProducts = lines.map((line, idx) => {
+function getPlumbingImage(baseName) {
+  const lower = baseName.toLowerCase();
+  if (lower.includes('elbow') && !lower.includes('holder')) {
+    return '/elbow_fitting.jpg';
+  }
+  return '';
+}
+
+function formatSizeLabel(sizeInch, sizeCm) {
+  const parts = [];
+  if (sizeInch && sizeInch !== '-') {
+    parts.push(sizeInch);
+  }
+  if (sizeCm && sizeCm !== '-') {
+    if (/[a-zA-Z]/.test(sizeCm)) {
+      parts.push(`(${sizeCm})`);
+    } else {
+      parts.push(`(${sizeCm} cm)`);
+    }
+  }
+  return parts.join(' ');
+}
+
+function formatBaseTitle(name, sizeInch, sizeCm) {
+  const sizeStr = formatSizeLabel(sizeInch, sizeCm);
+  return sizeStr ? `${name} ${sizeStr}` : name;
+}
+
+// Count duplicates of formatted names and base names
+const parsedRows = lines.map((line) => {
   const parts = line.split('\t').map(p => p.trim());
-  const name = parts[0] || 'Plumbing Material';
+  const baseName = parts[0] || 'Plumbing Material';
   const hsnCode = parts[1] || '';
   const sizeInch = parts[2] || '';
   const sizeCm = parts[3] || '';
   const partNo = parts[4] || '';
-  const rawMrp = parts[5] || '0';
+  const rawMrp = parts[5] || '';
+  const rawSizeLabel = formatSizeLabel(sizeInch, sizeCm);
+  const formattedName = formatBaseTitle(baseName, sizeInch, sizeCm);
+  return { baseName, hsnCode, sizeInch, sizeCm, partNo, rawMrp, rawSizeLabel, formattedName };
+});
 
-  let numMrp = parseFloat(rawMrp.replace(/[^0-9.]/g, ''));
-  if (isNaN(numMrp)) numMrp = 0;
+const nameFreq = {};
+const baseNameFreq = {};
+for (const r of parsedRows) {
+  nameFreq[r.formattedName] = (nameFreq[r.formattedName] || 0) + 1;
+  baseNameFreq[r.baseName] = (baseNameFreq[r.baseName] || 0) + 1;
+}
 
-  // Reduce all plumbing category items by 20%
-  // Original price = pre-discount price (numMrp * 1.20)
-  // Selling price = 20% reduced from original price (originalPrice * 0.80)
-  const originalPrice = numMrp > 0 ? Math.round(numMrp * 1.20 * 100) / 100 : undefined;
-  const price = originalPrice ? Math.round(originalPrice * 0.80 * 100) / 100 : 0;
+const popularPartCodes = new Set([
+  '2225701', '2225702', '2225703', // Elbow 90° ½, ¾, 1
+  '2226001', '2226002', '2226003', // Tee ½, ¾, 1
+  '2224701', '2224702',            // Coupler ½, ¾
+  '2225201', '2225202',            // MABT ½, ¾
+  '2225101', '2225102',            // FABT ½, ¾
+  '2226101', '2226102',            // Brass Elbow ½, ¾x½
+  '2224771', '2224772',            // Ball Valve ½, ¾
+  '2223601', '2223602',            // Tank Nipple ½, ¾
+  '4081101', '4081102'             // CPVC Solvent Cement 2 oz, 4 oz
+]);
 
-  let fullName = name;
-  if (sizeInch && sizeInch !== '-') fullName += ` ${sizeInch}`;
-  if (sizeCm && sizeCm !== '-') fullName += ` (${sizeCm} cm)`;
+const usedSkus = new Set();
 
-  const sku = (partNo && partNo !== '-' && partNo !== 'x') ? `PLM-${partNo}` : `PLM-${idx + 101}`;
+const plumbingProducts = parsedRows.map((row, idx) => {
+  const { baseName, hsnCode, partNo, rawMrp, rawSizeLabel, formattedName } = row;
+  const validPart = partNo && partNo !== '-' && partNo !== 'x' ? partNo : undefined;
+
+  let displayName = formattedName;
+  if (nameFreq[formattedName] > 1 && validPart) {
+    displayName = `${formattedName} (${validPart})`;
+  }
+
+  let sizeLabel = rawSizeLabel;
+  if (nameFreq[formattedName] > 1 && validPart) {
+    sizeLabel = rawSizeLabel ? `${rawSizeLabel} • #${validPart}` : `Part #${validPart}`;
+  } else if (!sizeLabel && baseNameFreq[baseName] > 1 && validPart) {
+    sizeLabel = `Part #${validPart}`;
+  }
+
+  const isPerMeter = /\/\s*mtr/i.test(rawMrp);
+  const cleanedNum = rawMrp.replace(/\/\s*mtr/gi, '').replace(/[^0-9.]/g, '');
+  let price = cleanedNum ? parseFloat(cleanedNum) : 0;
+  if (isNaN(price)) price = 0;
+
+  let sku = validPart ? `PLM-${validPart}` : `PLM-ITEM-${(idx + 1).toString().padStart(3, '0')}`;
+  if (usedSkus.has(sku)) {
+    sku = `${sku}-${idx + 1}`;
+  }
+  usedSkus.add(sku);
 
   return {
     id: `p-${(idx + 1).toString().padStart(3, '0')}`,
-    name: fullName,
+    name: displayName,
+    baseName: baseName,
+    sizeLabel: sizeLabel || undefined,
     category: 'plumbing',
-    subcategory: 'Fittings & Valves',
+    subcategory: getSubcategory(baseName),
     price: price,
-    originalPrice: originalPrice,
-    unit: 'ea',
+    unit: isPerMeter ? 'meter' : 'unit',
     stockStatus: 'in_stock',
     stockCount: 100,
     sku: sku,
-    hsnCode: hsnCode,
-    partCode: (partNo && partNo !== '-' && partNo !== 'x') ? partNo : undefined,
+    hsnCode: hsnCode || undefined,
+    partCode: validPart,
     description: '',
-    image: getPlumbingImage(fullName),
-    popular: false
+    image: getPlumbingImage(baseName),
+    popular: Boolean(validPart && popularPartCodes.has(validPart))
   };
 });
 
-// Electrical sample items
+// Preserve non-plumbing electrical items
 const electricalProducts = [
   {
     id: 'e-01',
     name: '1.5 sq mm FR PVC Copper Wire (90M Roll Red)',
     category: 'electrical',
     subcategory: 'Wires & Cable',
-    price: 1500.00,
-    originalPrice: 1800.00,
+    price: 1500,
+    originalPrice: 1800,
     unit: 'roll',
     stockStatus: 'in_stock',
     stockCount: 50,
@@ -439,9 +714,9 @@ const electricalProducts = [
     name: '20 Amp Single-Pole MCB Circuit Breaker (C-Curve)',
     category: 'electrical',
     subcategory: 'Panels & Breakers',
-    price: 222.00,
-    originalPrice: 266.40,
-    unit: 'ea',
+    price: 222,
+    originalPrice: 266.4,
+    unit: 'unit',
     stockStatus: 'in_stock',
     stockCount: 180,
     sku: 'ELE-MCB-1P-20A',
@@ -456,8 +731,8 @@ const electricalProducts = [
     name: '16A Modular Switch & 3-Pin Socket Combo with Indicator Box',
     category: 'electrical',
     subcategory: 'Switches & Outlets',
-    price: 288.00,
-    originalPrice: 345.60,
+    price: 288,
+    originalPrice: 345.6,
     unit: 'set',
     stockStatus: 'in_stock',
     stockCount: 95,
@@ -474,23 +749,35 @@ const allProducts = [...plumbingProducts, ...electricalProducts];
 
 const tsOutput = `import { Product, StoreSettings } from '../types';
 
+export const CATALOG_VERSION = '${CATALOG_VERSION}';
+
 export const INITIAL_PRODUCTS: Product[] = ${JSON.stringify(allProducts, null, 2)};
 
 export const INITIAL_STORE_SETTINGS: StoreSettings = {
-  storeName: 'Plumbing and Elctrical Express delivery',
-  helplineNumber: '9059236500',
-  whatsappNumber: '9059236500',
+  storeName: 'Minute Materials',
+  helplineNumber: '8332869926',
+  whatsappNumber: '8332869926',
   deliveryFeeExpress: 15.00,
   deliveryFeeStandard: 5.00,
   minOrderFreeDelivery: 199.00,
-  activeDeliveryNotice: '⚠️ Website under building stage! Please book strictly via WhatsApp or Phone: 9059236500 | 10 to 15 Min Express Delivery',
-  adminPin: 'SnapSupply10',
+  platformFee: 5.00,
+  handlingFee: 10.00,
+  gstPercentage: 0,
+  upiId: 'mr.vinnu10@okicici',
+  accountHolderName: 'THappetla Vinay Kumar',
+  activeDeliveryNotice: '⚠️ Minute Materials - Express Jobsite Delivery | Book via WhatsApp or Phone: 8332869926',
+  adminPin: '9059236500',
   depotLat: 17.343629,
   depotLng: 78.554161,
-  depotAddress: 'SnapSupply Express Hub'
+  depotAddress: 'Minute Materials Express Hub'
 };
 `;
 
-const targetPath = path.join(process.cwd(), 'src/data/initialProducts.ts');
-fs.writeFileSync(targetPath, tsOutput);
-console.log(`Generated ${allProducts.length} total products (${plumbingProducts.length} plumbing items). Target: ${targetPath}`);
+const targetTsPath = path.join(process.cwd(), 'src/data/initialProducts.ts');
+fs.writeFileSync(targetTsPath, tsOutput, 'utf-8');
+
+const dataJsonPath = path.join(process.cwd(), 'data/products.json');
+fs.mkdirSync(path.dirname(dataJsonPath), { recursive: true });
+fs.writeFileSync(dataJsonPath, JSON.stringify(allProducts, null, 2), 'utf-8');
+
+console.log(`Generated ${allProducts.length} total products (${plumbingProducts.length} plumbing items, ${electricalProducts.length} electrical items).`);

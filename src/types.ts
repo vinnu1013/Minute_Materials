@@ -5,6 +5,8 @@ export type StockStatus = 'in_stock' | 'low_stock' | 'out_of_stock';
 export interface Product {
   id: string;
   name: string;
+  baseName?: string;
+  sizeLabel?: string;
   category: ProductCategory;
   subcategory: string;
   price: number;
