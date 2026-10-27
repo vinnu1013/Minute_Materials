@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Trash2, Plus, Minus, ShoppingCart, ArrowRight, MapPin, Navigation, AlertCircle, Check, Loader2 } from 'lucide-react';
+import { X, Trash2, Plus, Minus, ShoppingCart, ArrowRight, MapPin, Navigation, AlertCircle, Check, Loader2, Truck } from 'lucide-react';
 import { CartItem, StoreSettings } from '../types';
 import { fetchCurrentLocationAddress } from '../utils/distance';
 
@@ -63,6 +63,12 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     const qty = Number(item?.quantity) || 0;
     return sum + (price * qty);
   }, 0);
+
+  const freeDeliveryThreshold = Number(storeSettings?.minOrderFreeDelivery) > 0
+    ? Number(storeSettings.minOrderFreeDelivery)
+    : 499;
+  const remainingForFreeDelivery = Math.max(0, freeDeliveryThreshold - subtotal);
+  const freeDeliveryProgress = Math.min(100, Math.round((subtotal / freeDeliveryThreshold) * 100));
 
   const handleFetchGPS = async () => {
     setIsLocating(true);
@@ -130,6 +136,32 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
         {/* Scrollable Content */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-white">
+          {/* ₹499 Free Delivery Progress Banner */}
+          <div className={`p-3 rounded-xl border ${remainingForFreeDelivery === 0 ? 'bg-emerald-50 border-emerald-200' : 'bg-amber-50/70 border-amber-200'}`}>
+            <div className="flex items-center justify-between gap-2 text-xs font-bold">
+              <div className="flex items-center gap-1.5 text-slate-900">
+                <Truck className={`w-4 h-4 shrink-0 ${remainingForFreeDelivery === 0 ? 'text-emerald-600' : 'text-amber-600'}`} />
+                {remainingForFreeDelivery === 0 ? (
+                  <span className="text-emerald-800">
+                    Unlocked! <strong className="font-black">FREE Express Delivery</strong> applied
+                  </span>
+                ) : (
+                  <span>
+                    Add <strong className="font-mono text-amber-800">₹{remainingForFreeDelivery.toFixed(0)}</strong> more for <strong className="text-slate-950">₹{freeDeliveryThreshold} FREE Delivery</strong>
+                  </span>
+                )}
+              </div>
+              <span className="font-mono text-[11px] font-black text-slate-600 shrink-0">
+                {freeDeliveryProgress}%
+              </span>
+            </div>
+            <div className="mt-2 h-1.5 w-full bg-white rounded-full overflow-hidden border border-slate-200/70">
+              <div
+                className={`h-full transition-all duration-300 rounded-full ${remainingForFreeDelivery === 0 ? 'bg-emerald-500' : 'bg-amber-500'}`}
+                style={{ width: `${freeDeliveryProgress}%` }}
+              />
+            </div>
+          </div>
 
           {/* Items List */}
           {validCartItems.length === 0 ? (

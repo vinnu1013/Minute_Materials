@@ -93,6 +93,15 @@ export default function App() {
         if (parsed.activeDeliveryNotice && parsed.activeDeliveryNotice.includes('9059236500')) {
           parsed.activeDeliveryNotice = parsed.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
         }
+        if (!parsed.minOrderFreeDelivery || parsed.minOrderFreeDelivery === 199) {
+          parsed.minOrderFreeDelivery = 499;
+        }
+        if (
+          !parsed.activeDeliveryNotice ||
+          parsed.activeDeliveryNotice === '⚠️ Minute Materials - Express Jobsite Delivery | Book via WhatsApp or Phone: 8332869926'
+        ) {
+          parsed.activeDeliveryNotice = INITIAL_STORE_SETTINGS.activeDeliveryNotice;
+        }
         parsed.gstPercentage = 0;
         return { ...INITIAL_STORE_SETTINGS, ...parsed };
       }
