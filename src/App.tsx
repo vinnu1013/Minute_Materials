@@ -747,97 +747,64 @@ export default function App() {
 
   const cartTotalItems = cart.reduce((sum, item) => sum + (item?.quantity || 0), 0);
 
-  const currentOrigin = typeof window !== 'undefined' ? window.location.origin : 'https://minutematerials.com';
-  const canonicalUrl = typeof window !== 'undefined' ? `${window.location.origin}${window.location.pathname}` : 'https://minutematerials.com';
+  const currentOrigin =
+    typeof window !== 'undefined' ? window.location.origin : 'https://www.minutematerials.online';
+  const canonicalUrl =
+    typeof window !== 'undefined'
+      ? `${window.location.origin}${window.location.pathname}`
+      : 'https://www.minutematerials.online/';
 
   const companyTitles: Record<Exclude<CompanyPageId, 'home'>, string> = {
-    about: 'About Us - Minute Materials (15-30 Min Jobsite Supply)',
-    categories: 'Material Categories - Minute Materials Hyderabad',
-    blog: 'Contractor Blog & Sizing Guides - Minute Materials',
-    faqs: 'FAQs - Minute Materials Express Delivery',
-    contact: 'Contact Us & Hub Location - Minute Materials',
+    about: 'About Minute Materials | Plumbing, Electrical, Fans & Lights in LB Nagar & Vanasthalipuram',
+    categories: 'Plumbing, Electrical, Fans, Lights & Tools Catalog | Minute Materials LB Nagar',
+    blog: 'Plumbing & Electrical Buying Guides | Minute Materials LB Nagar & Vanasthalipuram',
+    faqs: 'FAQs – 15-Min Material Delivery in LB Nagar & Vanasthalipuram | Minute Materials',
+    contact: 'Contact Minute Materials | LB Nagar & Vanasthalipuram Store (8332869926)',
   };
 
-  const pageTitle = activePage !== 'home'
-    ? companyTitles[activePage]
-    : activeCategory && activeCategory !== 'all'
-    ? `Minute Materials - ${getCategoryDisplayName(activeCategory, categories)} Supplies (15-30 Min Site Delivery)`
-    : 'Minute Materials - Express Jobsite Electrical, Plumbing, Fans, Lights & Tools Supply';
+  const pageTitle =
+    activePage !== 'home'
+      ? companyTitles[activePage]
+      : activeCategory && activeCategory !== 'all'
+      ? `${getCategoryDisplayName(activeCategory, categories)} in LB Nagar & Vanasthalipuram | Minute Materials`
+      : 'Minute Materials | Plumbing, Electrical, Fans & Lights in LB Nagar & Vanasthalipuram';
+
+  const pageDescription =
+    'Buy plumbing & electrical materials, ceiling/exhaust fans & LED lights in LB Nagar, Vanasthalipuram & nearby areas. 15-min express delivery. Call 8332869926!';
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
-      
       {/* React Helmet Document Head Management */}
       <Helmet>
         <title>{pageTitle}</title>
-        <meta
-          name="description"
-          content="Minute Materials delivers wholesale plumbing, electrical, and hardware supplies to active construction sites in 15-30 minutes across Hyderabad. Order via AI slip scan, WhatsApp, call, or online cart."
-        />
+        <meta name="description" content={pageDescription} />
         <meta
           name="keywords"
-          content="Minute Materials, plumbing materials delivery, electrical supplies online, Hyderabad jobsite express delivery, CPVC pipes fittings, copper wires switches, rapid contractor supply"
+          content="plumbing material LB Nagar, plumbing material Vanasthalipuram, electrical material LB Nagar, electrical material Vanasthalipuram, fans shop LB Nagar, ceiling fans Vanasthalipuram, exhaust fans, table fans, portable fans, LED lights LB Nagar, decorative lights Vanasthalipuram, tube lights, bed lights, LED bulbs, CPVC pipes fittings LB Nagar, UPVC pipes Vanasthalipuram, electrical switches wires Chintalkunta, plumbing electrical shop Hastinapuram, BN Reddy Nagar, Mansoorabad, Karmanghat, Bairamalguda, Sagar Ring Road, Nagole, Alkapuri, Kothapet, Chaitanyapuri, Dilsukhnagar, Saroornagar, Panama Godown, Sushma, Auto Nagar, Hayathnagar, Meerpet, Champapet, Injapur, hardware tools delivery Hyderabad, Minute Materials"
         />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="author" content="Minute Materials" />
         <link rel="canonical" href={canonicalUrl} />
 
-        {/* OpenGraph / Facebook Social Sharing Tags */}
+        {/* OpenGraph / WhatsApp / Facebook Social Sharing Tags */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Minute Materials" />
         <meta property="og:title" content={pageTitle} />
-        <meta
-          property="og:description"
-          content="Urgent material shortage on site? Minute Materials delivers wholesale plumbing, electrical, and hardware supplies in 15-30 mins direct to your jobsite."
-        />
+        <meta property="og:description" content={pageDescription} />
         <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:image" content={`${currentOrigin}/Logo.jpg`} />
-        <meta property="og:image:alt" content="Minute Materials - Rapid Jobsite Supply Network" />
+        <meta property="og:image" content={`${currentOrigin}/og-banner.jpg`} />
+        <meta
+          property="og:image:alt"
+          content="Minute Materials Logo – Express Plumbing, Electrical, Fans & Lights Delivery in LB Nagar & Vanasthalipuram"
+        />
         <meta property="og:locale" content="en_IN" />
 
         {/* Twitter / X Social Sharing Cards */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={pageTitle} />
-        <meta
-          name="twitter:description"
-          content="Urgent material shortage on site? We deliver genuine ISI plumbing & electrical supplies in 15-30 mins across Hyderabad."
-        />
-        <meta name="twitter:image" content={`${currentOrigin}/Logo.jpg`} />
-
-        {/* Schema.org Structured Data (JSON-LD) for Search Discovery */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "HardwareStore",
-            "name": "Minute Materials",
-            "url": canonicalUrl,
-            "logo": `${currentOrigin}/Logo.jpg`,
-            "description": "Minute Materials provides rapid 15-30 minute jobsite delivery for plumbing, electrical, and hardware materials across Hyderabad.",
-            "telephone": storeSettings.helplineNumber || "+918332869926",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": storeSettings.depotAddress || "Chinthalkunta / LB Nagar Ring Road",
-              "addressLocality": "Hyderabad",
-              "addressRegion": "Telangana",
-              "postalCode": "500074",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": storeSettings.depotLat || 17.3480,
-              "longitude": storeSettings.depotLng || 78.5510
-            },
-            "openingHoursSpecification": {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
-              ],
-              "opens": "06:00",
-              "closes": "23:00"
-            },
-            "priceRange": "₹₹"
-          })}
-        </script>
+        <meta property="twitter:description" content={pageDescription} />
+        <meta name="twitter:description" content={pageDescription} />
+        <meta name="twitter:image" content={`${currentOrigin}/og-banner.jpg`} />
       </Helmet>
 
       {/* Main Top Header */}

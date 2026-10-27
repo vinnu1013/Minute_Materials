@@ -8,18 +8,22 @@ export const DEPOT_LOCATION = {
   city: 'Hyderabad'
 };
 
-// Known local landmarks / zones
+// Known local landmarks / zones around LB Nagar & Vanasthalipuram Hub
 export const HYDERABAD_ZONES = [
-  { name: 'Central Express Zone', lat: 17.34265, lng: 78.55267, distanceKm: 1.2 },
-  { name: 'Dilsukhnagar / Kothapet', lat: 17.3688, lng: 78.5247, distanceKm: 3.5 },
-  { name: 'LB Nagar / Nagole', lat: 17.3480, lng: 78.5510, distanceKm: 4.2 },
-  { name: 'Uppal / Habsiguda', lat: 17.4018, lng: 78.5602, distanceKm: 6.8 },
-  { name: 'Secunderabad / MG Road', lat: 17.4399, lng: 78.4983, distanceKm: 11.5 },
-  { name: 'Begumpet / Punjagutta', lat: 17.4435, lng: 78.4518, distanceKm: 14.0 },
-  { name: 'Ameerpet / Kukatpally', lat: 17.4842, lng: 78.4021, distanceKm: 18.5 },
-  { name: 'Madhapur / Hitec City', lat: 17.4483, lng: 78.3808, distanceKm: 21.0 },
-  { name: 'Gachibowli / Financial District', lat: 17.4401, lng: 78.3489, distanceKm: 24.5 },
-  { name: 'Shamshabad / Airport Zone', lat: 17.2403, lng: 78.4294, distanceKm: 22.0 }
+  { name: 'Chinthalkunta / LB Nagar', lat: 17.3455, lng: 78.5522, distanceKm: 1.2 },
+  { name: 'Vanasthalipuram / Panama Godown', lat: 17.3292, lng: 78.5694, distanceKm: 2.6 },
+  { name: 'Sushma / Auto Nagar', lat: 17.3348, lng: 78.5765, distanceKm: 3.2 },
+  { name: 'Hastinapuram / BN Reddy Nagar', lat: 17.3198, lng: 78.5458, distanceKm: 3.1 },
+  { name: 'Mansoorabad / Sahara Estate', lat: 17.3502, lng: 78.5678, distanceKm: 2.8 },
+  { name: 'Bairamalguda / Karmanghat', lat: 17.3408, lng: 78.5326, distanceKm: 2.7 },
+  { name: 'Kothapet / Saroornagar', lat: 17.3612, lng: 78.5384, distanceKm: 3.6 },
+  { name: 'Nagole / Alkapuri', lat: 17.3728, lng: 78.5594, distanceKm: 4.4 },
+  { name: 'Dilsukhnagar / Chaitanyapuri', lat: 17.3688, lng: 78.5247, distanceKm: 4.8 },
+  { name: 'Meerpet / Badangpet', lat: 17.3185, lng: 78.5242, distanceKm: 5.0 },
+  { name: 'Champapet / Saidabad', lat: 17.3490, lng: 78.5130, distanceKm: 5.2 },
+  { name: 'Hayathnagar / Kuntloor', lat: 17.3270, lng: 78.6048, distanceKm: 6.2 },
+  { name: 'Injapur / Turkayamjal', lat: 17.2912, lng: 78.5680, distanceKm: 6.8 },
+  { name: 'Uppal / Habsiguda', lat: 17.4018, lng: 78.5602, distanceKm: 6.8 }
 ];
 
 /**

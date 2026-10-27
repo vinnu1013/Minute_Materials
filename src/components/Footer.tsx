@@ -12,6 +12,7 @@ import { StoreConfig, UserLocation, CategoryConfig } from '../types';
 import { DEFAULT_CATEGORIES } from '../data/categories';
 import { generateDirectWhatsAppChatUrl } from '../utils/whatsapp';
 import { CompanyPageId } from './CompanyPages';
+import { Logo } from './Logo';
 import {
   WhatsAppGlyph,
   WhatsAppBadgeIcon,
@@ -183,16 +184,19 @@ export const Footer: React.FC<FooterProps> = ({
             </ul>
           </div>
 
-          {/* Col 4: Emergency Jobsite Contact & Hub */}
+          {/* Col 4: Brand Logo, Emergency Jobsite Contact & Hub */}
           <div className="space-y-3">
+            <div className="pb-1">
+              <Logo size="md" showContainer={true} />
+            </div>
             <h4 className="text-white text-sm font-bold uppercase tracking-wider border-b border-navy-800 pb-2">
-              Emergency Contact & Hub
+              LB Nagar &amp; Vanasthalipuram Hub
             </h4>
             <div className="space-y-2 text-slate-300">
               <p className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                 <span>
-                  <strong>Main Express Hub:</strong> Chinthalkunta / LB Nagar Ring Road, Hyderabad.
+                  <strong>Main Express Hub:</strong> Chinthalkunta / LB Nagar Ring Road, Near Vanasthalipuram, Hyderabad – 500074.
                 </span>
               </p>
               <p className="flex items-center gap-2">
@@ -284,6 +288,72 @@ export const Footer: React.FC<FooterProps> = ({
                 </span>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Local SEO Keyword & Service Area Directory for Search Discovery */}
+        <div className="pt-6 border-t border-slate-800/80 space-y-4 text-[11px] leading-relaxed text-slate-400">
+          <div>
+            <h2 className="text-xs font-bold text-slate-200 uppercase tracking-wider mb-1.5">
+              Plumbing, Electrical, Fans &amp; Lights Store in LB Nagar &amp; Vanasthalipuram
+            </h2>
+            <p>
+              <strong className="text-slate-300">Minute Materials</strong> is your trusted express supplier for{' '}
+              <button
+                type="button"
+                onClick={() => onSelectCategory('plumbing')}
+                className="text-slate-300 hover:text-orange-400 underline decoration-slate-700 underline-offset-2 cursor-pointer"
+              >
+                Plumbing Materials
+              </button>{' '}
+              (CPVC, UPVC &amp; PVC pipes, elbows, tees, couplers, ball valves, brass FTA/MTA fittings, taps &amp; solvent cement),{' '}
+              <button
+                type="button"
+                onClick={() => onSelectCategory('electrical')}
+                className="text-slate-300 hover:text-orange-400 underline decoration-slate-700 underline-offset-2 cursor-pointer"
+              >
+                Electrical Materials
+              </button>{' '}
+              (FRLS copper wires, modular switches, sockets, MCBs, distribution boxes &amp; PVC conduits),{' '}
+              <button
+                type="button"
+                onClick={() => onSelectCategory('fans')}
+                className="text-slate-300 hover:text-orange-400 underline decoration-slate-700 underline-offset-2 cursor-pointer"
+              >
+                Fans
+              </button>{' '}
+              (ceiling fans, exhaust fans, table fans &amp; portable fans),{' '}
+              <button
+                type="button"
+                onClick={() => onSelectCategory('lights')}
+                className="text-slate-300 hover:text-orange-400 underline decoration-slate-700 underline-offset-2 cursor-pointer"
+              >
+                LED &amp; Decorative Lights
+              </button>{' '}
+              (decorative lights, LED tube lights, bed lights &amp; LED bulbs), and{' '}
+              <button
+                type="button"
+                onClick={() => onSelectCategory('tools')}
+                className="text-slate-300 hover:text-orange-400 underline decoration-slate-700 underline-offset-2 cursor-pointer"
+              >
+                Hardware &amp; Tools
+              </button>{' '}
+              with 10–15 minute doorstep and jobsite delivery.
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">
+              Nearby Locations Served Around LB Nagar &amp; Vanasthalipuram:
+            </h3>
+            <p className="text-slate-400">
+              LB Nagar • Vanasthalipuram • Chinthalkunta • Panama Godown • Sushma Crossroads • NGOs Colony • Sachivalaya Nagar • Pragathi Nagar • Vaidehi Nagar • Hastinapuram • BN Reddy Nagar • Mansoorabad • Sahara Estate • Bairamalguda • Sagar Ring Road • Karmanghat • Nagole • Alkapuri Colony • Kothapet • Mohan Nagar • Chaitanyapuri • Dilsukhnagar • Saroornagar • Auto Nagar • Hayathnagar • Kuntloor • Meerpet • Badangpet • Jillalguda • Champapet • Injapur • Turkayamjal, Hyderabad, Telangana.
+            </p>
+          </div>
+
+          <div className="pt-3 border-t border-slate-800/60 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-500">
+            <p>© {new Date().getFullYear()} Minute Materials (minutematerials.online). All rights reserved.</p>
+            <p>Express Order &amp; WhatsApp Helpline: +91 {callPhone}</p>
           </div>
         </div>
       </div>

@@ -23,7 +23,8 @@ export const Logo: React.FC<LogoProps> = ({
   const logoContent = (
     <img 
       src="/Logo.jpg" 
-      alt="Minute Materials Logo" 
+      alt="Minute Materials Logo – Plumbing, Electrical, Fans & Lights in LB Nagar & Vanasthalipuram" 
+      title="Minute Materials – Express Plumbing, Electrical, Fans & Lights Store"
       referrerPolicy="no-referrer"
       onError={(e) => {
         const target = e.currentTarget;

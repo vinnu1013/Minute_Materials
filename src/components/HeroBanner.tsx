@@ -42,16 +42,16 @@ export const HeroBanner: React.FC = () => {
         {/* Content Box */}
         <div className="relative z-10 max-w-2xl lg:max-w-3xl">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300/80 text-xs font-black uppercase tracking-wider mb-2 sm:mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> Express 15-Min Delivery Hub
+            <Sparkles className="w-3.5 h-3.5 text-amber-600" /> LB Nagar &amp; Vanasthalipuram • 15-Min Delivery
           </div>
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-            Plumbing &amp; Electrical <br className="hidden sm:inline" />
+            Plumbing, Electrical, <br className="hidden sm:inline" />
             <span className="text-amber-600">
-              Supplies Express Delivery
+              Fans &amp; Lights Express Store
             </span>
           </h1>
-          <p className="mt-2 text-xs sm:text-base text-slate-600 font-medium max-w-xl">
-            Order CPVC/PVC pipes, MCBs, wires, taps, valves, and trade tools. Delivered in 10-15 minutes across Hyderabad.
+          <p className="mt-2 text-xs sm:text-base text-slate-700 font-medium max-w-2xl leading-relaxed">
+            Shop genuine plumbing pipes &amp; fittings, electrical wires &amp; switches, ceiling/exhaust/table fans, decorative &amp; LED lights, and tools. Fast 10–15 min delivery across <strong>LB Nagar, Vanasthalipuram</strong>, Chinthalkunta, Hastinapuram, BN Reddy Nagar, Nagole, Karmanghat, Kothapet &amp; nearby areas.
           </p>
         </div>
 

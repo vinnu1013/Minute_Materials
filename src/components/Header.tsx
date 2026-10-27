@@ -94,9 +94,9 @@ export const Header: React.FC<HeaderProps> = ({
   const [recentSearches, setRecentSearches] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem('instant_supply_recent_searches');
-      return saved ? JSON.parse(saved) : ['CPVC Pipe', 'MCB Breaker', 'Brass Valve', 'Copper Wire', 'PEX Fitting'];
+      return saved ? JSON.parse(saved) : ['Elbow 90°', 'Ceiling Fan', 'Tube Light', 'Exhaust Fan', 'LED Bulb'];
     } catch {
-      return ['CPVC Pipe', 'MCB Breaker', 'Brass Valve', 'Copper Wire', 'PEX Fitting'];
+      return ['Elbow 90°', 'Ceiling Fan', 'Tube Light', 'Exhaust Fan', 'LED Bulb'];
     }
   });
 
@@ -258,7 +258,7 @@ export const Header: React.FC<HeaderProps> = ({
               <Search className="w-4 h-4 absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-slate-400 shrink-0" />
               <input
                 type="text"
-                placeholder="Search copper, wire, breakers, PEX..."
+                placeholder="Search plumbing, electrical, fans, LED lights, tools..."
                 value={searchTerm}
                 onFocus={() => {
                   setShowRecentDesktop(true);
