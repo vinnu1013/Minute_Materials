@@ -22,7 +22,12 @@ import {
 } from 'lucide-react';
 import { groupProductsByBaseName } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
-import { DEFAULT_CATEGORIES, getCategoryDisplayName } from '../data/categories';
+import {
+  DEFAULT_CATEGORIES,
+  getCategoryDisplayName,
+  isDetailPageCategory,
+  getProductGalleryImages,
+} from '../data/categories';
 
 interface ProductCatalogProps {
   products: Product[];
@@ -40,6 +45,7 @@ interface ProductCatalogProps {
   isAdmin: boolean;
   onQuickEditPrice?: (product?: Product) => void;
   onDeleteProduct?: (productId: string) => void;
+  onSelectProduct?: (product: Product) => void;
 }
 
 function getCategoryIcon(categoryId: string, className = 'w-3.5 h-3.5') {
@@ -52,6 +58,51 @@ function getCategoryIcon(categoryId: string, className = 'w-3.5 h-3.5') {
   if (cat === 'tools') return <Wrench className={className} />;
   return <Package className={className} />;
 }
+
+const CatalogCardAutoImage: React.FC<{ images: string[]; alt: string }> = ({ images, alt }) => {
+  const [idx, setIdx] = useState(0);
+
+  useEffect(() => {
+    setIdx(0);
+  }, [images.length, images[0]]);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
+    }
+    const timer = window.setInterval(() => {
+      setIdx((prev) => (prev + 1) % images.length);
+    }, 3200);
+    return () => window.clearInterval(timer);
+  }, [images]);
+
+  const currentSrc = images[idx] || images[0];
+  return (
+    <>
+      <img
+        src={currentSrc}
+        alt={alt}
+        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+      />
+      {images.length > 1 && (
+        <div className="absolute bottom-1 right-1 flex items-center gap-0.5 bg-white/85 px-1 py-0.5 rounded-full shadow-2xs pointer-events-none">
+          {images.slice(0, 5).map((_, dotIdx) => (
+            <span
+              key={dotIdx}
+              className={`h-1 rounded-full transition-all ${
+                dotIdx === idx % 5 ? 'w-2.5 bg-amber-500' : 'w-1 bg-slate-300'
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
 export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   products,
@@ -69,6 +120,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   isAdmin,
   onQuickEditPrice,
   onDeleteProduct,
+  onSelectProduct,
 }) => {
   const [sortBy, setSortBy] = useState<'popular' | 'price_asc' | 'price_desc' | 'name'>('popular');
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
@@ -530,7 +582,13 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               ? sortedPositive[0] || matchingVariants[0] || group.variants[0]
               : group.variants[0];
 
-            const displayImage = representativeWithImage?.image || product.image;
+            const cardGalleryImages = getProductGalleryImages(
+              representativeWithImage || product,
+              group.variants
+            );
+            const displayImage = cardGalleryImages[0] || representativeWithImage?.image || product.image;
+            const opensDetailPage =
+              Boolean(onSelectProduct) && isDetailPageCategory(product.category, categories);
             const minPrice = sortedPositive.length > 0 ? sortedPositive[0].price : 0;
             const maxPrice =
               sortedPositive.length > 0 ? sortedPositive[sortedPositive.length - 1].price : 0;
@@ -549,12 +607,32 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             return (
               <div
                 key={group.key}
-                className="bg-white border border-slate-200/60 hover:border-amber-400/80 rounded-xl p-1.5 sm:p-2.5 flex flex-col justify-between transition duration-200 hover:shadow-md relative group shadow-sm"
+                onClick={opensDetailPage ? () => onSelectProduct?.(product) : undefined}
+                role={opensDetailPage ? 'button' : undefined}
+                tabIndex={opensDetailPage ? 0 : undefined}
+                onKeyDown={
+                  opensDetailPage
+                    ? (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                          e.preventDefault();
+                          onSelectProduct?.(product);
+                        }
+                      }
+                    : undefined
+                }
+                className={`bg-white border border-slate-200/60 hover:border-amber-400/80 rounded-xl p-1.5 sm:p-2.5 flex flex-col justify-between transition duration-200 hover:shadow-md relative group shadow-sm ${
+                  opensDetailPage ? 'cursor-pointer' : ''
+                }`}
               >
                 {/* Product Header */}
                 <div>
                   <div className="relative mb-1.5 sm:mb-2 bg-slate-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center border border-slate-200/40">
-                    {displayImage && displayImage.trim() !== '' ? (
+                    {cardGalleryImages.length > 0 ? (
+                      <CatalogCardAutoImage
+                        images={cardGalleryImages}
+                        alt={hasMultipleSizes ? group.baseName : product.name}
+                      />
+                    ) : displayImage && displayImage.trim() !== '' ? (
                       <img
                         src={displayImage}
                         alt={hasMultipleSizes ? group.baseName : product.name}
@@ -751,7 +829,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   </div>
 
                   {/* Add to Cart / Select Size / Quantity Count Button */}
-                  <div className="shrink-0">
+                  <div className="shrink-0" onClick={(e) => e.stopPropagation()}>
                     {hasMultipleSizes ? (
                       <button
                         type="button"

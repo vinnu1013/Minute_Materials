@@ -17,7 +17,7 @@ import {
 import { Product, CartItem, CategoryConfig } from '../types';
 import { groupProductsByBaseName } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
-import { getCategoryDisplayName } from '../data/categories';
+import { getCategoryDisplayName, getProductGalleryImages, isDetailPageCategory } from '../data/categories';
 
 interface PriceDropModalProps {
   isOpen: boolean;
@@ -27,6 +27,7 @@ interface PriceDropModalProps {
   cartItems?: CartItem[];
   onUpdateQuantity?: (productId: string, delta: number) => void;
   onOpenWhatsAppForProduct?: (product: Product) => void;
+  onSelectProduct?: (product: Product) => void;
   categories?: CategoryConfig[];
 }
 
@@ -38,6 +39,7 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
   cartItems = [],
   onUpdateQuantity,
   onOpenWhatsAppForProduct,
+  onSelectProduct,
   categories,
 }) => {
   const [activeSizeGroupKey, setActiveSizeGroupKey] = useState<string | null>(null);
@@ -123,17 +125,31 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                     ? group.variants.reduce((sum, v) => sum + getCartQuantity(v.id), 0)
                     : singleQtyInCart;
 
+                  const canOpenDetails =
+                    Boolean(onSelectProduct) && isDetailPageCategory(product.category, categories);
+                  const coverImage = getProductGalleryImages(product)[0] || product.image;
+
                   return (
                     <div
                       key={group.key}
-                      className="bg-white border border-slate-200 hover:border-amber-400 rounded-xl p-2 sm:p-3 flex flex-col justify-between transition shadow-sm h-full group"
+                      onClick={
+                        canOpenDetails
+                          ? () => {
+                              onClose();
+                              onSelectProduct?.(product);
+                            }
+                          : undefined
+                      }
+                      className={`bg-white border border-slate-200 hover:border-amber-400 rounded-xl p-2 sm:p-3 flex flex-col justify-between transition shadow-sm h-full group ${
+                        canOpenDetails ? 'cursor-pointer' : ''
+                      }`}
                     >
                       <div>
                         {/* Image & Discount Badge */}
                         <div className="relative mb-2 bg-slate-50 rounded-lg overflow-hidden aspect-square flex items-center justify-center border border-slate-100">
-                          {product.image && product.image.trim() !== '' ? (
+                          {coverImage && coverImage.trim() !== '' ? (
                             <img
-                              src={product.image}
+                              src={coverImage}
                               alt={hasMultipleSizes ? group.baseName : product.name}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                             />
@@ -204,7 +220,10 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                         {hasMultipleSizes ? (
                           <button
                             type="button"
-                            onClick={() => setActiveSizeGroupKey(group.key)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setActiveSizeGroupKey(group.key);
+                            }}
                             className={`font-bold px-2 sm:px-3 py-1.5 rounded-lg text-[10px] sm:text-xs transition flex items-center justify-center gap-1 shadow-xs shrink-0 ${
                               totalGroupCartQty > 0
                                 ? 'bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300'
@@ -217,14 +236,20 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                             </span>
                           </button>
                         ) : singleQtyInCart > 0 ? (
-                          <div className="flex items-center justify-between bg-amber-50 text-slate-900 rounded-lg p-0.5 border border-amber-300 shrink-0">
+                          <div
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex items-center justify-between bg-amber-50 text-slate-900 rounded-lg p-0.5 border border-amber-300 shrink-0"
+                          >
                             <button
                               type="button"
-                              onClick={() =>
-                                onUpdateQuantity
-                                  ? onUpdateQuantity(product.id, -1)
-                                  : onAddToCart(product, -1)
-                              }
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                if (onUpdateQuantity) {
+                                  onUpdateQuantity(product.id, -1);
+                                } else {
+                                  onAddToCart(product, -1);
+                                }
+                              }}
                               className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-white hover:bg-amber-100 text-amber-700 border border-amber-200 flex items-center justify-center transition"
                             >
                               <Minus className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
@@ -234,7 +259,10 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                             </span>
                             <button
                               type="button"
-                              onClick={() => onAddToCart(product, 1)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                onAddToCart(product, 1);
+                              }}
                               className="w-5 h-5 sm:w-6 sm:h-6 rounded-md bg-amber-500 hover:bg-amber-400 text-slate-950 flex items-center justify-center transition"
                             >
                               <Plus className="w-2.5 h-2.5 sm:w-3 sm:h-3 stroke-[3]" />
@@ -243,7 +271,10 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                         ) : (
                           <button
                             type="button"
-                            onClick={() => onAddToCart(product, 1)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onAddToCart(product, 1);
+                            }}
                             className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2 sm:px-3 py-1.5 rounded-lg text-[10px] sm:text-xs transition flex items-center justify-center gap-1 shadow-xs shrink-0"
                           >
                             <ShoppingCart className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> + Add

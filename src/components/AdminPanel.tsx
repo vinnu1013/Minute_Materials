@@ -54,12 +54,20 @@ import {
   getCategorySizePresets,
   generateAutoSku,
   slugifyCategoryId,
+  getProductGalleryImages,
 } from '../data/categories';
 import {
   groupProductsByBaseName,
   ProductGroup,
   getVariantSizeLabel,
 } from '../utils/productGrouping';
+import { MultiImageUploader } from './MultiImageUploader';
+import {
+  ProductSpecsEditor,
+  ProductRichDetailsValue,
+  createRichDetailsStateFromProduct,
+  serializeRichDetailsToProductFields,
+} from './ProductSpecsEditor';
 
 export interface DbStatusInfo {
   connected: boolean;
@@ -100,6 +108,8 @@ interface AdminPanelProps {
   onUpdateBookingStatus: (bookingId: string, status: Booking['status']) => void;
   onUpdateStoreSettings: (settings: Partial<StoreSettings>) => void;
   onCloseAdmin: () => void;
+  initialEditProduct?: Product | null;
+  onClearInitialEditProduct?: () => void;
 }
 
 interface SizeDraftRow {
@@ -194,6 +204,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   onUpdateBookingStatus,
   onUpdateStoreSettings,
   onCloseAdmin,
+  initialEditProduct,
+  onClearInitialEditProduct,
 }) => {
   const [activeTab, setActiveTab] = useState<'prices' | 'categories' | 'bookings' | 'settings'>('prices');
 
@@ -374,7 +386,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [editOriginalPrice, setEditOriginalPrice] = useState<number | undefined>(undefined);
   const [editStockCount, setEditStockCount] = useState<number>(0);
   const [editStockStatus, setEditStockStatus] = useState<StockStatus>('in_stock');
-  const [editImage, setEditImage] = useState<string>('');
+  const [editImages, setEditImages] = useState<string[]>([]);
+  const [editDescription, setEditDescription] = useState<string>('');
+  const [editRichDetails, setEditRichDetails] = useState<ProductRichDetailsValue>(() =>
+    createRichDetailsStateFromProduct(null)
+  );
   const [editHsnCode, setEditHsnCode] = useState<string>('');
   const [editPartCode, setEditPartCode] = useState<string>('');
   const [editPopular, setEditPopular] = useState<boolean>(false);
@@ -400,11 +416,21 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setEditOriginalPrice(product.originalPrice);
     setEditStockCount(product.stockCount);
     setEditStockStatus(product.stockStatus);
-    setEditImage(product.image || '');
+    setEditImages(getProductGalleryImages(product));
+    setEditDescription(product.description || '');
+    setEditRichDetails(createRichDetailsStateFromProduct(product));
     setEditHsnCode(product.hsnCode || '');
     setEditPartCode(product.partCode || '');
     setEditPopular(!!product.popular);
   };
+
+  useEffect(() => {
+    if (initialEditProduct) {
+      setActiveTab('prices');
+      handleStartEditProduct(initialEditProduct);
+      onClearInitialEditProduct?.();
+    }
+  }, [initialEditProduct]);
 
   const handleSaveProductEdit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -417,8 +443,13 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         ? `${cleanBase} ${cleanSize}`
         : editName.trim() || editingProduct.name;
 
+    const cleanGallery = editImages.map((u) => (u || '').trim()).filter(Boolean);
+    const primaryImg = cleanGallery[0] || '';
+    const richFields = serializeRichDetailsToProductFields(editRichDetails);
+
     const updated: Product = {
       ...editingProduct,
+      ...richFields,
       name: computedName,
       baseName: cleanBase || undefined,
       sizeLabel: cleanSize || undefined,
@@ -429,7 +460,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       originalPrice: editOriginalPrice ? Number(editOriginalPrice) : undefined,
       stockCount: Number(editStockCount),
       stockStatus: editStockStatus,
-      image: editImage,
+      image: primaryImg,
+      images: cleanGallery,
+      description: editDescription.trim(),
       hsnCode: editHsnCode,
       partCode: editPartCode,
       popular: editPopular,
@@ -469,17 +502,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setTimeout(() => setBulkSuccessMessage(''), 3500);
   };
 
-  const handleEditImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setEditImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   // ============================================================================
   // MANAGE EXISTING MAIN MATERIAL GROUP & ALL SIZES MODAL
   // ============================================================================
@@ -488,7 +510,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [groupCategory, setGroupCategory] = useState<string>('plumbing');
   const [groupSubcategory, setGroupSubcategory] = useState<string>('');
   const [groupUnit, setGroupUnit] = useState<ProductUnit>('unit');
-  const [groupImage, setGroupImage] = useState<string>('');
+  const [groupImages, setGroupImages] = useState<string[]>([]);
+  const [groupRichDetails, setGroupRichDetails] = useState<ProductRichDetailsValue>(() =>
+    createRichDetailsStateFromProduct(null)
+  );
   const [groupHsn, setGroupHsn] = useState<string>('');
   const [groupPopular, setGroupPopular] = useState<boolean>(false);
   const [groupDescription, setGroupDescription] = useState<string>('');
@@ -497,13 +522,15 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
 
   const handleOpenGroupEditor = (group: ProductGroup, appendEmptySize = false) => {
     const first = group.variants[0];
-    const withImg = group.variants.find((v) => v.image && v.image.trim() !== '') || first;
+    const withImg =
+      group.variants.find((v) => getProductGalleryImages(v).length > 0) || first;
     setEditingGroup(group);
     setGroupBaseName(group.baseName);
     setGroupCategory(group.category);
     setGroupSubcategory(group.subcategory || first?.subcategory || '');
     setGroupUnit(first?.unit || 'unit');
-    setGroupImage(withImg?.image || '');
+    setGroupImages(getProductGalleryImages(withImg, group.variants));
+    setGroupRichDetails(createRichDetailsStateFromProduct(first));
     setGroupHsn(first?.hsnCode || '');
     setGroupPopular(group.popular);
     setGroupDescription(first?.description || '');
@@ -537,15 +564,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setGroupVariantRows(rows);
   };
 
-  const handleGroupImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => setGroupImage(reader.result as string);
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSaveGroupEditor = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!editingGroup || !groupBaseName.trim()) return;
@@ -563,6 +581,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       }
     }
 
+    const cleanGallery = groupImages.map((u) => (u || '').trim()).filter(Boolean);
+    const primaryGroupImg = cleanGallery[0] || '';
+    const richFields = serializeRichDetailsToProductFields(groupRichDetails);
+
     const isMulti = validRows.length > 1 || Boolean(validRows[0]?.sizeLabel.trim());
     const updatesToSave: Product[] = [];
     const creationsToSave: Array<Partial<Product>> = [];
@@ -579,6 +601,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         if (origVariant) {
           updatesToSave.push({
             ...origVariant,
+            ...richFields,
             name: fullName,
             baseName: isMulti ? cleanBase : undefined,
             sizeLabel: isMulti ? sz : undefined,
@@ -592,13 +615,15 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
             sku: row.sku.trim() || origVariant.sku,
             partCode: row.partCode.trim(),
             hsnCode: groupHsn.trim(),
-            image: groupImage,
+            image: primaryGroupImg,
+            images: cleanGallery,
             popular: groupPopular,
-            description: groupDescription,
+            description: groupDescription.trim(),
           });
         }
       } else {
         creationsToSave.push({
+          ...richFields,
           name: fullName,
           baseName: isMulti ? cleanBase : undefined,
           sizeLabel: isMulti ? sz : undefined,
@@ -612,9 +637,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
           sku: row.sku.trim() || generateAutoSku(groupCategory, cleanBase, sz, idx),
           partCode: row.partCode.trim(),
           hsnCode: groupHsn.trim(),
-          image: groupImage,
+          image: primaryGroupImg,
+          images: cleanGallery,
           popular: groupPopular,
-          description: groupDescription,
+          description: groupDescription.trim(),
         });
       }
     });
@@ -680,7 +706,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [newProductUnit, setNewProductUnit] = useState<ProductUnit>('unit');
   const [newProductHsnCode, setNewProductHsnCode] = useState('');
   const [newProductPopular, setNewProductPopular] = useState(false);
-  const [newProductImage, setNewProductImage] = useState('');
+  const [newProductImages, setNewProductImages] = useState<string[]>([]);
+  const [newProductRichDetails, setNewProductRichDetails] = useState<ProductRichDetailsValue>(() =>
+    createRichDetailsStateFromProduct(null)
+  );
   const [newProductDesc, setNewProductDesc] = useState('');
 
   // Bulk Table / Paste State
@@ -750,7 +779,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setSingleOriginalPrice('');
     setSingleStock('100');
     setSingleSku('');
-    setNewProductImage('');
+    setNewProductImages([]);
+    setNewProductRichDetails(createRichDetailsStateFromProduct(null));
     setNewProductDesc('');
     setSizeRows([createEmptySizeRow(), createEmptySizeRow()]);
     setComposerToast('');
@@ -760,7 +790,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   // Clone / Duplicate an existing group into the Composer for fast entry
   const handleCloneGroup = (group: ProductGroup) => {
     const first = group.variants[0];
-    const withImg = group.variants.find((v) => v.image && v.image.trim() !== '') || first;
+    const withImg =
+      group.variants.find((v) => getProductGalleryImages(v).length > 0) || first;
     setComposerMode('builder');
     setNewProductCategory(group.category);
     setNewProductSubcategory(group.subcategory || '');
@@ -768,7 +799,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     setNewProductUnit(first?.unit || 'unit');
     setNewProductHsnCode(first?.hsnCode || '');
     setNewProductPopular(group.popular);
-    setNewProductImage(withImg?.image || '');
+    setNewProductImages(getProductGalleryImages(withImg, group.variants));
+    setNewProductRichDetails(createRichDetailsStateFromProduct(first));
     setNewProductDesc(first?.description || '');
 
     if (group.variants.length > 1 || first?.sizeLabel) {
@@ -896,17 +928,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     }
   };
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setNewProductImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const saveBuilderMaterial = async (keepOpenForNext: boolean) => {
     const cleanBase = newBaseName.trim();
     if (!cleanBase) return;
@@ -915,6 +936,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       ensureSubcategoryExistsInConfig(newProductCategory, newProductSubcategory.trim());
     }
 
+    const cleanGallery = newProductImages.map((u) => (u || '').trim()).filter(Boolean);
+    const primaryImage = cleanGallery[0] || '';
+    const richFields = serializeRichDetailsToProductFields(newProductRichDetails);
+
     const itemsToCreate: Array<Partial<Product>> = [];
 
     if (!hasMultipleSizesMode) {
@@ -922,6 +947,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       const origVal = singleOriginalPrice ? Number(singleOriginalPrice) : undefined;
       const stockVal = Math.max(0, Number(singleStock) || 100);
       itemsToCreate.push({
+        ...richFields,
         name: cleanBase,
         category: newProductCategory,
         subcategory: newProductSubcategory.trim(),
@@ -933,7 +959,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         sku: singleSku.trim() || generateAutoSku(newProductCategory, cleanBase),
         hsnCode: newProductHsnCode.trim(),
         popular: newProductPopular,
-        image: newProductImage,
+        image: primaryImage,
+        images: cleanGallery,
         description: newProductDesc.trim(),
       });
     } else {
@@ -946,6 +973,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         const origVal = row.originalPrice ? Number(row.originalPrice) : undefined;
         const stockVal = Math.max(0, Number(row.stockCount) || 100);
         itemsToCreate.push({
+          ...richFields,
           name: `${cleanBase} ${sz}`,
           baseName: cleanBase,
           sizeLabel: sz,
@@ -960,7 +988,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
           partCode: row.partCode.trim(),
           hsnCode: newProductHsnCode.trim(),
           popular: newProductPopular,
-          image: newProductImage,
+          image: primaryImage,
+          images: cleanGallery,
           description: newProductDesc.trim(),
         });
       });
@@ -990,6 +1019,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       setSinglePrice('');
       setSingleOriginalPrice('');
       setSingleSku('');
+      setNewProductImages([]);
+      setNewProductRichDetails(createRichDetailsStateFromProduct(null));
+      setNewProductDesc('');
       setSizeRows([createEmptySizeRow(), createEmptySizeRow()]);
       setTimeout(() => {
         mainNameInputRef.current?.focus();
@@ -3301,70 +3333,47 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     )}
                   </div>
 
-                  {/* Step 4: Optional Image, Favorite & Description */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                      <label className="block font-bold text-slate-700">
-                        Material Image (Shared across sizes)
-                      </label>
-                      <div className="flex items-center gap-3">
-                        {newProductImage ? (
-                          <img
-                            src={newProductImage}
-                            alt="Preview"
-                            className="w-12 h-12 rounded-lg object-cover bg-white border border-slate-200 shrink-0"
-                          />
-                        ) : (
-                          <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                            {getCategorySmallIcon(newProductCategory)}
-                          </div>
-                        )}
-                        <div className="flex-1 space-y-1.5 min-w-0">
+                  {/* Step 4: Multiple Product Images, Description & Rich Specifications */}
+                  <div className="space-y-3">
+                    <MultiImageUploader
+                      images={newProductImages}
+                      onChange={setNewProductImages}
+                      label="Product Photos (Upload 1 or Multiple Images)"
+                      helperText="When 2 or more images are added, they slide automatically on the product details page & catalog."
+                    />
+
+                    <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-2">
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <label className="block font-bold text-slate-700">
+                          Product Description (Optional)
+                        </label>
+                        <label className="flex items-center gap-2 cursor-pointer">
                           <input
-                            type="text"
-                            placeholder="Image URL or /local_photo.jpg"
-                            value={newProductImage}
-                            onChange={(e) => setNewProductImage(e.target.value)}
-                            className="w-full bg-white border border-slate-300 text-slate-900 px-2.5 py-1.5 rounded-lg text-xs"
+                            type="checkbox"
+                            checked={newProductPopular}
+                            onChange={(e) => setNewProductPopular(e.target.checked)}
+                            className="w-4 h-4 rounded accent-amber-500 cursor-pointer"
                           />
-                          <label className="cursor-pointer inline-flex items-center gap-1.5 text-[11px] font-bold text-amber-800 hover:text-amber-900 bg-amber-50 px-2.5 py-1 rounded border border-amber-200">
-                            <Upload className="w-3.5 h-3.5" /> Upload Photo from Device
-                            <input
-                              type="file"
-                              accept="image/*"
-                              onChange={handleImageUpload}
-                              className="hidden"
-                            />
-                          </label>
-                        </div>
+                          <span className="text-xs font-bold text-amber-900">
+                            ★ Mark as Trade Favorite
+                          </span>
+                        </label>
                       </div>
+                      <textarea
+                        rows={2}
+                        placeholder="Detailed product features, energy rating, motor/LED/tool highlights..."
+                        value={newProductDesc}
+                        onChange={(e) => setNewProductDesc(e.target.value)}
+                        className="w-full bg-white border border-slate-300 text-slate-900 px-2.5 py-1.5 rounded-lg text-xs"
+                      />
                     </div>
 
-                    <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200 flex flex-col justify-between">
-                      <div>
-                        <label className="block font-bold text-slate-700 mb-1">
-                          Short Description (Optional)
-                        </label>
-                        <input
-                          type="text"
-                          placeholder="Brand, rating, warranty or specs..."
-                          value={newProductDesc}
-                          onChange={(e) => setNewProductDesc(e.target.value)}
-                          className="w-full bg-white border border-slate-300 text-slate-900 px-2.5 py-1.5 rounded-lg text-xs"
-                        />
-                      </div>
-                      <label className="flex items-center gap-2 pt-1 cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={newProductPopular}
-                          onChange={(e) => setNewProductPopular(e.target.checked)}
-                          className="w-4 h-4 rounded accent-amber-500 cursor-pointer"
-                        />
-                        <span className="text-xs font-bold text-amber-900">
-                          ★ Mark as Trade Favorite
-                        </span>
-                      </label>
-                    </div>
+                    <ProductSpecsEditor
+                      categoryId={newProductCategory}
+                      categories={categories}
+                      value={newProductRichDetails}
+                      onChange={setNewProductRichDetails}
+                    />
                   </div>
 
                   {/* Action Footer: Cancel | Save & Add Next | Save & Close */}
@@ -3731,38 +3740,26 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   </div>
                 </div>
 
-                {/* Shared Image, Unit & Favorite */}
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center">
-                  <div className="sm:col-span-6 flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
-                    {groupImage ? (
-                      <img
-                        src={groupImage}
-                        alt=""
-                        className="w-11 h-11 rounded-lg object-cover bg-white border border-slate-200 shrink-0"
-                      />
-                    ) : (
-                      <div className="w-11 h-11 rounded-lg bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                        {getCategorySmallIcon(groupCategory)}
-                      </div>
-                    )}
-                    <div className="flex-1 space-y-1 min-w-0">
-                      <input
-                        type="text"
-                        placeholder="Shared Image URL..."
-                        value={groupImage}
-                        onChange={(e) => setGroupImage(e.target.value)}
-                        className="w-full bg-white border border-slate-300 rounded px-2 py-1 text-xs"
-                      />
-                      <label className="cursor-pointer inline-flex items-center gap-1 text-[11px] font-bold text-amber-800">
-                        <Upload className="w-3 h-3" /> Upload Device Image
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleGroupImageUpload}
-                          className="hidden"
-                        />
-                      </label>
-                    </div>
+                {/* Shared Multi-Image Gallery, Unit, Description & Specifications */}
+                <MultiImageUploader
+                  images={groupImages}
+                  onChange={setGroupImages}
+                  label="Shared Product Photos (Multiple Images Supported)"
+                  helperText="Add 2+ photos to automatically slide images on the product details page."
+                />
+
+                <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-start">
+                  <div className="sm:col-span-6">
+                    <label className="block font-bold text-slate-700 mb-1">
+                      Product Description
+                    </label>
+                    <textarea
+                      rows={2}
+                      value={groupDescription}
+                      onChange={(e) => setGroupDescription(e.target.value)}
+                      placeholder="Detailed product overview..."
+                      className="w-full bg-slate-50 border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs"
+                    />
                   </div>
 
                   <div className="sm:col-span-3">
@@ -3780,7 +3777,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     </select>
                   </div>
 
-                  <div className="sm:col-span-3 pt-4">
+                  <div className="sm:col-span-3 pt-6">
                     <label className="flex items-center gap-2 cursor-pointer">
                       <input
                         type="checkbox"
@@ -3792,6 +3789,13 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     </label>
                   </div>
                 </div>
+
+                <ProductSpecsEditor
+                  categoryId={groupCategory}
+                  categories={categories}
+                  value={groupRichDetails}
+                  onChange={setGroupRichDetails}
+                />
 
                 {/* Sizes Table */}
                 <div className="border border-slate-200 rounded-xl p-3.5 space-y-2.5">
@@ -3994,7 +3998,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
         {/* ===================================================================== */}
         {editingProduct && (
           <div className="fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-            <div className="bg-white border border-slate-200 rounded-2xl max-w-md w-full p-6 text-slate-900 shadow-2xl relative space-y-4 my-8 max-h-[90vh] overflow-y-auto">
+            <div className="bg-white border border-slate-200 rounded-2xl max-w-2xl w-full p-5 sm:p-6 text-slate-900 shadow-2xl relative space-y-4 my-8 max-h-[92vh] overflow-y-auto">
               <button
                 type="button"
                 onClick={() => setEditingProduct(null)}
@@ -4006,12 +4010,14 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
               <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
                 <Edit3 className="w-5 h-5 text-amber-600" />
                 <div>
-                  <h3 className="text-lg font-black text-slate-900">Edit Material Details</h3>
+                  <h3 className="text-lg font-black text-slate-900">
+                    Edit Material Details &amp; Photos
+                  </h3>
                   <p className="text-[11px] text-slate-500 font-mono">SKU: {editingProduct.sku}</p>
                 </div>
               </div>
 
-              <form onSubmit={handleSaveProductEdit} className="space-y-3 text-xs">
+              <form onSubmit={handleSaveProductEdit} className="space-y-3.5 text-xs">
                 <div>
                   <label className="block font-bold text-slate-700 mb-1">Full Display Name</label>
                   <input
@@ -4084,40 +4090,12 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                   </div>
                 </div>
 
-                <div className="space-y-2 bg-slate-50 p-3 rounded-xl border border-slate-200">
-                  <label className="block font-bold text-slate-700">Material Photo</label>
-                  <div className="flex items-center gap-3">
-                    {editImage ? (
-                      <img
-                        src={editImage}
-                        alt="Preview"
-                        className="w-12 h-12 rounded-lg object-cover bg-white border border-slate-200 shrink-0"
-                      />
-                    ) : (
-                      <div className="w-12 h-12 rounded-lg bg-white border border-slate-200 flex items-center justify-center shrink-0">
-                        {getCategorySmallIcon(editCategory)}
-                      </div>
-                    )}
-                    <div className="flex-1 space-y-1.5">
-                      <input
-                        type="text"
-                        placeholder="Image URL..."
-                        value={editImage}
-                        onChange={(e) => setEditImage(e.target.value)}
-                        className="w-full bg-white border border-slate-300 text-slate-900 px-2.5 py-1.5 rounded-lg text-[11px]"
-                      />
-                      <label className="cursor-pointer inline-flex items-center gap-1.5 text-[11px] font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded border border-amber-200">
-                        <Upload className="w-3.5 h-3.5" /> Upload Image
-                        <input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleEditImageUpload}
-                          className="hidden"
-                        />
-                      </label>
-                    </div>
-                  </div>
-                </div>
+                <MultiImageUploader
+                  images={editImages}
+                  onChange={setEditImages}
+                  label="Product Photos (Upload 1 or Multiple Images)"
+                  helperText="Add 2 or more images to automatically slide photos on the product details page."
+                />
 
                 <div className="grid grid-cols-2 gap-2">
                   <div>
@@ -4182,6 +4160,24 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     </select>
                   </div>
                 </div>
+
+                <div>
+                  <label className="block font-bold text-slate-700 mb-1">Product Description</label>
+                  <textarea
+                    rows={2}
+                    placeholder="Detailed product features, materials, usage..."
+                    value={editDescription}
+                    onChange={(e) => setEditDescription(e.target.value)}
+                    className="w-full bg-slate-50 border border-slate-300 text-slate-900 px-3 py-2 rounded-lg text-xs"
+                  />
+                </div>
+
+                <ProductSpecsEditor
+                  categoryId={editCategory}
+                  categories={categories}
+                  value={editRichDetails}
+                  onChange={setEditRichDetails}
+                />
 
                 <label className="flex items-center gap-2 bg-amber-50/60 p-2.5 rounded-xl border border-amber-200 cursor-pointer">
                   <input

@@ -13,14 +13,38 @@ import { MobileBottomNav } from './components/MobileBottomNav';
 import { Footer } from './components/Footer';
 import { DeliveryAreasModal } from './components/DeliveryAreasModal';
 import { CompanyPages, CompanyPageId } from './components/CompanyPages';
+import { ProductDetailPage } from './components/ProductDetailPage';
 import { Helmet } from 'react-helmet-async';
 
 import { Product, CartItem, Booking, StoreSettings, CategoryConfig } from './types';
-import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS, CATALOG_VERSION } from './data/initialProducts';
-import { DEFAULT_CATEGORIES, CATEGORIES_VERSION, getCategoryDisplayName } from './data/categories';
+import { getCategoryDisplayName } from './data/categories';
+import {
+  ADMIN_STORE_SETTINGS,
+  ADMIN_CATEGORIES,
+  BASE_INITIAL_PRODUCTS,
+  MY_PRODUCTS,
+  PRODUCT_UPDATES,
+  REMOVE_PRODUCTS,
+  CATEGORY_BULK_PRICE_PERCENT,
+  buildCompiledInitialProducts,
+  computeProductsHashMap,
+  getCodeConfigSignature,
+} from './admin/compiledCatalog';
 import { fetchCurrentLocationAddress } from './utils/distance';
 import { groupProductsByBaseName } from './utils/productGrouping';
 import { ShoppingCart } from 'lucide-react';
+
+function resolveProductIdFromPath(pathname: string): string | null {
+  const match = (pathname || '').match(/^\/product\/([^/?#]+)/i);
+  if (match && match[1]) {
+    try {
+      return decodeURIComponent(match[1]);
+    } catch {
+      return match[1];
+    }
+  }
+  return null;
+}
 
 function resolvePageFromPath(pathname: string): CompanyPageId {
   const clean = pathname.toLowerCase().replace(/\/+$/, '') || '/';
@@ -42,72 +66,52 @@ const PAGE_PATHS: Record<CompanyPageId, string> = {
 };
 
 export default function App() {
+  const currentCodeSig = getCodeConfigSignature();
+
   const [products, setProducts] = useState<Product[]>(() => {
     try {
-      const savedVersion = localStorage.getItem('instant_supply_catalog_version');
-      if (savedVersion !== CATALOG_VERSION) {
-        localStorage.setItem('instant_supply_catalog_version', CATALOG_VERSION);
-        localStorage.setItem('instant_supply_products', JSON.stringify(INITIAL_PRODUCTS));
-        return INITIAL_PRODUCTS;
+      const savedSig = localStorage.getItem('instant_supply_code_sig');
+      if (savedSig !== currentCodeSig) {
+        return buildCompiledInitialProducts();
       }
       const saved = localStorage.getItem('instant_supply_products');
-      return saved ? JSON.parse(saved) : INITIAL_PRODUCTS;
+      return saved ? JSON.parse(saved) : buildCompiledInitialProducts();
     } catch {
-      return INITIAL_PRODUCTS;
+      return buildCompiledInitialProducts();
     }
   });
 
   const [categories, setCategories] = useState<CategoryConfig[]>(() => {
     try {
-      const savedCatVersion = localStorage.getItem('instant_supply_categories_version');
-      if (savedCatVersion !== CATEGORIES_VERSION) {
-        localStorage.setItem('instant_supply_categories_version', CATEGORIES_VERSION);
-        localStorage.setItem('instant_supply_categories', JSON.stringify(DEFAULT_CATEGORIES));
-        return DEFAULT_CATEGORIES;
+      const savedSig = localStorage.getItem('instant_supply_code_sig');
+      if (savedSig !== currentCodeSig) {
+        return ADMIN_CATEGORIES;
       }
       const saved = localStorage.getItem('instant_supply_categories');
       if (saved) {
         const parsed = JSON.parse(saved);
         if (Array.isArray(parsed)) return parsed;
       }
-      return DEFAULT_CATEGORIES;
+      return ADMIN_CATEGORIES;
     } catch {
-      return DEFAULT_CATEGORIES;
+      return ADMIN_CATEGORIES;
     }
   });
 
   const [storeSettings, setStoreSettings] = useState<StoreSettings>(() => {
     try {
+      const savedSig = localStorage.getItem('instant_supply_code_sig');
+      if (savedSig !== currentCodeSig) {
+        return ADMIN_STORE_SETTINGS;
+      }
       const saved = localStorage.getItem('instant_supply_settings');
       if (saved) {
         const parsed = JSON.parse(saved);
-        if (parsed.adminPin !== '9059236500') {
-          parsed.adminPin = '9059236500';
-        }
-        if (parsed.helplineNumber === '9059236500') {
-          parsed.helplineNumber = '8332869926';
-        }
-        if (parsed.whatsappNumber === '9059236500') {
-          parsed.whatsappNumber = '8332869926';
-        }
-        if (parsed.activeDeliveryNotice && parsed.activeDeliveryNotice.includes('9059236500')) {
-          parsed.activeDeliveryNotice = parsed.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
-        }
-        if (!parsed.minOrderFreeDelivery || parsed.minOrderFreeDelivery === 199) {
-          parsed.minOrderFreeDelivery = 499;
-        }
-        if (
-          !parsed.activeDeliveryNotice ||
-          parsed.activeDeliveryNotice === '⚠️ Minute Materials - Express Jobsite Delivery | Book via WhatsApp or Phone: 8332869926'
-        ) {
-          parsed.activeDeliveryNotice = INITIAL_STORE_SETTINGS.activeDeliveryNotice;
-        }
-        parsed.gstPercentage = 0;
-        return { ...INITIAL_STORE_SETTINGS, ...parsed };
+        return { ...ADMIN_STORE_SETTINGS, ...parsed };
       }
-      return INITIAL_STORE_SETTINGS;
+      return ADMIN_STORE_SETTINGS;
     } catch {
-      return INITIAL_STORE_SETTINGS;
+      return ADMIN_STORE_SETTINGS;
     }
   });
 
@@ -200,12 +204,34 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [activeSubcategory, setActiveSubcategory] = useState('all');
+  const [selectedProductId, setSelectedProductId] = useState<string | null>(() => {
+    if (typeof window === 'undefined') return null;
+    return resolveProductIdFromPath(window.location.pathname);
+  });
+  const [adminInitialEditProduct, setAdminInitialEditProduct] = useState<Product | null>(null);
   const [activePage, setActivePage] = useState<CompanyPageId>(() => {
     if (typeof window === 'undefined') return 'home';
     return resolvePageFromPath(window.location.pathname);
   });
 
+  const handleOpenProductDetail = (targetProduct: Product) => {
+    if (!targetProduct || !targetProduct.id) return;
+    setSelectedProductId(targetProduct.id);
+    setActivePage('home');
+    if (isAdmin) {
+      setIsAdmin(false);
+    }
+    if (typeof window !== 'undefined') {
+      const targetUrl = `/product/${encodeURIComponent(targetProduct.id)}`;
+      if (window.location.pathname !== targetUrl) {
+        window.history.pushState(null, '', targetUrl);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const handleNavigatePage = (page: CompanyPageId, skipScroll = false) => {
+    setSelectedProductId(null);
     setActivePage(page);
     if (isAdmin) {
       setIsAdmin(false);
@@ -221,7 +247,7 @@ export default function App() {
     }
   };
 
-  // Check URL route for /admin and Company subpages
+  // Check URL route for /admin, /product/:id, and Company subpages
   useEffect(() => {
     const syncRouteFromUrl = () => {
       const path = window.location.pathname.toLowerCase();
@@ -240,6 +266,14 @@ export default function App() {
         return;
       }
 
+      const prodId = resolveProductIdFromPath(window.location.pathname);
+      if (prodId) {
+        setSelectedProductId(prodId);
+        setActivePage('home');
+        return;
+      }
+
+      setSelectedProductId(null);
       setActivePage(resolvePageFromPath(window.location.pathname));
     };
 
@@ -256,7 +290,7 @@ export default function App() {
   // Handle Search submit
   const handleSearchSubmit = (term: string) => {
     setSearchTerm(term);
-    if (term.trim() && activePage !== 'home') {
+    if (term.trim() && (activePage !== 'home' || selectedProductId)) {
       handleNavigatePage('home', true);
     }
   };
@@ -347,7 +381,41 @@ export default function App() {
   };
 
   useEffect(() => {
-    fetchData();
+    const initSyncAndFetch = async () => {
+      try {
+        const savedSig = localStorage.getItem('instant_supply_code_sig');
+        if (savedSig !== currentCodeSig) {
+          const baseHashes = computeProductsHashMap(BASE_INITIAL_PRODUCTS);
+          const syncRes = await fetch('/api/code-config-sync', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              storeSettings: ADMIN_STORE_SETTINGS,
+              categories: ADMIN_CATEGORIES,
+              myProducts: MY_PRODUCTS,
+              productUpdates: PRODUCT_UPDATES,
+              removeProducts: REMOVE_PRODUCTS,
+              categoryBulkPricePercent: CATEGORY_BULK_PRICE_PERCENT,
+              baseProductsHashes: baseHashes,
+              baseProducts: BASE_INITIAL_PRODUCTS,
+            }),
+          });
+          if (syncRes.ok) {
+            const syncData = await syncRes.json();
+            if (Array.isArray(syncData.products)) setProducts(syncData.products);
+            if (Array.isArray(syncData.categories)) setCategories(syncData.categories);
+            if (syncData.settings) setStoreSettings(syncData.settings);
+            localStorage.setItem('instant_supply_code_sig', currentCodeSig);
+            return;
+          }
+        }
+      } catch (err) {
+        console.warn('Code config sync fallback:', err);
+      }
+      await fetchData();
+    };
+
+    initSyncAndFetch();
     // Auto refresh data every 15 seconds for customer views, but pause polling while in admin mode to protect active edits
     const interval = setInterval(() => {
       if (!isAdmin) {
@@ -355,7 +423,7 @@ export default function App() {
       }
     }, 15000);
     return () => clearInterval(interval);
-  }, [isAdmin]);
+  }, [isAdmin, currentCodeSig]);
 
   // Count active grouped price drop deals
   const priceDropCount = groupProductsByBaseName(
@@ -519,6 +587,7 @@ export default function App() {
     // Fallback optimistic insertion if offline
     const now = Date.now();
     const createdLocal: Product[] = items.map((item, idx) => ({
+      ...item,
       id: `prod-${now}-${idx}-${Math.random().toString(36).slice(2, 6)}`,
       name: item.name || 'New Material',
       sku: item.sku || `SKU-${now}-${idx}`,
@@ -527,11 +596,12 @@ export default function App() {
       price: Number(item.price) || 0,
       originalPrice: item.originalPrice ? Number(item.originalPrice) : undefined,
       unit: item.unit || 'piece',
-      brand: item.brand || 'Standard ISI',
+      brand: item.brand,
       stockStatus: item.stockStatus || 'in_stock',
       stockCount: item.stockCount !== undefined ? Number(item.stockCount) : 100,
       fastDelivery: item.fastDelivery ?? true,
-      image: item.image || '',
+      image: item.image || item.images?.[0] || '',
+      images: item.images,
       description: item.description || '',
       popular: Boolean(item.popular),
       baseName: item.baseName,
@@ -771,15 +841,24 @@ export default function App() {
     contact: 'Contact Minute Materials | LB Nagar & Vanasthalipuram Store (8332869926)',
   };
 
-  const pageTitle =
-    activePage !== 'home'
-      ? companyTitles[activePage]
-      : activeCategory && activeCategory !== 'all'
-      ? `${getCategoryDisplayName(activeCategory, categories)} in LB Nagar & Vanasthalipuram | Minute Materials`
-      : 'Minute Materials | Plumbing, Electrical, Fans & Lights in LB Nagar & Vanasthalipuram';
+  const selectedProduct = selectedProductId
+    ? products.find((p) => p.id === selectedProductId) || null
+    : null;
 
-  const pageDescription =
-    'Buy plumbing & electrical materials, ceiling/exhaust fans & LED lights in LB Nagar, Vanasthalipuram & nearby areas. 15-min express delivery. Call 8332869926!';
+  const pageTitle = selectedProduct
+    ? `${selectedProduct.name} | ${getCategoryDisplayName(
+        selectedProduct.category,
+        categories
+      )} – Minute Materials`
+    : activePage !== 'home'
+    ? companyTitles[activePage]
+    : activeCategory && activeCategory !== 'all'
+    ? `${getCategoryDisplayName(activeCategory, categories)} in LB Nagar & Vanasthalipuram | Minute Materials`
+    : 'Minute Materials | Plumbing, Electrical, Fans & Lights in LB Nagar & Vanasthalipuram';
+
+  const pageDescription = selectedProduct
+    ? `Buy ${selectedProduct.name} online at Minute Materials with 10–15 minute express delivery across LB Nagar, Vanasthalipuram & nearby areas.`
+    : 'Buy plumbing & electrical materials, ceiling/exhaust fans & LED lights in LB Nagar, Vanasthalipuram & nearby areas. 15-min express delivery. Call 8332869926!';
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 flex flex-col justify-between selection:bg-amber-500 selection:text-slate-950 pb-20 md:pb-0">
@@ -828,7 +907,12 @@ export default function App() {
           searchTerm={searchTerm}
           setSearchTerm={handleSearchSubmit}
           activeCategory={activeCategory}
-          setActiveCategory={setActiveCategory}
+          setActiveCategory={(cat) => {
+            setActiveCategory(cat);
+            if (selectedProductId) {
+              handleNavigatePage('home', true);
+            }
+          }}
           showPinModal={showAdminPinModal}
           setShowPinModal={setShowAdminPinModal}
           onNavigateHome={() => {
@@ -857,13 +941,49 @@ export default function App() {
             onBulkUpdatePrices={handleBulkUpdatePrices}
             onUpdateBookingStatus={handleUpdateBookingStatus}
             onUpdateStoreSettings={handleUpdateStoreSettings}
+            initialEditProduct={adminInitialEditProduct}
+            onClearInitialEditProduct={() => setAdminInitialEditProduct(null)}
             onCloseAdmin={() => {
               setIsAdmin(false);
               if (typeof window !== 'undefined') {
-                window.history.replaceState(null, '', PAGE_PATHS[activePage]);
+                const restorePath = selectedProductId
+                  ? `/product/${encodeURIComponent(selectedProductId)}`
+                  : PAGE_PATHS[activePage];
+                window.history.replaceState(null, '', restorePath);
               }
             }}
           />
+        ) : selectedProduct ? (
+          <main>
+            <ProductDetailPage
+              product={selectedProduct}
+              allProducts={products}
+              categories={categories}
+              cartItems={cart}
+              storeSettings={storeSettings}
+              onAddToCart={handleAddToCart}
+              onUpdateQuantity={handleUpdateCartQuantity}
+              onOpenCart={() => setIsCartOpen(true)}
+              onOpenWhatsAppForProduct={handleOpenWhatsAppForProduct}
+              onSelectProduct={handleOpenProductDetail}
+              onBackToCatalog={(cat, sub) => {
+                if (cat) setActiveCategory(cat);
+                setActiveSubcategory(sub || 'all');
+                handleNavigatePage('home');
+              }}
+              onNavigateHome={() => {
+                setActiveCategory('all');
+                setActiveSubcategory('all');
+                setSearchTerm('');
+                handleNavigatePage('home');
+              }}
+              isAdmin={isAdmin}
+              onEditProductInAdmin={(prod) => {
+                setAdminInitialEditProduct(prod);
+                setIsAdmin(true);
+              }}
+            />
+          </main>
         ) : activePage !== 'home' ? (
           <main>
             <CompanyPages
@@ -905,8 +1025,12 @@ export default function App() {
               activeSubcategory={activeSubcategory}
               setActiveSubcategory={setActiveSubcategory}
               isAdmin={isAdmin}
-              onQuickEditPrice={() => setIsAdmin(true)}
+              onQuickEditPrice={(prod) => {
+                if (prod) setAdminInitialEditProduct(prod);
+                setIsAdmin(true);
+              }}
               onDeleteProduct={handleDeleteProduct}
+              onSelectProduct={handleOpenProductDetail}
             />
           </main>
         )}
@@ -978,6 +1102,7 @@ export default function App() {
         cartItems={cart}
         onUpdateQuantity={handleUpdateCartQuantity}
         onOpenWhatsAppForProduct={handleOpenWhatsAppForProduct}
+        onSelectProduct={handleOpenProductDetail}
       />
       
       {/* 1. Cart Drawer */}

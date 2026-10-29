@@ -1,70 +1,9 @@
 import { CategoryConfig } from '../types';
+import { ADMIN_CATEGORIES } from '../admin/categories';
 
-export const CATEGORIES_VERSION = '2026-04-main-categories-v1';
+export const CATEGORIES_VERSION = '2026-04-main-categories-v2';
 
-export const DEFAULT_CATEGORIES: CategoryConfig[] = [
-  {
-    id: 'plumbing',
-    name: 'Plumbing',
-    subcategories: [
-      'CPVC Pipes & Fittings',
-      'UPVC Pipes & Fittings',
-      'PVC / SWR Drainage',
-      'Brass & GI Fittings',
-      'Valves, Taps & Mixers',
-      'Solvent, Thread & Sealants',
-      'Tanks & Sanitaryware',
-    ],
-    description: 'ISI CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, and solvent cements.',
-  },
-  {
-    id: 'electrical',
-    name: 'Electrical',
-    subcategories: [
-      'House Wires & Cables',
-      'MCB, RCCB & Distribution Boards',
-      'Modular Switches & Sockets',
-      'PVC Conduits & Casing',
-      'Junction & Concealed Boxes',
-      'Tapes, Clips & Accessories',
-    ],
-    description: 'FR/FRLS copper coils, MCB breakers, modular switches, conduits, and site accessories.',
-  },
-  {
-    id: 'fans',
-    name: 'Fans',
-    subcategories: [
-      'Table Fans',
-      'Exhaust Fans',
-      'Ceiling Fans',
-      'Portable Fans',
-    ],
-    description: 'High-speed ceiling fans, kitchen/bathroom exhaust fans, table fans, and rechargeable portable fans.',
-  },
-  {
-    id: 'lights',
-    name: 'Lights',
-    subcategories: [
-      'Decorative Lights',
-      'Tube Lights',
-      'Bed Lights',
-      'Bulbs',
-    ],
-    description: 'LED bulbs, batten tube lights, warm bed/night lamps, and architectural decorative lighting.',
-  },
-  {
-    id: 'tools',
-    name: 'Tools',
-    subcategories: [
-      'Plumbing Wrenches & Cutters',
-      'Electrical Testers & Pliers',
-      'Power Drills & Blades',
-      'Measuring & Safety Gear',
-      'Fasteners & Wall Plugs',
-    ],
-    description: 'Pipe wrenches, PVC cutters, insulated pliers, drill bits, PTFE, and jobsite hardware.',
-  },
-];
+export const DEFAULT_CATEGORIES: CategoryConfig[] = ADMIN_CATEGORIES;
 
 export function slugifyCategoryId(name: string): string {
   const cleaned = (name || '')
@@ -181,3 +120,126 @@ export function generateAutoSku(
   const suffix = String(Date.now() % 10000).padStart(4, '0');
   return `${catCode}-${nameCode || 'ITM'}${sizeCode}-${suffix}${index > 1 ? index : ''}`;
 }
+
+export function isDetailPageCategory(
+  categoryId: string,
+  categories: CategoryConfig[] = DEFAULT_CATEGORIES
+): boolean {
+  const raw = (categoryId || '').toLowerCase().trim();
+  if (!raw || raw === 'all') return false;
+  if (
+    raw === 'fans' ||
+    raw === 'lights' ||
+    raw === 'tools' ||
+    raw.includes('fan') ||
+    raw.includes('light') ||
+    raw.includes('lamp') ||
+    raw.includes('bulb') ||
+    raw.includes('tool')
+  ) {
+    return true;
+  }
+  const display = getCategoryDisplayName(categoryId, categories).toLowerCase();
+  return (
+    display.includes('fan') ||
+    display.includes('light') ||
+    display.includes('lamp') ||
+    display.includes('bulb') ||
+    display.includes('tool')
+  );
+}
+
+export function getProductGalleryImages(
+  product?: { image?: string; images?: string[] } | null,
+  fallbackVariants?: Array<{ image?: string; images?: string[] }>
+): string[] {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  const pushUrl = (url?: string) => {
+    const clean = (url || '').trim();
+    if (!clean || seen.has(clean)) return;
+    seen.add(clean);
+    result.push(clean);
+  };
+
+  if (product) {
+    if (Array.isArray(product.images)) {
+      product.images.forEach(pushUrl);
+    }
+    pushUrl(product.image);
+  }
+
+  if (result.length === 0 && Array.isArray(fallbackVariants)) {
+    fallbackVariants.forEach((v) => {
+      if (Array.isArray(v.images)) {
+        v.images.forEach(pushUrl);
+      }
+      pushUrl(v.image);
+    });
+  }
+
+  return result;
+}
+
+export function getCategorySpecPresets(categoryId: string): string[] {
+  const cat = (categoryId || '').toLowerCase();
+  if (cat.includes('fan')) {
+    return [
+      'No of blades',
+      'Design type',
+      'Power source',
+      'Colour name',
+      'No of speed',
+      'Wattage',
+      'Sweep size',
+      'Controller type',
+      'Model name',
+      'Material type',
+      'Blade material',
+      'Product dimensions',
+      'Voltage',
+      'Weight',
+      'Speed control',
+    ];
+  }
+  if (cat.includes('light') || cat.includes('bulb') || cat.includes('lamp')) {
+    return [
+      'Wattage',
+      'Light colour',
+      'Design type',
+      'Power source',
+      'Colour name',
+      'Base / Holder type',
+      'Material type',
+      'Lumen output',
+      'Voltage',
+      'Model name',
+      'Product dimensions',
+      'Weight',
+    ];
+  }
+  if (cat.includes('tool')) {
+    return [
+      'Material type',
+      'Design type',
+      'Power source',
+      'Colour name',
+      'Size / Capacity',
+      'Handle material',
+      'Model name',
+      'Product dimensions',
+      'Weight',
+      'Usage / Application',
+    ];
+  }
+  return [
+    'Material type',
+    'Size / Rating',
+    'Colour name',
+    'Model name',
+    'Standard / Grade',
+    'Weight',
+  ];
+}
+

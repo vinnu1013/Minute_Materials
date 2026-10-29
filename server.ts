@@ -4,7 +4,8 @@ import path from 'path';
 import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI, Type } from '@google/genai';
-import { INITIAL_PRODUCTS, INITIAL_STORE_SETTINGS } from './src/data/initialProducts';
+import { INITIAL_PRODUCTS } from './src/data/initialProducts';
+import { ADMIN_STORE_SETTINGS } from './src/admin/storeSettings';
 import { Product, Booking, StoreSettings, UserAccount } from './src/types';
 import { getEstimateForAddress, DEPOT_LOCATION } from './src/utils/distance';
 import { dbManager } from './src/db/storage';
@@ -140,25 +141,9 @@ const INITIAL_BOOKINGS: Booking[] = [
 // Persistent state loaded from disk
 let products: Product[] = loadJsonFile<Product[]>(PRODUCTS_FILE, [...INITIAL_PRODUCTS]);
 let storeSettings: StoreSettings = {
-  ...INITIAL_STORE_SETTINGS,
-  ...loadJsonFile<StoreSettings>(SETTINGS_FILE, { ...INITIAL_STORE_SETTINGS })
+  ...ADMIN_STORE_SETTINGS,
+  ...loadJsonFile<StoreSettings>(SETTINGS_FILE, { ...ADMIN_STORE_SETTINGS }),
 };
-if (storeSettings.adminPin === 'Vinnu1013' || !storeSettings.adminPin) {
-  storeSettings.adminPin = '9059236500';
-  saveJsonFile(SETTINGS_FILE, storeSettings);
-}
-if (
-  storeSettings.helplineNumber === '9059236500' ||
-  storeSettings.whatsappNumber === '9059236500' ||
-  (storeSettings.activeDeliveryNotice && storeSettings.activeDeliveryNotice.includes('9059236500'))
-) {
-  if (storeSettings.helplineNumber === '9059236500') storeSettings.helplineNumber = '8332869926';
-  if (storeSettings.whatsappNumber === '9059236500') storeSettings.whatsappNumber = '8332869926';
-  if (storeSettings.activeDeliveryNotice) {
-    storeSettings.activeDeliveryNotice = storeSettings.activeDeliveryNotice.replace(/9059236500/g, '8332869926');
-  }
-  saveJsonFile(SETTINGS_FILE, storeSettings);
-}
 
 let users: UserAccount[] = loadJsonFile<UserAccount[]>(USERS_FILE, INITIAL_USERS);
 let complaints = loadJsonFile(COMPLAINTS_FILE, INITIAL_COMPLAINTS);
@@ -198,8 +183,8 @@ async function startServer() {
   // Initialize persistent server database
   console.log('[Database] Persistent server storage active and verified.');
 
-  // Allow larger JSON payloads for Base64 image uploads
-  app.use(express.json({ limit: '15mb' }));
+  // Allow larger JSON payloads for multi-photo Base64 image uploads
+  app.use(express.json({ limit: '50mb' }));
 
   // API Routes
   app.get('/api/health', (req, res) => {
@@ -223,6 +208,27 @@ async function startServer() {
       const migration = await dbManager.syncDiskStorage();
       const status = await dbManager.getStatus();
       res.json({ success: true, connected, migration, status });
+    } catch (err: any) {
+      res.status(500).json({ success: false, error: err.message });
+    }
+  });
+
+  // Live Code Config Sync: Applies fresh edits from /src/admin/* compiled by Vite immediately
+  app.post('/api/code-config-sync', async (req, res) => {
+    try {
+      const syncResult = dbManager.syncCodeConfig(req.body);
+      const [latestProducts, latestCategories, latestSettings] = await Promise.all([
+        dbManager.getProducts(),
+        dbManager.getCategories(),
+        dbManager.getStoreSettings(),
+      ]);
+      res.json({
+        success: true,
+        syncResult,
+        products: latestProducts,
+        categories: latestCategories,
+        settings: latestSettings,
+      });
     } catch (err: any) {
       res.status(500).json({ success: false, error: err.message });
     }
@@ -326,26 +332,40 @@ async function startServer() {
         return;
       }
       const now = Date.now();
-      const created: Product[] = rawItems.map((item: Partial<Product>, idx: number) => ({
-        id: item.id || `p-${now}-${idx}-${Math.random().toString(36).slice(2, 6)}`,
-        name: item.name || 'New Material',
-        baseName: item.baseName,
-        sizeLabel: item.sizeLabel,
-        category: item.category || 'plumbing',
-        subcategory: item.subcategory || 'General',
-        price: Number(item.price) || 0,
-        originalPrice: item.originalPrice !== undefined ? Number(item.originalPrice) : undefined,
-        unit: item.unit || 'piece',
-        brand: item.brand,
-        fastDelivery: item.fastDelivery ?? true,
-        stockStatus: item.stockStatus || 'in_stock',
-        stockCount: item.stockCount !== undefined ? Number(item.stockCount) : 100,
-        sku: item.sku || `SKU-${now}-${idx}`,
-        description: item.description || '',
-        image: item.image || '',
-        popular: Boolean(item.popular),
-        specifications: item.specifications,
-      }));
+      const created: Product[] = rawItems.map((item: Partial<Product>, idx: number) => {
+        const cleanImages = Array.isArray(item.images)
+          ? item.images.map((u) => (u || '').trim()).filter(Boolean)
+          : [];
+        const primaryImage = (item.image || cleanImages[0] || '').trim();
+        const normalizedImages =
+          cleanImages.length > 0
+            ? cleanImages
+            : primaryImage
+            ? [primaryImage]
+            : undefined;
+        return {
+          ...item,
+          id: item.id || `p-${now}-${idx}-${Math.random().toString(36).slice(2, 6)}`,
+          name: item.name || 'New Material',
+          baseName: item.baseName,
+          sizeLabel: item.sizeLabel,
+          category: item.category || 'plumbing',
+          subcategory: item.subcategory || 'General',
+          price: Number(item.price) || 0,
+          originalPrice: item.originalPrice !== undefined ? Number(item.originalPrice) : undefined,
+          unit: item.unit || 'piece',
+          brand: item.brand,
+          fastDelivery: item.fastDelivery ?? true,
+          stockStatus: item.stockStatus || 'in_stock',
+          stockCount: item.stockCount !== undefined ? Number(item.stockCount) : 100,
+          sku: item.sku || `SKU-${now}-${idx}`,
+          description: item.description || '',
+          image: primaryImage,
+          images: normalizedImages,
+          popular: Boolean(item.popular),
+          specifications: item.specifications,
+        };
+      });
       const allProducts = await dbManager.addProductsBatch(created);
       res.status(201).json({ success: true, addedCount: created.length, products: allProducts });
     } catch (err: any) {

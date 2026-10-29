@@ -44,7 +44,16 @@ export interface Product {
   partCode?: string;
   description: string;
   image: string;
+  images?: string[];
+  brandImages?: string[];
   popular?: boolean;
+  rating?: number;
+  reviewCount?: number;
+  warranty?: string;
+  warrantyDetails?: string;
+  whatsInTheBox?: string;
+  vendorDetails?: string;
+  keyHighlights?: Record<string, string>;
   specifications?: Record<string, string>;
 }
 
