@@ -245,7 +245,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       (product.partCode && product.partCode.toLowerCase().includes(q)) ||
       (product.hsnCode && product.hsnCode.toLowerCase().includes(q)) ||
       product.subcategory.toLowerCase().includes(q) ||
-      product.description.toLowerCase().includes(q);
+      Boolean(product.description && product.description.toLowerCase().includes(q));
 
     return (
       matchesCategory &&

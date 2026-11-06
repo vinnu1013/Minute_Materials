@@ -23,106 +23,51 @@ import {
 // ----------------------------------------------------------------------------
 export const MY_PRODUCTS: Product[] = [
   // ==========================================================================
-  // TEMPLATE 1: FAN / LIGHT / TOOL (Opens Full Product Page + Auto-Slide Images)
-  // Uncomment & edit to add:
+  // Add custom products here using singleProduct({...}) or ...multiSizeProduct({...})
   // ==========================================================================
-  /*
-  singleProduct({
-    name: 'Longway Starlite-1 P1 Ceiling Fan, 1200mm/48 inch, Anti-Dust Decorative Star Rated - Grey',
-    category: 'fans',               // 'fans' | 'lights' | 'tools' | 'plumbing' | 'electrical'
-    subcategory: 'Ceiling Fans',
-    price: 1249,
-    originalPrice: 2881,            // Optional MRP (shows 56% Off + appears in Price Drops)
-    unit: 'unit',
-    brand: 'Longway',
-    warranty: '2 year',
-    rating: 4.1,
-    reviewCount: 716,
-    images: [
-      '/products/fan-1.jpg',        // 2+ images automatically slide!
-      '/products/fan-2.jpg',
-      '/products/fan-3.jpg',
-    ],
-    specifications: {
-      'No of blades': '3',
-      'Design type': 'Solid',
-      'Power source': 'Electric Powered',
-      'Colour name': 'Grey',
-      'No of speed': '5',
-      'Wattage': '50 W',
-      'Controller type': 'Switch Control',
-      'Model name': 'Starlite-1 P1',
-      'Material type': 'Sheet Metal',
-      'Product dimensions': '28 x 54 x 16 cm',
-      'Voltage': '230 V',
-      'Weight': '4 kg',
-    },
-    whatsInTheBox: '1 Ceiling Fan Motor, 3 Blades, 2 Canopies, Downrod, Shackle Kit, Warranty Card',
-    warrantyDetails: '2 Year Manufacturer Brand Warranty against manufacturing defects.',
-    description: 'Starlite-1 P1 Ceiling Fan | 120 cm | 50W | Anti-Dust Decorative | Star Rated',
-    popular: true,
-  }),
-  */
-
-  // ==========================================================================
-  // TEMPLATE 2: MULTI-SIZE MATERIAL (Shows 1 card -> asks size on "Add to Cart")
-  // Uncomment & edit (keep the `...` in front of `multiSizeProduct`):
-  // ==========================================================================
-  
-  ...multiSizeProduct({
-    baseName: 'Vinay',
-    category: 'plumbing',
-    subcategory: 'Brass & GI Fittings',
-    unit: 'unit',
-    image: 'https://cdn.corporatefinanceinstitute.com/assets/master-traders.jpeg',
-    popular: false,
-    sizes: [
-      { size: '1/2"',       price: 65,  originalPrice: 80 },
-      { size: '3/4"',       price: 95,  originalPrice: 115 },
-      { size: '3/4" x 1/2"', price: 78, originalPrice: 95 },
-      { size: '1"',         price: 145, originalPrice: 175 },
-    ],
-  }),
-  
-
-  // ==========================================================================
-  // TEMPLATE 3: SIMPLE SINGLE PRODUCT (1 Size)
-  // Uncomment & edit:
-  // ==========================================================================
-  
-  singleProduct({
-    name: '9W Cool Day White LED Bulb B22',
-    category: 'lights',
-    subcategory: 'Bulbs',
-    price: 79,
-    originalPrice: 140,
-    brand: 'Philips',
-    warranty: '1 year',
-    images: ['https://cdn.zeptonow.com/production/tr:w-640,ar-2400-2891.566265060241,pr-true,f-auto,q-80/cms/product_variant/8bf8b66b-11cd-4a69-b183-f68083ce4222_aspect_ratios=3x4.jpeg', '/products/led-bulb-2.jpg'],
-    specifications: {
-      'Wattage': '9 W',
-      'Light colour': 'Cool Day White (6500K)',
-      'Base / Holder type': 'B22 Pin',
-      'Power source': 'Corded Electric',
-    },
-  }),
-  
 ];
 
 // ----------------------------------------------------------------------------
-// B) QUICKLY UPDATE EXISTING CATALOG PRODUCTS (By ID, SKU, or Exact Name)
+// B) QUICKLY UPDATE EXISTING CATALOG PRODUCTS (Add / Modify Images or Prices)
 // ----------------------------------------------------------------------------
-// Example: { match: 'p-001', updates: { price: 18, originalPrice: 22 } }
+// You can match any product by:
+//   1. Product ID (e.g. 'plm-2225701')
+//   2. SKU (e.g. 'PLM-2225701')
+//   3. Base Name (e.g. 'Elbow 90°' or 'Ball Valve') — updates ALL sizes at once!
+//
+// Examples of adding / modifying single or multiple images:
+//
+// Example 1: Add multiple images to an existing fitting:
+// {
+//   match: 'Elbow 90°',
+//   updates: {
+//     image: '/products/cpvc-elbow-front.jpg',
+//     images: [
+//       '/products/cpvc-elbow-front.jpg',
+//       '/products/cpvc-elbow-side.jpg',
+//       '/products/cpvc-elbow-packaging.jpg',
+//     ],
+//   },
+// },
+//
+// Example 2: Add images to a specific part number:
+// {
+//   match: 'plm-2225701',
+//   updates: {
+//     image: '/products/elbow-half-inch.jpg',
+//     images: ['/products/elbow-half-inch.jpg', '/products/elbow-half-inch-box.jpg'],
+//   },
+// },
 export const PRODUCT_UPDATES: ProductQuickOverride[] = [
-  // { match: 'p-001', updates: { price: 18, popular: true } },
+  // Add your image or price updates here:
 ];
 
 // ----------------------------------------------------------------------------
 // C) REMOVE / HIDE ANY EXISTING PRODUCT (By ID, SKU, Exact Name, or Base Name)
 // ----------------------------------------------------------------------------
-// Example: 'p-006' or 'PLM-2225706' or 'Elbow 90°'
+// Example: 'plm-2225706' or 'PLM-2225706' or 'Elbow 90°'
 export const REMOVE_PRODUCTS: string[] = [
-  // 'p-999',
+  // 'plm-999',
 ];
 
 // ----------------------------------------------------------------------------

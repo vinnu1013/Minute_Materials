@@ -17,14 +17,15 @@ export const ADMIN_CATEGORIES: CategoryConfig[] = [
     name: 'Plumbing',
     subcategories: [
       'CPVC Pipes & Fittings',
-      'UPVC Pipes & Fittings',
-      'PVC / SWR Drainage',
       'Brass & GI Fittings',
       'Valves, Taps & Mixers',
       'Solvent, Thread & Sealants',
+      'Clamps & Hardware',
+      'UPVC Pipes & Fittings',
+      'PVC / SWR Drainage',
       'Tanks & Sanitaryware',
     ],
-    description: 'ISI CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, and solvent cements.',
+    description: 'Ashirvad CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, solvent cements, and clamps.',
   },
   {
     id: 'electrical',

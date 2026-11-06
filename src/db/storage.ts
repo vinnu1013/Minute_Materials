@@ -106,22 +106,44 @@ class DatabaseManager {
   constructor() {
     // Initialize persistent files on disk
     const loadedProducts = loadDiskJson<Product[]>(PRODUCTS_FILE, [...BASE_INITIAL_PRODUCTS]);
-    const initialById = new Map(BASE_INITIAL_PRODUCTS.map((p) => [p.id, p]));
     let needsMetadataSave = false;
-    const enrichedProducts = loadedProducts.map((p) => {
-      const ref = initialById.get(p.id);
-      if (ref && (!p.baseName || (ref.sizeLabel && !p.sizeLabel))) {
+
+    // Merge base products directly so code-level edits to initialProducts.ts
+    // (such as adding direct image URLs or updating metadata) are immediately synced to disk!
+    const diskById = new Map(loadedProducts.map((p) => [p.id, p]));
+    const mergedCodeProducts = BASE_INITIAL_PRODUCTS.map((codeProd) => {
+      const diskProd = diskById.get(codeProd.id);
+      if (!diskProd) {
         needsMetadataSave = true;
-        return {
-          ...p,
-          baseName: p.baseName || ref.baseName,
-          sizeLabel: p.sizeLabel || ref.sizeLabel,
-        };
+        return codeProd;
       }
-      return p;
+      const codeImage = (codeProd.image || '').trim();
+      const diskImage = (diskProd.image || '').trim();
+      const codeImages = Array.isArray(codeProd.images) ? codeProd.images : [];
+      const diskImages = Array.isArray(diskProd.images) ? diskProd.images : [];
+
+      if (codeImage !== diskImage || JSON.stringify(codeImages) !== JSON.stringify(diskImages)) {
+        needsMetadataSave = true;
+      }
+      if (codeProd.description !== diskProd.description) {
+        needsMetadataSave = true;
+      }
+
+      return {
+        ...diskProd,
+        ...codeProd,
+        image: codeImage || diskImage,
+        images: codeImages.length > 0 ? codeImages : diskImages,
+        description: codeProd.description || diskProd.description || '',
+      };
     });
-    if (needsMetadataSave) {
-      saveDiskJson(PRODUCTS_FILE, enrichedProducts);
+
+    const codeIdSet = new Set(BASE_INITIAL_PRODUCTS.map((p) => p.id));
+    const customAdminProducts = loadedProducts.filter((p) => !codeIdSet.has(p.id));
+    const allProducts = [...mergedCodeProducts, ...customAdminProducts];
+
+    if (needsMetadataSave || allProducts.length !== loadedProducts.length) {
+      saveDiskJson(PRODUCTS_FILE, allProducts);
     }
 
     loadDiskJson<CategoryConfig[]>(CATEGORIES_FILE, [...ADMIN_CATEGORIES]);

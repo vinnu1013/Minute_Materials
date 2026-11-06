@@ -958,16 +958,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   </div>
 
                   {/* Product Description */}
-                  <div className="space-y-1 pt-3 border-t border-slate-100">
-                    <h3 className="font-extrabold text-slate-900">Product Description</h3>
-                    <p className="text-slate-600 leading-relaxed whitespace-pre-line">
-                      {activeVariant.description && activeVariant.description.trim() !== ''
-                        ? activeVariant.description
-                        : `${activeVariant.name} supplied directly from ${
-                            storeSettings.storeName || 'Minute Materials'
-                          } for residential, commercial, and contractor installations. Available with 10–15 minute express dispatch across LB Nagar, Vanasthalipuram, Chinthalkunta, Hastinapuram, BN Reddy Nagar, Nagole, and nearby areas.`}
-                    </p>
-                  </div>
+                  {activeVariant.description && activeVariant.description.trim() !== '' && (
+                    <div className="space-y-1 pt-3 border-t border-slate-100">
+                      <h3 className="font-extrabold text-slate-900">Product Description</h3>
+                      <p className="text-slate-600 leading-relaxed whitespace-pre-line">
+                        {activeVariant.description}
+                      </p>
+                    </div>
+                  )}
 
                   {/* Vendor Details */}
                   <div className="space-y-1 pt-3 border-t border-slate-100">
