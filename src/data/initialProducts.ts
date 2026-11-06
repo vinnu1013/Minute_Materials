@@ -11069,7 +11069,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2569005",
     "hsnCode": "8481",
     "description": "",
-    "image": ""Ceramic Disc",",
+    "image": "",
     "images": []
   },
   {
