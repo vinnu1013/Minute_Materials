@@ -4181,7 +4181,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2222017",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-Hot-top-and-Cold-bottom.png",
     "images": []
   },
   {
@@ -4223,7 +4223,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2222027",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2631/hot-side-cold-down-6-mixer-1-366x366.png",
     "images": []
   },
   {
@@ -4265,7 +4265,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221407",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/6/522730920/NN/GM/IF/198674753/cpvc-3-in-1-mixer-adaptor-with-mabt-top-500x500.jpg",
     "images": []
   },
   {
@@ -4286,7 +4286,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221507",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/6/522730920/NN/GM/IF/198674753/cpvc-3-in-1-mixer-adaptor-with-mabt-top-500x500.jpg",
     "images": []
   },
   {
@@ -4307,7 +4307,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221607",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "data:image/webp;base64,UklGRowFAABXRUJQVlA4IIAFAADwJACdASq0ALQAPpVEnUulo6MhpLSaILASiWdu+EgoABcSu9egeeGZ75Z0D2+zGodnJQWezyHftUEwQQVfzoYx1JvULreWnBKYNuqK2hHDk91zWRrSz35gzz6dIGKcYyL41YWdAMEIiIdInvylKtDSs4EG/ML702dttR2hV6ir1EC2mDRWcajJFwsvafdpRCSw+AC2lZd/2gt2Qb8wbdUprAwLaYNuj7A56qu339kRaxviODa+QoXVz6Pv/2HCr8Q5dj5DnV7WmwG1vmW5nZjDPB0p4btPTh7CwwNVbmpDpPrZlDlCV9xiVq2JxC+7eCb07xLpzlg6l11duNw6gfsCn94BJAmW7/OOYF5RzcLLlCDaEnAkl+5l9XKI44ASS7wESVk73YrtHEa238el4fNQAP76tpkKrpW+q1PpIE0u1ISrID/sGr3fI3c9ooyT6ygVMR9WOO4OqSnQwVVusrSs4w5xuF4CzBdsE7JDAE0pVs4haSR9uzILa+FPddKDEoyYOwxJXnr78/nwCDwyQJfdo1ByeQQZ62YAD6rNwyHDcXoTCTd6CykZpnkAkMyHUy1NmiexMIgAx13zV3JAp0bifmCUe8SfRaBCboxQ9unfYrqVBwHYrlCqMrJN2gPwfQ9IR7N8gDbk9uDQaMSIJA4Ur0jx6GpRWCMws5BtLENqmyGATebJvPzx8HzNLjRzvhEUN4jRdnntzFKpSZHWwuWPpQX6Oz/OOpKLhh+T5ppOTJtciSFRY93ahqJwdPFOQjN/1ySHkQPfbUQfo7yGmVGi026+rlk06VdYT1FkDdDmQ3b0KfTvSrSLFb0ZxBoNLvVFRYGDPMK+lWOoUQYMOm4ZE8vBMdaT0KHxok8WzjQ+T7laKJo8JGp6JtAD27TKFHC3/0iHt+GNvOhOF8JvEIUbomYfi7frMA45rW6nPCu+7l8v+EwSyj6fQRosCZ0kOG++iFyLhFIBMtTyMNkxi/qqeRMldwIRpCTEHcBG5pTiauK9KoHHjoAW9wF8RSzkkoCDwgF9fJVr1SOvoLoL8/PyMKLX968KL35dxniYgItf1hElRTxA35YSwRRoKduxU7MlOym9OFRAF2J3XNriGpzRBNPlPXsr1GkSirab/0JUDWfjhRcb0s8euMzP56i7sWh+B1gSi8p8fQz9IA9F+R8PJh0Y0TNI8y7YESSZtZ4SdlSkaWRqNNezOr8GjfhFxbFe04fA9PTaQOpyyC8qZ7GMTdlpN6NY3G7PWjDjvJtHediLMZEM2081kaRmzwYX6tWWXnB0fhKs0gwtSFP76PIDMv8hVwvaREliqCM4/NKHWAkjt5rQW9pQrRkPMKRydGfN8KBg/JxpFaWzElPXOrlPOAW53SOo8SJO+LoYcyFebHfbDqNqyqwBQmr+rUefOBA/j8G/G3+yDQ9s9WkVzshf2YUluqei1JRt74FidLKXGClUGNQYqPQriKHpA6rj68O2Fk1GkEA7U39GYai0gP3i5RW1fVur+leV1TmKZf1Z/3ixrj1fLjDNPwH2O3V2p61SOlJxHSCO1F34mthbUKdjc6gSdiqkbaAv6HiPblBCuxodCyhkHaYegfnlg6v3J27zMOtUB8Fm6NW2Vlr1fEUc6R21xCfV6+qoudZjQ2Qrv8ClcvQBKK9XCkqH0pq6JeRCa20JFORIsAfkUlXF9EM2dyTztworgHUKUYaVKFdm6yRTzq18RiXWn5r8yQoW4s8w73LRYxe9CDzRMIFFx2tzpDxwOY6scZBQVv4E96pBLFbaNcdl/sxSM1BBGGvdYx+VmMbzGgZp0hNJELsWl0jlkVWKyphqr/XE5x8YilNfQNUT3g133mSFaW6nmHIt1XZUiJLR/SSqwctal+UIOAAA",
     "images": []
   },
   {
@@ -5714,7 +5714,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221101",
     "hsnCode": "3917",
     "description": "",
-    "image": "https://www.finolexpipes.com/site/assets/files/2782/cpvc-long-concealed-valve-triangle-knob-1.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -5735,7 +5735,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221102",
     "hsnCode": "3917",
     "description": "",
-    "image": "https://www.finolexpipes.com/site/assets/files/2782/long-concealed-valve-square-knob-1-2_1.png",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -5756,7 +5756,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221103",
     "hsnCode": "3917",
     "description": "",
-    "image": "https://www.finolexpipes.com/site/assets/files/2788/cpvc-short-concealed-valve-round-knob-1-min-1-1.jpg",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -5777,7 +5777,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221111",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -5798,7 +5798,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221112",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -5819,9 +5819,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221113",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221116",
     "name": "Long Concealed Valve Full Turn - Plastic (CP) ½",
@@ -5842,7 +5843,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "description": "",
     "image": "",
     "images": []
-  },
+  },*/
   {
     "id": "plm-2221201",
     "name": "Long Concealed Valve Quarter Turn - Triangle ¾",
@@ -5861,7 +5862,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221201",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -5882,7 +5883,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221202",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -5903,9 +5904,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221206",
     "name": "Long Concealed Valve Quarter Turn - Plastic (CP) ¾",
@@ -5927,6 +5929,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221211",
     "name": "Long Concealed Valve Full Turn - Triangle ¾",
@@ -5945,7 +5948,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221211",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -5966,7 +5969,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221212",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -5987,9 +5990,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221213",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221216",
     "name": "Long Concealed Valve Full Turn - Plastic (CP) ¾",
@@ -6011,6 +6015,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221301",
     "name": "Long Concealed Valve Quarter Turn - Triangle 1",
@@ -6029,7 +6034,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221301",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -6050,7 +6055,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6071,9 +6076,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221306",
     "name": "Long Concealed Valve Quarter Turn - Plastic (CP) 1",
@@ -6095,6 +6101,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221311",
     "name": "Long Concealed Valve Full Turn - Triangle 1",
@@ -6113,7 +6120,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221311",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4op9VtEWFGWGtoitpBr8RP90aYlc951btwEMd3q6mjg&s=10",
     "images": []
   },
   {
@@ -6134,7 +6141,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221312",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6155,9 +6162,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221313",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221316",
     "name": "Long Concealed Valve Full Turn - Plastic (CP) 1",
@@ -6179,6 +6187,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221121",
     "name": "Short Concealed Valve Quarter Turn - Triangle ½",
@@ -6242,6 +6251,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  /*
   {
     "id": "plm-2221126",
     "name": "Short Concealed Valve Quarter Turn - Plastic (CP) ½",
@@ -6263,6 +6273,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221131",
     "name": "Short Concealed Valve Full Turn - Triangle ½",
@@ -6326,6 +6337,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  /*
   {
     "id": "plm-2221136",
     "name": "Short Concealed Valve Full Turn - Plastic (CP) ½",
@@ -6347,6 +6359,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221221",
     "name": "Short Concealed Valve Quarter Turn - Triangle ¾",
@@ -6410,6 +6423,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  /*
   {
     "id": "plm-2221226",
     "name": "Short Concealed Valve Quarter Turn - Plastic (CP) ¾",
@@ -6431,6 +6445,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221231",
     "name": "Short Concealed Valve Full Turn - Triangle ¾",
@@ -6494,6 +6509,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  /*
   {
     "id": "plm-2221236",
     "name": "Short Concealed Valve Full Turn - Plastic (CP) ¾",
@@ -6515,6 +6531,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221321",
     "name": "Short Concealed Valve Quarter Turn - Triangle 1",
@@ -6533,7 +6550,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221321",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6554,7 +6571,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221322",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6575,9 +6592,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221323",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221326",
     "name": "Short Concealed Valve Quarter Turn - Plastic (CP) 1",
@@ -6599,6 +6617,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221331",
     "name": "Short Concealed Valve Full Turn - Triangle 1",
@@ -6617,7 +6636,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221331",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6638,7 +6657,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221332",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6659,9 +6678,10 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221333",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
+  /*
   {
     "id": "plm-2221336",
     "name": "Short Concealed Valve Full Turn - Plastic (CP) 1",
@@ -6683,6 +6703,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2221701",
     "name": "Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob - ½\" (1.5 cm)",
@@ -6704,6 +6725,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/524933582/PA/AF/BE/198674753/cpvc-concealed-valve-500x500.jpg",
     "images": []
   },
+  
   {
     "id": "plm-2221702",
     "name": "Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob - ¾\" (2 cm)",
@@ -6725,6 +6747,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  
   {
     "id": "plm-2221703",
     "name": "Concealed Valve Quarter Turn - Mini Spindle With Plastic Knob - 1\" (2.5 cm)",
@@ -6746,6 +6769,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "",
     "images": []
   },
+  
   {
     "id": "plm-2221411",
     "name": "Single Lever Concealed Diverter (Tap & Shower - Medium Flow) - ¾\" (2 cm)",
@@ -6785,7 +6809,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221412",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accesories_Diverter_Medium-flow.png",
     "images": []
   },
   {
@@ -6827,7 +6851,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2224132",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://static1.industrybuying.com/products/plumbing/faucets/bathroom-faucets/PLU.BAT.83203713_1668055820054.webp",
     "images": []
   },
   {
@@ -6848,7 +6872,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2224133",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-plates_HFD_Round.png",
     "images": []
   },
   {
@@ -6869,7 +6893,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2226131",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-plates_MFD_Oval-2.png",
     "images": []
   },
   {
@@ -6890,7 +6914,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2226132",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://static1.industrybuying.com/products/plumbing/faucets/bathroom-faucets/PLU.BAT.83203713_1668055820054.webp",
     "images": []
   },
   {
@@ -6911,7 +6935,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2226133",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-plates_HFD_Round.png",
     "images": []
   },
   {
@@ -6932,7 +6956,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221421",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-plates_Shower-only_Round.png",
     "images": []
   },
   {
@@ -6953,7 +6977,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2225131",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-Plates_Shower_Oval-1.png",
     "images": []
   },
   {
@@ -6974,7 +6998,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2225132",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CP-Valves-Accessories_Diverter-plates_Shower-only_Round.png",
     "images": []
   },
   {
@@ -6995,7 +7019,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2221453",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVEOpsNZIpPDEuPk6k57F2_a9YqG2nWg5-3spcX7_nMyGfVB9je1c9EXnR&s=10",
     "images": []
   },
   {
@@ -7106,7 +7130,7 @@ export const INITIAL_PRODUCTS: Product[] = [
   {
     "id": "plm-2226532",
     "name": "Water Hammer Arrestor - Type B 2.0 x 2.0 x 2.0 ¾ x ¾ x ¾",
-    "baseName": "Water Hammer Arrestor - Type B",
+    "baseName": "Water Hammer Arrestor - Type A",
     "sizeLabel": "2.0 x 2.0 x 2.0 ¾ x ¾ x ¾",
     "category": "plumbing",
     "subcategory": "CPVC Pipes & Fittings",
@@ -8192,7 +8216,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2129211",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/9/548255851/JK/IZ/TR/75342544/5m-astral-schedule-40-cpvc-pipe.png",
     "images": []
   },
   {
@@ -8360,7 +8384,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2129311",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH80.png",
     "images": []
   },
   {
@@ -9263,7 +9287,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2227301",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -9389,7 +9413,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2224626",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -10208,7 +10232,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2228419",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/CY/WQ/SH/SELLER-25008036/astral-reducer-bushing.jpg",
     "images": []
   },
   {
@@ -10733,7 +10757,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2561003",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51wGC-bPXaL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -10754,7 +10778,7 @@ export const INITIAL_PRODUCTS: Product[] = [
     "partCode": "2569003",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -11051,7 +11075,9 @@ export const INITIAL_PRODUCTS: Product[] = [
     "image": "https://mykit.in/crm/public/uploads/product_images_1000x1000/30000066.jpg",
     "images": []
   },
+  /*
   {
+    
     "id": "plm-2569005",
     "name": "Ceramic Disc",
     "baseName": "Ceramic Disc",
@@ -11068,10 +11094,11 @@ export const INITIAL_PRODUCTS: Product[] = [
     "sku": "PLM-2569005",
     "partCode": "2569005",
     "hsnCode": "8481",
-    "description": "",
+    "description": "https://cpimg.tistatic.com/09738730/b/4/Alumina-Ceramic-Disc..jpg",
     "image": "",
     "images": []
   },
+  */
   {
     "id": "plm-2569020",
     "name": "Allen Key (for round Knob)",
