@@ -1,8 +1,8 @@
-import { Product, StoreSettings } from '../types';
+import { Product, StoreSettings } from '../../types';
 
 export const CATALOG_VERSION = "2026-11-06-user-images-1793959171113";
 
-export const INITIAL_PRODUCTS: Product[] = [
+export const ASHIRVAD_PRODUCTS: Product[] = [
   {
     "id": "plm-2225701",
     "name": "Elbow 90° ½\" (1.5 cm)",

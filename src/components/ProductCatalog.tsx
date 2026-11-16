@@ -19,6 +19,7 @@ import {
   Wrench,
   Package,
   Layers,
+  Tag,
 } from 'lucide-react';
 import { groupProductsByBaseName } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
@@ -133,6 +134,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const selectedSubcategory = externalSubcategory !== undefined ? externalSubcategory : internalSubcategory;
   const setSelectedSubcategory = setExternalSubcategory || setInternalSubcategory;
 
+  const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [stockFilter, setStockFilter] = useState<'all' | 'in_stock' | 'low_stock'>('all');
   const [priceRange, setPriceRange] = useState<'all' | 'under_50' | '50_200' | '200_500' | 'above_500'>('all');
 
@@ -195,6 +197,30 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     return ordered;
   }, [activeCategory, activeCategoryConfig, categories, categoryProducts, products]);
 
+  const subcategoryScopedProducts = useMemo(() => {
+    if (selectedSubcategory === 'all') return categoryProducts;
+    return categoryProducts.filter(
+      (p) => (p.subcategory || '').toLowerCase() === selectedSubcategory.toLowerCase()
+    );
+  }, [categoryProducts, selectedSubcategory]);
+
+  const availableBrands = useMemo(() => {
+    const brandMap = new Map<string, { name: string; count: number }>();
+    const scopedGroups = groupProductsByBaseName(subcategoryScopedProducts);
+    for (const grp of scopedGroups) {
+      const rawBrand = (grp.brand || grp.variants[0]?.brand || '').trim();
+      if (!rawBrand) continue;
+      const key = rawBrand.toLowerCase();
+      const existing = brandMap.get(key);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        brandMap.set(key, { name: rawBrand, count: 1 });
+      }
+    }
+    return Array.from(brandMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [subcategoryScopedProducts]);
+
   // Reset selectedSubcategory if activeCategory changes and current subcategory is not in new list
   useEffect(() => {
     if (
@@ -205,16 +231,30 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     }
   }, [activeCategory, availableSubcategories, selectedSubcategory, setSelectedSubcategory]);
 
+  // Reset selectedBrand if current brand has no items in active category/subcategory
+  useEffect(() => {
+    if (
+      selectedBrand !== 'all' &&
+      !availableBrands.some((b) => b.name.toLowerCase() === selectedBrand.toLowerCase())
+    ) {
+      setSelectedBrand('all');
+    }
+  }, [availableBrands, selectedBrand]);
+
   const hasActiveFilters =
-    selectedSubcategory !== 'all' || stockFilter !== 'all' || priceRange !== 'all';
+    selectedSubcategory !== 'all' ||
+    selectedBrand !== 'all' ||
+    stockFilter !== 'all' ||
+    priceRange !== 'all';
 
   const clearAllFilters = () => {
     setSelectedSubcategory('all');
+    setSelectedBrand('all');
     setStockFilter('all');
     setPriceRange('all');
   };
 
-  // Group all catalog products by baseName so multi-size materials share one card
+  // Group all catalog products by baseName + brand so same products from different brands stay distinct
   const allGroups = useMemo(() => groupProductsByBaseName(products), [products]);
 
   const matchesProductCriteria = (product: Product): boolean => {
@@ -223,6 +263,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     const matchesSubcategory =
       selectedSubcategory === 'all' ||
       (product.subcategory || '').toLowerCase() === selectedSubcategory.toLowerCase();
+    const matchesBrand =
+      selectedBrand === 'all' ||
+      (product.brand || '').trim().toLowerCase() === selectedBrand.toLowerCase();
 
     const matchesStock =
       stockFilter === 'all' ||
@@ -240,6 +283,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
       !q ||
       product.name.toLowerCase().includes(q) ||
       (product.baseName && product.baseName.toLowerCase().includes(q)) ||
+      (product.brand && product.brand.toLowerCase().includes(q)) ||
       (product.sizeLabel && product.sizeLabel.toLowerCase().includes(q)) ||
       product.sku.toLowerCase().includes(q) ||
       (product.partCode && product.partCode.toLowerCase().includes(q)) ||
@@ -250,6 +294,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     return (
       matchesCategory &&
       matchesSubcategory &&
+      matchesBrand &&
       matchesStock &&
       matchesPrice &&
       matchesSearch
@@ -407,17 +452,56 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         </div>
       )}
 
+      {/* Always-accessible Filter by Brand Bar */}
+      {availableBrands.length > 0 && (
+        <div className="flex items-center gap-1.5 overflow-x-auto pb-2 mb-4 border-b border-slate-100 scrollbar-none">
+          <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider shrink-0 flex items-center gap-1 mr-0.5">
+            <Tag className="w-3 h-3 text-amber-600" />
+            <span>Brand:</span>
+          </span>
+          <button
+            type="button"
+            onClick={() => setSelectedBrand('all')}
+            className={`px-2.5 py-1 rounded-md text-[11px] font-bold whitespace-nowrap shrink-0 transition cursor-pointer border ${
+              selectedBrand === 'all'
+                ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-2xs font-extrabold'
+                : 'bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200 hover:text-slate-900'
+            }`}
+          >
+            All Brands
+          </button>
+          {availableBrands.map((b) => {
+            const isBrandActive = selectedBrand.toLowerCase() === b.name.toLowerCase();
+            return (
+              <button
+                key={b.name}
+                type="button"
+                onClick={() => setSelectedBrand(b.name)}
+                className={`px-2.5 py-1 rounded-md text-[11px] font-bold whitespace-nowrap shrink-0 transition cursor-pointer border ${
+                  isBrandActive
+                    ? 'bg-amber-500 text-slate-950 border-amber-400 shadow-2xs font-extrabold'
+                    : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100 hover:text-slate-900'
+                }`}
+              >
+                {b.name} <span className="opacity-70 font-mono">({b.count})</span>
+              </button>
+            );
+          })}
+        </div>
+      )}
+
       {/* Category-Specific Filter Panel */}
       {isFilterOpen && (
         <div className="bg-slate-50 border border-slate-200 rounded-2xl p-4 mb-6 shadow-md space-y-4 animate-in fade-in duration-200">
           <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <Filter className="w-4 h-4 text-amber-600" />
               <h3 className="text-xs sm:text-sm font-black text-slate-900 uppercase tracking-wider">
                 {categoryTitle} Filter Options
               </h3>
               <span className="text-xs text-slate-500">
-                · {availableSubcategories.length} subcategories
+                · {availableBrands.length} {availableBrands.length === 1 ? 'brand' : 'brands'} ·{' '}
+                {availableSubcategories.length} subcategories
               </span>
             </div>
 
@@ -431,8 +515,27 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             )}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-            {/* 1. Subcategories (Tailored strictly to active category) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+            {/* 1. Brand Filter */}
+            <div>
+              <label className="block text-[11px] font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
+                Filter by Brand:
+              </label>
+              <select
+                value={selectedBrand}
+                onChange={(e) => setSelectedBrand(e.target.value)}
+                className="w-full bg-white border border-slate-300 text-slate-900 rounded-lg px-2.5 py-1.5 text-xs focus:outline-none focus:border-amber-500 font-semibold"
+              >
+                <option value="all">All Brands ({availableBrands.length})</option>
+                {availableBrands.map((b) => (
+                  <option key={b.name} value={b.name}>
+                    {b.name} ({b.count})
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* 2. Subcategories (Tailored strictly to active category) */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                 Select Subcategory / Type:
@@ -451,7 +554,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </select>
             </div>
 
-            {/* 2. Stock Availability */}
+            {/* 3. Stock Availability */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                 Stock Status:
@@ -469,7 +572,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
               </select>
             </div>
 
-            {/* 3. Price Filter */}
+            {/* 4. Price Filter */}
             <div>
               <label className="block text-[11px] font-bold text-slate-700 mb-1.5 uppercase tracking-wide">
                 Price Filter:
@@ -725,10 +828,17 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                   </div>
 
                   <div className="space-y-0.5 sm:space-y-1">
-                    <span className="text-[7px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate">
-                      {getCategoryDisplayName(product.category, categories)}{' '}
-                      {product.subcategory ? `· ${product.subcategory}` : ''}
-                    </span>
+                    <div className="flex items-center justify-between gap-1">
+                      <span className="text-[7px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate">
+                        {getCategoryDisplayName(product.category, categories)}{' '}
+                        {product.subcategory ? `· ${product.subcategory}` : ''}
+                      </span>
+                      {product.brand && (
+                        <span className="text-[7px] sm:text-[8px] font-extrabold text-slate-700 bg-slate-100 border border-slate-200 px-1 py-0.2 rounded shrink-0 uppercase tracking-wide max-w-[45%] truncate">
+                          {product.brand}
+                        </span>
+                      )}
+                    </div>
                     <h3 className="font-bold text-[10px] sm:text-xs text-slate-900 leading-tight sm:leading-snug line-clamp-2 min-h-[1.75rem] sm:min-h-[2rem]">
                       {hasMultipleSizes ? group.baseName : product.name}
                     </h3>

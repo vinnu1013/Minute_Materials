@@ -12,7 +12,8 @@ All changes you make inside `/src/admin/` automatically sync to the live store a
 | **Add / Rename / Reorder / Remove Main Categories & Subcategories** | `src/admin/categories.ts` |
 | **Add New Products, Multi-Size Products, Fans/Lights/Tools, Bulk % Discounts, Quick Price Edits, Remove Items** | `src/admin/myProducts.ts` |
 | **Upload Product Photos (Single or Multiple Auto-Sliding Images)** | `public/products/` *(use `'/products/your-photo.jpg'`)* |
-| **Edit Existing Base Plumbing & Electrical Catalog Directly** | `src/data/initialProducts.ts` *(or `data/products.json`)* |
+| **Edit Ashirvad Brand Catalog Directly** | `src/data/brands/ashirvadProducts.ts` *(or `data/products.json`)* |
+| **Add Other Brands (Astral, Finolex, Polycab, etc.)** | Create separate files inside `src/data/brands/` & register in `src/data/brands/index.ts` |
 | **Edit Delivery Areas & Live Delivery Minutes (LB Nagar, Vanasthalipuram, etc.)** | `src/admin/deliveryAreas.ts` |
 
 ---

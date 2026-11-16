@@ -42,6 +42,12 @@ export function getCategorySizePresets(categoryId: string, subcategory = ''): st
     if (sub.includes('swr') || sub.includes('pvc')) {
       return ['40mm (1.5")', '50mm (2")', '75mm (2.5")', '110mm (4")', '160mm (6")'];
     }
+    if (sub.includes('sanitary')) {
+      return ['Snow White', 'Ivory', 'Matt Black', 'S Trap 300 mm', 'S Trap 220 mm', 'P Trap'];
+    }
+    if (sub.includes('tank')) {
+      return ['500 Ltr', '750 Ltr', '1000 Ltr', '1500 Ltr', '2000 Ltr', '3000 Ltr', '5000 Ltr'];
+    }
     return ['1/2"', '3/4"', '1"', '1 1/4"', '1 1/2"', '2"', '1" x 1/2"', '3/4" x 1/2"'];
   }
 

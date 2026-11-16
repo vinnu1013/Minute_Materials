@@ -171,37 +171,20 @@ export async function fetchCurrentLocationAddress(): Promise<{ address: string; 
         let formattedAddress = `GPS Location: ${lat.toFixed(5)}, ${lng.toFixed(5)}`;
 
         try {
-          const apiKey = getGoogleMapsApiKey();
-          if (apiKey) {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3500);
-            const googleRes = await fetch(
-              `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`,
-              { signal: controller.signal }
-            );
-            clearTimeout(timeoutId);
-            if (googleRes.ok) {
-              const gData = await googleRes.json();
-              if (gData.status === 'OK' && gData.results?.[0]?.formatted_address) {
-                formattedAddress = gData.results[0].formatted_address;
-              }
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 3500);
+          const response = await fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`,
+            {
+              signal: controller.signal,
+              headers: { 'Accept': 'application/json' }
             }
-          } else {
-            const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 3500);
-            const response = await fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`,
-              { 
-                signal: controller.signal,
-                headers: { 'Accept': 'application/json' }
-              }
-            );
-            clearTimeout(timeoutId);
-            if (response.ok) {
-              const data = await response.json();
-              if (data && data.display_name) {
-                formattedAddress = `${data.display_name} (GPS: ${lat.toFixed(5)}, ${lng.toFixed(5)})`;
-              }
+          );
+          clearTimeout(timeoutId);
+          if (response.ok) {
+            const data = await response.json();
+            if (data && data.display_name) {
+              formattedAddress = `${data.display_name} (GPS: ${lat.toFixed(5)}, ${lng.toFixed(5)})`;
             }
           }
         } catch (e) {
@@ -224,83 +207,5 @@ export async function fetchCurrentLocationAddress(): Promise<{ address: string; 
       { enableHighAccuracy: true, timeout: 10000, maximumAge: 15000 }
     );
   });
-}
-
-/**
- * Retrieve Google Maps Platform Key from environment
- */
-export function getGoogleMapsApiKey(): string {
-  return (
-    process.env.GOOGLE_MAPS_PLATFORM_KEY ||
-    (import.meta as any).env?.VITE_GOOGLE_MAPS_PLATFORM_KEY ||
-    (globalThis as any).GOOGLE_MAPS_PLATFORM_KEY ||
-    ''
-  );
-}
-
-/**
- * Geocode user address string using Google Maps Geocoding API
- */
-export async function geocodeWithGoogleMaps(address: string): Promise<{ lat: number; lng: number; formattedAddress: string } | null> {
-  const apiKey = getGoogleMapsApiKey();
-  if (!apiKey || !address || !address.trim()) return null;
-
-  try {
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
-    const res = await fetch(url);
-    if (!res.ok) return null;
-    const data = await res.json();
-    if (data.status === 'OK' && data.results && data.results.length > 0) {
-      const loc = data.results[0].geometry.location;
-      return {
-        lat: loc.lat,
-        lng: loc.lng,
-        formattedAddress: data.results[0].formatted_address
-      };
-    }
-  } catch (err) {
-    console.warn('Google Maps Geocoding API fetch notice:', err);
-  }
-  return null;
-}
-
-/**
- * Calculate distance between Central Hub (17.34265, 78.55267) and destination using Google Maps API with fallback
- */
-export async function getEstimateForAddressWithGoogleMaps(
-  address: string,
-  userLat?: number,
-  userLng?: number
-): Promise<{
-  distanceKm: number;
-  roadDistanceKm: number;
-  driveTimeMins: number;
-  totalDeliveryEstimateMins: number;
-  matchedZone?: string;
-  depotCoords: string;
-  geocodedAddress?: string;
-  isGoogleMapsPowered: boolean;
-}> {
-  const apiKey = getGoogleMapsApiKey();
-  let targetLat = userLat;
-  let targetLng = userLng;
-  let geocodedAddress: string | undefined;
-
-  if ((!targetLat || !targetLng) && address && apiKey) {
-    const geo = await geocodeWithGoogleMaps(address);
-    if (geo) {
-      targetLat = geo.lat;
-      targetLng = geo.lng;
-      geocodedAddress = geo.formattedAddress;
-    }
-  }
-
-  const fallbackEst = getEstimateForAddress(address, targetLat, targetLng);
-
-  return {
-    ...fallbackEst,
-    geocodedAddress,
-    isGoogleMapsPowered: Boolean(apiKey && (targetLat || targetLng))
-  };
 }
 

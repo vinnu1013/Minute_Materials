@@ -1,5 +1,5 @@
 import { Product, StoreSettings, CategoryConfig } from '../types';
-import { INITIAL_PRODUCTS } from '../data/initialProducts';
+import { ALL_BRAND_PRODUCTS } from '../data/brands';
 import { ADMIN_STORE_SETTINGS } from './storeSettings';
 import { ADMIN_CATEGORIES } from './categories';
 import { ADMIN_DELIVERY_AREAS } from './deliveryAreas';
@@ -156,7 +156,7 @@ export function applyCodeRulesToProductList(
 }
 
 export function buildCompiledInitialProducts(): Product[] {
-  return applyCodeRulesToProductList([...INITIAL_PRODUCTS], {
+  return applyCodeRulesToProductList([...ALL_BRAND_PRODUCTS], {
     myProducts: MY_PRODUCTS,
     productUpdates: PRODUCT_UPDATES,
     removeProducts: REMOVE_PRODUCTS,
@@ -173,7 +173,7 @@ export function getCodeConfigSignature(): string {
     updates: PRODUCT_UPDATES,
     removes: REMOVE_PRODUCTS,
     bulkPct: CATEGORY_BULK_PRICE_PERCENT,
-    baseProductsSig: fastDeterministicHash(INITIAL_PRODUCTS),
+    baseProductsSig: fastDeterministicHash(ALL_BRAND_PRODUCTS),
   });
 }
 
@@ -181,7 +181,7 @@ export {
   ADMIN_STORE_SETTINGS,
   ADMIN_CATEGORIES,
   ADMIN_DELIVERY_AREAS,
-  INITIAL_PRODUCTS as BASE_INITIAL_PRODUCTS,
+  ALL_BRAND_PRODUCTS as BASE_INITIAL_PRODUCTS,
   MY_PRODUCTS,
   PRODUCT_UPDATES,
   REMOVE_PRODUCTS,

@@ -4,7 +4,7 @@ import path from 'path';
 import fs from 'fs';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI, Type } from '@google/genai';
-import { INITIAL_PRODUCTS } from './src/data/initialProducts';
+import { ALL_BRAND_PRODUCTS } from './src/data/brands';
 import { ADMIN_STORE_SETTINGS } from './src/admin/storeSettings';
 import { Product, Booking, StoreSettings, UserAccount } from './src/types';
 import { getEstimateForAddress, DEPOT_LOCATION } from './src/utils/distance';
@@ -139,7 +139,7 @@ const INITIAL_BOOKINGS: Booking[] = [
 ];
 
 // Persistent state loaded from disk
-let products: Product[] = loadJsonFile<Product[]>(PRODUCTS_FILE, [...INITIAL_PRODUCTS]);
+let products: Product[] = loadJsonFile<Product[]>(PRODUCTS_FILE, [...ALL_BRAND_PRODUCTS]);
 let storeSettings: StoreSettings = {
   ...ADMIN_STORE_SETTINGS,
   ...loadJsonFile<StoreSettings>(SETTINGS_FILE, { ...ADMIN_STORE_SETTINGS }),

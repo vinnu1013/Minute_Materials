@@ -105,6 +105,14 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-[11px] text-slate-500 font-medium truncate">
+                {(group.brand || primaryVariant?.brand) && (
+                  <>
+                    <span className="text-slate-800 font-extrabold uppercase tracking-wide">
+                      {group.brand || primaryVariant?.brand}
+                    </span>
+                    <span aria-hidden="true">·</span>
+                  </>
+                )}
                 <span className="text-amber-700 font-semibold">
                   {getCategoryDisplayName(group.category, categories)}
                 </span>

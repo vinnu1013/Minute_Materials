@@ -2,7 +2,7 @@ Drop your product images inside this /public/products/ folder!
 
 Example:
   If you upload `ceiling-fan-1.jpg` and `ceiling-fan-2.jpg` into `/public/products/`,
-  reference them in `/src/admin/myProducts.ts` (or `/src/data/initialProducts.ts`) like this:
+  reference them in `/src/admin/myProducts.ts` (or `/src/data/brands/ashirvadProducts.ts`) like this:
 
   images: [
     '/products/ceiling-fan-1.jpg',

@@ -108,7 +108,7 @@ class DatabaseManager {
     const loadedProducts = loadDiskJson<Product[]>(PRODUCTS_FILE, [...BASE_INITIAL_PRODUCTS]);
     let needsMetadataSave = false;
 
-    // Merge base products directly so code-level edits to initialProducts.ts
+    // Merge base products directly so code-level edits to /src/data/brands/*
     // (such as adding direct image URLs or updating metadata) are immediately synced to disk!
     const diskById = new Map(loadedProducts.map((p) => [p.id, p]));
     const mergedCodeProducts = BASE_INITIAL_PRODUCTS.map((codeProd) => {
@@ -152,12 +152,12 @@ class DatabaseManager {
     loadDiskJson<ComplaintRecord[]>(COMPLAINTS_FILE, []);
     loadDiskJson<UserAccount[]>(USERS_FILE, []);
 
-    // Synchronize any code-level changes in src/admin/* or src/data/initialProducts.ts
+    // Synchronize any code-level changes in src/admin/* or src/data/brands/*
     this.syncCodeConfig();
   }
 
   /**
-   * Synchronizes code edits from `/src/admin/*` and `/src/data/initialProducts.ts`
+   * Synchronizes code edits from `/src/admin/*` and `/src/data/brands/*`
    * into the persistent `/data/*.json` store while preserving Web Admin Panel changes.
    */
   public syncCodeConfig(

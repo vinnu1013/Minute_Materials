@@ -33,7 +33,7 @@ import {
 } from '../data/categories';
 import {
   groupProductsByBaseName,
-  resolveBaseAndSize,
+  getProductGroupKey,
   getVariantSizeLabel,
   ProductGroup,
 } from '../utils/productGrouping';
@@ -94,8 +94,7 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
   const allGroups = useMemo(() => groupProductsByBaseName(allProducts), [allProducts]);
 
   const currentGroup = useMemo(() => {
-    const { baseName } = resolveBaseAndSize(product);
-    const key = `${product.category}::${baseName.toLowerCase().replace(/\s+/g, ' ').trim()}`;
+    const key = getProductGroupKey(product);
     return allGroups.find((g) => g.key === key) || null;
   }, [allGroups, product]);
 

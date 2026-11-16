@@ -285,6 +285,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
   const [catalogViewMode, setCatalogViewMode] = useState<'grouped' | 'flat'>('grouped');
   const [adminCategoryFilter, setAdminCategoryFilter] = useState<string>('all');
   const [adminSubcategoryFilter, setAdminSubcategoryFilter] = useState<string>('all');
+  const [adminBrandFilter, setAdminBrandFilter] = useState<string>('all');
   const [adminProductSearch, setAdminProductSearch] = useState('');
   const [inlinePrices, setInlinePrices] = useState<Record<string, string>>({});
   const [inlineStocks, setInlineStocks] = useState<Record<string, string>>({});
@@ -329,6 +330,17 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     }
   }, [adminCategoryFilter, activeFilterSubcategories, adminSubcategoryFilter]);
 
+  const availableAdminBrands = useMemo(() => {
+    const map = new Map<string, string>();
+    products.forEach((p) => {
+      const b = (p.brand || '').trim();
+      if (b && !map.has(b.toLowerCase())) {
+        map.set(b.toLowerCase(), b);
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => a.localeCompare(b));
+  }, [products]);
+
   const filteredAdminProducts = useMemo(() => {
     const q = adminProductSearch.trim().toLowerCase();
     return products.filter((p) => {
@@ -338,16 +350,20 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
       const subMatch =
         adminSubcategoryFilter === 'all' ||
         (p.subcategory || '').toLowerCase() === adminSubcategoryFilter.toLowerCase();
+      const brandMatch =
+        adminBrandFilter === 'all' ||
+        (p.brand || '').trim().toLowerCase() === adminBrandFilter.trim().toLowerCase();
       const searchMatch =
         !q ||
         p.name.toLowerCase().includes(q) ||
         (p.baseName && p.baseName.toLowerCase().includes(q)) ||
+        (p.brand && p.brand.toLowerCase().includes(q)) ||
         (p.sizeLabel && p.sizeLabel.toLowerCase().includes(q)) ||
         p.sku.toLowerCase().includes(q) ||
         (p.subcategory && p.subcategory.toLowerCase().includes(q));
-      return catMatch && subMatch && searchMatch;
+      return catMatch && subMatch && brandMatch && searchMatch;
     });
-  }, [products, adminCategoryFilter, adminSubcategoryFilter, adminProductSearch]);
+  }, [products, adminCategoryFilter, adminSubcategoryFilter, adminBrandFilter, adminProductSearch]);
 
   const filteredAdminGroups = useMemo(
     () => groupProductsByBaseName(filteredAdminProducts),
@@ -1696,6 +1712,39 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                     >
                       + Add to {getCategoryDisplayName(adminCategoryFilter, categories)}
                     </button>
+                  </div>
+                )}
+
+                {availableAdminBrands.length > 0 && (
+                  <div className="flex items-center gap-1.5 overflow-x-auto pt-1 scrollbar-none">
+                    <span className="text-[11px] font-bold text-slate-500 whitespace-nowrap shrink-0 pr-1">
+                      Brand:
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setAdminBrandFilter('all')}
+                      className={`px-2.5 py-1 rounded-md text-[11px] font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
+                        adminBrandFilter === 'all'
+                          ? 'bg-slate-900 text-white'
+                          : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                      }`}
+                    >
+                      All Brands
+                    </button>
+                    {availableAdminBrands.map((brand) => (
+                      <button
+                        key={brand}
+                        type="button"
+                        onClick={() => setAdminBrandFilter(brand)}
+                        className={`px-2.5 py-1 rounded-md text-[11px] font-semibold whitespace-nowrap shrink-0 transition cursor-pointer ${
+                          adminBrandFilter.toLowerCase() === brand.toLowerCase()
+                            ? 'bg-slate-900 text-white'
+                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                        }`}
+                      >
+                        {brand}
+                      </button>
+                    ))}
                   </div>
                 )}
               </div>

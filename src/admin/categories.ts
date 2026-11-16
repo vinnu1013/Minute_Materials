@@ -23,9 +23,10 @@ export const ADMIN_CATEGORIES: CategoryConfig[] = [
       'Clamps & Hardware',
       'UPVC Pipes & Fittings',
       'PVC / SWR Drainage',
-      'Tanks & Sanitaryware',
+      'Sanitaryware',
+      'Tanks',
     ],
-    description: 'Ashirvad CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, solvent cements, and clamps.',
+    description: 'Ashirvad CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, solvent cements, clamps, Cera sanitaryware, and water tanks.',
   },
   {
     id: 'electrical',

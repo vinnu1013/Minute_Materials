@@ -3,6 +3,7 @@ import { Product, ProductCategory } from '../types';
 export interface ProductGroup {
   key: string;
   baseName: string;
+  brand?: string;
   category: ProductCategory;
   subcategory: string;
   variants: Product[];
@@ -56,12 +57,18 @@ export function getVariantSizeLabel(product: Product): string {
   return product.sku || product.name;
 }
 
+export function getProductGroupKey(product: Product): string {
+  const { baseName } = resolveBaseAndSize(product);
+  const brandKey = (product.brand || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  return `${product.category}::${brandKey}::${baseName.toLowerCase().replace(/\s+/g, ' ').trim()}`;
+}
+
 export function groupProductsByBaseName(products: Product[]): ProductGroup[] {
   const groupMap = new Map<string, ProductGroup>();
 
   for (const product of products) {
     const { baseName } = resolveBaseAndSize(product);
-    const normalizedKey = `${product.category}::${baseName.toLowerCase().replace(/\s+/g, ' ').trim()}`;
+    const normalizedKey = getProductGroupKey(product);
 
     const existing = groupMap.get(normalizedKey);
     if (existing) {
@@ -69,10 +76,14 @@ export function groupProductsByBaseName(products: Product[]): ProductGroup[] {
       if (product.popular) {
         existing.popular = true;
       }
+      if (!existing.brand && product.brand) {
+        existing.brand = product.brand.trim();
+      }
     } else {
       groupMap.set(normalizedKey, {
         key: normalizedKey,
         baseName,
+        brand: product.brand?.trim() || undefined,
         category: product.category,
         subcategory: product.subcategory,
         variants: [product],
