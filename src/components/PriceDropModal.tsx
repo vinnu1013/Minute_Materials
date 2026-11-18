@@ -15,7 +15,7 @@ import {
   Package,
 } from 'lucide-react';
 import { Product, CartItem, CategoryConfig } from '../types';
-import { groupProductsByBaseName } from '../utils/productGrouping';
+import { groupProductsByBaseName, getGroupVariantSummary } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
 import { getCategoryDisplayName, getProductGalleryImages, isDetailPageCategory } from '../data/categories';
 
@@ -109,6 +109,9 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
               <div className="grid grid-cols-3 gap-2 sm:gap-3.5">
                 {discountedGroups.map((group) => {
                   const hasMultipleSizes = group.variants.length > 1;
+                  const variantSummary = hasMultipleSizes
+                    ? getGroupVariantSummary(group.variants)
+                    : null;
                   const sortedByPrice = [...group.variants].sort((a, b) => a.price - b.price);
                   const product = sortedByPrice[0];
                   const maxPrice = sortedByPrice[sortedByPrice.length - 1].price;
@@ -175,16 +178,18 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                           <span className="absolute top-1 left-1 bg-rose-600 text-white font-extrabold text-[8px] sm:text-[10px] px-1.5 sm:px-2 py-0.5 rounded flex items-center gap-0.5 shadow">
                             <Tag className="w-2 h-2 sm:w-2.5 sm:h-2.5" /> SAVE {maxDiscountPercent}%
                           </span>
-                          {hasMultipleSizes && (
+                          {hasMultipleSizes && variantSummary && (
                             <span className="absolute bottom-1 left-1 bg-slate-800/80 text-white text-[7px] sm:text-[8px] font-bold px-1.5 py-0.5 rounded">
-                              {group.variants.length} Sizes
+                              {variantSummary.badgeLabel}
                             </span>
                           )}
                         </div>
 
                         <span className="text-[8px] sm:text-[9px] uppercase tracking-wider font-extrabold text-amber-600 block truncate mb-0.5">
                           {getCategoryDisplayName(product.category, categories)}
-                          {hasMultipleSizes ? ` · ${group.variants.length} sizes` : ''}
+                          {hasMultipleSizes && variantSummary
+                            ? ` · ${variantSummary.availabilityLabel}`
+                            : ''}
                         </span>
                         <h4 className="font-bold text-slate-900 text-[11px] sm:text-sm leading-tight line-clamp-2 mb-1">
                           {hasMultipleSizes ? group.baseName : product.name}
@@ -232,7 +237,9 @@ export const PriceDropModal: React.FC<PriceDropModalProps> = ({
                           >
                             <ShoppingCart className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                             <span>
-                              {totalGroupCartQty > 0 ? `${totalGroupCartQty} · Sizes` : '+ Add'}
+                              {totalGroupCartQty > 0
+                                ? `${totalGroupCartQty} · ${variantSummary?.buttonSuffix || 'Sizes'}`
+                                : '+ Add'}
                             </span>
                           </button>
                         ) : singleQtyInCart > 0 ? (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Logo } from './Logo';
 import { 
   Phone, 
@@ -122,6 +122,8 @@ export const Header: React.FC<HeaderProps> = ({
     setShowRecentMobile(false);
   };
 
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchTerm.trim()) {
@@ -129,6 +131,11 @@ export const Header: React.FC<HeaderProps> = ({
     }
     setShowRecentDesktop(false);
     setShowRecentMobile(false);
+    // Automatically close/hide the mobile keyboard when user presses Enter
+    searchInputRef.current?.blur();
+    if (typeof document !== 'undefined' && document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
   };
 
   const clearRecentSearches = (e: React.MouseEvent) => {
@@ -257,8 +264,11 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="relative flex items-center">
               <Search className="w-4 h-4 absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 text-slate-400 shrink-0" />
               <input
-                type="text"
-                placeholder="Search plumbing, electrical, fans, LED lights, tools..."
+                ref={searchInputRef}
+                type="search"
+                inputMode="search"
+                enterKeyHint="search"
+                placeholder="Search plumbing, electrical, switches, wires, pipes..."
                 value={searchTerm}
                 onFocus={() => {
                   setShowRecentDesktop(true);
@@ -268,6 +278,11 @@ export const Header: React.FC<HeaderProps> = ({
                   setShowRecentDesktop(false);
                   setShowRecentMobile(false);
                 }, 200)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.currentTarget.blur();
+                  }
+                }}
                 onChange={(e) => handleSearchChange(e.target.value)}
                 className={`w-full bg-slate-50 border text-slate-900 text-xs sm:text-sm pl-8 sm:pl-9 pr-14 sm:pr-20 py-2 sm:py-2.5 rounded-xl focus:outline-none transition ${
                   isListening

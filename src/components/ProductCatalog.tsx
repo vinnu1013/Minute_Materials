@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useDeferredValue } from 'react';
+import { buildSearchIndex, scoreProductMatch, getCorrectedQuery } from '../utils/searchUtils';
 import { Product, CartItem, CategoryConfig } from '../types';
 import {
   ShoppingCart,
@@ -20,8 +21,10 @@ import {
   Package,
   Layers,
   Tag,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
-import { groupProductsByBaseName } from '../utils/productGrouping';
+import { groupProductsByBaseName, getGroupVariantSummary } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
 import {
   DEFAULT_CATEGORIES,
@@ -60,15 +63,37 @@ function getCategoryIcon(categoryId: string, className = 'w-3.5 h-3.5') {
   return <Package className={className} />;
 }
 
-const CatalogCardAutoImage: React.FC<{ images: string[]; alt: string }> = ({ images, alt }) => {
+const CatalogCardAutoImage: React.FC<{
+  images: string[];
+  alt: string;
+  onUserSwipe?: () => void;
+}> = ({ images, alt, onUserSwipe }) => {
   const [idx, setIdx] = useState(0);
+  const [dragOffsetX, setDragOffsetX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [pausedUntil, setPausedUntil] = useState(0);
+  const pointerStartRef = useRef<{
+    x: number;
+    y: number;
+    pointerId: number | null;
+    isTouch: boolean;
+    active: boolean;
+    lockedAxis: 'x' | 'y' | null;
+  }>({
+    x: 0,
+    y: 0,
+    pointerId: null,
+    isTouch: false,
+    active: false,
+    lockedAxis: null,
+  });
 
   useEffect(() => {
     setIdx(0);
   }, [images.length, images[0]]);
 
   useEffect(() => {
-    if (images.length <= 1) return;
+    if (images.length <= 1 || isDragging) return;
     if (
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -76,32 +101,192 @@ const CatalogCardAutoImage: React.FC<{ images: string[]; alt: string }> = ({ ima
       return;
     }
     const timer = window.setInterval(() => {
+      if (Date.now() < pausedUntil) return;
       setIdx((prev) => (prev + 1) % images.length);
     }, 3200);
     return () => window.clearInterval(timer);
-  }, [images]);
+  }, [images.length, isDragging, pausedUntil]);
 
-  const currentSrc = images[idx] || images[0];
-  return (
-    <>
+  const goTo = (nextIdx: number) => {
+    const wrapped = (nextIdx + images.length) % images.length;
+    setIdx(wrapped);
+    setPausedUntil(Date.now() + 6000);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (images.length <= 1 || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    pointerStartRef.current = {
+      x: t.clientX,
+      y: t.clientY,
+      pointerId: null,
+      isTouch: true,
+      active: true,
+      lockedAxis: null,
+    };
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current.active || !pointerStartRef.current.isTouch) return;
+    const t = e.touches[0];
+    const dx = t.clientX - pointerStartRef.current.x;
+    const dy = t.clientY - pointerStartRef.current.y;
+    if (!pointerStartRef.current.lockedAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      pointerStartRef.current.lockedAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
+    }
+    if (pointerStartRef.current.lockedAxis === 'x') {
+      setIsDragging(true);
+      setDragOffsetX(dx);
+    }
+  };
+
+  const finishSwipe = (dx: number) => {
+    if (Math.abs(dx) > 10) {
+      onUserSwipe?.();
+    }
+    if (Math.abs(dx) > 26) {
+      if (dx < 0) {
+        goTo(idx + 1);
+      } else {
+        goTo(idx - 1);
+      }
+    }
+    pointerStartRef.current.active = false;
+    pointerStartRef.current.lockedAxis = null;
+    setIsDragging(false);
+    setDragOffsetX(0);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current.active || !pointerStartRef.current.isTouch) return;
+    const dx = e.changedTouches[0]
+      ? e.changedTouches[0].clientX - pointerStartRef.current.x
+      : dragOffsetX;
+    finishSwipe(dx);
+  };
+
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (images.length <= 1 || e.pointerType === 'touch' || e.button !== 0) return;
+    pointerStartRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      pointerId: e.pointerId,
+      isTouch: false,
+      active: true,
+      lockedAxis: null,
+    };
+  };
+
+  const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current.active || pointerStartRef.current.isTouch) return;
+    const dx = e.clientX - pointerStartRef.current.x;
+    const dy = e.clientY - pointerStartRef.current.y;
+    if (!pointerStartRef.current.lockedAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      pointerStartRef.current.lockedAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
+    }
+    if (pointerStartRef.current.lockedAxis === 'x') {
+      setIsDragging(true);
+      setDragOffsetX(dx);
+    }
+  };
+
+  const handlePointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!pointerStartRef.current.active || pointerStartRef.current.isTouch) return;
+    const dx = e.clientX - pointerStartRef.current.x;
+    finishSwipe(dx);
+  };
+
+  if (images.length <= 1) {
+    return (
       <img
-        src={currentSrc}
+        src={images[0]}
         alt={alt}
+        draggable={false}
         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
       />
-      {images.length > 1 && (
-        <div className="absolute bottom-1 right-1 flex items-center gap-0.5 bg-white/85 px-1 py-0.5 rounded-full shadow-2xs pointer-events-none">
-          {images.slice(0, 5).map((_, dotIdx) => (
-            <span
-              key={dotIdx}
-              className={`h-1 rounded-full transition-all ${
-                dotIdx === idx % 5 ? 'w-2.5 bg-amber-500' : 'w-1 bg-slate-300'
-              }`}
-            />
-          ))}
-        </div>
-      )}
-    </>
+    );
+  }
+
+  return (
+    <div
+      className="relative w-full h-full overflow-hidden touch-pan-y select-none"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      onTouchCancel={handleTouchEnd}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerLeave={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+    >
+      <div
+        className={`flex h-full w-full ${
+          isDragging ? '' : 'transition-transform duration-300 ease-out'
+        }`}
+        style={{
+          transform: `translate3d(calc(-${idx * 100}% + ${dragOffsetX}px), 0, 0)`,
+        }}
+      >
+        {images.map((src, i) => (
+          <img
+            key={`${src}-${i}`}
+            src={src}
+            alt={`${alt} ${i + 1}`}
+            draggable={false}
+            className="w-full h-full shrink-0 object-cover"
+          />
+        ))}
+      </div>
+
+      {/* Subtle hover arrows for quick desktop stepping */}
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onUserSwipe?.();
+          goTo(idx - 1);
+        }}
+        aria-label="Previous image"
+        className="hidden sm:flex opacity-0 group-hover:opacity-100 absolute left-1 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-xs items-center justify-center text-slate-700 transition z-10 cursor-pointer"
+      >
+        <ChevronLeft className="w-3 h-3" />
+      </button>
+      <button
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          onUserSwipe?.();
+          goTo(idx + 1);
+        }}
+        aria-label="Next image"
+        className="hidden sm:flex opacity-0 group-hover:opacity-100 absolute right-1 top-1/2 -translate-y-1/2 w-5 h-5 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-xs items-center justify-center text-slate-700 transition z-10 cursor-pointer"
+      >
+        <ChevronRight className="w-3 h-3" />
+      </button>
+
+      {/* Interactive pagination dots */}
+      <div
+        className="absolute bottom-1 right-1 flex items-center gap-0.5 bg-white/85 px-1 py-0.5 rounded-full shadow-2xs z-10"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {images.slice(0, 5).map((_, dotIdx) => (
+          <button
+            key={dotIdx}
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onUserSwipe?.();
+              goTo(dotIdx);
+            }}
+            aria-label={`View image ${dotIdx + 1}`}
+            className={`h-1 rounded-full transition-all cursor-pointer ${
+              dotIdx === idx % 5 ? 'w-2.5 bg-amber-500' : 'w-1 bg-slate-300'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };
 
@@ -125,6 +310,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 }) => {
   const [sortBy, setSortBy] = useState<'popular' | 'price_asc' | 'price_desc' | 'name'>('popular');
   const [addedIds, setAddedIds] = useState<Record<string, boolean>>({});
+  const addedTimeoutsRef = useRef<Record<string, number>>({});
+  const lastCardSwipeAtRef = useRef<number>(0);
   const [catalogProductToDelete, setCatalogProductToDelete] = useState<Product | null>(null);
   const [activeSizeGroupKey, setActiveSizeGroupKey] = useState<string | null>(null);
 
@@ -137,6 +324,38 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   const [selectedBrand, setSelectedBrand] = useState<string>('all');
   const [stockFilter, setStockFilter] = useState<'all' | 'in_stock' | 'low_stock'>('all');
   const [priceRange, setPriceRange] = useState<'all' | 'under_50' | '50_200' | '200_500' | 'above_500'>('all');
+
+  // Clear "Added" feedback immediately if item leaves cart (e.g. decremented to 0 via "-")
+  useEffect(() => {
+    const activeCartIds = new Set(
+      (cartItems || [])
+        .filter((i) => i && i.product && i.quantity > 0)
+        .map((i) => i.product.id)
+    );
+    setAddedIds((prev) => {
+      let changed = false;
+      const next = { ...prev };
+      for (const id of Object.keys(next)) {
+        if (next[id] && !activeCartIds.has(id)) {
+          delete next[id];
+          changed = true;
+          if (addedTimeoutsRef.current[id]) {
+            window.clearTimeout(addedTimeoutsRef.current[id]);
+            delete addedTimeoutsRef.current[id];
+          }
+        }
+      }
+      return changed ? next : prev;
+    });
+  }, [cartItems]);
+
+  useEffect(() => {
+    return () => {
+      Object.keys(addedTimeoutsRef.current).forEach((id) => {
+        window.clearTimeout(addedTimeoutsRef.current[id]);
+      });
+    };
+  }, []);
 
   const getCartQuantity = (productId: string) => {
     if (!cartItems || !Array.isArray(cartItems)) return 0;
@@ -154,9 +373,18 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
   const handleAddWithFeedback = (product: Product) => {
     onAddToCart(product, 1);
+    if (addedTimeoutsRef.current[product.id]) {
+      window.clearTimeout(addedTimeoutsRef.current[product.id]);
+    }
     setAddedIds((prev) => ({ ...prev, [product.id]: true }));
-    setTimeout(() => {
-      setAddedIds((prev) => ({ ...prev, [product.id]: false }));
+    addedTimeoutsRef.current[product.id] = window.setTimeout(() => {
+      setAddedIds((prev) => {
+        if (!prev[product.id]) return prev;
+        const next = { ...prev };
+        delete next[product.id];
+        return next;
+      });
+      delete addedTimeoutsRef.current[product.id];
     }, 5000);
   };
 
@@ -254,8 +482,30 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     setPriceRange('all');
   };
 
+  // Deferred search term keeps typing 60fps smooth across 2,000+ SKUs
+  const deferredSearchTerm = useDeferredValue(searchTerm);
+  const correctedSearchLabel = useMemo(() => getCorrectedQuery(deferredSearchTerm), [deferredSearchTerm]);
+
+  // Pre-build normalized search index once per catalog change
+  const searchIndexById = useMemo(() => {
+    const entries = buildSearchIndex(products);
+    const map = new Map<string, (typeof entries)[number]>();
+    for (const entry of entries) {
+      map.set(entry.product.id, entry);
+    }
+    return map;
+  }, [products]);
+
   // Group all catalog products by baseName + brand so same products from different brands stay distinct
   const allGroups = useMemo(() => groupProductsByBaseName(products), [products]);
+
+  const getProductSearchScore = (product: Product): number => {
+    const q = deferredSearchTerm.trim();
+    if (!q) return 1;
+    const entry = searchIndexById.get(product.id);
+    if (!entry) return 0;
+    return scoreProductMatch(entry, q);
+  };
 
   const matchesProductCriteria = (product: Product): boolean => {
     const matchesCategory =
@@ -278,18 +528,7 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
     else if (priceRange === '200_500') matchesPrice = product.price > 200 && product.price <= 500;
     else if (priceRange === 'above_500') matchesPrice = product.price > 500;
 
-    const q = searchTerm.trim().toLowerCase();
-    const matchesSearch =
-      !q ||
-      product.name.toLowerCase().includes(q) ||
-      (product.baseName && product.baseName.toLowerCase().includes(q)) ||
-      (product.brand && product.brand.toLowerCase().includes(q)) ||
-      (product.sizeLabel && product.sizeLabel.toLowerCase().includes(q)) ||
-      product.sku.toLowerCase().includes(q) ||
-      (product.partCode && product.partCode.toLowerCase().includes(q)) ||
-      (product.hsnCode && product.hsnCode.toLowerCase().includes(q)) ||
-      product.subcategory.toLowerCase().includes(q) ||
-      Boolean(product.description && product.description.toLowerCase().includes(q));
+    const matchesSearch = getProductSearchScore(product) > 0;
 
     return (
       matchesCategory &&
@@ -302,37 +541,116 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
   };
 
   // Filter Groups where at least one size variant matches active criteria
-  const filteredGroups = allGroups
-    .map((group) => {
-      const matchingVariants = group.variants.filter(matchesProductCriteria);
-      return { group, matchingVariants };
-    })
-    .filter((entry) => entry.matchingVariants.length > 0);
+  const filteredGroups = useMemo(() => {
+    return allGroups
+      .map((group) => {
+        const matchingVariants = group.variants.filter(matchesProductCriteria);
+        const bestScore =
+          matchingVariants.length > 0
+            ? Math.max(...matchingVariants.map((v) => getProductSearchScore(v)))
+            : 0;
+        return { group, matchingVariants, bestScore };
+      })
+      .filter((entry) => entry.matchingVariants.length > 0);
+  }, [
+    allGroups,
+    activeCategory,
+    selectedSubcategory,
+    selectedBrand,
+    stockFilter,
+    priceRange,
+    deferredSearchTerm,
+    searchIndexById,
+  ]);
 
-  // Sort Product Groups
-  const sortedGroups = [...filteredGroups].sort((a, b) => {
-    if (sortBy === 'price_asc') {
-      const aPositive = a.matchingVariants.filter((v) => v.price > 0).map((v) => v.price);
-      const bPositive = b.matchingVariants.filter((v) => v.price > 0).map((v) => v.price);
-      const aMin = aPositive.length > 0 ? Math.min(...aPositive) : -1;
-      const bMin = bPositive.length > 0 ? Math.min(...bPositive) : -1;
-      if (aMin <= 0 && bMin > 0) return 1;
-      if (bMin <= 0 && aMin > 0) return -1;
-      return aMin - bMin;
+  // Sort Product Groups (prioritize search relevance when searching)
+  const sortedGroups = useMemo(() => {
+    const hasQuery = deferredSearchTerm.trim().length > 0;
+    return [...filteredGroups].sort((a, b) => {
+      if (hasQuery && b.bestScore !== a.bestScore) {
+        return b.bestScore - a.bestScore;
+      }
+      if (sortBy === 'price_asc') {
+        const aPositive = a.matchingVariants.filter((v) => v.price > 0).map((v) => v.price);
+        const bPositive = b.matchingVariants.filter((v) => v.price > 0).map((v) => v.price);
+        const aMin = aPositive.length > 0 ? Math.min(...aPositive) : -1;
+        const bMin = bPositive.length > 0 ? Math.min(...bPositive) : -1;
+        if (aMin <= 0 && bMin > 0) return 1;
+        if (bMin <= 0 && aMin > 0) return -1;
+        return aMin - bMin;
+      }
+      if (sortBy === 'price_desc') {
+        const aMax = Math.max(...a.matchingVariants.map((v) => v.price));
+        const bMax = Math.max(...b.matchingVariants.map((v) => v.price));
+        return bMax - aMax;
+      }
+      if (sortBy === 'name') {
+        return a.group.baseName.localeCompare(b.group.baseName);
+      }
+      // Default popular
+      if (a.group.popular && !b.group.popular) return -1;
+      if (!a.group.popular && b.group.popular) return 1;
+      return 0;
+    });
+  }, [filteredGroups, sortBy, deferredSearchTerm]);
+
+  // Inject Google Shopping Schema.org Product ItemList JSON-LD for visible catalog items
+  useEffect(() => {
+    if (typeof document === 'undefined') return;
+    const origin = window.location.origin;
+    const topProducts = sortedGroups
+      .slice(0, 40)
+      .map((entry) => entry.matchingVariants[0])
+      .filter((p) => p && p.price > 0);
+
+    const ldJson = {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      name: 'Minute Materials Product Catalog',
+      numberOfItems: topProducts.length,
+      itemListElement: topProducts.map((p, idx) => ({
+        '@type': 'ListItem',
+        position: idx + 1,
+        item: {
+          '@type': 'Product',
+          name: p.name,
+          sku: p.sku,
+          mpn: p.partCode || p.sku,
+          image: p.image?.startsWith('http')
+            ? p.image
+            : `${origin}${p.image?.startsWith('/') ? '' : '/'}${p.image || 'logo-square.png'}`,
+          brand: {
+            '@type': 'Brand',
+            name: p.brand || 'Minute Materials',
+          },
+          category: `${p.category} > ${p.subcategory}`,
+          offers: {
+            '@type': 'Offer',
+            url: `${origin}/?q=${encodeURIComponent(p.sku || p.name)}`,
+            priceCurrency: 'INR',
+            price: Number(p.price).toFixed(2),
+            availability:
+              p.stockStatus === 'out_of_stock'
+                ? 'https://schema.org/OutOfStock'
+                : 'https://schema.org/InStock',
+            itemCondition: 'https://schema.org/NewCondition',
+          },
+        },
+      })),
+    };
+
+    let script = document.getElementById('mm-product-jsonld') as HTMLScriptElement | null;
+    if (!script) {
+      script = document.createElement('script');
+      script.id = 'mm-product-jsonld';
+      script.type = 'application/ld+json';
+      document.head.appendChild(script);
     }
-    if (sortBy === 'price_desc') {
-      const aMax = Math.max(...a.matchingVariants.map((v) => v.price));
-      const bMax = Math.max(...b.matchingVariants.map((v) => v.price));
-      return bMax - aMax;
-    }
-    if (sortBy === 'name') {
-      return a.group.baseName.localeCompare(b.group.baseName);
-    }
-    // Default popular
-    if (a.group.popular && !b.group.popular) return -1;
-    if (!a.group.popular && b.group.popular) return 1;
-    return 0;
-  });
+    script.textContent = JSON.stringify(ldJson);
+  }, [sortedGroups]);
+
+  // Suppress unused variable warning when no typo correction is active
+  void correctedSearchLabel;
 
   // Limit visible grouped items to 60 when viewing All Materials and no filters active
   const displayedGroups =
@@ -674,6 +992,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
         <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-1.5 sm:gap-3 lg:gap-4">
           {displayedGroups.map(({ group, matchingVariants }) => {
             const hasMultipleSizes = group.variants.length > 1;
+            const variantSummary = hasMultipleSizes
+              ? getGroupVariantSummary(group.variants)
+              : null;
             const positiveVariants = group.variants.filter((v) => v.price > 0);
             const sortedPositive = [...positiveVariants].sort((a, b) => a.price - b.price);
             const representativeWithImage = group.variants.find(
@@ -701,8 +1022,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                 (positiveVariants.length > 0 && positiveVariants.length < group.variants.length));
             const allOutOfStock = group.variants.every((v) => v.stockStatus === 'out_of_stock');
 
-            const isAdded = addedIds[product.id];
             const qtyInCart = getCartQuantity(product.id);
+            const isAdded = Boolean(addedIds[product.id]) && qtyInCart > 0;
             const totalGroupCartQty = hasMultipleSizes
               ? group.variants.reduce((sum, v) => sum + getCartQuantity(v.id), 0)
               : qtyInCart;
@@ -710,7 +1031,14 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
             return (
               <div
                 key={group.key}
-                onClick={opensDetailPage ? () => onSelectProduct?.(product) : undefined}
+                onClick={
+                  opensDetailPage
+                    ? () => {
+                        if (Date.now() - lastCardSwipeAtRef.current < 350) return;
+                        onSelectProduct?.(product);
+                      }
+                    : undefined
+                }
                 role={opensDetailPage ? 'button' : undefined}
                 tabIndex={opensDetailPage ? 0 : undefined}
                 onKeyDown={
@@ -734,6 +1062,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       <CatalogCardAutoImage
                         images={cardGalleryImages}
                         alt={hasMultipleSizes ? group.baseName : product.name}
+                        onUserSwipe={() => {
+                          lastCardSwipeAtRef.current = Date.now();
+                        }}
                       />
                     ) : displayImage && displayImage.trim() !== '' ? (
                       <img
@@ -754,18 +1085,18 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
 
                     {/* Trade Favorite Badge */}
                     {(group.popular || product.popular) && (
-                      <div className="absolute top-1 left-1 flex flex-col gap-1">
+                      <div className="absolute top-1 left-1 flex flex-col gap-1 pointer-events-none">
                         <span className="bg-amber-500 text-slate-950 text-[6px] sm:text-[8px] font-extrabold uppercase px-1 sm:px-1.5 py-0.5 rounded shadow">
                           ★ Favorite
                         </span>
                       </div>
                     )}
 
-                    {/* Multi-Size Count & Total In-Cart Indicator */}
-                    {hasMultipleSizes && (
+                    {/* Multi-Size / Multi-Colour Count & Total In-Cart Indicator */}
+                    {hasMultipleSizes && variantSummary && (
                       <div className="absolute bottom-1 inset-x-1 flex items-center justify-between gap-1 pointer-events-none">
                         <span className="bg-slate-800/80 text-white text-[7px] sm:text-[8px] font-bold px-1 sm:px-1.5 py-0.5 rounded">
-                          {group.variants.length} Sizes
+                          {variantSummary.badgeLabel}
                         </span>
                         {totalGroupCartQty > 0 && (
                           <span className="bg-emerald-600 text-white text-[7px] sm:text-[8px] font-extrabold px-1 sm:px-1.5 py-0.5 rounded shadow-xs">
@@ -843,8 +1174,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                       {hasMultipleSizes ? group.baseName : product.name}
                     </h3>
 
-                    {/* Description if present (visible on tablet/desktop) */}
-                    {product.description && (
+                    {/* Description if present (visible on tablet/desktop, hidden for Fans cards before opening details) */}
+                    {product.description && (product.category || '').toLowerCase() !== 'fans' && (
                       <p className="text-[10px] text-slate-500 line-clamp-2 leading-relaxed hidden md:block">
                         {product.description}
                       </p>
@@ -881,11 +1212,11 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                           </span>
                         </div>
 
-                        {/* Line 2: Size availability or MRP/Discount */}
+                        {/* Line 2: Size / Colour availability or MRP/Discount */}
                         <div className="flex items-center gap-1 mt-0.5 sm:mt-1 flex-wrap">
-                          {hasMultipleSizes ? (
+                          {hasMultipleSizes && variantSummary ? (
                             <span className="text-[7px] sm:text-[9px] text-slate-500 font-medium">
-                              {group.variants.length} sizes available
+                              {variantSummary.availabilityLabel}
                             </span>
                           ) : product.originalPrice && product.originalPrice > product.price ? (
                             <>
@@ -929,8 +1260,8 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                         </div>
                         <div className="flex items-center gap-1 mt-0.5 sm:mt-1">
                           <span className="text-[7px] sm:text-[8px] text-slate-400 font-medium">
-                            {hasMultipleSizes
-                              ? `${group.variants.length} sizes · Quote`
+                            {hasMultipleSizes && variantSummary
+                              ? variantSummary.quoteAvailabilityLabel
                               : 'Quote on Request'}
                           </span>
                         </div>
@@ -964,7 +1295,9 @@ export const ProductCatalog: React.FC<ProductCatalogProps> = ({
                           <>
                             <ShoppingCart className="w-3 h-3 sm:w-3.5 sm:h-3.5 stroke-[2.5]" />
                             <span>
-                              {totalGroupCartQty > 0 ? `${totalGroupCartQty} · Sizes` : '+ Add'}
+                              {totalGroupCartQty > 0
+                                ? `${totalGroupCartQty} · ${variantSummary?.buttonSuffix || 'Sizes'}`
+                                : '+ Add'}
                             </span>
                           </>
                         )}

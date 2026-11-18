@@ -15,7 +15,11 @@ import {
   Package,
 } from 'lucide-react';
 import { Product, CartItem, CategoryConfig } from '../types';
-import { ProductGroup, getVariantSizeLabel } from '../utils/productGrouping';
+import {
+  ProductGroup,
+  getVariantSizeLabel,
+  getGroupVariantSummary,
+} from '../utils/productGrouping';
 import { getCategoryDisplayName } from '../data/categories';
 
 interface SizeSelectorModalProps {
@@ -76,6 +80,11 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
 
   const primaryVariant =
     group.variants.find((v) => v.image && v.image.trim() !== '') || group.variants[0];
+  const variantSummary = getGroupVariantSummary(group.variants);
+  const distinctImagesCount = new Set(
+    group.variants.map((v) => (v.image || '').trim()).filter(Boolean)
+  ).size;
+  const showVariantThumbnails = distinctImagesCount > 1;
 
   return (
     <div
@@ -123,7 +132,7 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
                   </>
                 )}
                 <span aria-hidden="true">·</span>
-                <span>{group.variants.length} sizes</span>
+                <span>{variantSummary.badgeLabel.toLowerCase()}</span>
               </div>
               <h3
                 id="size-selector-title"
@@ -132,7 +141,7 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
                 {group.baseName}
               </h3>
               <p className="text-xs text-slate-500 mt-0.5">
-                Select required size and quantity to add to cart
+                {variantSummary.selectorSubheading}
               </p>
             </div>
           </div>
@@ -172,7 +181,21 @@ export const SizeSelectorModal: React.FC<SizeSelectorModalProps> = ({
                   qty > 0 ? 'bg-amber-50/35 -mx-4 px-4 sm:-mx-5 sm:px-5' : ''
                 }`}
               >
-                {/* Left: Size Name & Part Metadata */}
+                {showVariantThumbnails && (
+                  <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-200 overflow-hidden flex items-center justify-center shrink-0">
+                    {variant.image && variant.image.trim() !== '' ? (
+                      <img
+                        src={variant.image}
+                        alt={sizeLabel}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      renderCategoryFallbackIcon(variant.category)
+                    )}
+                  </div>
+                )}
+
+                {/* Left: Size / Colour Name & Part Metadata */}
                 <div className="min-w-0 flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
                     <span className="text-sm sm:text-base font-bold text-slate-900 font-mono tabular-nums">

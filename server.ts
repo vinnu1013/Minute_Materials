@@ -309,6 +309,71 @@ async function startServer() {
     }
   });
 
+  // Google Shopping / Google Merchant Center RSS 2.0 XML Product Feed
+  const serveGoogleShoppingFeed = async (req: express.Request, res: express.Response) => {
+    try {
+      const list = await dbManager.getProducts();
+      const baseUrl =
+        process.env.APP_URL?.replace(/\/$/, '') ||
+        `${req.protocol}://${req.get('host') || 'www.minutematerials.online'}`;
+      const esc = (v: unknown) =>
+        String(v ?? '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;')
+          .replace(/'/g, '&apos;');
+
+      const itemsXml = list
+        .filter((p: any) => Number(p.price) > 0)
+        .map((p: any) => {
+          const imgUrl = p.image?.startsWith('http')
+            ? p.image
+            : `${baseUrl}${p.image?.startsWith('/') ? '' : '/'}${p.image || 'logo-square.png'}`;
+          const productLink = `${baseUrl}/?q=${encodeURIComponent(p.sku || p.name)}`;
+          const availability =
+            p.stockStatus === 'out_of_stock' ? 'out_of_stock' : 'in_stock';
+          const desc =
+            p.description?.trim() ||
+            `${p.brand || 'Minute Materials'} ${p.name} (${p.subcategory || p.category}) — genuine wholesale supply with 15-minute express delivery in Hyderabad.`;
+
+          return `    <item>
+      <g:id>${esc(p.id || p.sku)}</g:id>
+      <g:title>${esc(p.name)}</g:title>
+      <g:description>${esc(desc)}</g:description>
+      <g:link>${esc(productLink)}</g:link>
+      <g:image_link>${esc(imgUrl)}</g:image_link>
+      <g:availability>${availability}</g:availability>
+      <g:price>${Number(p.price).toFixed(2)} INR</g:price>
+      <g:brand>${esc(p.brand || 'Minute Materials')}</g:brand>
+      <g:condition>new</g:condition>
+      <g:mpn>${esc(p.sku || p.partCode || p.id)}</g:mpn>
+      <g:product_type>${esc(`${p.category || 'Hardware'} > ${p.subcategory || 'General'}`)}</g:product_type>
+    </item>`;
+        })
+        .join('\n');
+
+      const xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>Minute Materials — Plumbing &amp; Electrical Product Feed</title>
+    <link>${esc(baseUrl)}</link>
+    <description>Live Google Shopping product feed for Minute Materials (Plumbing, Sanitaryware, Faucets, Electrical Switches, Wires &amp; MCBs).</description>
+${itemsXml}
+  </channel>
+</rss>`;
+
+      res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+      res.setHeader('Cache-Control', 'public, max-age=900');
+      res.send(xml);
+    } catch (err: any) {
+      res.status(500).send(`<!-- Feed error: ${err.message} -->`);
+    }
+  };
+
+  app.get('/google-shopping-feed.xml', serveGoogleShoppingFeed);
+  app.get('/api/google-shopping-feed.xml', serveGoogleShoppingFeed);
+
   // Full Catalog Sync / Batch Save
   app.put('/api/products', async (req, res) => {
     try {

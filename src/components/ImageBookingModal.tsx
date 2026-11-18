@@ -14,10 +14,13 @@ import {
   Navigation,
   ShieldCheck,
   Send,
-  Eye
+  Eye,
+  ShoppingCart,
+  Check
 } from 'lucide-react';
 import { Product, GeminiDetectedItem, StoreSettings, UserRole } from '../types';
 import { fetchCurrentLocationAddress } from '../utils/distance';
+import { findBestCatalogMatch } from '../utils/searchUtils';
 
 interface ImageBookingModalProps {
   isOpen: boolean;
@@ -63,8 +66,52 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
   const [orderSuccess, setOrderSuccess] = useState(false);
   const [submittedBookingId, setSubmittedBookingId] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState('');
+  const [addedItemIndices, setAddedItemIndices] = useState<Record<number, boolean>>({});
   
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const resolveCartProduct = (item: GeminiDetectedItem, idx: number): Product => {
+    const itemName = item.item || item.name || `Material Item ${idx + 1}`;
+    const sizeStr = item.size || 'Standard';
+    const matched = findBestCatalogMatch(itemName, sizeStr, products);
+    if (matched) return matched;
+
+    return {
+      id: `scanned-${idx}-${itemName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+      name: sizeStr && sizeStr !== 'Standard' ? `${itemName} (${sizeStr})` : itemName,
+      baseName: itemName,
+      sizeLabel: sizeStr,
+      sku: `SCAN-${idx + 1}`,
+      brand: 'Minute Materials',
+      category: 'Plumbing',
+      subcategory: 'Scanned List Item',
+      price: Number(item.estimatedUnitPrice) || 0,
+      unit: 'Piece',
+      stockStatus: 'in_stock',
+      stockCount: 50,
+      image: uploadedImages[0]?.base64 || '/logo-square.png',
+      description: '',
+    };
+  };
+
+  const handleAddSingleScannedItem = (item: GeminiDetectedItem, idx: number) => {
+    const qty = Math.max(1, Number(item.quantity || item.estimatedQty || 1));
+    const cartProduct = resolveCartProduct(item, idx);
+    onAddToCart(cartProduct, qty);
+    setAddedItemIndices((prev) => ({ ...prev, [idx]: true }));
+  };
+
+  const handleAddAllScannedItems = () => {
+    if (!geminiResult?.detectedItems?.length) return;
+    const nextAdded: Record<number, boolean> = { ...addedItemIndices };
+    geminiResult.detectedItems.forEach((item, idx) => {
+      const qty = Math.max(1, Number(item.quantity || item.estimatedQty || 1));
+      const cartProduct = resolveCartProduct(item, idx);
+      onAddToCart(cartProduct, qty);
+      nextAdded[idx] = true;
+    });
+    setAddedItemIndices(nextAdded);
+  };
 
   // Auto fetch current location on modal open
   React.useEffect(() => {
@@ -641,30 +688,41 @@ Sent via Express Supplier Portal (${targetNumber})`;
             {/* AUTOMATICALLY DISPLAYED MATERIAL LIST FROM SCANNED IMAGES */}
             {geminiResult && (
               <div className="bg-white border border-cyan-300 rounded-2xl p-4 space-y-3 shadow-sm">
-                <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
                   <div className="flex items-center gap-2">
                     <Sparkles className="w-4 h-4 text-cyan-600 animate-pulse" />
                     <span className="text-xs font-black text-cyan-800 uppercase tracking-wider">
                       Auto-Scanned Material List ({geminiResult.detectedItems.length} Items)
                     </span>
                   </div>
-                  <span className="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-0.5 rounded-lg">
-                    Total: ₹{geminiResult.totalEstimatedCost.toFixed(2)}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg">
+                      Total: ₹{geminiResult.totalEstimatedCost.toFixed(2)}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={handleAddAllScannedItems}
+                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[11px] px-3 py-1.5 rounded-lg shadow-sm transition"
+                    >
+                      <ShoppingCart className="w-3.5 h-3.5" />
+                      Add All to Cart
+                    </button>
+                  </div>
                 </div>
 
                 {geminiResult.rawNotes && <p className="text-xs text-slate-600 italic">{geminiResult.rawNotes}</p>}
 
                 {/* Material Table */}
-                <div className="overflow-x-auto border border-slate-200 rounded-xl max-h-56 overflow-y-auto bg-white">
+                <div className="overflow-x-auto border border-slate-200 rounded-xl max-h-60 overflow-y-auto bg-white">
                   <table className="w-full text-left text-xs">
                     <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 text-[11px]">
                       <tr>
-                        <th className="py-2.5 px-3">Sl No</th>
-                        <th className="py-2.5 px-3">Item Description</th>
-                        <th className="py-2.5 px-3">Size</th>
-                        <th className="py-2.5 px-3 text-center">Qty</th>
-                        <th className="py-2.5 px-3 text-right">Price</th>
+                        <th className="py-2.5 px-2.5">Sl</th>
+                        <th className="py-2.5 px-2.5">Item Description</th>
+                        <th className="py-2.5 px-2.5">Size</th>
+                        <th className="py-2.5 px-2 text-center">Qty</th>
+                        <th className="py-2.5 px-2.5 text-right">Price</th>
+                        <th className="py-2.5 px-2.5 text-right">Cart</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100">
@@ -673,14 +731,36 @@ Sent via Express Supplier Portal (${targetNumber})`;
                         const itemName = item.item || item.name;
                         const sizeStr = item.size || 'Standard';
                         const qty = item.quantity || item.estimatedQty || 1;
+                        const isAdded = Boolean(addedItemIndices[idx]);
                         return (
                           <tr key={idx} className="hover:bg-slate-50 transition">
-                            <td className="py-2.5 px-3 font-mono text-cyan-700 font-bold">{slNo}</td>
-                            <td className="py-2.5 px-3 font-semibold text-slate-900">{itemName}</td>
-                            <td className="py-2.5 px-3 text-amber-700 font-mono text-[11px]">{sizeStr}</td>
-                            <td className="py-2.5 px-3 text-center font-bold text-emerald-600">{qty}</td>
-                            <td className="py-2.5 px-3 text-right font-mono font-bold text-slate-700">
+                            <td className="py-2.5 px-2.5 font-mono text-cyan-700 font-bold">{slNo}</td>
+                            <td className="py-2.5 px-2.5 font-semibold text-slate-900">{itemName}</td>
+                            <td className="py-2.5 px-2.5 text-amber-700 font-mono text-[11px]">{sizeStr}</td>
+                            <td className="py-2.5 px-2 text-center font-bold text-emerald-600">{qty}</td>
+                            <td className="py-2.5 px-2.5 text-right font-mono font-bold text-slate-700">
                               ₹{(qty * item.estimatedUnitPrice).toFixed(2)}
+                            </td>
+                            <td className="py-2.5 px-2.5 text-right">
+                              <button
+                                type="button"
+                                onClick={() => handleAddSingleScannedItem(item, idx)}
+                                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
+                                  isAdded
+                                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                    : 'bg-amber-500 hover:bg-amber-400 text-slate-950'
+                                }`}
+                              >
+                                {isAdded ? (
+                                  <>
+                                    <Check className="w-3 h-3" /> Added
+                                  </>
+                                ) : (
+                                  <>
+                                    <Plus className="w-3 h-3" /> Add
+                                  </>
+                                )}
+                              </button>
                             </td>
                           </tr>
                         );

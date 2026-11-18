@@ -45,12 +45,13 @@ export const ADMIN_CATEGORIES: CategoryConfig[] = [
     id: 'fans',
     name: 'Fans',
     subcategories: [
-      'Table Fans',
-      'Exhaust Fans',
       'Ceiling Fans',
+      'Exhaust Fans',
+      'Table Fans',
+      'Pedestal Fans',
       'Portable Fans',
     ],
-    description: 'High-speed ceiling fans, kitchen/bathroom exhaust fans, table fans, and rechargeable portable fans.',
+    description: 'High-speed ceiling fans, kitchen/bathroom exhaust fans, table fans, pedestal fans, and rechargeable portable fans.',
   },
   {
     id: 'lights',

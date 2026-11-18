@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import {
   ChevronRight,
   ChevronLeft,
@@ -35,6 +35,7 @@ import {
   groupProductsByBaseName,
   getProductGroupKey,
   getVariantSizeLabel,
+  getGroupVariantSummary,
   ProductGroup,
 } from '../utils/productGrouping';
 import { SizeSelectorModal } from './SizeSelectorModal';
@@ -119,18 +120,61 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
   const [activeSlide, setActiveSlide] = useState(0);
   const [isGalleryHovered, setIsGalleryHovered] = useState(false);
+  const [isSwipingGallery, setIsSwipingGallery] = useState(false);
+  const [galleryDragOffsetX, setGalleryDragOffsetX] = useState(0);
+  const [swipePauseUntil, setSwipePauseUntil] = useState(0);
+  const gallerySwipeRef = useRef<{
+    x: number;
+    y: number;
+    isTouch: boolean;
+    active: boolean;
+    lockedAxis: 'x' | 'y' | null;
+  }>({ x: 0, y: 0, isTouch: false, active: false, lockedAxis: null });
   const [showDoorstepModalInfo, setShowDoorstepModalInfo] = useState(false);
   const [showAllDetails, setShowAllDetails] = useState(true);
   const [addedFeedback, setAddedFeedback] = useState<Record<string, boolean>>({});
+  const addedTimeoutsRef = useRef<Record<string, number>>({});
   const [similarSizeModalGroup, setSimilarSizeModalGroup] = useState<ProductGroup | null>(null);
 
   useEffect(() => {
     setActiveSlide(0);
   }, [activeVariant.id, galleryImages.length]);
 
+  // Clear "Added" feedback immediately when an item leaves the cart
+  useEffect(() => {
+    const activeCartIds = new Set(
+      (cartItems || [])
+        .filter((i) => i && i.product && i.quantity > 0)
+        .map((i) => i.product.id)
+    );
+    setAddedFeedback((prev) => {
+      let changed = false;
+      const next = { ...prev };
+      for (const id of Object.keys(next)) {
+        if (next[id] && !activeCartIds.has(id)) {
+          delete next[id];
+          changed = true;
+          if (addedTimeoutsRef.current[id]) {
+            window.clearTimeout(addedTimeoutsRef.current[id]);
+            delete addedTimeoutsRef.current[id];
+          }
+        }
+      }
+      return changed ? next : prev;
+    });
+  }, [cartItems]);
+
+  useEffect(() => {
+    return () => {
+      Object.keys(addedTimeoutsRef.current).forEach((id) => {
+        window.clearTimeout(addedTimeoutsRef.current[id]);
+      });
+    };
+  }, []);
+
   // Automatic image slider when multiple product images exist
   useEffect(() => {
-    if (galleryImages.length <= 1 || isGalleryHovered) return;
+    if (galleryImages.length <= 1 || isGalleryHovered || isSwipingGallery) return;
     if (
       typeof window !== 'undefined' &&
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -138,10 +182,95 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
       return;
     }
     const timer = window.setInterval(() => {
+      if (Date.now() < swipePauseUntil) return;
       setActiveSlide((prev) => (prev + 1) % galleryImages.length);
     }, 3000);
     return () => window.clearInterval(timer);
-  }, [galleryImages.length, isGalleryHovered]);
+  }, [galleryImages.length, isGalleryHovered, isSwipingGallery, swipePauseUntil]);
+
+  const goToGallerySlide = (nextIdx: number) => {
+    if (galleryImages.length <= 1) return;
+    setActiveSlide((nextIdx + galleryImages.length) % galleryImages.length);
+    setSwipePauseUntil(Date.now() + 6000);
+  };
+
+  const handleGalleryTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (galleryImages.length <= 1 || e.touches.length !== 1) return;
+    const t = e.touches[0];
+    gallerySwipeRef.current = {
+      x: t.clientX,
+      y: t.clientY,
+      isTouch: true,
+      active: true,
+      lockedAxis: null,
+    };
+  };
+
+  const handleGalleryTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!gallerySwipeRef.current.active || !gallerySwipeRef.current.isTouch) return;
+    const t = e.touches[0];
+    const dx = t.clientX - gallerySwipeRef.current.x;
+    const dy = t.clientY - gallerySwipeRef.current.y;
+    if (!gallerySwipeRef.current.lockedAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      gallerySwipeRef.current.lockedAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
+    }
+    if (gallerySwipeRef.current.lockedAxis === 'x') {
+      setIsSwipingGallery(true);
+      setGalleryDragOffsetX(dx);
+    }
+  };
+
+  const finishGallerySwipe = (dx: number) => {
+    if (Math.abs(dx) > 36) {
+      if (dx < 0) {
+        goToGallerySlide(activeSlide + 1);
+      } else {
+        goToGallerySlide(activeSlide - 1);
+      }
+    }
+    gallerySwipeRef.current.active = false;
+    gallerySwipeRef.current.lockedAxis = null;
+    setIsSwipingGallery(false);
+    setGalleryDragOffsetX(0);
+  };
+
+  const handleGalleryTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!gallerySwipeRef.current.active || !gallerySwipeRef.current.isTouch) return;
+    const dx = e.changedTouches[0]
+      ? e.changedTouches[0].clientX - gallerySwipeRef.current.x
+      : galleryDragOffsetX;
+    finishGallerySwipe(dx);
+  };
+
+  const handleGalleryPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (galleryImages.length <= 1 || e.pointerType === 'touch' || e.button !== 0) return;
+    gallerySwipeRef.current = {
+      x: e.clientX,
+      y: e.clientY,
+      isTouch: false,
+      active: true,
+      lockedAxis: null,
+    };
+  };
+
+  const handleGalleryPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!gallerySwipeRef.current.active || gallerySwipeRef.current.isTouch) return;
+    const dx = e.clientX - gallerySwipeRef.current.x;
+    const dy = e.clientY - gallerySwipeRef.current.y;
+    if (!gallerySwipeRef.current.lockedAxis && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) {
+      gallerySwipeRef.current.lockedAxis = Math.abs(dx) >= Math.abs(dy) ? 'x' : 'y';
+    }
+    if (gallerySwipeRef.current.lockedAxis === 'x') {
+      setIsSwipingGallery(true);
+      setGalleryDragOffsetX(dx);
+    }
+  };
+
+  const handleGalleryPointerUp = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!gallerySwipeRef.current.active || gallerySwipeRef.current.isTouch) return;
+    const dx = e.clientX - gallerySwipeRef.current.x;
+    finishGallerySwipe(dx);
+  };
 
   const getCartQuantity = (productId: string) => {
     const found = (cartItems || []).find((i) => i && i.product && i.product.id === productId);
@@ -150,13 +279,31 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
   const handleAddWithFeedback = (target: Product) => {
     onAddToCart(target, 1);
+    if (addedTimeoutsRef.current[target.id]) {
+      window.clearTimeout(addedTimeoutsRef.current[target.id]);
+    }
     setAddedFeedback((prev) => ({ ...prev, [target.id]: true }));
-    window.setTimeout(() => {
-      setAddedFeedback((prev) => ({ ...prev, [target.id]: false }));
+    addedTimeoutsRef.current[target.id] = window.setTimeout(() => {
+      setAddedFeedback((prev) => {
+        if (!prev[target.id]) return prev;
+        const next = { ...prev };
+        delete next[target.id];
+        return next;
+      });
+      delete addedTimeoutsRef.current[target.id];
     }, 2500);
   };
 
+  const currentVariantSummary = useMemo(
+    () =>
+      currentGroup && currentGroup.variants.length > 1
+        ? getGroupVariantSummary(currentGroup.variants)
+        : null,
+    [currentGroup]
+  );
+
   const qtyInCart = getCartQuantity(activeVariant.id);
+  const isActiveVariantAdded = Boolean(addedFeedback[activeVariant.id]) && qtyInCart > 0;
   const categoryName = getCategoryDisplayName(activeVariant.category, categories);
   const hasDiscount =
     Boolean(activeVariant.originalPrice) &&
@@ -391,15 +538,42 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                   </div>
                 )}
 
-                {/* Main Auto-Sliding Stage */}
-                <div className="relative flex-1 aspect-square bg-white rounded-xl overflow-hidden flex items-center justify-center border border-slate-100">
+                {/* Main Auto-Sliding & Swipeable Stage */}
+                <div
+                  className="relative flex-1 aspect-square bg-white rounded-xl overflow-hidden flex items-center justify-center border border-slate-100 touch-pan-y select-none"
+                  onTouchStart={handleGalleryTouchStart}
+                  onTouchMove={handleGalleryTouchMove}
+                  onTouchEnd={handleGalleryTouchEnd}
+                  onTouchCancel={handleGalleryTouchEnd}
+                  onPointerDown={handleGalleryPointerDown}
+                  onPointerMove={handleGalleryPointerMove}
+                  onPointerUp={handleGalleryPointerUp}
+                  onPointerLeave={handleGalleryPointerUp}
+                  onPointerCancel={handleGalleryPointerUp}
+                >
                   {galleryImages.length > 0 ? (
-                    <img
-                      key={`${activeVariant.id}-${activeSlide}`}
-                      src={galleryImages[activeSlide] || galleryImages[0]}
-                      alt={`${activeVariant.name} – Image ${activeSlide + 1}`}
-                      className="w-full h-full object-contain p-2 sm:p-4 transition-opacity duration-300"
-                    />
+                    <div
+                      className={`flex h-full w-full ${
+                        isSwipingGallery ? '' : 'transition-transform duration-300 ease-out'
+                      }`}
+                      style={{
+                        transform: `translate3d(calc(-${activeSlide * 100}% + ${galleryDragOffsetX}px), 0, 0)`,
+                      }}
+                    >
+                      {galleryImages.map((imgUrl, idx) => (
+                        <div
+                          key={`${activeVariant.id}-slide-${idx}`}
+                          className="w-full h-full shrink-0 flex items-center justify-center"
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`${activeVariant.name} – Image ${idx + 1}`}
+                            draggable={false}
+                            className="w-full h-full object-contain p-2 sm:p-4"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   ) : (
                     <div className="flex flex-col items-center justify-center text-slate-400 p-8 text-center">
                       <div className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 mb-2">
@@ -413,14 +587,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
 
                   {/* Discount Badge on Gallery */}
                   {hasDiscount && (
-                    <span className="absolute top-2.5 left-2.5 bg-emerald-600 text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow-xs">
+                    <span className="absolute top-2.5 left-2.5 bg-emerald-600 text-white text-[11px] font-black px-2.5 py-1 rounded-lg shadow-xs pointer-events-none">
                       {discountPercent}% OFF
                     </span>
                   )}
 
                   {/* Rating Pill on Gallery */}
                   {(activeVariant.rating || activeVariant.reviewCount) && (
-                    <div className="absolute top-2.5 right-2.5 bg-white/95 border border-slate-200 px-2 py-1 rounded-lg shadow-xs flex items-center gap-1 text-xs">
+                    <div className="absolute top-2.5 right-2.5 bg-white/95 border border-slate-200 px-2 py-1 rounded-lg shadow-xs flex items-center gap-1 text-xs pointer-events-none">
                       <span className="font-black text-slate-900">
                         {(activeVariant.rating || 4.2).toFixed(1)}
                       </span>
@@ -438,35 +612,38 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                     <>
                       <button
                         type="button"
-                        onClick={() =>
-                          setActiveSlide(
-                            (prev) => (prev - 1 + galleryImages.length) % galleryImages.length
-                          )
-                        }
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goToGallerySlide(activeSlide - 1);
+                        }}
                         aria-label="Previous product image"
-                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-700 hover:text-slate-950 transition cursor-pointer"
+                        className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-700 hover:text-slate-950 transition cursor-pointer z-10"
                       >
                         <ChevronLeft className="w-4 h-4" />
                       </button>
 
                       <button
                         type="button"
-                        onClick={() =>
-                          setActiveSlide((prev) => (prev + 1) % galleryImages.length)
-                        }
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goToGallerySlide(activeSlide + 1);
+                        }}
                         aria-label="Next product image"
-                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-700 hover:text-slate-950 transition cursor-pointer"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 hover:bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-700 hover:text-slate-950 transition cursor-pointer z-10"
                       >
                         <ChevronRight className="w-4 h-4" />
                       </button>
 
                       {/* Pagination Dots */}
-                      <div className="absolute bottom-2.5 inset-x-0 flex items-center justify-center gap-1.5">
+                      <div className="absolute bottom-2.5 inset-x-0 flex items-center justify-center gap-1.5 z-10">
                         {galleryImages.map((_, idx) => (
                           <button
                             key={idx}
                             type="button"
-                            onClick={() => setActiveSlide(idx)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              goToGallerySlide(idx);
+                            }}
                             aria-label={`Go to slide ${idx + 1}`}
                             className={`h-1.5 rounded-full transition-all cursor-pointer ${
                               idx === activeSlide
@@ -569,14 +746,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                       onClick={() => handleAddWithFeedback(activeVariant)}
                       disabled={activeVariant.stockStatus === 'out_of_stock'}
                       className={`px-6 py-2.5 rounded-xl text-sm font-black flex items-center gap-2 shadow-sm transition cursor-pointer ${
-                        addedFeedback[activeVariant.id]
+                        isActiveVariantAdded
                           ? 'bg-emerald-600 text-white'
                           : activeVariant.stockStatus === 'out_of_stock'
                           ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
                           : 'bg-amber-500 hover:bg-amber-400 text-slate-950 active:scale-95'
                       }`}
                     >
-                      {addedFeedback[activeVariant.id] ? (
+                      {isActiveVariantAdded ? (
                         <>
                           <Check className="w-4 h-4" />
                           <span>Added to Cart</span>
@@ -659,11 +836,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                 )}
               </div>
 
-              {/* Multi-Size / Variant Selector (if product belongs to a multi-size group) */}
+              {/* Multi-Size / Colour Selector (if product belongs to a multi-variant group) */}
               {currentGroup && currentGroup.variants.length > 1 && (
                 <div className="pt-2 border-t border-slate-100 space-y-2">
                   <label className="block text-xs font-extrabold text-slate-800">
-                    Select Size / Variant ({currentGroup.variants.length} options):
+                    {currentVariantSummary?.selectorHeading ||
+                      `Select Size / Variant (${currentGroup.variants.length} options):`}
                   </label>
                   <div className="flex flex-wrap gap-2">
                     {currentGroup.variants.map((variant) => {
@@ -761,14 +939,14 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                         onClick={() => handleAddWithFeedback(activeVariant)}
                         disabled={activeVariant.stockStatus === 'out_of_stock'}
                         className={`px-6 py-3 rounded-xl text-sm font-black flex items-center justify-center gap-2 shadow-sm transition cursor-pointer ${
-                          addedFeedback[activeVariant.id]
+                          isActiveVariantAdded
                             ? 'bg-emerald-600 text-white'
                             : activeVariant.stockStatus === 'out_of_stock'
                             ? 'bg-slate-200 text-slate-400 cursor-not-allowed'
                             : 'bg-amber-500 hover:bg-amber-400 text-slate-950 active:scale-95'
                         }`}
                       >
-                        {addedFeedback[activeVariant.id] ? (
+                        {isActiveVariantAdded ? (
                           <>
                             <Check className="w-4 h-4" />
                             <span>Added to Cart</span>
@@ -1048,15 +1226,18 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4">
               {similarGroups.slice(0, 10).map((simGroup) => {
                 const hasMultiple = simGroup.variants.length > 1;
+                const simSummary = hasMultiple ? getGroupVariantSummary(simGroup.variants) : null;
                 const positive = simGroup.variants
                   .filter((v) => v.price > 0)
                   .sort((a, b) => a.price - b.price);
                 const simProd = positive[0] || simGroup.variants[0];
                 const simImages = getProductGalleryImages(simProd, simGroup.variants);
                 const simDisplayImg = simImages[0] || '';
+                const simSingleCartQty = getCartQuantity(simProd.id);
                 const simCartQty = hasMultiple
                   ? simGroup.variants.reduce((s, v) => s + getCartQuantity(v.id), 0)
-                  : getCartQuantity(simProd.id);
+                  : simSingleCartQty;
+                const isSimAdded = Boolean(addedFeedback[simProd.id]) && simSingleCartQty > 0;
                 const simHasDiscount =
                   !hasMultiple &&
                   simProd.originalPrice &&
@@ -1156,7 +1337,9 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                             onClick={() => setSimilarSizeModalGroup(simGroup)}
                             className="w-full py-1.5 px-3 rounded-lg text-xs font-black bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-300 transition cursor-pointer"
                           >
-                            {simCartQty > 0 ? `${simCartQty} in Cart · Sizes` : 'ADD · Sizes'}
+                            {simCartQty > 0
+                              ? `${simCartQty} in Cart · ${simSummary?.buttonSuffix || 'Sizes'}`
+                              : `ADD · ${simSummary?.buttonSuffix || 'Sizes'}`}
                           </button>
                         ) : simProd.price <= 0 ? (
                           <button
@@ -1196,12 +1379,12 @@ export const ProductDetailPage: React.FC<ProductDetailPageProps> = ({
                             onClick={() => handleAddWithFeedback(simProd)}
                             disabled={simProd.stockStatus === 'out_of_stock'}
                             className={`w-full py-1.5 px-3 rounded-lg text-xs font-black border transition cursor-pointer ${
-                              addedFeedback[simProd.id]
+                              isSimAdded
                                 ? 'bg-emerald-600 text-white border-emerald-600'
                                 : 'bg-white hover:bg-amber-500 text-amber-700 hover:text-slate-950 border-amber-400'
                             }`}
                           >
-                            {addedFeedback[simProd.id] ? 'ADDED ✓' : 'ADD'}
+                            {isSimAdded ? 'ADDED ✓' : 'ADD'}
                           </button>
                         )}
                       </div>

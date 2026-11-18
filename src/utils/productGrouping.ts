@@ -10,6 +10,157 @@ export interface ProductGroup {
   popular: boolean;
 }
 
+export interface GroupVariantSummary {
+  totalCount: number;
+  sizeCount: number;
+  colourCount: number;
+  hasMultipleSizes: boolean;
+  hasMultipleColours: boolean;
+  hasMultipleOptions: boolean;
+  badgeLabel: string;
+  availabilityLabel: string;
+  quoteAvailabilityLabel: string;
+  buttonSuffix: string;
+  selectorHeading: string;
+  selectorSubheading: string;
+}
+
+const KNOWN_COLOUR_TOKEN =
+  /^(?:snow white|ivory\s*\/\s*superior colours|ivory|superior colours|super special colours|french gold|rose gold|platinum|matte black|matt black|silky black|matte white|matt white|dark grey|dark gray|white|black|beige|coffee|grey|gray|gold|silver|chrome|bronze|copper|red|blue|green|yellow|brown|orange)$/i;
+
+function isPartMatchingColour(part: string, specColour: string): boolean {
+  const cleanPart = part.trim().toLowerCase();
+  if (!cleanPart) return false;
+  const barePart = cleanPart.replace(/\s*\([^)]*\)/g, '').trim();
+  if (specColour) {
+    const cleanSpec = specColour.trim().toLowerCase();
+    const bareSpec = cleanSpec.replace(/\s*\([^)]*\)/g, '').trim();
+    if (
+      cleanPart === cleanSpec ||
+      barePart === bareSpec ||
+      cleanSpec.startsWith(barePart + ' ') ||
+      cleanSpec.startsWith(cleanPart)
+    ) {
+      return true;
+    }
+  }
+  return KNOWN_COLOUR_TOKEN.test(barePart) || KNOWN_COLOUR_TOKEN.test(cleanPart);
+}
+
+export function getGroupVariantSummary(variants: Product[]): GroupVariantSummary {
+  const totalCount = variants.length;
+  if (totalCount <= 1) {
+    return {
+      totalCount,
+      sizeCount: totalCount,
+      colourCount: 0,
+      hasMultipleSizes: false,
+      hasMultipleColours: false,
+      hasMultipleOptions: false,
+      badgeLabel: '',
+      availabilityLabel: '',
+      quoteAvailabilityLabel: '',
+      buttonSuffix: 'Sizes',
+      selectorHeading: 'Select Option:',
+      selectorSubheading: 'Select required option and quantity to add to cart',
+    };
+  }
+
+  const colourSet = new Set<string>();
+  const sizeSet = new Set<string>();
+
+  for (const v of variants) {
+    const rawSpecColour = (
+      v.specifications?.['Colour / Finish'] ||
+      v.specifications?.['Colour name'] ||
+      v.specifications?.['Color'] ||
+      v.specifications?.['Colour'] ||
+      ''
+    ).trim();
+    const specColour = rawSpecColour && rawSpecColour !== '-' ? rawSpecColour : '';
+    if (specColour) {
+      colourSet.add(specColour.toLowerCase());
+    }
+
+    const label = getVariantSizeLabel(v);
+    if (label.includes('·')) {
+      const parts = label.split('·').map((p) => p.trim()).filter(Boolean);
+      const nonColourParts: string[] = [];
+      for (const p of parts) {
+        if (isPartMatchingColour(p, specColour)) {
+          if (!specColour) {
+            colourSet.add(p.toLowerCase());
+          }
+        } else {
+          nonColourParts.push(p);
+        }
+      }
+      if (nonColourParts.length > 0) {
+        sizeSet.add(nonColourParts.join(' · ').toLowerCase());
+      }
+    } else if (isPartMatchingColour(label, specColour)) {
+      if (!specColour) {
+        colourSet.add(label.toLowerCase());
+      }
+    } else if (label && label !== 'Standard') {
+      sizeSet.add(label.toLowerCase());
+    }
+  }
+
+  const hasMultipleColours = colourSet.size > 1;
+  // If no explicit sizes vary (sizeSet <= 1) and multiple colours exist, it's a pure colour variant group.
+  // If colourCount === 0 and sizeCount <= 1 (e.g. part-code only fallbacks), treat variants.length as sizes.
+  const hasMultipleSizes = sizeSet.size > 1 || (!hasMultipleColours && totalCount > 1);
+
+  const colourCount = hasMultipleColours ? colourSet.size : colourSet.size;
+  const sizeCount = hasMultipleSizes ? (sizeSet.size > 1 ? sizeSet.size : totalCount) : sizeSet.size;
+
+  let badgeLabel = `${totalCount} Sizes`;
+  let availabilityLabel = `${totalCount} sizes available`;
+  let quoteAvailabilityLabel = `${totalCount} sizes · Quote`;
+  let buttonSuffix = 'Sizes';
+  let selectorHeading = `Select Size (${totalCount} options):`;
+  let selectorSubheading = 'Select required size and quantity to add to cart';
+
+  if (hasMultipleColours && hasMultipleSizes) {
+    badgeLabel = `${sizeCount} Sizes · ${colourCount} Colours`;
+    availabilityLabel = `${sizeCount} sizes · ${colourCount} colours`;
+    quoteAvailabilityLabel = `${sizeCount} sizes · ${colourCount} colours`;
+    buttonSuffix = 'Options';
+    selectorHeading = `Select Size & Colour (${totalCount} options):`;
+    selectorSubheading = 'Select required size, colour and quantity to add to cart';
+  } else if (hasMultipleColours) {
+    badgeLabel = `${colourCount} Colours`;
+    availabilityLabel = `${colourCount} colours available`;
+    quoteAvailabilityLabel = `${colourCount} colours · Quote`;
+    buttonSuffix = 'Colours';
+    selectorHeading = `Select Colour (${colourCount} colours):`;
+    selectorSubheading = 'Select required colour and quantity to add to cart';
+  } else {
+    badgeLabel = `${sizeCount} Sizes`;
+    availabilityLabel = `${sizeCount} sizes available`;
+    quoteAvailabilityLabel = `${sizeCount} sizes · Quote`;
+    buttonSuffix = 'Sizes';
+    selectorHeading = `Select Size (${sizeCount} sizes):`;
+    selectorSubheading = 'Select required size and quantity to add to cart';
+  }
+
+  return {
+    totalCount,
+    sizeCount,
+    colourCount,
+    hasMultipleSizes,
+    hasMultipleColours,
+    hasMultipleOptions: true,
+    badgeLabel,
+    availabilityLabel,
+    quoteAvailabilityLabel,
+    buttonSuffix,
+    selectorHeading,
+    selectorSubheading,
+  };
+}
+
 // Fallback parser for custom/admin-added products that don't explicitly define baseName/sizeLabel
 const TRAILING_SIZE_PATTERN =
   /^(.*?)\s+((?:(?:\d+\s+)?[¼½¾]|\d+(?:\.\d+)?(?:\s*\/\s*\d+)?)(?:\s*(?:x|X|×|and|&)\s*(?:(?:\d+\s+)?[¼½¾]|\d+(?:\.\d+)?(?:\s*\/\s*\d+)?))*(?:\s*(?:inch|in|"|mm|cm|mtr|m|ft|oz|ml|sq\s*mm|amp|a))?(?:\s*\([^)]+\))*)$/i;

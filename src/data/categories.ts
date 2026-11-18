@@ -1,7 +1,7 @@
 import { CategoryConfig } from '../types';
 import { ADMIN_CATEGORIES } from '../admin/categories';
 
-export const CATEGORIES_VERSION = '2026-04-main-categories-v2';
+export const CATEGORIES_VERSION = '2026-11-18-fans-subcategories-v3';
 
 export const DEFAULT_CATEGORIES: CategoryConfig[] = ADMIN_CATEGORIES;
 
