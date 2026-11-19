@@ -930,69 +930,61 @@ Return a valid JSON object matching this schema:
 
       const candidateModels = ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'];
       let geminiResponse: any = null;
-      let lastErr: any = null;
 
       for (const modelName of candidateModels) {
-        for (let attempt = 1; attempt <= 2; attempt++) {
-          try {
-            geminiResponse = await ai.models.generateContent({
-              model: modelName,
-              contents: {
-                parts: [...imageParts, { text: promptText }]
-              },
-              config: {
-                temperature: 0.1,
-                responseMimeType: 'application/json',
-                responseSchema: {
-                  type: Type.OBJECT,
-                  properties: {
-                    detectedItems: {
-                      type: Type.ARRAY,
-                      items: {
-                        type: Type.OBJECT,
-                        properties: {
-                          slNo: { type: Type.NUMBER },
-                          originalText: { type: Type.STRING },
-                          item: { type: Type.STRING },
-                          size: { type: Type.STRING },
-                          quantity: { type: Type.NUMBER },
-                          name: { type: Type.STRING },
-                          estimatedQty: { type: Type.NUMBER },
-                          estimatedUnitPrice: { type: Type.NUMBER },
-                          confidence: { type: Type.NUMBER }
-                        },
-                        required: ['item', 'name', 'quantity', 'estimatedQty', 'estimatedUnitPrice']
-                      }
-                    },
-                    totalEstimatedCost: { type: Type.NUMBER },
-                    rawNotes: { type: Type.STRING }
+        try {
+          geminiResponse = await ai.models.generateContent({
+            model: modelName,
+            contents: {
+              parts: [...imageParts, { text: promptText }]
+            },
+            config: {
+              temperature: 0.1,
+              responseMimeType: 'application/json',
+              responseSchema: {
+                type: Type.OBJECT,
+                properties: {
+                  detectedItems: {
+                    type: Type.ARRAY,
+                    items: {
+                      type: Type.OBJECT,
+                      properties: {
+                        slNo: { type: Type.NUMBER },
+                        originalText: { type: Type.STRING },
+                        item: { type: Type.STRING },
+                        size: { type: Type.STRING },
+                        quantity: { type: Type.NUMBER },
+                        name: { type: Type.STRING },
+                        estimatedQty: { type: Type.NUMBER },
+                        estimatedUnitPrice: { type: Type.NUMBER },
+                        confidence: { type: Type.NUMBER }
+                      },
+                      required: ['item', 'name', 'quantity', 'estimatedQty', 'estimatedUnitPrice']
+                    }
                   },
-                  required: ['detectedItems', 'totalEstimatedCost', 'rawNotes']
-                }
+                  totalEstimatedCost: { type: Type.NUMBER },
+                  rawNotes: { type: Type.STRING }
+                },
+                required: ['detectedItems', 'totalEstimatedCost', 'rawNotes']
               }
-            });
-            break;
-          } catch (err: any) {
-            lastErr = err;
-            const msg = String(err?.message || err || '');
-            const isTransient =
-              err?.status === 503 ||
-              err?.status === 429 ||
-              msg.includes('503') ||
-              msg.includes('UNAVAILABLE') ||
-              msg.includes('high demand') ||
-              msg.includes('429');
-            if (!isTransient) throw err;
-            console.warn(`Gemini ${modelName} attempt ${attempt} busy (503/429), retrying/falling back...`);
-            if (attempt < 2) {
-              await new Promise((r) => setTimeout(r, 900));
             }
-          }
+          });
+          if (geminiResponse?.text) break;
+        } catch (err: any) {
+          const msg = String(err?.message || err || '');
+          const isTransient =
+            err?.status === 503 ||
+            err?.status === 429 ||
+            msg.includes('503') ||
+            msg.includes('UNAVAILABLE') ||
+            msg.includes('high demand') ||
+            msg.includes('429');
+          if (!isTransient) throw err;
+          console.warn(`Gemini ${modelName} busy (503/429), falling back to next model...`);
         }
-        if (geminiResponse) break;
       }
 
-      if (!geminiResponse) {
+      if (!geminiResponse?.text) {
         throw new Error(
           'AI scanner is momentarily busy due to high demand. Please tap "Re-scan Images" in a few seconds.'
         );
