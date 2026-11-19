@@ -16,7 +16,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 985,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_advance_fr.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP2a4-0-D59Z_u-B0osQbbpl5zDWP3XxMdHqafVcafcg&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -176,7 +176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 1040,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_advance_effr.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-5GBjV5rLmFslIi0SmlQ2eZa6JaqzA8dD6FnvofZ1Lg&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -272,7 +272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 2680,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_fireguard.png",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/anchor-fireguard-fr---lsh-wire-20240923155413065.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -432,7 +432,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 3450,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_multicore.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTww-SedzUbYYaFXmSgdD1rBbiYwrGMrkIaFJTM7cqaxgRK4G4BBGoSKWEXBiRijans7jU5LIpBhYmsL1N76WJX_vIVkMEdSkdyoBRd7UokOfRoPTFZ6w-9lg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -448,7 +448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 4850,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_multicore.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXaupsWD0xqDMliTrbFa5gEJ1KTexyXpT_bdWCEdF40J0FpVjaXrWILqs&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -528,7 +528,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 6850,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_submersible_flat.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9_hhDHqejdB0oh50Re8Dkwam-jqf8OavMYwxwoCfufA&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -576,7 +576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 890,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_telephone.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWGyNnAPfFX6ubXlnQqLitibXJCJZoaTHjfP4tChhAJA&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -608,7 +608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "House Wires & Cables",
     "price": 8450,
     "unit": "Coil",
-    "image": "/assets/electrical/wire_cat6.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiX7LoFmQYNaFnFJL5YO5Qv-Lu2l64TxUtO3ZHq4PGTw&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -624,7 +624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 131,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ee1929f8df6f.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS11xMKXzRBG5p70pI2NFyxIPUFGTndKrJaVVV6UwQuTQ&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -640,7 +640,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 178,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2d07966fb168.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIhvpZ4ssFQhcqlBMYKbs8OpR_AxWuQkR7l9hUbjrvQ&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -656,7 +656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5f75570df650.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6xIpZW40ZF5jmX9HLKtOEPLO3mShEMomG5q8c10gFZw&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -672,7 +672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 77,
     "unit": "Piece",
-    "image": "/assets/electrical/el_60eb5bd5e16d.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2qSonGQVs1WmDx1Cq71iSL5zvs6TL6kkcFmORqDlu5A&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -688,7 +688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 205,
     "unit": "Piece",
-    "image": "/assets/electrical/el_60eb5bd5e16d.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTatxj9uBUxP4HTg9IvTpQ-5yOeenFrNVZkEokeV6ZKdg&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -704,7 +704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 171,
     "unit": "Piece",
-    "image": "/assets/electrical/el_282d47c7e149.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSqVSAFLGwa7Rr4Ur5kGlu9U6lCkc_DwPc3VtEg7OBwA&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -720,7 +720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 288,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e957a0424cec.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzqEmrtBh8UA52gWGhNECUl6zuHHGjL9FXultB3Rkp9w&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -736,7 +736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 85,
     "unit": "Piece",
-    "image": "/assets/electrical/el_91fc13963e12.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeRZdBPkwY5mb_3ue-ZD-ssMywI4NxtfH9fJt49WSJ5g&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -752,7 +752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 144,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4357bb849c5f.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy-i7Z6j6mwR6cEx3WlBdxX47AdenrrzZwshkjt1nfyw&s=10",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -768,7 +768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 157,
     "unit": "Piece",
-    "image": "/assets/electrical/el_85a439d7866c.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThKtw4uLfNRwvqTPRm3IC6c4y9D2K63OBETGfblnNImA&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -784,7 +784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 210,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a26302def71d.png",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD9prdGqWYkinI_V10Npk4a6k7UInDeZ-9CphfukkuLg&s",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -816,7 +816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 213,
     "unit": "Piece",
-    "image": "/assets/electrical/el_469f2e111f16.png",
+    "image": "https://nepakarte.com/uploads/all/2eNqzxEsXZTDn1UYx5YmgMQImmmEZ3EkyWQNUTcw.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -832,7 +832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c0b9a9d00c7f.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/16-amp-switch-flat-penta-modular-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -848,7 +848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_83f90182107b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/06076bf3c802444ebc7d5619ab64ceb6.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -864,7 +864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 419,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a4c1ead0953.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/black/ANCHOR-32A-INDICATOR-2M-ZIVA-BLACK-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -880,7 +880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 105,
     "unit": "Piece",
-    "image": "/assets/electrical/el_87a04994b327.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTUSmWfAsX3AuQKyyi0poFqTpj3Kjd_uuL3_-zvm2K_XqNnIGvbphFDYj1-vRn2HgolPnj16H5xxeH5Q8u9aR8jh5tiKOsKWJPhu1j_xYFUGmJ-EYyHogOeog",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -896,7 +896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 185,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d7431cc47c6f.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQxKZs_KLyG721IIXHgFQpJhRR8wHF-YjnKa8DMNq_Jlbq68IqqZIrXcs8It7FJ_zK2d7Z4FZL1R7M4eJes4Uum_VD1q-u0t114RsD_2QOTScwznLPjeh8vRw",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -912,7 +912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 202,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b92f8543e862.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSHGecYg1ntXkYZSh4JFvHZdWe0IvgDF1SqNqZz6xTO9JI6rDXr7qR9ngXv_E9cZ7TfY_vTbI-0088bMq9ZC15DTGPMm9Y8v3jBshNy0L7DNprtCISEaxDH",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -928,7 +928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 202,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a372ecb88ded.png",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQm_u_0550LJGhpKJhRWw_t8SvocVJaq-gHIhyFOBeIu0oEIhF2aHsc3HXy_s7nML6OX-9GAzHGWxFnKPQO6GrYE3TLdQqM-GxV2AZ6bLMQc44uR_LLJ9Xd2A",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -944,7 +944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 270,
     "unit": "Piece",
-    "image": "/assets/electrical/el_54f35959ed3c.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcR5Xu4Vjdi1ObSFxfUF4N5fVmqYTzfpRXsGrNNYaiP5L-Mprm01Q-GjikN9t_B7cEvMAPRsljXq6nUOozlLuoPNOuzIQxLcuBvO4OX_Ml_8vpoK7ENi5dMW",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -960,7 +960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 234,
     "unit": "Piece",
-    "image": "/assets/electrical/el_859e621d6948.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQEP-tRM-gKDqnTh824F0xT1-MnReDGuuZofCifz2-pGb7jyq1az2FyFJVU7RrMmGGTdYLAKYA_cIFeVUO-bynYX9smE8C1KNIFnBmU5Nup_Gmp0M0INVAu",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -976,7 +976,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 285,
     "unit": "Piece",
-    "image": "/assets/electrical/el_252d92228fbf.png",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcSHCvpcAv2KeqtBmWOxWGDzJRHP4gLHTFjQA-r50V_Jmr_nH-_sjVyJtQHGNn1ugt-E0Wk4bPp9yyGMrMSPdgMmqMM7fC5ms3F_huOLNApthH5-vleCk7RwFg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -992,7 +992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 537,
     "unit": "Piece",
-    "image": "/assets/electrical/el_28f0820170b9.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT8eTBnSRsUdS0OzPCLKQ_fZT66qUFPW-bN1eJJPYdVpTnQFDFALhrtr-SIxcMVoS-qVlvoKhZQOpkjLoKqKRDNCQrysgQWsA",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1008,7 +1008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a34739818f3f.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/658/anchor-penta-modular-6a-switch-1way-switch-white-65001-261005131512-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1024,7 +1024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bb790f687a0e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/penta_6amp_2way_switch_white_65002_box-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1040,7 +1040,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_36f630c96483.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/726/anchor-penta-bell-push-switch-1m-bell-switch-65003-261011034518-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1056,7 +1056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_36f630c96483.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/anchor-penta-modular-white-bell-push-6-a-modular-switch-2-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1072,7 +1072,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_459db0e1fa60.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/919/anchor-penta-zen-10a-switch-1m-white-65171-261007001526-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1088,7 +1088,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bb790f687a0e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/b71cad1aa2846b5979cb84c34f7ca880.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1104,7 +1104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 216,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e4a6807db603.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a90dfb90a3b8877714dd8f0caa756ec6.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1120,7 +1120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 154,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e372d436373f.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/anchor-penta-16ax-1-way-1m-white-modular-switch-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1136,7 +1136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 201,
     "unit": "Piece",
-    "image": "/assets/electrical/el_322edb92d484.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/700f1f2ca25ef70ea0a8e7796ab38cc41.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1152,7 +1152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 287,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8ef0bcf2d97c.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/ae9a5410bbfb439d970fe33802e86836.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1168,7 +1168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 150,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9c82c4c526fb.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/Anchor-Ziva-6A-Socket-3-Pin-2-Module-ISI-68208-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1184,7 +1184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_259f0c490e0d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-with-shutter-6amp-pack-65203-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1200,7 +1200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 252,
     "unit": "Piece",
-    "image": "/assets/electrical/el_29407eaab120.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/8cff56331ab43e3d02cbb7953b7e6dba.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1216,7 +1216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 239,
     "unit": "Piece",
-    "image": "/assets/electrical/el_df2d33fa6018.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-16amp-pack-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1232,7 +1232,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 37,
     "unit": "Piece",
-    "image": "/assets/electrical/el_caf97c4f2894.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/900/anchor-penta-1-module-plate-65801-white-with-chrome-collar-261012050010-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1248,7 +1248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 132,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4dc26f203b4a.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/led-indicator-modular-penta-anchor-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1264,7 +1264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 207,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bad7bc28233a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/6204ab9e2076d923b78df4c0291a3753.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1280,7 +1280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 249,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bad7bc28233a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/60386873bee78c68d5249b2e8f840aa9.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1296,7 +1296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 262,
     "unit": "Piece",
-    "image": "/assets/electrical/el_caefde327486.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/b6d496c42d4bc9a97c24a100d4c895b4.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1312,7 +1312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1510,
     "unit": "Piece",
-    "image": "/assets/electrical/el_caf97c4f2894.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/14ea12a8d4c1ce8ae45564cddc241e95.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1328,7 +1328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1769,
     "unit": "Piece",
-    "image": "/assets/electrical/el_354eb8e7b6cb.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/fe70615b7ca11a6a71a0ae4557192a2f.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1344,7 +1344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1685,
     "unit": "Piece",
-    "image": "/assets/electrical/el_caf97c4f2894.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/83a6aaee103befa59a473ee89cd90899.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1360,7 +1360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 551,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6bbf6460b1bc.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/923/anchor-penta-25a-motor-starter-switch-2-module-65125-261007120011-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1376,7 +1376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 118,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8bed93141e12.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/Roma-Anchor/roma-4step-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1392,7 +1392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 157,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8bed93141e12.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/Roma-Anchor/5step-roma-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1408,7 +1408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ae90c5981d47.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/rj11-telephone-jack-black-anchor-jiva-68610B-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1424,7 +1424,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 255,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f9a2d65ac2e9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1440,7 +1440,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 789,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f9a2d65ac2e9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1456,7 +1456,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 958,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f9a2d65ac2e9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1472,7 +1472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 838,
     "unit": "Piece",
-    "image": "/assets/electrical/el_43d14721dac0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/f7f169ff800d1728f4317445a66beb7c.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1488,7 +1488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 838,
     "unit": "Piece",
-    "image": "/assets/electrical/el_43d14721dac0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/fb0b13db3c7ee3b2e3135693cc1c8b85.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1504,7 +1504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_43d14721dac0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/59e7b9a9e9561e7ceb84b64270baac4c.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1520,7 +1520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 452,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7909fdbb2c3b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/penta/anchor-penta-fan-regulator-1m-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1536,7 +1536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 536,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9b83740f59e9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/730/anchor-penta-fan-regulator-2-module-65302-261103060756-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1552,7 +1552,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 540,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ec3362f4aa5e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/default_product.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1568,7 +1568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 443,
     "unit": "Piece",
-    "image": "/assets/electrical/el_705e617ec0a2.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/dcf9082a17123c1adc46b4f19dc90e6c.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1584,7 +1584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 578,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc6040984645.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/50dd7100bcbd98c41b1179143a2325a41.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1600,7 +1600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2028,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc6040984645.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/3d8372246ee1dfe157d2d9adc2e07806.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1616,7 +1616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 195,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5f3faf4e8df3.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d45b6d92e35ff59d3f5a1861e431d581.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1632,7 +1632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3725,
     "unit": "Piece",
-    "image": "/assets/electrical/el_36f946ebfc09.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/8f82c6a76c7f216612ca7e1d8ce1a3e9.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1648,7 +1648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3725,
     "unit": "Piece",
-    "image": "/assets/electrical/el_70901c164d08.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/54fae29923ec3a5d77f5dea10b77030b.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1664,7 +1664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3928,
     "unit": "Piece",
-    "image": "/assets/electrical/el_21a33da8d1bd.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/7a4bf9ba2bd774068ad50351fb8980761.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1680,7 +1680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 795,
     "unit": "Piece",
-    "image": "/assets/electrical/el_133909124e6a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a38e77213c6ac717528dbd5ab1df581f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1696,7 +1696,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d546469b1881.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/76e29a9f2d8037429c360bdefcca0f571.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1776,7 +1776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1792,7 +1792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1872,7 +1872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1888,7 +1888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1904,7 +1904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 149,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ed8de13207e5.png",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTVCQONxfy8tW_k0XtXYlPA1gDqib-iFxdbUz7e3FjyNPY8zQ_76jecAKGQVmLv9Tc-qn8w8XS6lZ754FzmeZAgSK5cUdQon_qUkjPV832Il81ea-QABOBc5w",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1920,7 +1920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 215,
     "unit": "Piece",
-    "image": "/assets/electrical/el_88098fe45a8d.png",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRcs61zEG5n2SwRqg2ay_6ua8YsD02B6eqX44e2_uO6xUobj-eohoyQobnEBHc6nzN3v6G3jO4CwKHJnbfoBEyK2LvRZcnwEv_eohL2UVU2JeH1p6u53u2Q",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1936,7 +1936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 180,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ea82c6330dfb.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTrbpAZ_TBlGwfIBah8jGhX1xflUhgfyhdMfKVFZrTkTv3h4gYPL2i6uO3wmbehpkG3eVWMQ1yIExkCRsPx2VdYcmSLJt6YezQ282MpKCp3wCVNagf8fsiqSw",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1952,7 +1952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 232,
     "unit": "Piece",
-    "image": "/assets/electrical/el_25df44553cc1.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTrbpAZ_TBlGwfIBah8jGhX1xflUhgfyhdMfKVFZrTkTv3h4gYPL2i6uO3wmbehpkG3eVWMQ1yIExkCRsPx2VdYcmSLJt6YezQ282MpKCp3wCVNagf8fsiqSw",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1968,7 +1968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 282,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b399e52c1024.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRT0p0aBcE6QEnELAV5WVarwjCHkQI0A2ZY9jYcUB9uTOfHFLR7fjkies_KzFRerEZW1wi7zzaJeXxnb4AivW6VN9YfzPlp-MQTalCMxbhtZxna25su92FxfQ",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1984,7 +1984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 201,
     "unit": "Piece",
-    "image": "/assets/electrical/el_787afd48793d.png",
+    "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS7A3nmpKA-itExEKciNfyBOxvxctjmm5fg7iI-QiyhDBRHuRMzHetrIidqpSFu8e-S2BJHRHJMLT16SjHeS_JKdERQGCUxcMEzuQH_nxpLCMmIx3gJ0c7unA",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2000,7 +2000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 253,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b408d55078c0.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcT4byyG5xl9j0fQ-uCPfeNJ2QTUQ0Yik53gQ2-M841nGWwqGcnohdwVll-tchhlkt9pp3MfJDSfedZ7J3yBLRvDr5PO9-CaaYoK6hBj-AXXJ2Brv67DrVC7dg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2016,7 +2016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 364,
     "unit": "Piece",
-    "image": "/assets/electrical/el_28caf4dbc949.png",
+    "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTdRl56kw6DRK-VLR2BB-ODrHlDX8MH4PO1409cO8MtHR4pcjG_0TwaiXE3AgnxDgJG8aKszNTCzcw47vzgHm6-2r_U0eFTpGUKkc_KnM07Dm2qA7RDDmE6TQ",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2032,7 +2032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 189,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8b265dc1c815.png",
+    "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcRO-tlVY58tOgXOGoycyHxpWDYqITHfUJXkfb-kjFEj0Y5GMUFt1WZB4GnHulXW9vf6i-2oFtTftxSfvaZzfqUztKIWVS4yNthkPNiOlRVKJ7TH13kGAgNn",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2048,7 +2048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 203,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0fd1889c5428.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/Anchor-penta-6A-socket-with-shutter-black-2-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2064,7 +2064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 325,
     "unit": "Piece",
-    "image": "/assets/electrical/el_70573212531b.png",
+    "image": "https://nepakarte.com/uploads/all/SV6bMXnrKc5PFtkEWt1qqpNquzauuzVhEto93iI5.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2080,7 +2080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 315,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5fd962f26f0e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/penta-16a-socket-graphite-black-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2096,7 +2096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 49,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f4d200db6656.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/861/blank-plate-graphite-black-for-anchor-penta-modular-plates-1-261005023034-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2112,7 +2112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_16464cac7e8c.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/860/anchor-penta-graphite-black-indicator-1-module-65504b-neon-i-261012001630-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2128,7 +2128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 264,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8fcffe40fe00.png",
+    "image": "https://nepakarte.com/uploads/all/p1juaKzqHCijSTAu9WjoIreMVlpu9sjR6CijkuZr.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2160,7 +2160,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 332,
     "unit": "Piece",
-    "image": "/assets/electrical/el_da26e1195ee3.png",
+    "image": "https://nepakarte.com/uploads/all/bq6cjwG1r5eYBw8eqUu6fOC4RuDIX4dF6l7MBlfZ.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2176,7 +2176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1763,
     "unit": "Piece",
-    "image": "/assets/electrical/el_629d50451b1d.png",
+    "image": "https://nepakarte.com/uploads/all/DHgBlloh64gf7c04VcXnA6QGISkqvkjYeH54GZfp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2192,7 +2192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2052,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9c7155ea6cd0.png",
+    "image": "https://nepakarte.com/uploads/all/jxPv1Nj208UGksshcbGAMhLD4DUVKaXXJ3VeykaA.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2208,7 +2208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1956,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dda87ee60292.png",
+    "image": "https://nepakarte.com/uploads/all/jxPv1Nj208UGksshcbGAMhLD4DUVKaXXJ3VeykaA.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2224,7 +2224,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 638,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e1b488ccfc96.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/1049/anchor-penta-modular-25a-motor-starter-switch-graphite-black-261006060026-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2256,7 +2256,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 197,
     "unit": "Piece",
-    "image": "/assets/electrical/el_47a1279e5f17.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/anchor-65502-penta-modular-1m-polycarbonate-white-tv-socket-outlet-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2272,7 +2272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 210,
     "unit": "Piece",
-    "image": "/assets/electrical/el_996614f91d80.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/rj11-telephone-jack-black-anchor-jiva-68610B-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2288,7 +2288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 325,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c0fd5baae544.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2304,7 +2304,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1007,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c0fd5baae544.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2320,7 +2320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1217,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c0fd5baae544.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2336,7 +2336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1068,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb18780fe90f.png",
+    "image": "https://nepakarte.com/uploads/all/VIcQxZHnP6hbxojP9uauRzILnc6qvsBDAmf7XCva.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2352,7 +2352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1068,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb18780fe90f.png",
+    "image": "https://nepakarte.com/uploads/all/cpLZO5jwAPzYmMxX6fzTXhhycNszREKbr5SCS0y3.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2384,7 +2384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 603,
     "unit": "Piece",
-    "image": "/assets/electrical/el_916057c03e44.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/856/anchor-penta-fan-regulator-1m-graphite-black-65301b-261102185518-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2400,7 +2400,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b42b94d4905e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/penta/ANCHOR-PENTA-BLACK-DURA-REGULATOR-2M-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2416,7 +2416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4eb0dd241373.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/penta/ANCHOR-PENTA-BLACK-DURA-REGULATOR-2M-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2480,7 +2480,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2252,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c3c4ea537a58.png",
+    "image": "https://nepakarte.com/uploads/all/qVo3zpOdow6g6I6qTQMSmdaK6Bp7wESFEuaYmPji.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2528,7 +2528,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4721,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9158ff6618ce.png",
+    "image": "https://nepakarte.com/uploads/all/P9ic2njL0WoRoaFM4sZYcCYEUubXkMP2baQM0srj.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2544,7 +2544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4979,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3bd06f8fb886.png",
+    "image": "https://nepakarte.com/uploads/all/5TCMsiqHCCT7VaaKL5FvXnux3FtJrbJ3wTOiT94M.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2656,7 +2656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2672,7 +2672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2752,7 +2752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2768,7 +2768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a42774df85d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-DP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2784,7 +2784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bc2250cd8bcc.png",
+    "image": "https://nepakarte.com/uploads/all/Y9BaJgLZKuu4UiCTWWCGvCNF4EhcaWsiyK9etPon.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2800,7 +2800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bc2250cd8bcc.png",
+    "image": "https://nepakarte.com/uploads/all/VQXDAmSOCvqbTI0AC10wm6ZT80FW00KAMwnl8WCG.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2816,7 +2816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bc2250cd8bcc.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2848,7 +2848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 62,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cfc8c2aedb04.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2864,7 +2864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ea79ec5a11f1.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-with-shutter-6amp-pack-65203-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3008,7 +3008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 199,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c261cc2d2904.png",
+    "image": "https://nepakarte.com/uploads/all/PjVE411p4S2cwdQJ92EbODe5UgJdHqpzMKAFmgcP.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3056,7 +3056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 557,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2091b3b23858.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/923/anchor-penta-25a-motor-starter-switch-2-module-65125-261007120011-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3088,7 +3088,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 273,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bce3ed67848d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-WITH-BOX-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3104,7 +3104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 278,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bce3ed67848d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-WITH-BOX-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3136,7 +3136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-6A-1WAY-NON-MODULAR-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3152,7 +3152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-6A-1WAY-NON-MODULAR-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3168,7 +3168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-6A-1WAY-NON-MODULAR-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3232,7 +3232,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3248,7 +3248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3264,7 +3264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3280,7 +3280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c20d169b42d1.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/Penta-Flat-6-Amp-Modular-anchor-Switch-Grey-65141B-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3296,7 +3296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 28,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c20d169b42d1.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/Penta-Flat-6-Amp-Modular-anchor-Switch-Grey-65141B-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3344,7 +3344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c20d169b42d1.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3360,7 +3360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_59403457b6af.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3376,7 +3376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 29,
     "unit": "Piece",
-    "image": "/assets/electrical/el_59403457b6af.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/658/anchor-penta-modular-6a-switch-1way-switch-white-65001-261005131512-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3392,7 +3392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 29,
     "unit": "Piece",
-    "image": "/assets/electrical/el_59403457b6af.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/658/anchor-penta-modular-6a-switch-1way-switch-white-65001-261005131512-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3408,7 +3408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 29,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/658/anchor-penta-modular-6a-switch-1way-switch-white-65001-261005131512-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3472,7 +3472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_59403457b6af.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3488,7 +3488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3504,7 +3504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3520,7 +3520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_47dcea3b2fff.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-with-shutter-6amp-pack-65203-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3536,7 +3536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-with-shutter-6amp-pack-65203-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3552,7 +3552,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-with-shutter-6amp-pack-65203-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3920,7 +3920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 147,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7433dfd09842.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-NON-MODULAR-6-20A-SWITCH-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3936,7 +3936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 147,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a557bdffb0a5.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-NON-MODULAR-6-20A-SWITCH-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3984,7 +3984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7433dfd09842.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/ANCHOR-PENTA-NON-MODULAR-6-20A-SWITCH-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4080,7 +4080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_930768ee46da.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-16amp-pack-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4096,7 +4096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-16amp-pack-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4112,7 +4112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c9c1801493c4.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/ANCHOR-PENTA-NON-MODULAR-6-16A-SOCKET-2M-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4256,7 +4256,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 229,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a1eac21a0c39.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-16amp-pack-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4272,7 +4272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 229,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d43e2cc74611.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/anchor-penta-socket-16amp-pack-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4288,7 +4288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 233,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f637954733dd.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-OUTLET-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4336,7 +4336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 244,
     "unit": "Piece",
-    "image": "/assets/electrical/el_28ce10ac6afc.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-OUTLET-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4352,7 +4352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 244,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d43e2cc74611.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-OUTLET-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4400,7 +4400,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 278,
     "unit": "Piece",
-    "image": "/assets/electrical/el_01f80f6daff0.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/combined%20Box/ANCHOR-PENTA-6-16A-COMBINED-BOX-WITH-BOX-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4912,7 +4912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 75,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5958a60a056b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/penta/Penta-Flat-6-Amp-Modular-anchor-Switch-Grey-65141B-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4944,7 +4944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 75,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d35cdd3f2d2b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/858/anchor-penta-bell-push-switch-1m-graphite-black-65003b-261012001615-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5424,7 +5424,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 217,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4c063b227c51.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/dc7036da8ffc09d5d34f55843cf5020e.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5504,7 +5504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 259,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c468436a9008.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/5852c0903d3158a9f4e7ee298eee9702.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5600,7 +5600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5616,7 +5616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5696,7 +5696,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5712,7 +5712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5728,7 +5728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 261,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c592d419d3b7.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/rOMA-URBAN-10A-1M-WITH-INDICATOR-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5744,7 +5744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 262,
     "unit": "Piece",
-    "image": "/assets/electrical/el_87288da7280d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/fa14eb3c53094d0323749eeeca109144.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5760,7 +5760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 307,
     "unit": "Piece",
-    "image": "/assets/electrical/el_43429c57a32d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/e74f0b8cc8a53963231216f649076da0.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5776,7 +5776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 262,
     "unit": "Piece",
-    "image": "/assets/electrical/el_340cfcad3f74.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/552f5e345c9d523300ea73c6a65b0a6e.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5792,7 +5792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 307,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2bacf3223abc.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/e1f11e558d8c2c5ddacb6cd0196e8975.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5808,7 +5808,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 336,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f4035e0553a7.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/bell-push-10a-roma-front-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5824,7 +5824,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 380,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fa6e5b921127.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5840,7 +5840,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 355,
     "unit": "Piece",
-    "image": "/assets/electrical/el_081a7c8a667e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d882cdd325a9cea02b8a693daba786f8.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5856,7 +5856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 328,
     "unit": "Piece",
-    "image": "/assets/electrical/el_19e928d4496b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4f52c16c93e61c9e1c25f529932b0071.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5872,7 +5872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 394,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fd6ebceb269a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/7c63a554c36ea63c77723a472b7ca20f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5888,7 +5888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 432,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ed30da89749e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5904,7 +5904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 828,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d93707b2174e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0c9097d0139751fc728f1614cca51b43.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5920,7 +5920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 265,
     "unit": "Piece",
-    "image": "/assets/electrical/el_52b21f2a6fda.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/roma%20urban/roma-urban-6a-socket-white-2m-66402-online-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5936,7 +5936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 444,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6e3c04e684fb.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/32f45c38130e4305d737e8115cfa39a4.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5952,7 +5952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 544,
     "unit": "Piece",
-    "image": "/assets/electrical/el_66d377612590.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Roma-Anchor/16amp-roma-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5968,7 +5968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 553,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e78e528c9981.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/1aa48fc4880bb0c9b8a3bf979d3b917e3.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5984,7 +5984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 848,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6a32b9ef053f.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/Roma-Anchor/roma-4step-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6000,7 +6000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6c77e4dba169.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/eadc317f2764a00bec1b729a56321cd3.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6016,7 +6016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1136,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0c82571ede64.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/43137ee460351398978a8ec6a64cc69f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6032,7 +6032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 782,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9fa32c2145be.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/9ce2e101957dc53e3e89cc8e1599aa601.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6048,7 +6048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2490,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5c65c51fcf2c.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/44993675dd0d868b192d56c8fb7af7e7.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6064,7 +6064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 282,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a7c6187740ff.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4a3c9b0079ce41ad7a090322fd77908f.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6080,7 +6080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1022,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a7c6187740ff.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/827a1fd7a77a96b4c3a3cd36b431f878.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6096,7 +6096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1161,
     "unit": "Piece",
-    "image": "/assets/electrical/el_58f85ed5f4b7.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6112,7 +6112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 237,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d8fdc50d1dea.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0d30c935315fc29c87bd8d3ada2f1bd3.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6128,7 +6128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 286,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8e3342f544a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/19873725ed76e249281f495eb7d547ac.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6144,7 +6144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_125536292c5f.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0a30984ca2e5f170d14cc06c70e087aa.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6160,7 +6160,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0fd3090a1121.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6176,7 +6176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_58f85ed5f4b7.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6192,7 +6192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5e190870adbd.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6208,7 +6208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c9b01d08c882.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/indicator/roma%20urban/roma-urban-led-indicator-red-1m-66605r-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6224,7 +6224,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2becde331bcf.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6240,7 +6240,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 70,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfd693587bde.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6256,7 +6256,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 111,
     "unit": "Piece",
-    "image": "/assets/electrical/el_93123adb2c31.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6272,7 +6272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 497,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2d95b8450761.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Roma-Anchor/16amp-roma-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6288,7 +6288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 891,
     "unit": "Piece",
-    "image": "/assets/electrical/el_93123adb2c31.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/5469441a9e8de6030c3712aeec8381072.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6304,7 +6304,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4849,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dfd2878debc6.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/6e188dc874a5c7bee808852f9020c0c91.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6320,7 +6320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2006,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bddc4a061d2e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/67f3c822a32053681b2c45736b4da971.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6336,7 +6336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3075,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734fb7a065cc.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/e65076d21d4b718526e684473c359d55.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6352,7 +6352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_270f727011b9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6368,7 +6368,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3986,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8144de6f0d9.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/eb7ef0469ad23a2c5782e8770da045291.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6384,7 +6384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1057,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c094c0da5e43.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/27099b1bb4f5d2f647df1faef21a5d9a.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6416,7 +6416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 662,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c65ef2fe9c31.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/6d2bb9eb2c15945e521e74f65e846d1d.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6432,7 +6432,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1636,
     "unit": "Piece",
-    "image": "/assets/electrical/el_742746a6bc1d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/bb181e83b9ac6be1b28b2a2b26dcd73e.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6448,7 +6448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1118,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a103b0202982.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/e8fdc390336451fc3378dbdabf7dfbc6.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6464,7 +6464,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1118,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a103b0202982.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/03e68135e0895efe7ac9d0abac64f8a0.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6480,7 +6480,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 8091,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cb5a2b384038.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6496,7 +6496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 8091,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cb5a2b384038.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6512,7 +6512,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 7031,
     "unit": "Piece",
-    "image": "/assets/electrical/el_774c7a835474.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/656f0dbf9392657eed7feefc486781fb2.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6608,7 +6608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 364,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fa024b391190.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/bell-push-10a-roma-front-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6624,7 +6624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 417,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4bb016d14c0b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6688,7 +6688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 469,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6a6aabd010e8.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6848,7 +6848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2717,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7cddffc935b8.png",
+    "image": "https://nepakarte.com/uploads/all/yzRQNsNbOcpPtdK43IW98iA5CERxz0w0988oBNGB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6896,7 +6896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1497,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9cdd274e296d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6960,7 +6960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 74,
     "unit": "Piece",
-    "image": "/assets/electrical/el_542b1dc17f73.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6976,7 +6976,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8f2a3f219ae.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6992,7 +6992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9cdd274e296d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7120,7 +7120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2299,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4bd9dd07def6.png",
+    "image": "https://nepakarte.com/uploads/all/pG3X56ge9QqnHoCGI2ixUWNl5BkFth2QxqPvT4Ri.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7152,7 +7152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7eb5fa5d711a.png",
+    "image": "https://nepakarte.com/uploads/all/BjqqJwW0RZE21mFBI0Y6R6cN0Ht8qYr0wsrlgIAA.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7168,7 +7168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1536,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5801a1ea0bb0.png",
+    "image": "https://nepakarte.com/uploads/all/dKD2GxHKWAZjyWRnEoApH6q80LiUm4Exhnpd81Z7.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7184,7 +7184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 5107,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0a6819efa0d5.png",
+    "image": "https://nepakarte.com/uploads/all/spHNoCHNc5uU0JqmYpMbZDgedEDiXXhMS6nPOs40.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7200,7 +7200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 721,
     "unit": "Piece",
-    "image": "/assets/electrical/el_958681d0e5d1.png",
+    "image": "https://nepakarte.com/uploads/all/fNLfKgVVUlqRzGDzRvZTPEackVXSWFeO6lQkmsnv.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7216,7 +7216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_958681d0e5d1.png",
+    "image": "https://nepakarte.com/uploads/all/wFwA9D44r5vOD72mTdtm5JBlm8s8QXUCtC3EJkMf.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7232,7 +7232,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_958681d0e5d1.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7264,7 +7264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_41fa93cc56f2.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7408,7 +7408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 364,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1bb11a646f84.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/bell-push-10a-roma-front-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7424,7 +7424,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 417,
     "unit": "Piece",
-    "image": "/assets/electrical/el_431f31068989.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7488,7 +7488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 469,
     "unit": "Piece",
-    "image": "/assets/electrical/el_259b7b023048.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7600,7 +7600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5ae6ef1b060d.png",
+    "image": "https://nepakarte.com/uploads/all/cH5k2IPe5ayMPbnZUT5xsI3S1ize8d40TSHLhlVF.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7632,7 +7632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f4262b6b1f02.png",
+    "image": "https://nepakarte.com/uploads/all/gQyoudhWYBCefcsCkNnAJI09PeHjzYNAXe1QR0Dd.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7648,7 +7648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2717,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d91079df9e4d.png",
+    "image": "https://nepakarte.com/uploads/all/LNHIlcNCYRQk6SVv0Hd5Hgg9r3SnKSwQYo6MlpJb.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7664,7 +7664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 307,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7d884acd6b29.png",
+    "image": "https://nepakarte.com/uploads/all/Pft3mH7PTLstiAHrrKZPo817Br6BUHaM08y1qJvn.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7696,7 +7696,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1497,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7bfc4e62a173.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7728,7 +7728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 305,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9c982a51a592.png",
+    "image": "https://nepakarte.com/uploads/all/JXsOCMNvREAjJPEf1rbpiMOP378HjeQcp5YgZtgG.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7760,7 +7760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 74,
     "unit": "Piece",
-    "image": "/assets/electrical/el_297bd4ef53a0.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7776,7 +7776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_00a584b19a8d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7792,7 +7792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7bfc4e62a173.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8080,7 +8080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e12e90398c45.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8192,7 +8192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 364,
     "unit": "Piece",
-    "image": "/assets/electrical/el_183eea46fa13.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/bell-push-10a-roma-front-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8208,7 +8208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 417,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fd1fe315cecf.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8272,7 +8272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 469,
     "unit": "Piece",
-    "image": "/assets/electrical/el_06143186ac67.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8480,7 +8480,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1497,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8c28fd64da20.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8544,7 +8544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 74,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ac400efebfd7.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8560,7 +8560,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ac871fee52ce.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8576,7 +8576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 127,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8c28fd64da20.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8864,7 +8864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f9e8f02c02c2.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8896,7 +8896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a01ec05b04f3886bded782c17fa48396.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8912,7 +8912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0414042bbb67899e6d058a5c1cb87503.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8928,7 +8928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/3d67c6a0022eea35b7eb2a1efb4f7b9b.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8944,7 +8944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/dfaf1b7d15e572ae5a1b2fa172ce8657.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8960,7 +8960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/88d152334168de3b1c82114af25d969b1.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8976,7 +8976,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 352,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/1f9d12efe0083c8cb10f9b8769072f9c.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8992,7 +8992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/93f04334d788c3a859389e0f7708f1eb.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9008,7 +9008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/fa3a3c407f82377f55c19c5d403335c7.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9024,7 +9024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/92cad8e05ca788dc7475183dd19c959b.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9040,7 +9040,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4575b9b026b3a8ad63406363c8e9e5e5.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9056,7 +9056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_325784dab54a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/90ffcbb134728e25a7388a090d0ee80b1.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9072,7 +9072,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 797,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b34d47210f87.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/c24573003f91e12892c75e42971e03fe.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9088,7 +9088,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/af13b9a22b3f1ea3ecabd22e6b78d549.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9104,7 +9104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2958efe32274c6369d16dccad3add350.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9120,7 +9120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/50c2e156c1502fb41bc5d51be51d76a3.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9136,7 +9136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/06b7476ec66a0df253337fbbbc39f2da.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9152,7 +9152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/caf086cb95d6a70f6a0fda05f4e9cc97.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9168,7 +9168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/c2f8e1260683ddd569afefcb6558a1a6.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9184,7 +9184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/099bd586b4f3288eef1b7eb8322f9c8e1.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9200,7 +9200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/889c522de6762367fdbcd152e4c381c71.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9216,7 +9216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/f206e92339beed173f6cc8e5cae595ab.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9232,7 +9232,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d0a62b2b138867d96f0521c38484b4c31.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9248,7 +9248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2131847b1d4cccf8c5e06f7bef69cf60.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9264,7 +9264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38061586b339.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/78c409525c3446e8a17748d27d532ab4.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9664,7 +9664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2043,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1239bf318b0e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/26d3af810451fadd294aff0f8e5cdee71.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9680,7 +9680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Junction & Concealed Boxes",
     "price": 12621,
     "unit": "Piece",
-    "image": "/assets/electrical/el_826bed25971b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/75a04ea0cbb9289084240583b76892d8.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9728,7 +9728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6100,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b62daf75fd9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Anchor%20Roma%20Urban%20Smart%20Touch%20Switch%2016A%201-Channel%20-%20White-6-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9776,7 +9776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5b85730d3152.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Anchor%20Roma%20Urban%20Smart%20Touch%20Switch%2016A%201-Channel%20-%20White-6-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9792,7 +9792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5b85730d3152.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Fan-Regulator-%20100W-1-Channel-%202-Module-white-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9824,7 +9824,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6900,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5b85730d3152.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9872,7 +9872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_44c6b0573857.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Anchor%20Roma%20Urban%20Smart%20Touch%20Switch%2016A%201-Channel%20-%20White-6-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9920,7 +9920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8126ff6202b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Anchor%20Roma%20Urban%20Smart%20Touch%20Switch%2016A%201-Channel%20-%20White-6-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9936,7 +9936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8126ff6202b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Fan-Regulator-%20100W-1-Channel-%202-Module-white-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9952,7 +9952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6900,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8126ff6202b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9968,7 +9968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6900,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8126ff6202b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch%20plates/Roma-Anchor/ANCHOR-ROMA-1M-WHITE-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9984,7 +9984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6600,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b62daf75fd9.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/roma%20urban/smart%20switch/Fan-Regulator-%20100W-1-Channel-%202-Module-white-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10032,7 +10032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 199,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e0294666bdb1.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/ba3a3ae550894c78c7ff006c8ce28a99.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10048,7 +10048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 256,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ca495d82ff8b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/435375343278e08eaf504a171eaea6d1.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10064,7 +10064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 256,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ca495d82ff8b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/937315cf79eb4801d8474c4bc6558eee.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10080,7 +10080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 256,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e0294666bdb1.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/19d06e3a1a4f90b2e7704d257962e1221.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10096,7 +10096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3cc55facd5f0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/84d2c8892fcc6e60580f09d23082aa6f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10112,7 +10112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 462,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3cc55facd5f0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/220905caf2238e55661320d4c369d635.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10144,7 +10144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 768,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bab5ef796893.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/c94a9676b3c1132168f8dd27bde656ed.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10160,7 +10160,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 221,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bab5ef796893.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d7ead5493404dfc648694a5793608bdf.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10176,7 +10176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 380,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bab5ef796893.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/44e8c3e9d4a9b627e1c2d22b92d048f61.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10192,7 +10192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 417,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bab5ef796893.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/de1e7f6da2c60b9bb6768ba10c8ebc28.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10352,7 +10352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81cab9d5840e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10368,7 +10368,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 191,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1de7ef74e036.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a1918db40140397d0a21e9ac1ce9fb931.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10384,7 +10384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 238,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1de7ef74e036.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/efd781df5ac053730c3ea85efec5b384.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10400,7 +10400,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1de7ef74e036.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/25c801f83373161c6a13f424af3c2791.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10416,7 +10416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1de7ef74e036.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/67968af79a4fafec766aed5d7043942c.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10432,7 +10432,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0c8f8ab56baa.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/8053519398a89e3d928132298251e0ec.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10448,7 +10448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 380,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0c8f8ab56baa.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/ee0082a52d407582bf0b57c51564db24.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10464,7 +10464,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2188,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0c8f8ab56baa.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/26fd45817c0a0bb1e951d17fa7df947c.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10480,7 +10480,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2278,
     "unit": "Piece",
-    "image": "/assets/electrical/el_0c8f8ab56baa.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2e4c0fffc8488719169ae93b5c17b66e.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10512,7 +10512,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1012,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e1e36d6887c2.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d4b392dfa44a0fc6f6813643066d80ad1.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10528,7 +10528,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 334,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e1e36d6887c2.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/db60b95decdeed944b4cd8685417cfdc1.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10704,7 +10704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 261,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9e07faebaf35.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/cd6539b09d112a53ba4098fe605df806.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10720,7 +10720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 444,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9e07faebaf35.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/723d8c61fce870c3474d080313a4a2fd.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10736,7 +10736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 486,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9e07faebaf35.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/581ff1f0d53d18bf7ae4b5952835eb8f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10896,7 +10896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1364,
     "unit": "Piece",
-    "image": "/assets/electrical/el_435cb1a7e675.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/681/anchor-penta-rj45-computer-jack-cat6-1-module-65622-261006070342-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10912,7 +10912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 219,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4e5da93c1154.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/ec2dd97b3142e7a0d30517eb57998209.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10928,7 +10928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 277,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4e5da93c1154.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/008bfef4efdd575ac3e9a5c0c43661e9.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10944,7 +10944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 65,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4e5da93c1154.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d9b344c68f983c6f45f6898c8b9a2ab8.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10960,7 +10960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 216,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4e5da93c1154.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/525002932dd3585b9d78698bc7713256.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10976,7 +10976,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 216,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aa668b170321.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/dbe40ccd11b1fb869099e58e00076027.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10992,7 +10992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 441,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aa668b170321.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/f645358b695e99125681b2129918ca81.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11008,7 +11008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2542,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aa668b170321.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4dc81a70490100c0bfa13295418a1b0a.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11024,7 +11024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2652,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aa668b170321.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/d9b660e5561b383fd6ec8716fef60fea.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11056,7 +11056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1182,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2a3139f0f3ec.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/fdd0b49f7a05f53c0346aceeae35f532.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11472,7 +11472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 39,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9bc5726893cd.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/16a-switch-anchor-ziva-1way-white-2-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11488,7 +11488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 78,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3e2ad62591bf.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/Anchor-Ziva-Bell-Push-Switch-1M-68003-jpg-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11504,7 +11504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 112,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e2ae44f8d26f.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/Anchor-Ziva-Bell-Push-with-Neon-6A-2Module-68066-jpg-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11520,7 +11520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 91,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9bc5726893cd.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/16a-switch-anchor-ziva-1way-white-2-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11536,7 +11536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 91,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7be83f90aa5a.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/23fcf35b0a60d6f917f34f8024f5ddc9.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11552,7 +11552,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 126,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f5b7a763f83b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/26d07ae4d7900394b2efaae387b01072.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11568,7 +11568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 230,
     "unit": "Piece",
-    "image": "/assets/electrical/el_33e47d21756c.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/07f1de397293d02ea1ee1a1be4434dd5.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11584,7 +11584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 162,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ce95aed15465.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/18/c4/a-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11600,7 +11600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 344,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c68e2a2c3653.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/ziva/fan-regulator-ziva-1m-68301-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11616,7 +11616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 396,
     "unit": "Piece",
-    "image": "/assets/electrical/el_22c6f2f40a7e.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/18/c4/b-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11648,7 +11648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 474,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2ec8dc4ece13.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/9dc70107a880137314cb5a86ed80dce8.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11680,7 +11680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 106,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3c2bdbb95a02.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4ae814b375680f7146d0460bd149c6a0.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11696,7 +11696,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_adac948d4b9d.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/rj11-telephone-jack-black-anchor-jiva-68610B-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11712,7 +11712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_02c26cff57a0.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/680/anchor-ziva-rj45-computer-jack-cat6-1-module-68622-261006214511-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11728,7 +11728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 668,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3e7d45cce794.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/680/anchor-ziva-rj45-computer-jack-cat6-1-module-68622-261006214511-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11744,7 +11744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 22,
     "unit": "Piece",
-    "image": "/assets/electrical/el_27818d76e355.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/Anchor-Ziva-Blank-Plate-1M-68503-jpg-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11760,7 +11760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 87,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c381e3413401.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/Anchor-Ziva-Neon-Indicator-Red-1Module-68504-jpg-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11776,7 +11776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1161,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f306207bbd68.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/48fe118b07a43ce5c04a3789df5f152e.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11808,7 +11808,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 160,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3e7d45cce794.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/8a0d997c88054bf6ac6646d9b3c0a020.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11824,7 +11824,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 160,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b5ef5a380ef7.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/13111c20aee51aeb480ecbd988cd8cc9.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11840,7 +11840,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 482,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c5e1e491bae0.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/motor-starter/anchor/ziva-68125-motor-starter-25a-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11856,7 +11856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 516,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb5c9536833d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/32f57b05e13cc66c536619f3cda36b39.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11872,7 +11872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 516,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e533b0e76727.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0a175e9ffb2cc47dffead9c1cf4eb9fe.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11936,7 +11936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 49,
     "unit": "Piece",
-    "image": "/assets/electrical/el_48ab5b61b507.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/black/anchor-ziva-black-switch-in-brass%20plate-800x800.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11968,7 +11968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 147,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2050f5c89357.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/809/anchor-ziva-bell-push-with-indicator-black-2module-68066b-261011170036-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11984,7 +11984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_48ab5b61b507.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/black/anchor-ziva-6a-switch-68001b-800x800.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12032,7 +12032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 304,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c164a8661d31.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/switch/ziva/black/ANCHOR-32A-INDICATOR-2M-ZIVA-BLACK-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12048,7 +12048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 214,
     "unit": "Piece",
-    "image": "/assets/electrical/el_daa0e789f31b.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/808/anchor-ziva-16a-socket-3-pin-socket-68205b-261004014616-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12064,7 +12064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 453,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5ee7dc58d528.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/Fan%20Regulator/ziva/fan-regulator-1m-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12080,7 +12080,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 524,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a56f6d1a8e79.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/807/anchor-ziva-6a-socket-black-68208b-261007034528-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12160,7 +12160,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 171,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5e2a40a99130.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/rj11-telephone-jack-black-anchor-jiva-68610B-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12176,7 +12176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 208,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7636e61f39fb.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/680/anchor-ziva-rj45-computer-jack-cat6-1-module-68622-261006214511-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12192,7 +12192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 879,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a08a034af127.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/rj45-computer-jack-black-anchor-jiva-68622B-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12208,7 +12208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 29,
     "unit": "Piece",
-    "image": "/assets/electrical/el_df3c9420a3bf.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/blank-dummy-plate-jiva-black-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12224,7 +12224,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 116,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1d6efe840b73.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/socket/Anchor/indicator-ziva-black-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12304,7 +12304,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 557,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1d6efe840b73.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/motor-starter/anchor/25a-motor-starter-ziva-black-68125b-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12448,7 +12448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12464,7 +12464,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/25-uno-25a-mini-mcb-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12480,7 +12480,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12544,7 +12544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12576,7 +12576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12640,7 +12640,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12656,7 +12656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-25A-SP-MINI-MCB-BLACK-1-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12672,7 +12672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/mcb/Anchor/ANCHOR-32A-SP-MINI-MCB-BLACK-2-800x800.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12736,7 +12736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12768,7 +12768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/product/electric%20fittings/support%20modules/ziva-mini-mcb-20a-white-800x800.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12816,7 +12816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 121,
     "unit": "Piece",
-    "image": "/assets/electrical/el_11c12b644a62.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/57342f6b95854ad89e9c4088ab94adcf.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12832,7 +12832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 132,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5a4f29a05743.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/3049f7815aa6d0a717f6703971a6680a.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12864,7 +12864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 145,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a55d32307151.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/91d503c079ec0b18c2300ac06f767522.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12880,7 +12880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 161,
     "unit": "Piece",
-    "image": "/assets/electrical/el_25e52456ea2d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/e8250347ec21ebfbb5b948f61bc1cb87.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12896,7 +12896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 193,
     "unit": "Piece",
-    "image": "/assets/electrical/el_46cc52b69b82.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/9a5859b8f76280c97c0c185a19d17014.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12928,7 +12928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 193,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cfe3bbd6e916.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/5f12e21baf189361ed9cc4e0b9902b27.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12944,7 +12944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 590,
     "unit": "Piece",
-    "image": "/assets/electrical/el_64ba4ab5c8da.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/923/anchor-penta-25a-motor-starter-switch-2-module-65125-261007120011-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12960,7 +12960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 259,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8ee0cd29c19c.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/7d46fde6325be39f06a245530a9c6424.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12976,7 +12976,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 258,
     "unit": "Piece",
-    "image": "/assets/electrical/el_53d9c4167923.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2ebcdae9bbf2c2dbc0228d7bccc805a4.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12992,7 +12992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 473,
     "unit": "Piece",
-    "image": "/assets/electrical/el_20cdc0de44a1.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/763333b0f312f025d780a8f4451bf6f3.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13008,7 +13008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 545,
     "unit": "Piece",
-    "image": "/assets/electrical/el_798b58fd500f.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/0432268334291febec6d0dbc1f8bae5d.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13024,7 +13024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 602,
     "unit": "Piece",
-    "image": "/assets/electrical/el_798b58fd500f.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/c4f1a9079d69dbe9c56d4ac815da7429.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13040,7 +13040,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 416,
     "unit": "Piece",
-    "image": "/assets/electrical/el_67dfad2d85d7.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/9cd3a9c8d09716e07c730e89776cfcc7.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13056,7 +13056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 641,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c5e8d282ac0e.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/1e14bfe2714193e7af5abc64ecbd6b46.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13072,7 +13072,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 163,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cfb558b963a3.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/31f0b956cab7d9c07abd3155a56843f6.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13088,7 +13088,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b253c41978a2.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/7921d90348e08272240aeed482095bae.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13104,7 +13104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 118,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a7eecc6e1856.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/78daa841983616d05c58f0fff5d5eae1.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13120,7 +13120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 153,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c04c656cc2bf.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/b0c675ce126dd3a5c7f0b1325cdb6cd0.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13136,7 +13136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 162,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b6e906e8220d.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a67b5b83f4dfe5c971655fa7e06bbca3.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13152,7 +13152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 130,
     "unit": "Piece",
-    "image": "/assets/electrical/el_db19f96cda2b.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/af6c94e5c75076e32354adf007996f0d.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13184,7 +13184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 321,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e32f63781e21.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2e9f1b0f07f2e53fe41d6743c15db964.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13200,7 +13200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 39,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fd7f99ae9751.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/de01d76e793fec3fba32f4401a45fb20.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13216,7 +13216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 39,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e1dce7d8f722.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/a2a12471535005ffef2984cfa21c8eda.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13232,7 +13232,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 131,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e99425c4f956.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/9aa9725e0bbca8966afaa2c556eed96f.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13248,7 +13248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Junction & Concealed Boxes",
     "price": 578,
     "unit": "Piece",
-    "image": "/assets/electrical/el_99f65ebfb5b0.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/b09007d46d54f6bb4166f7d582a3f5d9.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13264,7 +13264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Junction & Concealed Boxes",
     "price": 578,
     "unit": "Piece",
-    "image": "/assets/electrical/el_182db02cfc39.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/2db82e0f698804408eafba7350d06542.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13280,7 +13280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Junction & Concealed Boxes",
     "price": 578,
     "unit": "Piece",
-    "image": "/assets/electrical/el_1c7329874598.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/7887968ac1e67b5624dcf811d007ed12.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13296,7 +13296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2542,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e9ff94c5c5cc.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/4a84789f9c362b5b21ea7842c79a9c7e.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13312,7 +13312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 389,
     "unit": "Piece",
-    "image": "/assets/electrical/el_2af43e437dab.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/899e0b68a9c29f71e128a380cbb0c64e.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13328,7 +13328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 582,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7d3b8f8419c1.png",
+    "image": "https://www.matemart.in/Assets/images/products/medium/f53cfee8ec535cd60167044b316bc5cd.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13520,7 +13520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 655,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4598a9759507.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/923/anchor-penta-25a-motor-starter-switch-2-module-65125-261007120011-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13904,7 +13904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9bb68ebf8223.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/919/anchor-penta-zen-10a-switch-1m-white-65171-261007001526-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13920,7 +13920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 129,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9bb68ebf8223.png",
+    "image": "https://onlineshop.itjunction.org/image/cache/catalog/ads_planner/1139/anchor-penta-zen-16a-switch-1m-white-65173-261014050207-1-800x800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""

@@ -1,6 +1,6 @@
 import { Product, StoreSettings } from '../../types';
 
-export const CATALOG_VERSION = "2026-11-18-anchor-panasonic-electrical-v6";
+export const CATALOG_VERSION = "2026-11-19-anchor-exact-sku-images-v10";
 
 export const ASHIRVAD_PRODUCTS: Product[] = [
   {
