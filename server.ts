@@ -868,12 +868,7 @@ ${itemsXml}
   // Gemini AI Analysis endpoint for Image Upload mode (Mode 3)
   app.post('/api/analyze-image', async (req, res) => {
     try {
-      const { imageBase64, imageBase64List, mimeType = 'image/jpeg', plumberPhone, userRole } = req.body;
-
-      if (userRole === 'customer' && (!plumberPhone || !plumberPhone.trim())) {
-        res.status(400).json({ error: 'Plumber / Electrician Phone Number is MANDATORY for Customer orders.' });
-        return;
-      }
+      const { imageBase64, imageBase64List } = req.body;
 
       const imagesArray: string[] = imageBase64List && Array.isArray(imageBase64List) && imageBase64List.length > 0
         ? imageBase64List
@@ -886,12 +881,14 @@ ${itemsXml}
 
       const ai = getGeminiClient();
 
-      const imageParts = imagesArray.map(imgStr => {
-        const cleanBase64 = imgStr.replace(/^data:image\/\w+;base64,/, '');
+      const imageParts = imagesArray.map((imgStr) => {
+        const match = imgStr.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
+        const detectedMime = match ? match[1] : 'image/jpeg';
+        const cleanBase64 = match ? match[2] : imgStr.replace(/^data:[^;]+;base64,/, '');
         return {
           inlineData: {
             data: cleanBase64,
-            mimeType
+            mimeType: detectedMime
           }
         };
       });
@@ -899,76 +896,107 @@ ${itemsXml}
       const currentCatalog = await dbManager.getProducts();
 
       const promptText = `
-You are an expert plumbing and electrical materials dispatcher at a top supplier company in India.
-Analyze ${imagesArray.length > 1 ? 'these ' + imagesArray.length + ' images' : 'this image'} (handwritten material list, job site tag, broken part photo, blueprint, or material receipt).
-Extract the text and list of materials from all provided images.
-Organize each extracted item with:
-- slNo: Serial number (1, 2, 3...)
-- item: Name/description of material
-- size: Size specification (e.g. "1/2 inch", "3/4 inch", "20mm", "1.5 sq mm", "100m Roll", "Standard")
-- quantity: Quantity number (e.g., 5, 10, 2)
-- name: Full item name with size
-- estimatedQty: Same as quantity
-- estimatedUnitPrice: Estimated unit price in Indian Rupees (₹)
+You are an expert Indian plumbing, sanitaryware, and electrical hardware OCR specialist & material dispatcher.
+Carefully read and transcribe EVERY line of text from ${imagesArray.length > 1 ? 'these ' + imagesArray.length + ' uploaded images' : 'this uploaded image'} (handwritten plumber/electrician slip, printed bill, WhatsApp screenshot, part photo, or material list).
 
-Here is a sample of our store's current stock catalog:
-${JSON.stringify(currentCatalog.slice(0, 80).map(p => ({ id: p.id, name: p.name, price: p.price, category: p.category, unit: p.unit })), null, 2)}
+CRITICAL INSTRUCTIONS:
+1. Extract ONLY the actual items visible in the uploaded image(s). Never invent or hallucinate items not in the image.
+2. Auto-correct spelling mistakes, messy handwriting, and Indian trade abbreviations:
+   - Plumbing: "elbo/elbw" -> "Elbow", "cpvc/cvpc" -> "CPVC", "upvc" -> "UPVC", "mta/m.t.a" -> "Male Threaded Adaptor (MTA)", "fta/f.t.a" -> "Female Threaded Adaptor (FTA)", "b/v or ball valv" -> "Ball Valve", "nrv" -> "Non Return Valve", "t/t or teflon" -> "PTFE Teflon Tape", "s/c or solvant" -> "Solvent Cement", "couplr" -> "Coupler", "reduser" -> "Reducer", "basen" -> "Wash Basin", "commode/toliet" -> "Water Closet", "fauset" -> "Faucet", "shwer" -> "Shower".
+   - Electrical: "swich" -> "Switch", "soket" -> "Socket", "regultor" -> "Fan Regulator", "wyer/wir" -> "Copper Wire", "mcb" -> "MCB", "rccb" -> "RCCB", "moduler" -> "Modular", "ankor" -> "Anchor", "panasonik" -> "Panasonic", "plait" -> "Cover Plate".
+   - Sizes: normalize inches/mm/sq.mm/modules cleanly (e.g. "1/2 inch", "3/4 inch", "1 inch", "20mm", "1.5 sq.mm", "2.5 sq.mm", "6A", "16A", "2 Module").
+3. Preserve "originalText" (exact text written in the image) alongside "item" (clean auto-corrected material name).
+4. Extract exact quantities (default to 1 if no quantity is written).
 
-Return a valid JSON object matching the schema below:
+Return a valid JSON object matching this schema:
 {
   "detectedItems": [
     {
       "slNo": 1,
-      "item": "CPVC Elbow 90 Degree",
-      "size": "1/2 inch",
+      "originalText": "exact text from photo",
+      "item": "Auto-corrected material name",
+      "size": "Size specification or Standard",
       "quantity": 10,
-      "name": "CPVC Elbow 90 Degree 1/2 inch",
+      "name": "Full clean material name with size",
       "estimatedQty": 10,
-      "estimatedUnitPrice": 35.00,
-      "matchedProductId": "p-01 (or null if custom/unmatched)",
+      "estimatedUnitPrice": 35,
       "confidence": 0.95
     }
   ],
-  "totalEstimatedCost": 350.00,
-  "rawNotes": "Clear summary of extracted material list from image(s)"
+  "totalEstimatedCost": 350,
+  "rawNotes": "Brief summary of the handwritten/printed list"
 }
 `;
 
-      const geminiResponse = await ai.models.generateContent({
-        model: 'gemini-3.6-flash',
-        contents: {
-          parts: [...imageParts, { text: promptText }]
-        },
-        config: {
-          responseMimeType: 'application/json',
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              detectedItems: {
-                type: Type.ARRAY,
-                items: {
+      const candidateModels = ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'];
+      let geminiResponse: any = null;
+      let lastErr: any = null;
+
+      for (const modelName of candidateModels) {
+        for (let attempt = 1; attempt <= 2; attempt++) {
+          try {
+            geminiResponse = await ai.models.generateContent({
+              model: modelName,
+              contents: {
+                parts: [...imageParts, { text: promptText }]
+              },
+              config: {
+                temperature: 0.1,
+                responseMimeType: 'application/json',
+                responseSchema: {
                   type: Type.OBJECT,
                   properties: {
-                    slNo: { type: Type.NUMBER },
-                    item: { type: Type.STRING },
-                    size: { type: Type.STRING },
-                    quantity: { type: Type.NUMBER },
-                    name: { type: Type.STRING },
-                    estimatedQty: { type: Type.NUMBER },
-                    estimatedUnitPrice: { type: Type.NUMBER },
-                    matchedProductId: { type: Type.STRING },
-                    confidence: { type: Type.NUMBER }
+                    detectedItems: {
+                      type: Type.ARRAY,
+                      items: {
+                        type: Type.OBJECT,
+                        properties: {
+                          slNo: { type: Type.NUMBER },
+                          originalText: { type: Type.STRING },
+                          item: { type: Type.STRING },
+                          size: { type: Type.STRING },
+                          quantity: { type: Type.NUMBER },
+                          name: { type: Type.STRING },
+                          estimatedQty: { type: Type.NUMBER },
+                          estimatedUnitPrice: { type: Type.NUMBER },
+                          confidence: { type: Type.NUMBER }
+                        },
+                        required: ['item', 'name', 'quantity', 'estimatedQty', 'estimatedUnitPrice']
+                      }
+                    },
+                    totalEstimatedCost: { type: Type.NUMBER },
+                    rawNotes: { type: Type.STRING }
                   },
-                  required: ['name', 'estimatedQty', 'estimatedUnitPrice']
+                  required: ['detectedItems', 'totalEstimatedCost', 'rawNotes']
                 }
-              },
-              totalEstimatedCost: { type: Type.NUMBER },
-              rawNotes: { type: Type.STRING }
-            },
-            required: ['detectedItems', 'totalEstimatedCost', 'rawNotes']
+              }
+            });
+            break;
+          } catch (err: any) {
+            lastErr = err;
+            const msg = String(err?.message || err || '');
+            const isTransient =
+              err?.status === 503 ||
+              err?.status === 429 ||
+              msg.includes('503') ||
+              msg.includes('UNAVAILABLE') ||
+              msg.includes('high demand') ||
+              msg.includes('429');
+            if (!isTransient) throw err;
+            console.warn(`Gemini ${modelName} attempt ${attempt} busy (503/429), retrying/falling back...`);
+            if (attempt < 2) {
+              await new Promise((r) => setTimeout(r, 900));
+            }
           }
         }
-      });
+        if (geminiResponse) break;
+      }
+
+      if (!geminiResponse) {
+        throw new Error(
+          'AI scanner is momentarily busy due to high demand. Please tap "Re-scan Images" in a few seconds.'
+        );
+      }
 
       const jsonText = geminiResponse.text;
       if (!jsonText) {
@@ -976,12 +1004,93 @@ Return a valid JSON object matching the schema below:
       }
 
       const parsedData = JSON.parse(jsonText);
+
+      // Server-side full-catalog matching so every item is accurately marked Found vs Not Found
+      const normalizeTokens = (s: string) =>
+        s.toLowerCase().replace(/[^a-z0-9./]+/g, ' ').trim().split(/\s+/).filter((t) => t.length >= 2);
+
+      const indexedCatalog = currentCatalog.map((p) => {
+        const hay = `${p.name} ${p.baseName || ''} ${p.brand || ''} ${p.sizeLabel || ''} ${p.sku} ${p.subcategory}`.toLowerCase();
+        return { product: p, hay, tokens: new Set(normalizeTokens(hay)) };
+      });
+
+      const matchCatalogProduct = (itemName: string, sizeStr: string) => {
+        const qTokens = normalizeTokens(`${itemName} ${sizeStr !== 'Standard' ? sizeStr : ''}`);
+        const nameTokens = normalizeTokens(itemName);
+        if (nameTokens.length === 0) return null;
+
+        let best: any = null;
+        let bestScore = 0;
+
+        for (const entry of indexedCatalog) {
+          let hits = 0;
+          for (const t of nameTokens) {
+            if (entry.tokens.has(t) || entry.hay.includes(t)) {
+              hits += 1;
+            } else if (t.length >= 3) {
+              for (const ct of entry.tokens) {
+                if (ct.startsWith(t.slice(0, 3)) && Math.abs(ct.length - t.length) <= 2) {
+                  hits += 0.6;
+                  break;
+                }
+              }
+            }
+          }
+          const coverage = hits / nameTokens.length;
+          if (coverage < 0.55) continue;
+
+          let score = coverage * 100;
+          if (sizeStr && sizeStr !== 'Standard' && entry.hay.includes(sizeStr.toLowerCase())) {
+            score += 35;
+          }
+          for (const qt of qTokens) {
+            if (entry.tokens.has(qt)) score += 5;
+          }
+          if (score > bestScore) {
+            bestScore = score;
+            best = entry.product;
+          }
+        }
+        return bestScore >= 65 ? best : null;
+      };
+
+      let computedTotal = 0;
+      const notFoundItems: any[] = [];
+
       if (parsedData && Array.isArray(parsedData.detectedItems)) {
-        parsedData.detectedItems = parsedData.detectedItems.map((item: any, idx: number) => ({
-          ...item,
-          slNo: idx + 1
-        }));
+        parsedData.detectedItems = parsedData.detectedItems.map((item: any, idx: number) => {
+          const cleanName = item.item || item.name || `Item ${idx + 1}`;
+          const sizeStr = item.size || 'Standard';
+          const qty = Math.max(1, Number(item.quantity || item.estimatedQty || 1));
+          const matched = matchCatalogProduct(cleanName, sizeStr);
+
+          const unitPrice = matched && matched.price > 0
+            ? Number(matched.price)
+            : Number(item.estimatedUnitPrice || 0);
+          computedTotal += qty * unitPrice;
+
+          const enriched = {
+            ...item,
+            slNo: idx + 1,
+            item: cleanName,
+            size: sizeStr,
+            quantity: qty,
+            estimatedQty: qty,
+            estimatedUnitPrice: unitPrice,
+            foundInCatalog: Boolean(matched),
+            matchedProductId: matched ? matched.id : null,
+            matchedProductName: matched ? matched.name : null,
+            matchedBrand: matched ? matched.brand : null,
+          };
+          if (!matched) {
+            notFoundItems.push(enriched);
+          }
+          return enriched;
+        });
+        parsedData.totalEstimatedCost = Number(computedTotal.toFixed(2));
+        parsedData.notFoundItems = notFoundItems;
       }
+
       res.json({ success: true, analysis: parsedData });
 
     } catch (error: any) {

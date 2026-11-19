@@ -154,6 +154,7 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
 
     setIsScanning(true);
     setErrorMessage('');
+    setAddedItemIndices({});
 
     try {
       const response = await fetch('/api/analyze-image', {
@@ -168,23 +169,16 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
 
       const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to scan images.');
+        throw new Error(data.error || 'Failed to scan material list image.');
       }
 
       setGeminiResult(data.analysis);
     } catch (err: any) {
-      console.warn('AI Scan fallback triggered:', err);
-      // Fallback detected list for instant visual feedback if offline/error
-      setGeminiResult({
-        detectedItems: [
-          { slNo: 1, item: 'CPVC Pipe 3/4 inch', size: '3/4 inch (10ft)', quantity: 6, name: 'CPVC Pipe 3/4 inch', estimatedQty: 6, estimatedUnitPrice: 210.00 },
-          { slNo: 2, item: 'CPVC Brass Elbow', size: '3/4 inch', quantity: 8, name: 'CPVC Brass Elbow 3/4 inch', estimatedQty: 8, estimatedUnitPrice: 95.00 },
-          { slNo: 3, item: 'Copper Wire 2.5 sq mm', size: '90m Roll', quantity: 2, name: 'Copper Wire Roll 2.5 sq mm', estimatedQty: 2, estimatedUnitPrice: 2450.00 },
-          { slNo: 4, item: 'Solvent Cement', size: '250ml Can', quantity: 2, name: 'Solvent Cement 250ml', estimatedQty: 2, estimatedUnitPrice: 140.00 }
-        ],
-        totalEstimatedCost: 7200.00,
-        rawNotes: 'Auto-scanned material items extracted from photo'
-      });
+      console.error('Image OCR scan failed:', err);
+      setGeminiResult(null);
+      setErrorMessage(
+        err?.message || 'Could not read the uploaded image. Please upload a clearer photo or click Re-scan Images.'
+      );
     } finally {
       setIsScanning(false);
     }
@@ -686,90 +680,156 @@ Sent via Express Supplier Portal (${targetNumber})`;
             </div>
 
             {/* AUTOMATICALLY DISPLAYED MATERIAL LIST FROM SCANNED IMAGES */}
-            {geminiResult && (
-              <div className="bg-white border border-cyan-300 rounded-2xl p-4 space-y-3 shadow-sm">
-                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
-                  <div className="flex items-center gap-2">
-                    <Sparkles className="w-4 h-4 text-cyan-600 animate-pulse" />
-                    <span className="text-xs font-black text-cyan-800 uppercase tracking-wider">
-                      Auto-Scanned Material List ({geminiResult.detectedItems.length} Items)
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg">
-                      Total: ₹{geminiResult.totalEstimatedCost.toFixed(2)}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={handleAddAllScannedItems}
-                      className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[11px] px-3 py-1.5 rounded-lg shadow-sm transition"
-                    >
-                      <ShoppingCart className="w-3.5 h-3.5" />
-                      Add All to Cart
-                    </button>
-                  </div>
-                </div>
+            {geminiResult && (() => {
+              const items = geminiResult.detectedItems || [];
+              const enrichedItems = items.map((item: any, idx: number) => {
+                const matchedById = item.matchedProductId
+                  ? products.find((p) => p.id === item.matchedProductId) || null
+                  : null;
+                const matchedProduct =
+                  matchedById ||
+                  findBestCatalogMatch(item.item || item.name || '', item.size, products);
+                return { item, idx, matchedProduct };
+              });
+              const foundCount = enrichedItems.filter((e) => Boolean(e.matchedProduct)).length;
+              const notFoundList = enrichedItems.filter((e) => !e.matchedProduct);
 
-                {geminiResult.rawNotes && <p className="text-xs text-slate-600 italic">{geminiResult.rawNotes}</p>}
+              return (
+                <div className="bg-white border border-cyan-300 rounded-2xl p-4 space-y-3 shadow-sm">
+                  <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <Sparkles className="w-4 h-4 text-cyan-600 animate-pulse" />
+                      <span className="text-xs font-black text-cyan-800 uppercase tracking-wider">
+                        Extracted List ({items.length} Items)
+                      </span>
+                      <span className="text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-md">
+                        {foundCount} Found
+                      </span>
+                      {notFoundList.length > 0 && (
+                        <span className="text-[11px] font-bold text-rose-700 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-md">
+                          {notFoundList.length} Not Found
+                        </span>
+                      )}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs font-mono font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-lg">
+                        Total: ₹{geminiResult.totalEstimatedCost.toFixed(2)}
+                      </span>
+                      {items.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={handleAddAllScannedItems}
+                          className="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-[11px] px-3 py-1.5 rounded-lg shadow-sm transition"
+                        >
+                          <ShoppingCart className="w-3.5 h-3.5" />
+                          Add All to Cart
+                        </button>
+                      )}
+                    </div>
+                  </div>
 
-                {/* Material Table */}
-                <div className="overflow-x-auto border border-slate-200 rounded-xl max-h-60 overflow-y-auto bg-white">
-                  <table className="w-full text-left text-xs">
-                    <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 text-[11px]">
-                      <tr>
-                        <th className="py-2.5 px-2.5">Sl</th>
-                        <th className="py-2.5 px-2.5">Item Description</th>
-                        <th className="py-2.5 px-2.5">Size</th>
-                        <th className="py-2.5 px-2 text-center">Qty</th>
-                        <th className="py-2.5 px-2.5 text-right">Price</th>
-                        <th className="py-2.5 px-2.5 text-right">Cart</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-100">
-                      {geminiResult.detectedItems.map((item, idx) => {
-                        const slNo = idx + 1;
-                        const itemName = item.item || item.name;
-                        const sizeStr = item.size || 'Standard';
-                        const qty = item.quantity || item.estimatedQty || 1;
-                        const isAdded = Boolean(addedItemIndices[idx]);
-                        return (
-                          <tr key={idx} className="hover:bg-slate-50 transition">
-                            <td className="py-2.5 px-2.5 font-mono text-cyan-700 font-bold">{slNo}</td>
-                            <td className="py-2.5 px-2.5 font-semibold text-slate-900">{itemName}</td>
-                            <td className="py-2.5 px-2.5 text-amber-700 font-mono text-[11px]">{sizeStr}</td>
-                            <td className="py-2.5 px-2 text-center font-bold text-emerald-600">{qty}</td>
-                            <td className="py-2.5 px-2.5 text-right font-mono font-bold text-slate-700">
-                              ₹{(qty * item.estimatedUnitPrice).toFixed(2)}
-                            </td>
-                            <td className="py-2.5 px-2.5 text-right">
-                              <button
-                                type="button"
-                                onClick={() => handleAddSingleScannedItem(item, idx)}
-                                className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
-                                  isAdded
-                                    ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
-                                    : 'bg-amber-500 hover:bg-amber-400 text-slate-950'
-                                }`}
-                              >
-                                {isAdded ? (
-                                  <>
-                                    <Check className="w-3 h-3" /> Added
-                                  </>
-                                ) : (
-                                  <>
-                                    <Plus className="w-3 h-3" /> Add
-                                  </>
+                  {geminiResult.rawNotes && <p className="text-xs text-slate-600 italic">{geminiResult.rawNotes}</p>}
+
+                  {/* Not Found Products Alert Box */}
+                  {notFoundList.length > 0 && (
+                    <div className="bg-rose-50 border border-rose-200 rounded-xl p-3 space-y-1.5">
+                      <div className="flex items-center gap-1.5 text-xs font-black text-rose-800">
+                        <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                        <span>Products Not Found in Live Catalog ({notFoundList.length})</span>
+                      </div>
+                      <p className="text-[11px] text-rose-700">
+                        These items from your photo were not matched in our online catalog. You can still submit the order via <strong>Order Now</strong> so our dispatch desk arranges them for you:
+                      </p>
+                      <ul className="list-disc list-inside text-[11px] font-semibold text-rose-900 space-y-0.5">
+                        {notFoundList.map(({ item, idx }) => (
+                          <li key={idx}>
+                            {item.item || item.name}
+                            {item.size && item.size !== 'Standard' ? ` (${item.size})` : ''} — Qty: {item.quantity || item.estimatedQty || 1}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Material Table */}
+                  <div className="overflow-x-auto border border-slate-200 rounded-xl max-h-60 overflow-y-auto bg-white">
+                    <table className="w-full text-left text-xs">
+                      <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200 text-[11px]">
+                        <tr>
+                          <th className="py-2.5 px-2.5">Sl</th>
+                          <th className="py-2.5 px-2.5">Extracted Material</th>
+                          <th className="py-2.5 px-2.5">Size</th>
+                          <th className="py-2.5 px-2 text-center">Qty</th>
+                          <th className="py-2.5 px-2.5 text-right">Price</th>
+                          <th className="py-2.5 px-2.5 text-right">Cart</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100">
+                        {enrichedItems.map(({ item, idx, matchedProduct }) => {
+                          const slNo = idx + 1;
+                          const itemName = item.item || item.name;
+                          const origText = (item as any).originalText;
+                          const sizeStr = item.size || 'Standard';
+                          const qty = item.quantity || item.estimatedQty || 1;
+                          const unitPrice = matchedProduct && matchedProduct.price > 0
+                            ? matchedProduct.price
+                            : item.estimatedUnitPrice;
+                          const isAdded = Boolean(addedItemIndices[idx]);
+                          return (
+                            <tr key={idx} className={`hover:bg-slate-50 transition ${!matchedProduct ? 'bg-rose-50/40' : ''}`}>
+                              <td className="py-2.5 px-2.5 font-mono text-cyan-700 font-bold">{slNo}</td>
+                              <td className="py-2.5 px-2.5">
+                                <div className="font-semibold text-slate-900">{itemName}</div>
+                                {origText && origText.toLowerCase().trim() !== itemName.toLowerCase().trim() && (
+                                  <div className="text-[10px] text-slate-500">
+                                    Auto-corrected from: <span className="italic">"{origText}"</span>
+                                  </div>
                                 )}
-                              </button>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                                {matchedProduct ? (
+                                  <div className="text-[10px] text-emerald-700 font-semibold">
+                                    Matched: {matchedProduct.name}
+                                  </div>
+                                ) : (
+                                  <div className="text-[10px] text-rose-600 font-bold">
+                                    Not found in catalog
+                                  </div>
+                                )}
+                              </td>
+                              <td className="py-2.5 px-2.5 text-amber-700 font-mono text-[11px]">{sizeStr}</td>
+                              <td className="py-2.5 px-2 text-center font-bold text-emerald-600">{qty}</td>
+                              <td className="py-2.5 px-2.5 text-right font-mono font-bold text-slate-700">
+                                {unitPrice > 0 ? `₹${(qty * unitPrice).toFixed(2)}` : 'Quote'}
+                              </td>
+                              <td className="py-2.5 px-2.5 text-right">
+                                <button
+                                  type="button"
+                                  onClick={() => handleAddSingleScannedItem(item, idx)}
+                                  className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-bold transition ${
+                                    isAdded
+                                      ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                                      : 'bg-amber-500 hover:bg-amber-400 text-slate-950'
+                                  }`}
+                                >
+                                  {isAdded ? (
+                                    <>
+                                      <Check className="w-3 h-3" /> Added
+                                    </>
+                                  ) : (
+                                    <>
+                                      <Plus className="w-3 h-3" /> Add
+                                    </>
+                                  )}
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* Delivery Address (LAST FIELD BEFORE ACTIONS) */}
             <div>
