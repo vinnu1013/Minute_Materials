@@ -158,7 +158,7 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
         const img = new Image();
         img.onerror = () => resolve(dataUrl); // fallback to original if browser can't decode
         img.onload = () => {
-          const MAX_DIM = 1200;
+          const MAX_DIM = 960;
           let { width, height } = img;
           if (width > MAX_DIM || height > MAX_DIM) {
             if (width >= height) {
@@ -181,7 +181,7 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
             ctx.fillStyle = '#ffffff';
             ctx.fillRect(0, 0, width, height);
             ctx.drawImage(img, 0, 0, width, height);
-            const compressed = canvas.toDataURL('image/jpeg', 0.75);
+            const compressed = canvas.toDataURL('image/jpeg', 0.68);
             resolve(compressed);
           } catch {
             resolve(dataUrl);
@@ -219,8 +219,8 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
       } catch {
         throw new Error(
           response.status === 413
-            ? 'Photo file was too large. Please try uploading again or fewer photos at once.'
-            : 'Server returned an unexpected response while scanning. Please tap Re-scan Images.'
+            ? 'Photo file was too large. Please try uploading fewer photos at once.'
+            : `Scan request could not be completed (HTTP ${response.status}). Please tap Re-scan Images.`
         );
       }
 

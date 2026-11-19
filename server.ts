@@ -928,7 +928,7 @@ Return a valid JSON object matching this schema:
 }
 `;
 
-      const candidateModels = ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'];
+      const candidateModels = ['gemini-3.1-flash-lite', 'gemini-4-hydrogen'];
       let geminiResponse: any = null;
 
       for (const modelName of candidateModels) {
@@ -990,12 +990,16 @@ Return a valid JSON object matching this schema:
         );
       }
 
-      const jsonText = geminiResponse.text;
-      if (!jsonText) {
+      const rawJsonText = String(geminiResponse.text)
+        .trim()
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+      if (!rawJsonText) {
         throw new Error('No analysis text returned from Gemini API.');
       }
 
-      const parsedData = JSON.parse(jsonText);
+      const parsedData = JSON.parse(rawJsonText);
 
       // Server-side full-catalog matching so every item is accurately marked Found vs Not Found
       const normalizeTokens = (s: string) =>
