@@ -148,6 +148,51 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
     }
   };
 
+  // Compress & resize large mobile camera photos (e.g. 8-12MB -> ~250KB) for fast, reliable OCR
+  const compressImageFile = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onerror = () => reject(new Error('Failed to read image file.'));
+      reader.onload = () => {
+        const dataUrl = reader.result as string;
+        const img = new Image();
+        img.onerror = () => resolve(dataUrl); // fallback to original if browser can't decode
+        img.onload = () => {
+          const MAX_DIM = 1600;
+          let { width, height } = img;
+          if (width > MAX_DIM || height > MAX_DIM) {
+            if (width >= height) {
+              height = Math.round((height * MAX_DIM) / width);
+              width = MAX_DIM;
+            } else {
+              width = Math.round((width * MAX_DIM) / height);
+              height = MAX_DIM;
+            }
+          }
+          try {
+            const canvas = document.createElement('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) {
+              resolve(dataUrl);
+              return;
+            }
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, width, height);
+            ctx.drawImage(img, 0, 0, width, height);
+            const compressed = canvas.toDataURL('image/jpeg', 0.82);
+            resolve(compressed);
+          } catch {
+            resolve(dataUrl);
+          }
+        };
+        img.src = dataUrl;
+      };
+      reader.readAsDataURL(file);
+    });
+  };
+
   // Automatically trigger scan whenever new images are added
   const triggerAutoScan = async (imagesList: ImageFileItem[]) => {
     if (imagesList.length === 0) return;
@@ -167,9 +212,20 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
         })
       });
 
-      const data = await response.json();
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to scan material list image.');
+      const rawText = await response.text();
+      let data: any = null;
+      try {
+        data = rawText ? JSON.parse(rawText) : null;
+      } catch {
+        throw new Error(
+          response.status === 413
+            ? 'Photo file was too large. Please try uploading again or fewer photos at once.'
+            : 'Server returned an unexpected response while scanning. Please tap Re-scan Images.'
+        );
+      }
+
+      if (!response.ok || !data?.analysis) {
+        throw new Error(data?.error || 'Failed to scan material list image.');
       }
 
       setGeminiResult(data.analysis);
@@ -184,8 +240,8 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
     }
   };
 
-  // Handle Multi-file Selection
-  const processFiles = (files: FileList | File[]) => {
+  // Handle Multi-file Selection (with automatic mobile photo compression)
+  const processFiles = async (files: FileList | File[]) => {
     const fileArray = Array.from(files).filter(f => f.type.startsWith('image/'));
     if (fileArray.length === 0) {
       setErrorMessage('Please select valid image files (JPG, PNG, WebP).');
@@ -193,28 +249,25 @@ export const ImageBookingModal: React.FC<ImageBookingModalProps> = ({
     }
 
     setErrorMessage('');
-    const newItems: ImageFileItem[] = [];
-    let readCount = 0;
+    try {
+      const newItems: ImageFileItem[] = await Promise.all(
+        fileArray.map(async (file) => {
+          const compressedBase64 = await compressImageFile(file);
+          return {
+            id: `img-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+            name: file.name,
+            base64: compressedBase64,
+          };
+        })
+      );
 
-    fileArray.forEach((file) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        newItems.push({
-          id: `img-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
-          name: file.name,
-          base64: reader.result as string
-        });
-        readCount++;
-
-        if (readCount === fileArray.length) {
-          const updatedList = [...uploadedImages, ...newItems];
-          setUploadedImages(updatedList);
-          // AUTO SCAN AUTOMATICALLY
-          triggerAutoScan(updatedList);
-        }
-      };
-      reader.readAsDataURL(file);
-    });
+      const updatedList = [...uploadedImages, ...newItems];
+      setUploadedImages(updatedList);
+      // AUTO SCAN AUTOMATICALLY
+      triggerAutoScan(updatedList);
+    } catch (err: any) {
+      setErrorMessage(err?.message || 'Failed to process selected image.');
+    }
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
