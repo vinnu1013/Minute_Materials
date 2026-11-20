@@ -1,6 +1,6 @@
 import { Product, StoreSettings } from '../../types';
 
-export const CATALOG_VERSION = "2026-11-20-maru-exact-prices-images-v12";
+export const CATALOG_VERSION = "2026-11-20-sudhakar-complete-online-v18";
 
 export const ASHIRVAD_PRODUCTS: Product[] = [
   {
