@@ -26,7 +26,7 @@ export const ADMIN_CATEGORIES: CategoryConfig[] = [
       'Sanitaryware',
       'Tanks',
     ],
-    description: 'Ashirvad CPVC, UPVC, SWR pipes, brass elbows, ball valves, taps, solvent cements, clamps, Cera sanitaryware, and water tanks.',
+    description: 'Ashirvad, Sudhakar & Vectus CPVC/UPVC/SWR pipes, Brass fittings, valves, Cera sanitaryware, and water tanks.',
   },
   {
     id: 'electrical',
