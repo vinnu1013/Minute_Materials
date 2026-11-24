@@ -7,6 +7,7 @@ import { CheckoutModal } from './components/CheckoutModal';
 import { PhoneBookingModal } from './components/PhoneBookingModal';
 import { ImageBookingModal } from './components/ImageBookingModal';
 import { WhatsAppBookingModal } from './components/WhatsAppBookingModal';
+import { ImageSearchExplodeModal, VisualSearchAttachments } from './components/ImageSearchExplodeModal';
 import { AdminPanel } from './components/AdminPanel';
 import { PriceDropModal } from './components/PriceDropModal';
 import { MobileBottomNav } from './components/MobileBottomNav';
@@ -176,8 +177,9 @@ export default function App() {
   const [isCartAnimating, setIsCartAnimating] = useState(false);
   const cartAnimationTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const [activeBookingModal, setActiveBookingModal] = useState<
-    'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | null
+    'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search' | null
   >(null);
+  const [visualSearchAttachments, setVisualSearchAttachments] = useState<VisualSearchAttachments | null>(null);
 
   const [isAdmin, setIsAdmin] = useState(false);
   const [showAdminPinModal, setShowAdminPinModal] = useState(false);
@@ -476,10 +478,11 @@ export default function App() {
 
   const handleClearCart = () => {
     setCart([]);
+    setVisualSearchAttachments(null);
   };
 
   // Open booking modal
-  const handleOpenBookingMode = (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => {
+  const handleOpenBookingMode = (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search') => {
     if (mode === 'cart_delivery') {
       setIsCartOpen(true);
     } else {
@@ -1120,6 +1123,7 @@ export default function App() {
         storeSettings={storeSettings}
         deliveryAddress={deliveryAddress}
         setDeliveryAddress={setDeliveryAddress}
+        visualSearchAttachments={visualSearchAttachments}
       />
 
       {/* 2. Checkout Modal */}
@@ -1134,6 +1138,7 @@ export default function App() {
         storeSettings={storeSettings}
         deliveryAddress={deliveryAddress}
         setDeliveryAddress={setDeliveryAddress}
+        visualSearchAttachments={visualSearchAttachments}
         onOrderCompleted={() => {
           handleClearCart();
           fetchData();
@@ -1168,6 +1173,20 @@ export default function App() {
         onClose={() => setActiveBookingModal(null)}
         cartItems={cart}
         storeSettings={storeSettings}
+        visualSearchAttachments={visualSearchAttachments}
+        onBookingCreated={() => {
+          fetchData();
+        }}
+      />
+
+      {/* 6. Search Product With Image (Animated Exploded View & Dual-Image WhatsApp Order) */}
+      <ImageSearchExplodeModal
+        isOpen={activeBookingModal === 'image_search'}
+        onClose={() => setActiveBookingModal(null)}
+        storeSettings={storeSettings}
+        cartItems={cart}
+        onAddToCart={handleAddToCart}
+        onAttachVisualSearchImages={(attachments) => setVisualSearchAttachments(attachments)}
         onBookingCreated={() => {
           fetchData();
         }}

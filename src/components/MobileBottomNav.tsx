@@ -5,7 +5,7 @@ interface MobileBottomNavProps {
   cartCount: number;
   onOpenCart: () => void;
   onNavigateHome?: () => void;
-  onOpenBookingMode?: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => void;
+  onOpenBookingMode?: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search') => void;
   onOpenPriceDrops?: () => void;
   priceDropCount?: number;
   isAdmin?: boolean;

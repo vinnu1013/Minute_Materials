@@ -201,11 +201,11 @@ export const CERA_SANITARY_PRODUCTS: Product[] = [
   s('s1047154', 'Carat with Built-in Jet Wall Hung EWC (Carina Seat Cover)', 'Carat with Built-in Jet Wall Hung EWC', 'Carina Seat · P Trap', 8490, 'Snow White', '500 x 360 x 350 mm (P Trap)', 'S1047154', 'piece', "https://www.cera-india.com/sites/default/files/S1047154-1_0.jpg", ["https://www.cera-india.com/sites/default/files/S1047154-1_0.jpg","https://www.cera-india.com/sites/default/files/S1047154-2.jpg","https://www.cera-india.com/sites/default/files/S1047154-3.jpg"]),
 
   // Pages 44-52: Two Piece EWCs, Wall Hung Extended EWCs, Back to Wall EWC, Complete Sets & Components
-  s('s1021131', 'Croft Two Piece EWC (P Trap)', 'Croft Two Piece EWC', 'P Trap', 6520, 'Snow White', '670 x 400 x 800 mm', 'S1021131'),
-  s('s1060114', 'Croft Cistern', 'Croft Cistern', 'Snow White', 4125, 'Snow White', '-', 'S1060114'),
+  s('s1021131', 'Croft Two Piece EWC (P Trap)', 'Croft Two Piece EWC', 'P Trap', 6520, 'Snow White', '670 x 400 x 800 mm', 'S1021131', 'piece', "/assets/plumbing/cera_croft.webp", ["/assets/plumbing/cera_croft.webp"]),
+  s('s1060114', 'Croft Cistern', 'Croft Cistern', 'Snow White', 4125, 'Snow White', '-', 'S1060114', 'piece', "/assets/plumbing/cera_croft.webp", ["/assets/plumbing/cera_croft.webp"]),
   s('b1520239', 'Chanter PRO Soft Close Seat Cover', 'Chanter PRO Soft Close Seat Cover', 'Standard', 1620, '-', '-', 'B1520239'),
   s('b1810114', 'Twin Flush Fittings', 'Twin Flush Fittings', 'Standard', 2105, '-', '-', 'B1810114'),
-  s('set-croft', 'Croft Complete Set (with Chanter PRO Soft Close Seat Cover)', 'Croft Complete Set', 'Snow White', 14370, 'Snow White', '670 x 400 x 800 mm', undefined, 'set'),
+  s('set-croft', 'Croft Complete Set (with Chanter PRO Soft Close Seat Cover)', 'Croft Complete Set', 'Snow White', 14370, 'Snow White', '670 x 400 x 800 mm', undefined, 'set', "/assets/plumbing/cera_croft.webp", ["/assets/plumbing/cera_croft.webp"]),
 
   s('s1020108', 'Clair Two Piece EWC (P Trap)', 'Clair Two Piece EWC', 'P Trap', 6700, 'Snow White', '665 x 390 x 810 mm', 'S1020108', 'piece', "https://mykit.in/crm/public/uploads/product_images_1000x1000/cera-clair-set.jpg", ["https://mykit.in/crm/public/uploads/product_images_1000x1000/cera-clair-set.jpg"]),
   s('s1062135', 'Clair Cistern with Twin Flush Fittings', 'Clair Cistern with Twin Flush Fittings', 'Snow White', 6110, 'Snow White', '-', 'S1062135', 'piece', "https://www.cera-india.com/sites/default/files/S1021106CL-1.jpg", ["https://www.cera-india.com/sites/default/files/S1021106CL-1.jpg","https://www.cera-india.com/sites/default/files/S1021106CL-2.jpg","https://www.cera-india.com/sites/default/files/S1021106CL-3.jpg"]),
@@ -493,9 +493,9 @@ export const CERA_SANITARY_PRODUCTS: Product[] = [
   s('s2010110', 'Chamber Neo One Piece Wash Basin with Integrated Half Pedestal', 'Chamber Neo One Piece Wash Basin with Integrated Half Pedestal', '440 x 440 x 345 mm', 5490, 'Snow White', '440 x 440 x 345 mm', 'S2010110', 'piece', "https://pristoenterprises.in/images/products/S2010110_1.jpg", ["https://pristoenterprises.in/images/products/S2010110_1.jpg"]),
   s('s2010109', 'Cuddle Neo One Piece Wash Basin with Integrated Half Pedestal', 'Cuddle Neo One Piece Wash Basin with Integrated Half Pedestal', '450 x 425 x 330 mm', 4990, 'Snow White', '450 x 425 x 330 mm', 'S2010109', 'piece', "https://www.cera-india.com/sites/default/files/S2010109_1.jpg", ["https://www.cera-india.com/sites/default/files/S2010109_1.jpg"]),
 
-  s('s2040131', 'Cedar Wash Basin', 'Cedar Wash Basin', 'Snow White', 8550, 'Snow White', '620 x 490 mm', 'S2040131'),
-  s('s2090115', 'Cedar Half Pedestal', 'Cedar Half Pedestal', 'Snow White', 6810, 'Snow White', '-', 'S2090115'),
-  s('set-cedar', 'Cedar Complete Set', 'Cedar Complete Set', 'Snow White', 15360, 'Snow White', '620 x 490 mm', undefined, 'set'),
+  s('s2040131', 'Cedar Wash Basin', 'Cedar Wash Basin', 'Snow White', 8550, 'Snow White', '620 x 490 mm', 'S2040131', 'piece', "https://www.cera-india.com/sites/default/files/S2040131-1.jpg", ["https://www.cera-india.com/sites/default/files/S2040131-1.jpg"]),
+  s('s2090115', 'Cedar Half Pedestal', 'Cedar Half Pedestal', 'Snow White', 6810, 'Snow White', '-', 'S2090115', 'piece', "https://www.cera-india.com/sites/default/files/S2040131-1.jpg", ["https://www.cera-india.com/sites/default/files/S2040131-1.jpg"]),
+  s('set-cedar', 'Cedar Complete Set', 'Cedar Complete Set', 'Snow White', 15360, 'Snow White', '620 x 490 mm', undefined, 'set', "https://www.cera-india.com/sites/default/files/S2040131-1.jpg", ["https://www.cera-india.com/sites/default/files/S2040131-1.jpg"]),
 
   s('s2040130', 'Cyress Wash Basin', 'Cyress Wash Basin', 'Snow White', 5390, 'Snow White', '670 x 480 mm', 'S2040130', 'piece', "https://qkikxy-pull-zone.b-cdn.net/uploads/bath-segment/cera/CERA-MN-S2040130.png", ["https://qkikxy-pull-zone.b-cdn.net/uploads/bath-segment/cera/CERA-MN-S2040130.png"]),
   s('s2090114', 'Cyress Half Pedestal', 'Cyress Half Pedestal', 'Snow White', 4140, 'Snow White', '-', 'S2090114', 'piece', "https://qkikxy-pull-zone.b-cdn.net/uploads/bath-segment/cera/CERA-MN-S2040130.png", ["https://qkikxy-pull-zone.b-cdn.net/uploads/bath-segment/cera/CERA-MN-S2040130.png"]),

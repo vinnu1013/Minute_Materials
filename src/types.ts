@@ -55,6 +55,7 @@ export interface Product {
   vendorDetails?: string;
   keyHighlights?: Record<string, string>;
   specifications?: Record<string, string>;
+  priceOnRequest?: boolean;
 }
 
 export interface CartItem {
@@ -63,7 +64,7 @@ export interface CartItem {
   customNotes?: string;
 }
 
-export type BookingType = 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order';
+export type BookingType = 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search';
 
 export type OrderStatus = 'new' | 'packing' | 'dispatched' | 'delivered' | 'cancelled';
 
@@ -77,6 +78,7 @@ export interface GeminiDetectedItem {
   estimatedUnitPrice: number;
   matchedProductId?: string;
   confidence?: number;
+  priceOnRequest?: boolean;
 }
 
 export interface CustomerLocation {
@@ -127,8 +129,10 @@ export interface Booking {
     quantity: number;
     category: ProductCategory;
     unit: string;
+    priceOnRequest?: boolean;
   }>;
   imageBase64?: string;
+  explodedImageBase64?: string;
   geminiAnalysis?: {
     detectedItems: GeminiDetectedItem[];
     totalEstimatedCost: number;

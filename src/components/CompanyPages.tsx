@@ -40,7 +40,7 @@ interface CompanyPagesProps {
   activePage: Exclude<CompanyPageId, 'home'>;
   onNavigatePage: (page: CompanyPageId) => void;
   onSelectCatalogCategory: (category: string, searchQuery?: string, subcategory?: string) => void;
-  onOpenBookingMode: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => void;
+  onOpenBookingMode: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search') => void;
   onOpenLocationModal: () => void;
   products: Product[];
   storeSettings: StoreSettings;

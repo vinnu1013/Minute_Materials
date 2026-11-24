@@ -800,7 +800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 107,
     "unit": "Piece",
-    "image": "/assets/electrical/el_424a225ca71b.png",
+    "image": "/assets/electrical/crop_65151.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1712,7 +1712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d546469b1881.png",
+    "image": "/assets/electrical/crop_65980_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1728,7 +1728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d546469b1881.png",
+    "image": "/assets/electrical/crop_65980_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1744,7 +1744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d546469b1881.png",
+    "image": "/assets/electrical/crop_65980_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2144,7 +2144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 315,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8fcffe40fe00.png",
+    "image": "/assets/electrical/crop_65508B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2240,7 +2240,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 150,
     "unit": "Piece",
-    "image": "/assets/electrical/el_47a1279e5f17.png",
+    "image": "/assets/electrical/crop_65501B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2368,7 +2368,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1341,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb18780fe90f.png",
+    "image": "/assets/electrical/crop_65705B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2448,7 +2448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 721,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c3c4ea537a58.png",
+    "image": "/assets/electrical/crop_65402B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2464,7 +2464,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2252,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b42b94d4905e.png",
+    "image": "/assets/electrical/crop_65322B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2496,7 +2496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1416,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a1ed9dd006d2.png",
+    "image": "/assets/electrical/crop_65701B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2832,7 +2832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 29,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cfc8c2aedb04.png",
+    "image": "/assets/electrical/crop_14126.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2880,7 +2880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 103,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b96f4d6e965b.png",
+    "image": "/assets/electrical/crop_14609.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2912,7 +2912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 178,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc8d39fd932d.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/TEL%20JACK-1000x1000.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2944,7 +2944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 97,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5d6322b3b980.png",
+    "image": "/assets/electrical/crop_14607.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2960,7 +2960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 383,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b6463dd624c2.png",
+    "image": "/assets/electrical/crop_14501.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -2992,7 +2992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 151,
     "unit": "Piece",
-    "image": "/assets/electrical/el_71bfdadf439e.png",
+    "image": "/assets/electrical/crop_14401.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3024,7 +3024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 318,
     "unit": "Piece",
-    "image": "/assets/electrical/el_89409ffacf57.png",
+    "image": "/assets/electrical/crop_14404.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3040,7 +3040,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 168,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9bb5e5509b23.png",
+    "image": "/assets/electrical/crop_14307.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3072,7 +3072,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 230,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bce3ed67848d.png",
+    "image": "/assets/electrical/crop_14614.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3120,7 +3120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 375,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5899b7382853.png",
+    "image": "/assets/electrical/crop_14620.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3184,7 +3184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/2%20way%20switch-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3200,7 +3200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7fac2be6a973.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/PENTA/1%20(215)-1000x1000.jpeg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3216,7 +3216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38025.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3312,7 +3312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c20d169b42d1.png",
+    "image": "/assets/electrical/crop_38070.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3328,7 +3328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 56,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c20d169b42d1.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/PENTA/1%20(212)-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3424,7 +3424,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_59403457b6af.png",
+    "image": "/assets/electrical/crop_38207.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3440,7 +3440,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38207.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3456,7 +3456,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38207.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3568,7 +3568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 133,
     "unit": "Piece",
-    "image": "/assets/electrical/el_eb81cb1c5c1d.png",
+    "image": "/assets/electrical/crop_38444.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3584,7 +3584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 133,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b9f8a542801c.png",
+    "image": "/assets/electrical/crop_38444.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3600,7 +3600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 133,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38444.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3616,7 +3616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 155,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fae7ac7f9e07.png",
+    "image": "/assets/electrical/crop_38455.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3632,7 +3632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 155,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b9f8a542801c.png",
+    "image": "/assets/electrical/crop_38455.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3648,7 +3648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 72,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ffbf8f8237c6.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Neon%20Night%20Lamp-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3664,7 +3664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 72,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b9f8a542801c.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Neon%20Night%20Lamp%20IVORY-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3680,7 +3680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 72,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38273.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3712,7 +3712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 87,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38400.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3728,7 +3728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 87,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38400.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3744,7 +3744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 91,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b9f8a542801c.png",
+    "image": "/assets/electrical/crop_38411.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3760,7 +3760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 91,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38411.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3776,7 +3776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 95,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e9e4a22ec8e9.png",
+    "image": "/assets/electrical/crop_38295.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3792,7 +3792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 95,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6fa6108c1390.png",
+    "image": "/assets/electrical/crop_38295.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3808,7 +3808,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 95,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38295.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3824,7 +3824,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 109,
     "unit": "Piece",
-    "image": "/assets/electrical/el_41736cbc2072.png",
+    "image": "/assets/electrical/crop_38309.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3840,7 +3840,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 109,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6fa6108c1390.png",
+    "image": "/assets/electrical/crop_38309.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3856,7 +3856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 109,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38309.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3872,7 +3872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 150,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6fa6108c1390.png",
+    "image": "/assets/electrical/crop_38821.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3888,7 +3888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 150,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38821.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3904,7 +3904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 150,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38821.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3952,7 +3952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 161,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7433dfd09842.png",
+    "image": "/assets/electrical/crop_39993.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -3968,7 +3968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 161,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a557bdffb0a5.png",
+    "image": "/assets/electrical/crop_39993.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4000,7 +4000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39991.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4016,7 +4016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_39991.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4032,7 +4032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7433dfd09842.png",
+    "image": "/assets/electrical/crop_38488.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4048,7 +4048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_38488.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4064,7 +4064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_38488.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4128,7 +4128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39994.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4144,7 +4144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39994.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4160,7 +4160,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7433dfd09842.png",
+    "image": "/assets/electrical/crop_39991.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4176,7 +4176,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39991.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4192,7 +4192,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 156,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39991.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4208,7 +4208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c9c1801493c4.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/UNI%20SOCKET%20CAPTON%20SERIES-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4224,7 +4224,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39994.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4240,7 +4240,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 165,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fed6e27bdfa.png",
+    "image": "/assets/electrical/crop_39994.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4304,7 +4304,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 233,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d43e2cc74611.png",
+    "image": "/assets/electrical/crop_39998.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4320,7 +4320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 233,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d43e2cc74611.png",
+    "image": "/assets/electrical/crop_39998.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4384,7 +4384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 278,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d43e2cc74611.png",
+    "image": "/assets/electrical/crop_39996.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4416,7 +4416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 278,
     "unit": "Piece",
-    "image": "/assets/electrical/el_51346325c603.png",
+    "image": "/assets/electrical/crop_39593.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4496,7 +4496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 233,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38808.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4544,7 +4544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3cb568701649.png",
+    "image": "/assets/electrical/crop_38580.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4560,7 +4560,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38580.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4576,7 +4576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38580.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4592,7 +4592,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 356,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8731ad34cca3.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/capton%20with%20box%205%20in%201-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4608,7 +4608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 356,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38579.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4624,7 +4624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3cb568701649.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/,%20Euro%20Capton-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4640,7 +4640,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38580.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4656,7 +4656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 340,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38580.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4672,7 +4672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 356,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8731ad34cca3.png",
+    "image": "/assets/electrical/crop_38579.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4688,7 +4688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 356,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_38579.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4704,7 +4704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 510,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/CAPTON%205%20IN%201-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4720,7 +4720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 510,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e66dea5b1d84.png",
+    "image": "/assets/electrical/crop_39985.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4736,7 +4736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 361,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d52e18ace6d3.png",
+    "image": "/assets/electrical/crop_38284.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4752,7 +4752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 361,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38284.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4768,7 +4768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 361,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38284.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4784,7 +4784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 406,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38660.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4800,7 +4800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 406,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38660.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4832,7 +4832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 387,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38648.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4848,7 +4848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 387,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38648.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4864,7 +4864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 427,
     "unit": "Piece",
-    "image": "/assets/electrical/el_735f127adfab.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/DELUX%20DIMMER-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4880,7 +4880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 427,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38659.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4896,7 +4896,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 427,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_38659.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4928,7 +4928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 75,
     "unit": "Piece",
-    "image": "/assets/electrical/el_86c07ec96abe.png",
+    "image": "/assets/electrical/crop_2538.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4960,7 +4960,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 572,
     "unit": "Piece",
-    "image": "/assets/electrical/el_648ae2bf09f1.png",
+    "image": "/assets/electrical/crop_8556.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -4992,7 +4992,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 62,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734f37302775.png",
+    "image": "/assets/electrical/crop_2301.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5008,7 +5008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 62,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb72bd0bc522.png",
+    "image": "/assets/electrical/crop_2301.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5200,7 +5200,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6e3fa9beaf19.png",
+    "image": "/assets/electrical/crop_39072.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5216,7 +5216,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6e3fa9beaf19.png",
+    "image": "/assets/electrical/crop_39072.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5248,7 +5248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 46,
     "unit": "Piece",
-    "image": "/assets/electrical/el_89ea7d54fadb.png",
+    "image": "/assets/electrical/crop_14706.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5280,7 +5280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 53,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d7d72d91b2dc.png",
+    "image": "/assets/electrical/crop_39527.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5296,7 +5296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 53,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dce515be43f9.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/HOLDER%20BATTEN-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5312,7 +5312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 53,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dce515be43f9.png",
+    "image": "/assets/electrical/crop_38538.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5328,7 +5328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_637134e832dc.png",
+    "image": "/assets/electrical/crop_39797.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5344,7 +5344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f8f0efc084e0.png",
+    "image": "/assets/electrical/crop_39797.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5360,7 +5360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e647b54c85f1.png",
+    "image": "/assets/electrical/crop_39800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5376,7 +5376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 55,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e647b54c85f1.png",
+    "image": "/assets/electrical/crop_39800.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5392,7 +5392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 41,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bf7a6bcbb7c0.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/adaptor.-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5408,7 +5408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Tapes, Clips & Accessories",
     "price": 41,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_6506.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5440,7 +5440,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 217,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4fc6fdf6b705.png",
+    "image": "/assets/electrical/crop_5081.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5456,7 +5456,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 498,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a5b56cd1722d.png",
+    "image": "/assets/electrical/crop_5376.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5472,7 +5472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 498,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_5376.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5488,7 +5488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 259,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b314b3862223.png",
+    "image": "/assets/electrical/crop_39083.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5520,7 +5520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 259,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_39083.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5536,7 +5536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c468436a9008.png",
+    "image": "/assets/electrical/crop_98236_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5552,7 +5552,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c468436a9008.png",
+    "image": "/assets/electrical/crop_98236_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5568,7 +5568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98236_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5584,7 +5584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98236_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5632,7 +5632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98246_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5648,7 +5648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98246_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5664,7 +5664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98246_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -5680,7 +5680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a20123a90b84.png",
+    "image": "/assets/electrical/crop_98246_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6528,7 +6528,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 289,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4bf3077b1358.png",
+    "image": "/assets/electrical/crop_66111B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6544,7 +6544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 281,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8a9ba6ee0b4.png",
+    "image": "/assets/electrical/crop_66102B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6560,7 +6560,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 337,
     "unit": "Piece",
-    "image": "/assets/electrical/el_38f100280824.png",
+    "image": "/assets/electrical/crop_66202B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6576,7 +6576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 290,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fb7d85847701.png",
+    "image": "/assets/electrical/crop_66103B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6592,7 +6592,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 337,
     "unit": "Piece",
-    "image": "/assets/electrical/el_450dca23b7b5.png",
+    "image": "/assets/electrical/crop_66203B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6640,7 +6640,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 388,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d28ac7602fb.png",
+    "image": "/assets/electrical/crop_66144B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6656,7 +6656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 356,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dd88f25179e5.png",
+    "image": "/assets/electrical/crop_66105B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6704,7 +6704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 889,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3bf2d115ccaf.png",
+    "image": "/assets/electrical/crop_66025B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6720,7 +6720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 286,
     "unit": "Piece",
-    "image": "/assets/electrical/el_df6da768ee8d.png",
+    "image": "/assets/electrical/crop_66402B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6736,7 +6736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 477,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8bf43d3cc894.png",
+    "image": "/assets/electrical/crop_66404B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6768,7 +6768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 602,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e6c260cee916.png",
+    "image": "/assets/electrical/crop_66406B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6784,7 +6784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 922,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a19dae44c6f.png",
+    "image": "/assets/electrical/crop_66501B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6800,7 +6800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7ba0f734e7d7.png",
+    "image": "/assets/electrical/crop_66503B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6816,7 +6816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1235,
     "unit": "Piece",
-    "image": "/assets/electrical/el_93889ad14e27.png",
+    "image": "/assets/electrical/crop_66508B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6832,7 +6832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b89844ee7c7e.png",
+    "image": "/assets/electrical/crop_66505B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6864,7 +6864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 307,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5a62626d60ee.png",
+    "image": "/assets/electrical/crop_66555B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6880,7 +6880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1268,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9cdd274e296d.png",
+    "image": "/assets/electrical/crop_66555B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6912,7 +6912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7cddffc935b8.png",
+    "image": "/assets/electrical/crop_66601B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6928,7 +6928,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 305,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ff28bc636b70.png",
+    "image": "/assets/electrical/crop_66602B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -6944,7 +6944,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e4104d17500f.png",
+    "image": "/assets/electrical/crop_66603B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7008,7 +7008,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 390,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cebac3f015ae.png",
+    "image": "/assets/electrical/crop_66606B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7024,7 +7024,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d3ecf0ffe837.png",
+    "image": "/assets/electrical/crop_66608B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7040,7 +7040,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8f2a3f219ae.png",
+    "image": "/assets/electrical/crop_66712B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7056,7 +7056,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9f61d4141717.png",
+    "image": "/assets/electrical/crop_66609B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7104,7 +7104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2299,
     "unit": "Piece",
-    "image": "/assets/electrical/el_769a0d667ff6.png",
+    "image": "/assets/electrical/crop_66715B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7136,7 +7136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2299,
     "unit": "Piece",
-    "image": "/assets/electrical/el_68dc470742a2.png",
+    "image": "/assets/electrical/crop_66718B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7248,7 +7248,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1788,
     "unit": "Piece",
-    "image": "/assets/electrical/el_958681d0e5d1.png",
+    "image": "/assets/electrical/crop_66706B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7280,7 +7280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 8934,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7d1e931ed988.png",
+    "image": "/assets/electrical/crop_66707B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7296,7 +7296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 8934,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7d1e931ed988.png",
+    "image": "/assets/electrical/crop_66707B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7312,7 +7312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 7780,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6bec63028d20.png",
+    "image": "/assets/electrical/crop_66708B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7328,7 +7328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 289,
     "unit": "Piece",
-    "image": "/assets/electrical/el_67c2a56aec62.png",
+    "image": "/assets/electrical/crop_66111S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7360,7 +7360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 337,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4c341b58af3d.png",
+    "image": "/assets/electrical/crop_66202S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7376,7 +7376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 290,
     "unit": "Piece",
-    "image": "/assets/electrical/el_90fd61793fbf.png",
+    "image": "/assets/electrical/crop_66103S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7392,7 +7392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 337,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e12238a36893.png",
+    "image": "/assets/electrical/crop_66203S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7472,7 +7472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 430,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d35832189481.png",
+    "image": "/assets/electrical/crop_66205S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7504,7 +7504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 889,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ac4ce6e60c5f.png",
+    "image": "/assets/electrical/crop_66025S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7520,7 +7520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 286,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bcdc7eabd241.png",
+    "image": "/assets/electrical/crop_66402S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7568,7 +7568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 602,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cb01b2b78237.png",
+    "image": "/assets/electrical/crop_66406S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7584,7 +7584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 922,
     "unit": "Piece",
-    "image": "/assets/electrical/el_900c8e128a47.png",
+    "image": "/assets/electrical/crop_66501S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7616,7 +7616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1235,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cd5f62a54b2c.png",
+    "image": "/assets/electrical/crop_66508S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7680,7 +7680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1268,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7bfc4e62a173.png",
+    "image": "/assets/electrical/crop_66555S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7712,7 +7712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d91079df9e4d.png",
+    "image": "/assets/electrical/crop_66601S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7744,7 +7744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7c8b2b5f898c.png",
+    "image": "/assets/electrical/crop_66603S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7808,7 +7808,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 390,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5c4c2084e46f.png",
+    "image": "/assets/electrical/crop_66606S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7856,7 +7856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ca197672381c.png",
+    "image": "/assets/electrical/crop_66609S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7872,7 +7872,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3042,
     "unit": "Piece",
-    "image": "/assets/electrical/el_69180c1feb01.png",
+    "image": "/assets/electrical/crop_66711S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7888,7 +7888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3347,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3fa3d3e2a93e.png",
+    "image": "/assets/electrical/crop_66716S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7920,7 +7920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2687,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5c3094e24d32.png",
+    "image": "/assets/electrical/crop_66717S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7936,7 +7936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2558,
     "unit": "Piece",
-    "image": "/assets/electrical/el_86e7c4420169.png",
+    "image": "/assets/electrical/crop_66718S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7952,7 +7952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1146,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e12547d45704.png",
+    "image": "/assets/electrical/crop_66702S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7968,7 +7968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1536,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b9200b078248.png",
+    "image": "/assets/electrical/crop_66703S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -7984,7 +7984,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 721,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c1ae9bcb9084.png",
+    "image": "/assets/electrical/crop_66705S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8064,7 +8064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e12e90398c45.png",
+    "image": "/assets/electrical/crop_66778S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8096,7 +8096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 7780,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b4a9b90ea414.png",
+    "image": "/assets/electrical/crop_66708S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8112,7 +8112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 289,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ed443b3ad24f.png",
+    "image": "/assets/electrical/crop_66111GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8128,7 +8128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 281,
     "unit": "Piece",
-    "image": "/assets/electrical/el_57e508ba6887.png",
+    "image": "/assets/electrical/crop_66102GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8144,7 +8144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 337,
     "unit": "Piece",
-    "image": "/assets/electrical/el_624762822c29.png",
+    "image": "/assets/electrical/crop_66202GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8224,7 +8224,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 388,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b25fdda7af31.png",
+    "image": "/assets/electrical/crop_66144GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8256,7 +8256,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 430,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e5f845196221.png",
+    "image": "/assets/electrical/crop_66205GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8288,7 +8288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 889,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d82e0a931e17.png",
+    "image": "/assets/electrical/crop_66025GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8320,7 +8320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 477,
     "unit": "Piece",
-    "image": "/assets/electrical/el_87c0ed1bba06.png",
+    "image": "/assets/electrical/crop_66404GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8336,7 +8336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 592,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aec2b4565739.png",
+    "image": "/assets/electrical/crop_66455GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8352,7 +8352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 602,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c309abbdc9d2.png",
+    "image": "/assets/electrical/crop_66406GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8368,7 +8368,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 922,
     "unit": "Piece",
-    "image": "/assets/electrical/el_91144395fc51.png",
+    "image": "/assets/electrical/crop_66501GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8384,7 +8384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dfb6ca5e107f.png",
+    "image": "/assets/electrical/crop_66503GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8400,7 +8400,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1235,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ce159b39e16a.png",
+    "image": "/assets/electrical/crop_66508GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8416,7 +8416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_45144fe79c24.png",
+    "image": "/assets/electrical/crop_66505GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8432,7 +8432,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2717,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d7deacc4c0c9.png",
+    "image": "/assets/electrical/crop_66506GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8448,7 +8448,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 307,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f300cb400545.png",
+    "image": "/assets/electrical/crop_66555GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8464,7 +8464,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1268,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8c28fd64da20.png",
+    "image": "/assets/electrical/crop_66555GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8496,7 +8496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 254,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d7deacc4c0c9.png",
+    "image": "/assets/electrical/crop_66601GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8592,7 +8592,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 390,
     "unit": "Piece",
-    "image": "/assets/electrical/el_96e3cf7e8c25.png",
+    "image": "/assets/electrical/crop_66606GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8608,7 +8608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a239189efd01.png",
+    "image": "/assets/electrical/crop_66608GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8624,7 +8624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 333,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ac871fee52ce.png",
+    "image": "/assets/electrical/crop_66712GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8656,7 +8656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3042,
     "unit": "Piece",
-    "image": "/assets/electrical/el_98aad1307e7b.png",
+    "image": "/assets/electrical/crop_66711GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8672,7 +8672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3347,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ff60f6768e73.png",
+    "image": "/assets/electrical/crop_66716GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8688,7 +8688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2299,
     "unit": "Piece",
-    "image": "/assets/electrical/el_70a7daef623f.png",
+    "image": "/assets/electrical/crop_66715GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8704,7 +8704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2687,
     "unit": "Piece",
-    "image": "/assets/electrical/el_430ee7affcd3.png",
+    "image": "/assets/electrical/crop_66717GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8720,7 +8720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2558,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8ae312a723b.png",
+    "image": "/assets/electrical/crop_66718GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8736,7 +8736,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1146,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cb5d2c319047.png",
+    "image": "/assets/electrical/crop_66702GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8752,7 +8752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1536,
     "unit": "Piece",
-    "image": "/assets/electrical/el_47c311c60ba6.png",
+    "image": "/assets/electrical/crop_66703GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8768,7 +8768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 721,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a3e7899cfc8.png",
+    "image": "/assets/electrical/crop_66705GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8784,7 +8784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_39a134df7433.png",
+    "image": "/assets/electrical/crop_66704GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8800,7 +8800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a3e7899cfc8.png",
+    "image": "/assets/electrical/crop_66706GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8816,7 +8816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a3e7899cfc8.png",
+    "image": "/assets/electrical/crop_66706GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8832,7 +8832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a3e7899cfc8.png",
+    "image": "/assets/electrical/crop_66706GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8848,7 +8848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1224,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f9e8f02c02c2.png",
+    "image": "/assets/electrical/crop_66778GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -8880,7 +8880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 7780,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b34d47210f87.png",
+    "image": "/assets/electrical/crop_66708GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9280,7 +9280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9296,7 +9296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9312,7 +9312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9328,7 +9328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9344,7 +9344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9360,7 +9360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9376,7 +9376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9392,7 +9392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9408,7 +9408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9424,7 +9424,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9440,7 +9440,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9456,7 +9456,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a06725f47f8a.png",
+    "image": "/assets/electrical/crop_roma_mcb_s_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9472,7 +9472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9488,7 +9488,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9504,7 +9504,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9520,7 +9520,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9536,7 +9536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9552,7 +9552,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 386,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9568,7 +9568,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9584,7 +9584,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9600,7 +9600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9616,7 +9616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9632,7 +9632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9648,7 +9648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 857,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfac811bf294.png",
+    "image": "/assets/electrical/crop_roma_mcb_gb_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9696,7 +9696,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 5400,
     "unit": "Piece",
-    "image": "/assets/electrical/el_95168a24a08d.png",
+    "image": "/assets/electrical/crop_71022.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9712,7 +9712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6100,
     "unit": "Piece",
-    "image": "/assets/electrical/el_95168a24a08d.png",
+    "image": "/assets/electrical/crop_71023.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9744,7 +9744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 5600,
     "unit": "Piece",
-    "image": "/assets/electrical/el_876ee8222646.png",
+    "image": "/assets/electrical/crop_71022B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9760,7 +9760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_876ee8222646.png",
+    "image": "/assets/electrical/crop_71023B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9808,7 +9808,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6900,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5b85730d3152.png",
+    "image": "/assets/electrical/crop_71030B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9840,7 +9840,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 5600,
     "unit": "Piece",
-    "image": "/assets/electrical/el_64c82833e5a3.png",
+    "image": "/assets/electrical/crop_71022S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9856,7 +9856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_64c82833e5a3.png",
+    "image": "/assets/electrical/crop_71023S.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9888,7 +9888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 5600,
     "unit": "Piece",
-    "image": "/assets/electrical/el_62d26c131272.png",
+    "image": "/assets/electrical/crop_71022GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -9904,7 +9904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_62d26c131272.png",
+    "image": "/assets/electrical/crop_71023GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10000,7 +10000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b62daf75fd9.png",
+    "image": "/assets/electrical/crop_71030.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10016,7 +10016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 6700,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b62daf75fd9.png",
+    "image": "/assets/electrical/crop_71028.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10128,7 +10128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 768,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3cc55facd5f0.png",
+    "image": "/assets/electrical/crop_86020.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10208,7 +10208,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 615,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3b145f88989a.png",
+    "image": "/assets/electrical/crop_86401.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10240,7 +10240,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 949,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3b145f88989a.png",
+    "image": "/assets/electrical/crop_86404.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10256,7 +10256,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 705,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c09a3af6626a.png",
+    "image": "/assets/electrical/crop_86410.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10272,7 +10272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 933,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8ca70057809.png",
+    "image": "/assets/electrical/crop_86411.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10288,7 +10288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2587,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8ca70057809.png",
+    "image": "/assets/electrical/crop_86411.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10304,7 +10304,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 253,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81cab9d5840e.png",
+    "image": "/assets/electrical/crop_86450.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10320,7 +10320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 298,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81cab9d5840e.png",
+    "image": "/assets/electrical/crop_86460.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10336,7 +10336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 998,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81cab9d5840e.png",
+    "image": "/assets/electrical/crop_86460.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10496,7 +10496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1519,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e1e36d6887c2.png",
+    "image": "/assets/electrical/crop_86550.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10544,7 +10544,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 81,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d3a1d0fecd00.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/tiona/((35)-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10560,7 +10560,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 233,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d3a1d0fecd00.png",
+    "image": "/assets/electrical/crop_86103B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10576,7 +10576,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 301,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a4c38096a4a.png",
+    "image": "/assets/electrical/crop_86101B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10592,7 +10592,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 301,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a4c38096a4a.png",
+    "image": "/assets/electrical/crop_86102B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10608,7 +10608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 301,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d3a1d0fecd00.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/tiona/((32)-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10624,7 +10624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 140,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a4c38096a4a.png",
+    "image": "/assets/electrical/crop_86101B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10640,7 +10640,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 304,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a4c38096a4a.png",
+    "image": "/assets/electrical/crop_86144B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10656,7 +10656,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 398,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f34448dda7dd.png",
+    "image": "/assets/electrical/crop_86325B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10672,7 +10672,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 886,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f34448dda7dd.png",
+    "image": "/assets/electrical/crop_86020B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10688,7 +10688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 886,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9e07faebaf35.png",
+    "image": "/assets/electrical/crop_86025B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10752,7 +10752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 724,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c6f0f10b88dd.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Step%20Fan%20Regulator%20100W-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10768,7 +10768,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1102,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5c32a7e23412.png",
+    "image": "/assets/electrical/crop_86402B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10784,7 +10784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1102,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c6f0f10b88dd.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Step%20Fan%20Regular%202M%20100W-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10800,7 +10800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 820,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c7a52e807eba.png",
+    "image": "/assets/electrical/crop_86410B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10816,7 +10816,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1078,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7e6c6f309400.png",
+    "image": "/assets/electrical/crop_86411B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10832,7 +10832,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2858,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7e6c6f309400.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/tiona/((48)-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10848,7 +10848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 287,
     "unit": "Piece",
-    "image": "/assets/electrical/el_435cb1a7e675.png",
+    "image": "/assets/electrical/crop_86450B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10864,7 +10864,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 343,
     "unit": "Piece",
-    "image": "/assets/electrical/el_435cb1a7e675.png",
+    "image": "/assets/electrical/crop_86460B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -10880,7 +10880,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1159,
     "unit": "Piece",
-    "image": "/assets/electrical/el_435cb1a7e675.png",
+    "image": "/assets/electrical/crop_86460B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11088,7 +11088,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11104,7 +11104,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11120,7 +11120,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11136,7 +11136,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11152,7 +11152,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11168,7 +11168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11184,7 +11184,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11264,7 +11264,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 759,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11280,7 +11280,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11296,7 +11296,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11312,7 +11312,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11328,7 +11328,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11344,7 +11344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d77fe70a58.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11360,7 +11360,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11376,7 +11376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4d6ab1bd843a.png",
+    "image": "/assets/electrical/crop_tiona_mcb_b_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11632,7 +11632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 362,
     "unit": "Piece",
-    "image": "/assets/electrical/el_860e5cbe16ff.png",
+    "image": "/assets/electrical/crop_68401.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11664,7 +11664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 78,
     "unit": "Piece",
-    "image": "/assets/electrical/el_deb8de698687.png",
+    "image": "/assets/electrical/crop_68501.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11792,7 +11792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 160,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d44574d7f25e.png",
+    "image": "/assets/electrical/crop_68508.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11904,7 +11904,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 344,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e533b0e76727.png",
+    "image": "/assets/electrical/crop_68708.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11920,7 +11920,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 509,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b20fe306ee06.png",
+    "image": "/assets/electrical/crop_68709.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -11952,7 +11952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 103,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f3817c35e2b6.png",
+    "image": "/assets/electrical/crop_68003B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12000,7 +12000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 119,
     "unit": "Piece",
-    "image": "/assets/electrical/el_81d3c26b5783.png",
+    "image": "/assets/electrical/crop_68002B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12016,7 +12016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 168,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b36f89325a6f.png",
+    "image": "/assets/electrical/crop_68025B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12096,7 +12096,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 477,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e46fec1d75ba.png",
+    "image": "/assets/electrical/crop_68401B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12112,7 +12112,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 623,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d8ef31fb24b.png",
+    "image": "/assets/electrical/crop_68402B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12128,7 +12128,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 105,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4ef07d82c63f.png",
+    "image": "/assets/electrical/crop_68501B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12144,7 +12144,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 140,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aab755a51272.png",
+    "image": "/assets/electrical/crop_68502B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12240,7 +12240,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1530,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a37231e38cbc.png",
+    "image": "/assets/electrical/crop_68505B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12272,7 +12272,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 211,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a08a034af127.png",
+    "image": "/assets/electrical/crop_68509B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12288,7 +12288,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 211,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5169ee054906.png",
+    "image": "/assets/electrical/crop_68710B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12320,7 +12320,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 679,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6285b8b4d132.png",
+    "image": "/assets/electrical/crop_68705B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12336,7 +12336,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 679,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6285b8b4d132.png",
+    "image": "/assets/electrical/crop_68705B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12352,7 +12352,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 130,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a8a10af2b97d.png",
+    "image": "/assets/electrical/crop_68702B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12368,7 +12368,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 451,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6285b8b4d132.png",
+    "image": "/assets/electrical/crop_68708B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12384,7 +12384,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 670,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4c303805f558.png",
+    "image": "/assets/electrical/crop_68709B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12400,7 +12400,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12416,7 +12416,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12432,7 +12432,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 339,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12496,7 +12496,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12512,7 +12512,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12528,7 +12528,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12560,7 +12560,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 760,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_w_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12592,7 +12592,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12608,7 +12608,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12624,7 +12624,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 365,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_sp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12688,7 +12688,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12704,7 +12704,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12720,7 +12720,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12752,7 +12752,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 823,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a3ea3a629838.png",
+    "image": "/assets/electrical/crop_ziva_mcb_b_dp.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12784,7 +12784,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 62,
     "unit": "Piece",
-    "image": "/assets/electrical/el_46b3ef016ad0.png",
+    "image": "/assets/electrical/crop_47101.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12800,7 +12800,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 116,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5ea6aa07bbf2.png",
+    "image": "/assets/electrical/crop_47103.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12848,7 +12848,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 130,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8fc7723096b.png",
+    "image": "/assets/electrical/crop_47201.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -12912,7 +12912,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 193,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8fc7723096b.png",
+    "image": "/assets/electrical/crop_47261.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13168,7 +13168,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 130,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e8508fecb269.png",
+    "image": "/assets/electrical/crop_47688.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13344,7 +13344,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 75,
     "unit": "Piece",
-    "image": "/assets/electrical/el_dbfab72fd58c.png",
+    "image": "/assets/electrical/crop_47101GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13376,7 +13376,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 145,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fe6867de6473.png",
+    "image": "/assets/electrical/crop_47104GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13392,7 +13392,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 159,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e348501800ab.png",
+    "image": "/assets/electrical/crop_47105GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13408,7 +13408,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 153,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9b03d8e01d2e.png",
+    "image": "/assets/electrical/crop_47201GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13440,7 +13440,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 192,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8be8fe34875f.png",
+    "image": "/assets/electrical/crop_47162GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13472,7 +13472,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 229,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9b03d8e01d2e.png",
+    "image": "/assets/electrical/crop_47261GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13536,7 +13536,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 310,
     "unit": "Piece",
-    "image": "/assets/electrical/el_4a33bdd2f245.png",
+    "image": "/assets/electrical/crop_47369GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13600,7 +13600,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 497,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfe306b7ec10.png",
+    "image": "/assets/electrical/crop_47545GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13616,7 +13616,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 765,
     "unit": "Piece",
-    "image": "/assets/electrical/el_473e66a1d691.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Rider/(39-1000x1000.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13632,7 +13632,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 190,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d00a8a51ab47.png",
+    "image": "/assets/electrical/crop_47611GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13648,7 +13648,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 214,
     "unit": "Piece",
-    "image": "/assets/electrical/el_a7db069f6b8e.png",
+    "image": "/assets/electrical/crop_47622GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13664,7 +13664,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1739,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6672cba685c2.png",
+    "image": "/assets/electrical/crop_47680GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13680,7 +13680,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1941,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8e0cd94f860f.png",
+    "image": "/assets/electrical/crop_47687GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13712,7 +13712,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 180,
     "unit": "Piece",
-    "image": "/assets/electrical/el_b75a2c5ebf6e.png",
+    "image": "/assets/electrical/crop_47677GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13728,7 +13728,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "MCB, RCCB & Distribution Boards",
     "price": 189,
     "unit": "Piece",
-    "image": "/assets/electrical/el_78152f68d510.png",
+    "image": "/assets/electrical/crop_47681GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13744,7 +13744,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 153,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3bf2dfe3c3cf.png",
+    "image": "/assets/electrical/crop_47682GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13760,7 +13760,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 376,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cd52b89ef675.png",
+    "image": "/assets/electrical/crop_47683GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13776,7 +13776,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 45,
     "unit": "Piece",
-    "image": "/assets/electrical/el_aca0103fb9b6.png",
+    "image": "/assets/electrical/crop_47684GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13792,7 +13792,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 73,
     "unit": "Piece",
-    "image": "/assets/electrical/el_9f7f12e7024b.png",
+    "image": "/assets/electrical/crop_47685GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13824,7 +13824,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 672,
     "unit": "Piece",
-    "image": "/assets/electrical/el_5af619d2e8de.png",
+    "image": "/assets/electrical/crop_47296GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13856,7 +13856,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 460,
     "unit": "Piece",
-    "image": "/assets/electrical/el_93232809a1fe.png",
+    "image": "/assets/electrical/crop_47276GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13888,7 +13888,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 922,
     "unit": "Piece",
-    "image": "/assets/electrical/el_93232809a1fe.png",
+    "image": "/assets/electrical/crop_47297GB.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13936,7 +13936,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 168,
     "unit": "Piece",
-    "image": "/assets/electrical/el_ee1929f8df6f.png",
+    "image": "/assets/electrical/crop_65174.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13952,7 +13952,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 108,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3ad9eaf2bd99.png",
+    "image": "/assets/electrical/crop_65176.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -13968,7 +13968,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7375bc3b9d8a.png",
+    "image": "/assets/electrical/crop_65178.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -14000,7 +14000,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 128,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a14bc9e3544.png",
+    "image": "/assets/electrical/crop_65172B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -14016,7 +14016,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 200,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7a14bc9e3544.png",
+    "image": "/assets/electrical/crop_65174B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -14032,7 +14032,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 172,
     "unit": "Piece",
-    "image": "/assets/electrical/el_39af55d99433.png",
+    "image": "/assets/electrical/crop_65175B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -14048,7 +14048,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 184,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d70046db7718.png",
+    "image": "/assets/electrical/crop_65177B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -14064,7 +14064,7 @@ export const ANCHOR_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 302,
     "unit": "Piece",
-    "image": "/assets/electrical/el_fe12fb09efb6.png",
+    "image": "/assets/electrical/crop_65179B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""

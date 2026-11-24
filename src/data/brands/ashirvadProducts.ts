@@ -1,6 +1,6 @@
 import { Product, StoreSettings } from '../../types';
 
-export const CATALOG_VERSION = "2026-11-20-sudhakar-complete-online-v18";
+export const CATALOG_VERSION = "2026-11-23-anchor-panasonic-complete-v19";
 
 export const ASHIRVAD_PRODUCTS: Product[] = [
   {
@@ -84,7 +84,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225704",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Elbow-90%E2%81%B0.png",
     "images": []
   },
   {
@@ -105,7 +105,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225705",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Elbow-90%E2%81%B0.png",
     "images": []
   },
   {
@@ -126,7 +126,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225706",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Elbow-90%E2%81%B0.png",
     "images": []
   },
   {
@@ -168,7 +168,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225708",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -189,7 +189,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225709",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -210,7 +210,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225711",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -231,7 +231,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225712",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -252,7 +252,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225723",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -273,7 +273,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225725",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -294,7 +294,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225726",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -315,7 +315,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225727",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -336,7 +336,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225728",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -357,7 +357,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225729",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -378,7 +378,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225730",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmeA6hKNRposocRi_PjM7SzNpg5de8cGgM0q49qh_-VA&s=10",
     "images": []
   },
   {
@@ -420,7 +420,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226002",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/GQ/FH/AY/102081502/3-4-inch-cpvc-tee-500x500.png",
     "images": []
   },
   {
@@ -441,7 +441,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226003",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/GQ/FH/AY/102081502/3-4-inch-cpvc-tee-500x500.png",
     "images": []
   },
   {
@@ -462,7 +462,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226004",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/GQ/FH/AY/102081502/3-4-inch-cpvc-tee-500x500.png",
     "images": []
   },
   {
@@ -483,7 +483,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226005",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/GQ/FH/AY/102081502/3-4-inch-cpvc-tee-500x500.png",
     "images": []
   },
   {
@@ -504,7 +504,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226006",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/GQ/FH/AY/102081502/3-4-inch-cpvc-tee-500x500.png",
     "images": []
   },
   {
@@ -546,7 +546,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224702",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI383.webp",
     "images": []
   },
   {
@@ -567,7 +567,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224703",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI383.webp",
     "images": []
   },
   {
@@ -588,7 +588,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224704",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI383.webp",
     "images": []
   },
   {
@@ -609,7 +609,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224705",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI383.webp",
     "images": []
   },
   {
@@ -630,7 +630,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224706",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI383.webp",
     "images": []
   },
   {
@@ -672,7 +672,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2026/3/596014394/GV/XF/YB/76873734/58.jpg",
     "images": []
   },
   {
@@ -693,7 +693,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2026/3/596014394/GV/XF/YB/76873734/58.jpg",
     "images": []
   },
   {
@@ -714,7 +714,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225304",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2026/3/596014394/GV/XF/YB/76873734/58.jpg",
     "images": []
   },
   {
@@ -735,7 +735,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225305",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2026/3/596014394/GV/XF/YB/76873734/58.jpg",
     "images": []
   },
   {
@@ -756,7 +756,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225306",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2026/3/596014394/GV/XF/YB/76873734/58.jpg",
     "images": []
   },
   {
@@ -798,7 +798,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225309",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51QKrcBWQtL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -840,7 +840,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225402",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51fF2skbPsL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -861,7 +861,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225403",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51fF2skbPsL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -882,7 +882,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225404",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51fF2skbPsL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -903,7 +903,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225405",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51fF2skbPsL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -924,7 +924,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225406",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51fF2skbPsL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg",
     "images": []
   },
   {
@@ -966,7 +966,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225902",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/IS/AE/DQ/64780734/cpvc-union.png",
     "images": []
   },
   {
@@ -987,7 +987,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225903",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/IS/AE/DQ/64780734/cpvc-union.png",
     "images": []
   },
   {
@@ -1008,7 +1008,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225904",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/IS/AE/DQ/64780734/cpvc-union.png",
     "images": []
   },
   {
@@ -1029,7 +1029,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225905",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/IS/AE/DQ/64780734/cpvc-union.png",
     "images": []
   },
   {
@@ -1050,7 +1050,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225906",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/7/IS/AE/DQ/64780734/cpvc-union.png",
     "images": []
   },
   {
@@ -1092,7 +1092,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224722",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/427875930/CL/PB/ER/43091587/cpvc-end-cap.jpg",
     "images": []
   },
   {
@@ -1113,7 +1113,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224723",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/427875930/CL/PB/ER/43091587/cpvc-end-cap.jpg",
     "images": []
   },
   {
@@ -1134,7 +1134,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224724",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/427875930/CL/PB/ER/43091587/cpvc-end-cap.jpg",
     "images": []
   },
   {
@@ -1155,7 +1155,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224725",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/427875930/CL/PB/ER/43091587/cpvc-end-cap.jpg",
     "images": []
   },
   {
@@ -1176,7 +1176,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224726",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/6/427875930/CL/PB/ER/43091587/cpvc-end-cap.jpg",
     "images": []
   },
   {
@@ -1218,7 +1218,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223602",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1239,7 +1239,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223603",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1260,7 +1260,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223604",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1281,7 +1281,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223605",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1302,7 +1302,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223606",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1323,7 +1323,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223609",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1344,7 +1344,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223610",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1365,7 +1365,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223621",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/t/a/tank-nipple_1_3.jpg",
     "images": []
   },
   {
@@ -1407,7 +1407,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223608",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/OR/WA/QL/SELLER-11386291/tank-nipple-with-one-side-pipe-fitment-.jpg",
     "images": []
   },
   {
@@ -1428,7 +1428,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223625",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/OR/WA/QL/SELLER-11386291/tank-nipple-with-one-side-pipe-fitment-.jpg",
     "images": []
   },
   {
@@ -1449,7 +1449,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223626",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/OR/WA/QL/SELLER-11386291/tank-nipple-with-one-side-pipe-fitment-.jpg",
     "images": []
   },
   {
@@ -1470,7 +1470,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223627",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/OR/WA/QL/SELLER-11386291/tank-nipple-with-one-side-pipe-fitment-.jpg",
     "images": []
   },
   {
@@ -1512,7 +1512,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223708",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51cdKDnOe3L.jpg",
     "images": []
   },
   {
@@ -1533,7 +1533,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223709",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51cdKDnOe3L.jpg",
     "images": []
   },
   {
@@ -1554,7 +1554,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223710",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51cdKDnOe3L.jpg",
     "images": []
   },
   {
@@ -1575,7 +1575,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223711",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51cdKDnOe3L.jpg",
     "images": []
   },
   {
@@ -1617,7 +1617,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225802",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.shahagroagency.com/uploads/products/SKU-1635/cpvc-elbow-1-inch-45d-1641.webp",
     "images": []
   },
   {
@@ -1638,7 +1638,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225803",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.shahagroagency.com/uploads/products/SKU-1635/cpvc-elbow-1-inch-45d-1641.webp",
     "images": []
   },
   {
@@ -1659,7 +1659,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225804",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.shahagroagency.com/uploads/products/SKU-1635/cpvc-elbow-1-inch-45d-1641.webp",
     "images": []
   },
   {
@@ -1680,7 +1680,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225805",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.shahagroagency.com/uploads/products/SKU-1635/cpvc-elbow-1-inch-45d-1641.webp",
     "images": []
   },
   {
@@ -1701,7 +1701,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225806",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.shahagroagency.com/uploads/products/SKU-1635/cpvc-elbow-1-inch-45d-1641.webp",
     "images": []
   },
   {
@@ -1764,7 +1764,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224602",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1785,7 +1785,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224603",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1806,7 +1806,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224604",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1827,7 +1827,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224605",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1848,7 +1848,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224606",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1869,7 +1869,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224607",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1890,7 +1890,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224608",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1911,7 +1911,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224609",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1932,7 +1932,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224610",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1953,7 +1953,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224611",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1974,7 +1974,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224612",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -1995,7 +1995,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224613",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -2016,7 +2016,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224614",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -2037,7 +2037,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224615",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/1/482842765/QT/SE/KL/238958320/3-4-x-1-2-inch-cpvc-reducer-coupler-250x250.jpg",
     "images": []
   },
   {
@@ -2079,7 +2079,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224782",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499495417/YS/IQ/TF/47021860/cpvc-converter-bushing.png",
     "images": []
   },
   {
@@ -2100,7 +2100,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224783",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499495417/YS/IQ/TF/47021860/cpvc-converter-bushing.png",
     "images": []
   },
   {
@@ -2121,7 +2121,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224784",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499495417/YS/IQ/TF/47021860/cpvc-converter-bushing.png",
     "images": []
   },
   {
@@ -2142,7 +2142,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224785",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499495417/YS/IQ/TF/47021860/cpvc-converter-bushing.png",
     "images": []
   },
   {
@@ -2163,7 +2163,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224786",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499495417/YS/IQ/TF/47021860/cpvc-converter-bushing.png",
     "images": []
   },
   {
@@ -2205,7 +2205,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224752",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2226,7 +2226,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224753",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2247,7 +2247,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224754",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2268,7 +2268,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224755",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2289,7 +2289,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224756",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2310,7 +2310,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224757",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2331,7 +2331,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224758",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2352,7 +2352,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224759",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2373,7 +2373,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224760",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2394,7 +2394,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224761",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2415,7 +2415,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224762",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2436,7 +2436,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224763",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2457,7 +2457,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224764",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2478,7 +2478,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224765",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2023/8/335726049/AF/KH/AO/4450020/whatsapp-image-2023-08-18-at-10-55-39-am.jpeg",
     "images": []
   },
   {
@@ -2520,7 +2520,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224902",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2541,7 +2541,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224903",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2562,7 +2562,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224904",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2583,7 +2583,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224905",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2604,7 +2604,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224906",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2625,7 +2625,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224907",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2646,7 +2646,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224908",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2667,7 +2667,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224909",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2688,7 +2688,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224910",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2709,7 +2709,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224911",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2730,7 +2730,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224912",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2751,7 +2751,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224913",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2772,7 +2772,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224914",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2793,7 +2793,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224915",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2814,7 +2814,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224916",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2835,7 +2835,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224917",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2856,7 +2856,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224918",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://d91ztqmtx7u1k.cloudfront.net/ClientContent/Images/ExtraLarge/25x20mm-cpvc-reducer-tee-20260324195214983.webp",
     "images": []
   },
   {
@@ -2898,7 +2898,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226102",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -2919,7 +2919,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226103",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -2940,7 +2940,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226104",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -2961,7 +2961,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226107",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -2982,7 +2982,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226105",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -3003,7 +3003,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226108",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -3024,7 +3024,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226109",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -3045,7 +3045,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226106",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.irely.in/media/catalog/product/cache/3fba745dcec88e97bfe808bedc471260/r/e/relbow-brass_1_4.jpg",
     "images": []
   },
   {
@@ -3110,7 +3110,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225602",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3131,7 +3131,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225605",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3152,7 +3152,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225603",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3173,7 +3173,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225604",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3194,7 +3194,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225607",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3215,7 +3215,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225606",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.handypanda.in/_next/image?url=https%3A%2F%2Fcdn.handypanda.in%2Fproducts%2FPIPASTREDRUBJ6-0.jpg&w=3840&q=75",
     "images": []
   },
   {
@@ -3257,7 +3257,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225202",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3278,7 +3278,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3299,7 +3299,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225204",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3320,7 +3320,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225205",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3341,7 +3341,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225206",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3362,7 +3362,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225210",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3383,7 +3383,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225211",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_MABT.png",
     "images": []
   },
   {
@@ -3425,7 +3425,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225208",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.badarihardwares.com/cdn/shop/files/Main_dae881cb-52fc-456b-a7ff-cfaa7cf3c9c0.jpg?v=1772711623",
     "images": []
   },
   {
@@ -3446,7 +3446,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225209",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.badarihardwares.com/cdn/shop/files/Main_dae881cb-52fc-456b-a7ff-cfaa7cf3c9c0.jpg?v=1772711623",
     "images": []
   },
   {
@@ -3488,7 +3488,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Union-MABT-1.png",
     "images": []
   },
   {
@@ -3530,7 +3530,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225102",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3551,7 +3551,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225103",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3572,7 +3572,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225104",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3593,7 +3593,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225105",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3614,7 +3614,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225106",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3635,7 +3635,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225110",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3656,7 +3656,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225111",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_FABT.png",
     "images": []
   },
   {
@@ -3698,7 +3698,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225108",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://home-run.co/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0872%2F6095%2F4939%2Ffiles%2FAshirvad_Flowguard_Plus_Reducing_Female_Adapter_Brass_Threaded_-_FABT.webp%3Fv%3D1741002783&w=3840&q=75",
     "images": []
   },
   {
@@ -3719,7 +3719,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225109",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://home-run.co/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0872%2F6095%2F4939%2Ffiles%2FAshirvad_Flowguard_Plus_Reducing_Female_Adapter_Brass_Threaded_-_FABT.webp%3Fv%3D1741002783&w=3840&q=75",
     "images": []
   },
   {
@@ -3761,7 +3761,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Union-FABT-1.png",
     "images": []
   },
   {
@@ -3866,7 +3866,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221005",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/08/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-all-Top-1.png",
     "images": []
   },
   {
@@ -3908,7 +3908,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221105",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScWThYPlywUy-M__l72mH0fvf5DRuGtc6g_Kl1LJNT4MlehNK0Y8Rxoj05&s=10",
     "images": []
   },
   {
@@ -3950,7 +3950,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221205",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-Top-and-Side.png",
     "images": []
   },
   {
@@ -3992,7 +3992,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221015",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-Hot-top-and-Cold-bottom.png",
     "images": []
   },
   {
@@ -4034,7 +4034,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221025",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2631/hot-side-cold-down-6-mixer-1-366x366.png",
     "images": []
   },
   {
@@ -4076,7 +4076,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222005",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://img.4imz.com/media/A5K44YAH/product/cpvc-3-in-1-wall-mixer-adapter-1766205682.jpg",
     "images": []
   },
   {
@@ -4118,7 +4118,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222105",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/891e5db9-6334-4d70-940c-3ddca93c90d3/cpvc-1107--x--3-in-1-mix-top--bottom--6-1.jpeg",
     "images": []
   },
   {
@@ -4160,7 +4160,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222205",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-Top-and-Side.png",
     "images": []
   },
   {
@@ -4202,7 +4202,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222015",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_3-in-1-mixer-adaptor-Hot-top-and-Cold-bottom.png",
     "images": []
   },
   {
@@ -4244,7 +4244,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222025",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2631/hot-side-cold-down-6-mixer-1-366x366.png",
     "images": []
   },
   {
@@ -4391,7 +4391,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229403",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51PZ1sPFEeL.jpg",
     "images": []
   },
   {
@@ -4412,7 +4412,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229404",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51PZ1sPFEeL.jpg",
     "images": []
   },
   {
@@ -4433,7 +4433,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229406",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51PZ1sPFEeL.jpg",
     "images": []
   },
   {
@@ -4454,7 +4454,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229407",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51PZ1sPFEeL.jpg",
     "images": []
   },
   {
@@ -4496,7 +4496,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224772",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -4517,7 +4517,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224773",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -4538,7 +4538,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224774",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -4559,7 +4559,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224775",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -4580,7 +4580,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224776",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -4622,7 +4622,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224872",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/ECOM/Default/2025/4/505992552/MK/AG/AX/93162484/main-bf91c844-757c-48f7-8ef3-17084897152a-500x500.jpg",
     "images": []
   },
   {
@@ -4643,7 +4643,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224874",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/ECOM/Default/2025/4/505992552/MK/AG/AX/93162484/main-bf91c844-757c-48f7-8ef3-17084897152a-500x500.jpg",
     "images": []
   },
   {
@@ -4685,7 +4685,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224972",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://static.wixstatic.com/media/ad6d92_9c401eadddfa4c3db20476fff4d64334~mv2.jpeg/v1/fill/w_440,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ad6d92_9c401eadddfa4c3db20476fff4d64334~mv2.jpeg",
     "images": []
   },
   {
@@ -4706,7 +4706,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224974",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://static.wixstatic.com/media/ad6d92_9c401eadddfa4c3db20476fff4d64334~mv2.jpeg/v1/fill/w_440,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/ad6d92_9c401eadddfa4c3db20476fff4d64334~mv2.jpeg",
     "images": []
   },
   {
@@ -4748,7 +4748,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2271022",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/147502/ball-valve-accessories-red-handle-2-1-1.png",
     "images": []
   },
   {
@@ -4769,7 +4769,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2271023",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/147502/ball-valve-accessories-red-handle-2-1-1.png",
     "images": []
   },
   {
@@ -4790,7 +4790,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2271024",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/147502/ball-valve-accessories-red-handle-2-1-1.png",
     "images": []
   },
   {
@@ -4811,7 +4811,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2271025",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/147502/ball-valve-accessories-red-handle-2-1-1.png",
     "images": []
   },
   {
@@ -4832,7 +4832,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2271026",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/147502/ball-valve-accessories-red-handle-2-1-1.png",
     "images": []
   },
   {
@@ -4874,7 +4874,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229703",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://tiimg.tistatic.com/fp/1/008/268/brass-non-return-valve-for-water-1-2-to-1-inch-091.jpg",
     "images": []
   },
   {
@@ -4916,7 +4916,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226008",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Cross-Tee.png",
     "images": []
   },
   {
@@ -4937,7 +4937,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226009",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Cross-Tee.png",
     "images": []
   },
   {
@@ -4979,7 +4979,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224402",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.nenoba.com/Media/Products/cpvc_pro_sdr-11_tee_holder.webp",
     "images": []
   },
   {
@@ -5000,7 +5000,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3824403",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.nenoba.com/Media/Products/cpvc_pro_sdr-11_tee_holder.webp",
     "images": []
   },
   {
@@ -5042,7 +5042,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.dotpe.in/longtail/store-items/7709064/ZuF9m32r.webp",
     "images": []
   },
   {
@@ -5084,7 +5084,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223502",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51+NCmF4PJL.jpg",
     "images": []
   },
   {
@@ -5126,7 +5126,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224802",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/528150539/QR/YV/IS/17245043/cpvc-thermal-expansion-loop-500x500.png",
     "images": []
   },
   {
@@ -5147,7 +5147,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224803",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/528150539/QR/YV/IS/17245043/cpvc-thermal-expansion-loop-500x500.png",
     "images": []
   },
   {
@@ -5168,7 +5168,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224804",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/528150539/QR/YV/IS/17245043/cpvc-thermal-expansion-loop-500x500.png",
     "images": []
   },
   {
@@ -5189,7 +5189,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224805",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/528150539/QR/YV/IS/17245043/cpvc-thermal-expansion-loop-500x500.png",
     "images": []
   },
   {
@@ -5210,7 +5210,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224806",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/528150539/QR/YV/IS/17245043/cpvc-thermal-expansion-loop-500x500.png",
     "images": []
   },
   {
@@ -5252,7 +5252,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227102",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2448/step-over-bend-366x366.png",
     "images": []
   },
   {
@@ -5273,7 +5273,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227103",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2448/step-over-bend-366x366.png",
     "images": []
   },
   {
@@ -5294,7 +5294,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227104",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2448/step-over-bend-366x366.png",
     "images": []
   },
   {
@@ -5315,7 +5315,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227105",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2448/step-over-bend-366x366.png",
     "images": []
   },
   {
@@ -5336,7 +5336,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227106",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.finolexpipes.com/site/assets/files/2448/step-over-bend-366x366.png",
     "images": []
   },
   {
@@ -5378,7 +5378,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227002",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -5399,7 +5399,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227003",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -5420,7 +5420,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227004",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -5441,7 +5441,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227005",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -5462,7 +5462,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227006",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -5504,7 +5504,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227007",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://home-run.co/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0872%2F6095%2F4939%2Ffiles%2FAshirvad_Flowguard_Plus_CPVC_Sweep_Bend_Long_Radius_Bend_f0cc028c-f47c-4607-b3f6-0d709c769cc2.webp%3Fv%3D1741001319&w=3840&q=75",
     "images": []
   },
   {
@@ -5525,7 +5525,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227009",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://home-run.co/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0872%2F6095%2F4939%2Ffiles%2FAshirvad_Flowguard_Plus_CPVC_Sweep_Bend_Long_Radius_Bend_f0cc028c-f47c-4607-b3f6-0d709c769cc2.webp%3Fv%3D1741001319&w=3840&q=75",
     "images": []
   },
   {
@@ -5567,7 +5567,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228498",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -5588,7 +5588,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228499",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -5609,7 +5609,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228500",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -5651,7 +5651,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228598",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -5672,7 +5672,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228599",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -5693,7 +5693,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228600",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -6206,7 +6206,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221121",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6227,7 +6227,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221122",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6248,7 +6248,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221123",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   /*
@@ -6292,7 +6292,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221131",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6313,7 +6313,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221132",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6334,7 +6334,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221133",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   /*
@@ -6378,7 +6378,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221221",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6399,7 +6399,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221222",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6420,7 +6420,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221223",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   /*
@@ -6464,7 +6464,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221231",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_500x500/50001367.jpg",
     "images": []
   },
   {
@@ -6485,7 +6485,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221232",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/7ac68514-e332-443b-ac54-94730f35c1aa/ashirvad-flowguard-plus--x--in-20-x-20-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   {
@@ -6506,7 +6506,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221233",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/bef18733-715d-4e00-94ec-1e10a0d0f656/ashirvad-flowguard-plus-1-in-25-mm-cpvc-short-concealed-valve--quarter-turn-spindle-1.webp",
     "images": []
   },
   /*
@@ -6744,7 +6744,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221702",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/524933582/PA/AF/BE/198674753/cpvc-concealed-valve-500x500.jpg",
     "images": []
   },
   
@@ -6766,7 +6766,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221703",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/7/524933582/PA/AF/BE/198674753/cpvc-concealed-valve-500x500.jpg",
     "images": []
   },
   
@@ -7061,7 +7061,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221810",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0Mw-k1Clijr4kTCSPyk4zQ-JnMqd-kl5m3Kh7JguA5XaJopmNeWuieA8&s=10",
     "images": []
   },
   {
@@ -7103,7 +7103,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226114",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/09/Ashirvad_CP-Valves-Accesories_CPVC_Flush-valve.png",
     "images": []
   },
   {
@@ -7145,7 +7145,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2226532",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKInaEUK8lavs-F_F5otrGBu1DN7-CyOyWGP_P-bfy1I1Si02MPYmL1Jg&s=10",
     "images": []
   },
   {
@@ -7208,7 +7208,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/DG/QA/SC/SELLER-25008036/astral-sdr-11-pp-pipe-strap-clamp-500x500.jpg",
     "images": []
   },
   {
@@ -7229,7 +7229,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222204",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/DG/QA/SC/SELLER-25008036/astral-sdr-11-pp-pipe-strap-clamp-500x500.jpg",
     "images": []
   },
   {
@@ -7250,7 +7250,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2222206",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/DG/QA/SC/SELLER-25008036/astral-sdr-11-pp-pipe-strap-clamp-500x500.jpg",
     "images": []
   },
   {
@@ -7292,7 +7292,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3823008",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1187.webp",
     "images": []
   },
   {
@@ -7313,7 +7313,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3823009",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1187.webp",
     "images": []
   },
   {
@@ -7334,7 +7334,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3823010",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1187.webp",
     "images": []
   },
   {
@@ -7355,7 +7355,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3823011",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1187.webp",
     "images": []
   },
   {
@@ -7376,7 +7376,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3823012",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1187.webp",
     "images": []
   },
   {
@@ -7418,7 +7418,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822008",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_HxRapstknEEUBCTVSAFTb06UZLBTEcs9dlC-jO_QA&s=10",
     "images": []
   },
   {
@@ -7439,7 +7439,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822009",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_HxRapstknEEUBCTVSAFTb06UZLBTEcs9dlC-jO_QA&s=10",
     "images": []
   },
   {
@@ -7460,7 +7460,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822010",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_HxRapstknEEUBCTVSAFTb06UZLBTEcs9dlC-jO_QA&s=10",
     "images": []
   },
   {
@@ -7481,7 +7481,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822011",
     "hsnCode": "8308",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_HxRapstknEEUBCTVSAFTb06UZLBTEcs9dlC-jO_QA&s=10",
     "images": []
   },
   {
@@ -7544,7 +7544,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223612",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51BZADxsSHL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -7565,7 +7565,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223613",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51BZADxsSHL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -7586,7 +7586,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223614",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51BZADxsSHL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -7607,7 +7607,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223615",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51BZADxsSHL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -7628,7 +7628,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2223616",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51BZADxsSHL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -7670,7 +7670,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3825902",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7691,7 +7691,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3825903",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7712,7 +7712,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3825904",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7733,7 +7733,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3825905",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7754,7 +7754,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3825906",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7796,7 +7796,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225412",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7817,7 +7817,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225413",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7838,7 +7838,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225414",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7859,7 +7859,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225415",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7880,7 +7880,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2225416",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/5ASH422.webp",
     "images": []
   },
   {
@@ -7922,7 +7922,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081100",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -7943,7 +7943,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081101",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -7964,7 +7964,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081106",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -7985,7 +7985,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081102",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -8006,7 +8006,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081103",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -8027,7 +8027,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081104",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -8048,7 +8048,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081105",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/1-Step-CPVC-Solvent-Cement-Yellow-Coloured.png",
     "images": []
   },
   {
@@ -8090,7 +8090,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081202",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/2-Step-CPVC-Solvent-Cement-Orange-Coloured.png",
     "images": []
   },
   {
@@ -8111,7 +8111,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081203",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/2-Step-CPVC-Solvent-Cement-Orange-Coloured.png",
     "images": []
   },
   {
@@ -8132,7 +8132,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "4081204",
     "hsnCode": "3506",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/2-Step-CPVC-Solvent-Cement-Orange-Coloured.png",
     "images": []
   },
   {
@@ -8237,7 +8237,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129202",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH40.png",
     "images": []
   },
   {
@@ -8258,7 +8258,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129212",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/9/548255851/JK/IZ/TR/75342544/5m-astral-schedule-40-cpvc-pipe.png",
     "images": []
   },
   {
@@ -8279,7 +8279,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH40.png",
     "images": []
   },
   {
@@ -8300,7 +8300,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129213",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/9/548255851/JK/IZ/TR/75342544/5m-astral-schedule-40-cpvc-pipe.png",
     "images": []
   },
   {
@@ -8321,7 +8321,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129204",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH40.png",
     "images": []
   },
   {
@@ -8342,7 +8342,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129214",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/9/548255851/JK/IZ/TR/75342544/5m-astral-schedule-40-cpvc-pipe.png",
     "images": []
   },
   {
@@ -8405,7 +8405,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/08/Frame-1973341772-2-1.png",
     "images": []
   },
   {
@@ -8426,7 +8426,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129312",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH80.png",
     "images": []
   },
   {
@@ -8447,7 +8447,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/08/Frame-1973341772-2-1.png",
     "images": []
   },
   {
@@ -8468,7 +8468,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129313",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH80.png",
     "images": []
   },
   {
@@ -8489,7 +8489,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129304",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/08/Frame-1973341772-2-1.png",
     "images": []
   },
   {
@@ -8510,7 +8510,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2129314",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Pipes_SCH80.png",
     "images": []
   },
   {
@@ -8552,7 +8552,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228212",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/e5819411-34ad-4e54-ac0d-f261897ba1fa/ashirvad-flowguard-plus-1-in-25-mm-sdr-11-flowguard-plus-cpvc-elbow-90-2.jpeg",
     "images": []
   },
   {
@@ -8573,7 +8573,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228213",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/e5819411-34ad-4e54-ac0d-f261897ba1fa/ashirvad-flowguard-plus-1-in-25-mm-sdr-11-flowguard-plus-cpvc-elbow-90-2.jpeg",
     "images": []
   },
   {
@@ -8594,7 +8594,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228214",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/e5819411-34ad-4e54-ac0d-f261897ba1fa/ashirvad-flowguard-plus-1-in-25-mm-sdr-11-flowguard-plus-cpvc-elbow-90-2.jpeg",
     "images": []
   },
   {
@@ -8636,7 +8636,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228202",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/e5819411-34ad-4e54-ac0d-f261897ba1fa/ashirvad-flowguard-plus-1-in-25-mm-sdr-11-flowguard-plus-cpvc-elbow-90-2.jpeg",
     "images": []
   },
   {
@@ -8657,7 +8657,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://services.ibo.com/media/v1/products/images/e5819411-34ad-4e54-ac0d-f261897ba1fa/ashirvad-flowguard-plus-1-in-25-mm-sdr-11-flowguard-plus-cpvc-elbow-90-2.jpeg",
     "images": []
   },
   {
@@ -8699,7 +8699,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228312",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/1/DD/OY/AV/69683776/new-product-500x500.jpeg",
     "images": []
   },
   {
@@ -8720,7 +8720,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228313",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/1/DD/OY/AV/69683776/new-product-500x500.jpeg",
     "images": []
   },
   {
@@ -8741,7 +8741,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228314",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/1/DD/OY/AV/69683776/new-product-500x500.jpeg",
     "images": []
   },
   {
@@ -8783,7 +8783,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/1/DD/OY/AV/69683776/new-product-500x500.jpeg",
     "images": []
   },
   {
@@ -8804,7 +8804,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2022/1/DD/OY/AV/69683776/new-product-500x500.jpeg",
     "images": []
   },
   {
@@ -8846,7 +8846,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228112",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/415a3G4eZGL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -8867,7 +8867,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228113",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/415a3G4eZGL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -8888,7 +8888,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228114",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/415a3G4eZGL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -8930,7 +8930,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228102",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/415a3G4eZGL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -8951,7 +8951,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228103",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/415a3G4eZGL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -9014,7 +9014,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228702",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499113908/EK/BL/CK/105835084/astral-end-cap-500x500.jpg",
     "images": []
   },
   {
@@ -9035,7 +9035,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228703",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2025/3/499113908/EK/BL/CK/105835084/astral-end-cap-500x500.jpg",
     "images": []
   },
   {
@@ -9056,7 +9056,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228514",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -9077,7 +9077,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228614",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://www.ashirvad.com/wp-content/uploads/2025/10/Ashirvad_CPVC_Fitting_Flange-End-cap-closed_SDR11-1.png",
     "images": []
   },
   {
@@ -9119,7 +9119,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190081",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9140,7 +9140,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190082",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9161,7 +9161,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190083",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9182,7 +9182,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190084",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9203,7 +9203,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190085",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9224,7 +9224,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190086",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9245,7 +9245,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "1190087",
     "hsnCode": "4016",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2bHHLzhdcdQgli2H2rG-PhTtgBRiRf7lSIO13oD6NIw&s=10",
     "images": []
   },
   {
@@ -9329,7 +9329,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227302",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -9350,7 +9350,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227203",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -9371,7 +9371,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2227303",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-tp9CR4n6gSVsNIV3WyPEkLsTISruP-V9eQRDx5bpCDLL7TwFfJO2YlNP&s=10",
     "images": []
   },
   {
@@ -9455,7 +9455,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224627",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9476,7 +9476,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224624",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9497,7 +9497,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224628",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9518,7 +9518,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224625",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9539,7 +9539,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224629",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9560,7 +9560,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224616",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9581,7 +9581,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224618",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9602,7 +9602,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224620",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9623,7 +9623,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224621",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9644,7 +9644,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224617",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9665,7 +9665,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224619",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-N6nLu3J1z363nw760l5OAF2AL4x17Z-MBD_Hzv__T4LpE3XiJfpFJ5Au&s=10",
     "images": []
   },
   {
@@ -9728,7 +9728,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221923",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9749,7 +9749,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224927",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9770,7 +9770,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221924",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9791,7 +9791,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224928",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9812,7 +9812,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2221925",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9833,7 +9833,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224929",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9854,7 +9854,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224919",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9875,7 +9875,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224921",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9896,7 +9896,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224923",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9917,7 +9917,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224924",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9938,7 +9938,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224920",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -9959,7 +9959,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2224922",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2q14KCyLWs7UGYHwbPtYO_DaRXeUmm8ET1w_tc_WcbadK_RfB7Fl-kg7_&s=10",
     "images": []
   },
   {
@@ -10001,7 +10001,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228902",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6l4FQ5HYdZBDoRcjBMjbh8d6mNOm2LXOKiHbwQK7HLg&s=10",
     "images": []
   },
   {
@@ -10022,7 +10022,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228903",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6l4FQ5HYdZBDoRcjBMjbh8d6mNOm2LXOKiHbwQK7HLg&s=10",
     "images": []
   },
   {
@@ -10064,7 +10064,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228802",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/RR/VE/TT/SELLER-25008036/astral-male-adapter-sch-80-500x500.jpg",
     "images": []
   },
   {
@@ -10085,7 +10085,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228803",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/RR/VE/TT/SELLER-25008036/astral-male-adapter-sch-80-500x500.jpg",
     "images": []
   },
   {
@@ -10106,7 +10106,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228401",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/ZQ/CB/WE/14865208/ajay-cpvc-sch-80.jpg",
     "images": []
   },
   {
@@ -10148,7 +10148,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228413",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/ZQ/CB/WE/14865208/ajay-cpvc-sch-80.jpg",
     "images": []
   },
   {
@@ -10169,7 +10169,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228404",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/ZQ/CB/WE/14865208/ajay-cpvc-sch-80.jpg",
     "images": []
   },
   {
@@ -10190,7 +10190,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228415",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/ZQ/CB/WE/14865208/ajay-cpvc-sch-80.jpg",
     "images": []
   },
   {
@@ -10211,7 +10211,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228416",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2021/6/ZQ/CB/WE/14865208/ajay-cpvc-sch-80.jpg",
     "images": []
   },
   {
@@ -10253,7 +10253,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228420",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/CY/WQ/SH/SELLER-25008036/astral-reducer-bushing.jpg",
     "images": []
   },
   {
@@ -10274,7 +10274,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228417",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/CY/WQ/SH/SELLER-25008036/astral-reducer-bushing.jpg",
     "images": []
   },
   {
@@ -10295,7 +10295,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228418",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/CY/WQ/SH/SELLER-25008036/astral-reducer-bushing.jpg",
     "images": []
   },
   {
@@ -10337,7 +10337,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228002",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHxrOPwhNfCsbTZW1jgW3OvYv_2zBjJVzzwHXRVc7nw&s=10",
     "images": []
   },
   {
@@ -10358,7 +10358,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2228003",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEHxrOPwhNfCsbTZW1jgW3OvYv_2zBjJVzzwHXRVc7nw&s=10",
     "images": []
   },
   {
@@ -10400,7 +10400,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229003",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://static1.industrybuying.com/products/plumbing/cpvc-pipes-fittings/union/PLU.UNI.35553040_1669268658225.webp",
     "images": []
   },
   {
@@ -10421,7 +10421,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2229004",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://static1.industrybuying.com/products/plumbing/cpvc-pipes-fittings/union/PLU.UNI.35553040_1669268658225.webp",
     "images": []
   },
   {
@@ -10442,7 +10442,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822207",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp9XvdgroFr9AaZUOsstuas1Gv0WWLb2xeTYLNzltKnZsZon2aDLpngDo&s=10",
     "images": []
   },
   {
@@ -10484,7 +10484,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822209",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp9XvdgroFr9AaZUOsstuas1Gv0WWLb2xeTYLNzltKnZsZon2aDLpngDo&s=10",
     "images": []
   },
   {
@@ -10505,7 +10505,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "3822210",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp9XvdgroFr9AaZUOsstuas1Gv0WWLb2xeTYLNzltKnZsZon2aDLpngDo&s=10",
     "images": []
   },
   {
@@ -10547,7 +10547,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2524107",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/10/QN/VM/MA/5862354/4-inch-ss-butterfly-valve.jpg",
     "images": []
   },
   {
@@ -10568,7 +10568,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2524108",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/10/QN/VM/MA/5862354/4-inch-ss-butterfly-valve.jpg",
     "images": []
   },
   {
@@ -10589,7 +10589,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2524109",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/10/QN/VM/MA/5862354/4-inch-ss-butterfly-valve.jpg",
     "images": []
   },
   {
@@ -10610,7 +10610,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2524111",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/10/QN/VM/MA/5862354/4-inch-ss-butterfly-valve.jpg",
     "images": []
   },
   {
@@ -10631,7 +10631,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2524115",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/10/QN/VM/MA/5862354/4-inch-ss-butterfly-valve.jpg",
     "images": []
   },
   {
@@ -10652,7 +10652,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2522108",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -10673,7 +10673,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2522109",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -10694,7 +10694,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2522111",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://cdn.madoverbuildings.com/products/images/Ashirvad/561QWI1160.webp",
     "images": []
   },
   {
@@ -10715,7 +10715,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2561001",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51wGC-bPXaL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -10736,7 +10736,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2561002",
     "hsnCode": "3917",
     "description": "",
-    "image": "",
+    "image": "https://m.media-amazon.com/images/I/51wGC-bPXaL._AC_UF1000,1000_QL80_.jpg",
     "images": []
   },
   {
@@ -10799,7 +10799,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569004",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10820,7 +10820,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569001",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10841,7 +10841,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569002",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10862,7 +10862,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569103",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10883,7 +10883,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569104",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10904,7 +10904,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569101",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -10925,7 +10925,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2569102",
     "hsnCode": "8481",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2024/8/441005590/CR/FI/FY/75336779/ashirvad-cpvc-brass-mechanism-spares-for-cpvc-concealed-valve-50000602.jpg",
     "images": []
   },
   {
@@ -11264,7 +11264,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2591001",
     "hsnCode": "8207",
     "description": "",
-    "image": "",
+    "image": "https://static1.industrybuying.com/products/plumbing/cpvc-pipes-fittings/valve/PLU.VAL.23205356_1668055946820.webp",
     "images": []
   },
   {
@@ -11306,7 +11306,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2591007",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://www.racknsell.com/public/thumbs/products/17481/Diverter%20Spindle_500_500.jpg",
     "images": []
   },
   {
@@ -11537,7 +11537,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2593102",
     "hsnCode": "7307",
     "description": "",
-    "image": "",
+    "image": "https://mykit.in/crm/public/uploads/product_images_1000x1000/50000911.jpg",
     "images": []
   },
   {
@@ -11579,7 +11579,7 @@ export const ASHIRVAD_PRODUCTS: Product[] = [
     "partCode": "2593104",
     "hsnCode": "8207",
     "description": "",
-    "image": "",
+    "image": "https://5.imimg.com/data5/SELLER/Default/2020/9/DM/OU/MF/84761716/brass-nut-500x500.jpg",
     "images": []
   }
 ];

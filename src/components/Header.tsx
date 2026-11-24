@@ -12,7 +12,8 @@ import {
   X,
   Mic,
   Clock,
-  Trash2
+  Trash2,
+  Layers
 } from 'lucide-react';
 import { StoreSettings } from '../types';
 import { useVoiceSearch } from '../hooks/useVoiceSearch';
@@ -21,7 +22,7 @@ interface HeaderProps {
   storeSettings: StoreSettings;
   cartCount: number;
   onOpenCart: () => void;
-  onOpenBookingMode: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order') => void;
+  onOpenBookingMode: (mode: 'cart_delivery' | 'phone_callback' | 'image_upload' | 'whatsapp_order' | 'image_search') => void;
   isAdmin: boolean;
   onToggleAdmin: () => void;
   searchTerm: string;
@@ -442,7 +443,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
 
         {/* Booking Modes Shortcuts Bar */}
-        <div className="mt-2.5 pt-2.5 sm:mt-3 sm:pt-3 border-t border-slate-100 grid grid-cols-3 gap-1.5 sm:gap-2 text-xs">
+        <div className="mt-2.5 pt-2.5 sm:mt-3 sm:pt-3 border-t border-slate-100 grid grid-cols-2 sm:grid-cols-4 gap-1.5 sm:gap-2 text-xs">
           <button
             onClick={() => onOpenBookingMode('phone_callback')}
             className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 hover:border-amber-400 p-1.5 sm:p-2 rounded-lg text-slate-800 transition font-medium text-left"
@@ -455,26 +456,39 @@ export const Header: React.FC<HeaderProps> = ({
           </button>
 
           <button
+            onClick={() => onOpenBookingMode('whatsapp_order')}
+            className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 hover:border-amber-400 p-1.5 sm:p-2 rounded-lg text-slate-800 transition font-medium text-left"
+          >
+            <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-600 shrink-0" />
+            <div className="truncate min-w-0">
+              <span className="font-bold text-slate-900 text-[11px] sm:text-xs block truncate">2. WhatsApp</span>
+              <span className="text-[9px] sm:text-[10px] text-slate-500 block truncate">Instant Chat</span>
+            </div>
+          </button>
+
+          <button
             onClick={() => onOpenBookingMode('image_upload')}
             className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 hover:border-amber-400 p-1.5 sm:p-2 rounded-lg text-slate-800 transition font-medium text-left relative"
           >
             <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-600 shrink-0" />
             <div className="truncate min-w-0">
               <span className="font-bold text-slate-900 text-[11px] sm:text-xs block truncate">
-                2. Materials List
+                3. Material List
               </span>
               <span className="text-[9px] sm:text-[10px] text-slate-500 block truncate">Photo to Text</span>
             </div>
           </button>
 
           <button
-            onClick={() => onOpenBookingMode('whatsapp_order')}
-            className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200/60 hover:border-amber-400 p-1.5 sm:p-2 rounded-lg text-slate-800 transition font-medium text-left"
+            onClick={() => onOpenBookingMode('image_search')}
+            className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 bg-amber-50/70 hover:bg-amber-100/80 border border-amber-200/80 hover:border-amber-400 p-1.5 sm:p-2 rounded-lg text-slate-800 transition font-medium text-left"
           >
-            <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-green-600 shrink-0" />
+            <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 shrink-0" />
             <div className="truncate min-w-0">
-              <span className="font-bold text-slate-900 text-[11px] sm:text-xs block truncate">3. WhatsApp</span>
-              <span className="text-[9px] sm:text-[10px] text-slate-500 block truncate">Instant Chat</span>
+              <span className="font-bold text-slate-900 text-[11px] sm:text-xs block truncate">
+                4. Search product with image
+              </span>
+              <span className="text-[9px] sm:text-[10px] text-amber-700 font-semibold block truncate">Exploded View</span>
             </div>
           </button>
         </div>

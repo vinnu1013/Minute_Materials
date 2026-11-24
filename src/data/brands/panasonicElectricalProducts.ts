@@ -32,7 +32,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 205,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM5011B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -64,7 +64,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 244,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM5012B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -96,7 +96,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 270,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM5111B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -112,7 +112,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 290,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f473dcd81054.png",
+    "image": "/assets/electrical/crop_WIM5021.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -128,7 +128,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 290,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM5021B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -144,7 +144,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 335,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f473dcd81054.png",
+    "image": "/assets/electrical/crop_WIM5022.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -160,7 +160,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 335,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM5022B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -192,7 +192,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 321,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM50112B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -224,7 +224,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 374,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM50122B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -256,7 +256,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 335,
     "unit": "Piece",
-    "image": "/assets/electrical/el_794d4fba9529.png",
+    "image": "/assets/electrical/crop_WIM51112B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -272,7 +272,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 402,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f473dcd81054.png",
+    "image": "/assets/electrical/crop_WIM50212.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -288,7 +288,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 402,
     "unit": "Piece",
-    "image": "/assets/electrical/el_de7ef2224cad.png",
+    "image": "/assets/electrical/crop_WIM50212B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -304,7 +304,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 525,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f473dcd81054.png",
+    "image": "/assets/electrical/crop_WIM51212.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -320,7 +320,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 525,
     "unit": "Piece",
-    "image": "/assets/electrical/el_de7ef2224cad.png",
+    "image": "/assets/electrical/crop_WIM51212B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -336,7 +336,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 601,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc4e36be3024.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/10026-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -352,7 +352,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 601,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cd90c33d9df0.png",
+    "image": "/assets/electrical/crop_WIM51113B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -368,7 +368,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1047,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc4e36be3024.png",
+    "image": "https://electricji.com/image/cache/catalog/products/Panasonic/image1-1000x1000.png",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -384,7 +384,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1047,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cd90c33d9df0.png",
+    "image": "/assets/electrical/crop_WIM51234B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -400,7 +400,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 744,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cc4e36be3024.png",
+    "image": "/assets/electrical/crop_WIM4734.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -416,7 +416,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 744,
     "unit": "Piece",
-    "image": "/assets/electrical/el_cd90c33d9df0.png",
+    "image": "/assets/electrical/crop_WIM4734B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -432,7 +432,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 267,
     "unit": "Piece",
-    "image": "/assets/electrical/el_522acb37ac59.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/10025-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -448,7 +448,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 267,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e48cd9812530.png",
+    "image": "/assets/electrical/crop_WIM50119B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -464,7 +464,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 349,
     "unit": "Piece",
-    "image": "/assets/electrical/el_522acb37ac59.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Panasonic%20Europa/10A,%20Bell%20Push%20Switch%20WITH%20INDUCATOR_15-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -480,7 +480,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 349,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e48cd9812530.png",
+    "image": "/assets/electrical/crop_WIM51119B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -496,7 +496,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 335,
     "unit": "Piece",
-    "image": "/assets/electrical/el_522acb37ac59.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/10024-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -512,7 +512,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 335,
     "unit": "Piece",
-    "image": "/assets/electrical/el_e48cd9812530.png",
+    "image": "/assets/electrical/crop_WIM50219B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -528,7 +528,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 450,
     "unit": "Piece",
-    "image": "/assets/electrical/el_53e501449e3d.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/BELL%20PUSH%20WHITE-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -544,7 +544,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 450,
     "unit": "Piece",
-    "image": "/assets/electrical/el_53e501449e3d.png",
+    "image": "/assets/electrical/crop_WIM51219B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -560,7 +560,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 336,
     "unit": "Piece",
-    "image": "/assets/electrical/el_53e501449e3d.png",
+    "image": "/assets/electrical/crop_WIM113214.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -576,7 +576,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 336,
     "unit": "Piece",
-    "image": "/assets/electrical/el_53e501449e3d.png",
+    "image": "/assets/electrical/crop_WIM113214B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -592,7 +592,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 410,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d9fbd9fff651.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Twin%20Socket%2016A%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -608,7 +608,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 410,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d9fbd9fff651.png",
+    "image": "/assets/electrical/crop_WIM1252B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -624,7 +624,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 475,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d9fbd9fff651.png",
+    "image": "/assets/electrical/crop_WIM1253.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -640,7 +640,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 475,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d9fbd9fff651.png",
+    "image": "/assets/electrical/crop_WIM1253B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -656,7 +656,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2082,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1341.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -672,7 +672,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2082,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1341B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -688,7 +688,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2704,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1443.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -704,7 +704,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2704,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1443B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -720,7 +720,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2572,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1343.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -736,7 +736,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 2572,
     "unit": "Piece",
-    "image": "/assets/electrical/el_3d2acfa9e2ea.png",
+    "image": "/assets/electrical/crop_WIM1343B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -752,7 +752,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 731,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/10023-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -768,7 +768,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 731,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "/assets/electrical/crop_WIM4951B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -784,7 +784,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1021,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Step%20Fan%20Regulator%202M%20100W%20white-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -800,7 +800,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1021,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "/assets/electrical/crop_WIM4952B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -816,7 +816,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 913,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Dimmer%201M%20450W%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -832,7 +832,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 913,
     "unit": "Piece",
-    "image": "/assets/electrical/el_583313c671c7.png",
+    "image": "/assets/electrical/crop_WIM5714B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -848,7 +848,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1089,
     "unit": "Piece",
-    "image": "/assets/electrical/el_8c1357c2beea.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Dimmer%20Switch%202M%20650W%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -864,7 +864,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1089,
     "unit": "Piece",
-    "image": "/assets/electrical/el_bfcdc1aca727.png",
+    "image": "/assets/electrical/crop_WIM5726B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -880,7 +880,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 250,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/TV%20Socket%20Outlet%201M%20White-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -896,7 +896,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 250,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM2501B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -912,7 +912,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 243,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/TTT%20WH-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -928,7 +928,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 243,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM2164B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -944,7 +944,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 405,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM2264.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -960,7 +960,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 405,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM2264B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -976,7 +976,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 301,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/CORE%20WHITE-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -992,7 +992,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 301,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM3023B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1008,7 +1008,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/10001-1000x1000.jpg",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1024,7 +1024,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 57,
     "unit": "Piece",
-    "image": "/assets/electrical/el_d350130f2ca6.png",
+    "image": "/assets/electrical/crop_WIM3020B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1040,7 +1040,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 235,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Receptor%20RJ45%201M%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1056,7 +1056,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 235,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "/assets/electrical/crop_WIM2499B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1072,7 +1072,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 727,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Receptor%20RJ45%201M%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1088,7 +1088,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 727,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "/assets/electrical/crop_WIM2499B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1104,7 +1104,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 897,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Receptor%20RJ45%201M%20White-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1120,7 +1120,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 897,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "/assets/electrical/crop_WIM2499B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1136,7 +1136,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 324,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/Panasonic%20Europa/RED-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1152,7 +1152,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1157,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/BUZZER%20WHITE-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1168,7 +1168,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1157,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "/assets/electrical/crop_WIM4702B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1184,7 +1184,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 912,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/SCOT%20WHITE-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1200,7 +1200,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 912,
     "unit": "Piece",
-    "image": "/assets/electrical/el_f2ea63ae88c5.png",
+    "image": "/assets/electrical/crop_WIM4822B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1280,7 +1280,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4323,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b0d159e06ca.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/Panasonic%20Akina/PROJECTOR%20SOCKET%20WHITE-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1296,7 +1296,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 4323,
     "unit": "Piece",
-    "image": "/assets/electrical/el_6b0d159e06ca.png",
+    "image": "/assets/electrical/crop_WIM2311B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1312,7 +1312,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3519,
     "unit": "Piece",
-    "image": "/assets/electrical/el_737b21b21982.png",
+    "image": "/assets/electrical/crop_WIM57812.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1328,7 +1328,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3519,
     "unit": "Piece",
-    "image": "/assets/electrical/el_737b21b21982.png",
+    "image": "/assets/electrical/crop_WIM57812B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1344,7 +1344,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3773,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7eadb1cd5e0c.png",
+    "image": "/assets/electrical/crop_WIM1051.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1360,7 +1360,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 3773,
     "unit": "Piece",
-    "image": "/assets/electrical/el_7eadb1cd5e0c.png",
+    "image": "/assets/electrical/crop_WIM1051B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1376,7 +1376,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1810,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c4e419932dee.png",
+    "image": "/assets/electrical/crop_WIM4661.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1392,7 +1392,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 1810,
     "unit": "Piece",
-    "image": "/assets/electrical/el_c4e419932dee.png",
+    "image": "/assets/electrical/crop_WIM4661B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1408,7 +1408,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 978,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "https://electricji.com/image/cache/catalog/products/Panasonic/New/1687532312156_vision061-1000x1000.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1424,7 +1424,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 978,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "/assets/electrical/crop_WIM4012B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1440,7 +1440,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 16215,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/D1-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1456,7 +1456,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 16215,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "/assets/electrical/crop_WIM4022B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1472,7 +1472,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 978,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "/assets/electrical/crop_WIM40121.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1488,7 +1488,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 978,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "/assets/electrical/crop_WIM4012B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1504,7 +1504,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 16215,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "https://electricji.com/image/cache/catalog/ANCHOR/D1-1000x1000.JPG",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""
@@ -1520,7 +1520,7 @@ export const PANASONIC_ELECTRICAL_PRODUCTS: Product[] = [
     "subcategory": "Modular Switches & Sockets",
     "price": 16215,
     "unit": "Piece",
-    "image": "/assets/electrical/el_734cb803e765.png",
+    "image": "/assets/electrical/crop_WIM4022B.webp",
     "stockStatus": "in_stock",
     "stockCount": 100,
     "description": ""

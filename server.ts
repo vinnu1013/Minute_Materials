@@ -746,7 +746,29 @@ ${itemsXml}
     }
   });
 
-  // Create Booking (Handles all 4 modes)
+  // Serve exploded annotated image for a booking so it can be viewed in WhatsApp
+  app.get('/api/bookings/:id/exploded-image', async (req, res) => {
+    const { id } = req.params;
+    const allBookings = await dbManager.getBookings();
+    const booking = allBookings.find(b => b.id === id);
+    if (!booking || !booking.explodedImageBase64) {
+      res.status(404).send('Exploded image not found');
+      return;
+    }
+    const matches = booking.explodedImageBase64.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
+    if (matches) {
+      const mimeType = matches[1];
+      const buffer = Buffer.from(matches[2], 'base64');
+      res.setHeader('Content-Type', mimeType);
+      res.send(buffer);
+    } else {
+      res.setHeader('Content-Type', 'image/jpeg');
+      const cleanBase64 = booking.explodedImageBase64.replace(/^data:image\/[a-zA-Z0-9.+-]+;base64,/, '');
+      res.send(Buffer.from(cleanBase64, 'base64'));
+    }
+  });
+
+  // Create Booking (Handles all modes including Search product with image)
   app.post('/api/bookings', async (req, res) => {
     const {
       userId,
@@ -764,6 +786,7 @@ ${itemsXml}
       recipientPhone,
       items,
       imageBase64,
+      explodedImageBase64,
       geminiAnalysis,
       whatsappMessage,
       notes,
@@ -778,8 +801,8 @@ ${itemsXml}
       upiTxnRef
     } = req.body;
 
-    // MANDATORY phone check for image upload & callbacks
-    if ((bookingType === 'image_upload' || bookingType === 'phone_callback') && (!plumberPhone || !plumberPhone.trim())) {
+    // MANDATORY phone check for image upload, image search & callbacks
+    if ((bookingType === 'image_upload' || bookingType === 'phone_callback' || bookingType === 'image_search') && (!plumberPhone || !plumberPhone.trim())) {
       res.status(400).json({ error: 'Phone number is mandatory for this booking mode.' });
       return;
     }
@@ -823,6 +846,7 @@ ${itemsXml}
       deliveryOption: deliveryOption || 'express_60min',
       items: items || [],
       imageBase64: imageBase64 || undefined,
+      explodedImageBase64: explodedImageBase64 || undefined,
       geminiAnalysis: geminiAnalysis || undefined,
       whatsappMessage: whatsappMessage || undefined,
       notes: notes || '',
@@ -1093,6 +1117,279 @@ Return a valid JSON object matching this schema:
       console.error('Image Analysis Error:', error);
       res.status(500).json({
         error: error.message || 'Failed to analyze material image with Gemini AI.'
+      });
+    }
+  });
+
+  // Search Product With Image: Exploded View Decomposition & Annotated Catalog Match
+  app.post('/api/search-with-image', async (req, res) => {
+    try {
+      const { imageBase64 } = req.body;
+      if (!imageBase64 || typeof imageBase64 !== 'string') {
+        res.status(400).json({ error: 'An image upload is required to generate the exploded view.' });
+        return;
+      }
+
+      const match = imageBase64.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/);
+      const detectedMime = match ? match[1] : 'image/jpeg';
+      const cleanBase64 = match ? match[2] : imageBase64.replace(/^data:[^;]+;base64,/, '');
+
+      const ai = getGeminiClient();
+      const currentCatalog = await dbManager.getProducts();
+
+      const promptText = `
+You are an expert Indian MEP (Plumbing, Sanitaryware, Electrical, Pipes, Fans, Lighting & Hardware) product engineer and catalog specialist.
+Inspect this uploaded product / assembly / installation / hardware photo and decompose it into an EXPLODED PARTS VIEW.
+
+TASK:
+1. Identify the overall product or assembly title ("assemblyTitle") and a 1-sentence engineering summary ("assemblySummary").
+2. Detect EVERY distinct physical product, component, sub-part, accessory, or fitting visible in the image (aim for 3 to 12 distinct exploded parts; if it is a single standalone item with sub-assemblies like body, cartridge, flange, spout, handle, switch plate, module, pipe, coupling, etc., list each distinct functional component or visible hardware piece).
+3. For EACH exploded part:
+   - "partNumber": sequential integer starting at 1
+   - "partName": accurate, specific product/part name (e.g., "Basin Mixer Spout", "CPVC Brass Elbow 90°", "6A 1-Way Modular Switch", "Angle Stop Valve", "Concealed Flush Valve Body", "Flexible Braided Hose", "Chrome Wall Flange")
+   - "searchKeywords": concise 2-4 word search phrase optimized for an Indian hardware/electrical/plumbing catalog (include any visible brand or item code/SKU if readable)
+   - "category": one of "plumbing", "electrical", "sanitaryware", "lighting", "fans", "pipes", "tools", "hardware"
+   - "sizeOrSpec": detected size, rating, finish, or "Standard" (e.g., "1/2 inch", "15mm", "6A 240V", "Chrome Finish")
+   - "estimatedQty": integer >= 1 visible in the image
+   - "shortNote": brief 4-8 word note explaining where it fits or its purpose
+   - "box2d": tight 2D bounding box enclosing THAT single part in normalized 0..1000 integer coordinates { "ymin", "xmin", "ymax", "xmax" } where 0,0 is top-left and 1000,1000 is bottom-right. Make sure ymin < ymax and xmin < xmax.
+   - "explodeDirection": unit-scale outward explosion vector { "dx", "dy" } between -1.0 and 1.0 pointing away from the assembly center so exploded parts spread cleanly around the diagram.
+
+Return strictly valid JSON matching the schema.
+`;
+
+      const candidateModels = ['gemini-4-hydrogen', 'gemini-3.1-flash-lite'];
+      let geminiResponse: any = null;
+
+      for (const modelName of candidateModels) {
+        try {
+          const requestConfig: any = {
+            responseMimeType: 'application/json',
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                assemblyTitle: { type: Type.STRING },
+                assemblySummary: { type: Type.STRING },
+                explodedParts: {
+                  type: Type.ARRAY,
+                  items: {
+                    type: Type.OBJECT,
+                    properties: {
+                      partNumber: { type: Type.NUMBER },
+                      partName: { type: Type.STRING },
+                      searchKeywords: { type: Type.STRING },
+                      category: { type: Type.STRING },
+                      sizeOrSpec: { type: Type.STRING },
+                      estimatedQty: { type: Type.NUMBER },
+                      shortNote: { type: Type.STRING },
+                      box2d: {
+                        type: Type.OBJECT,
+                        properties: {
+                          ymin: { type: Type.NUMBER },
+                          xmin: { type: Type.NUMBER },
+                          ymax: { type: Type.NUMBER },
+                          xmax: { type: Type.NUMBER }
+                        },
+                        required: ['ymin', 'xmin', 'ymax', 'xmax']
+                      },
+                      explodeDirection: {
+                        type: Type.OBJECT,
+                        properties: {
+                          dx: { type: Type.NUMBER },
+                          dy: { type: Type.NUMBER }
+                        },
+                        required: ['dx', 'dy']
+                      }
+                    },
+                    required: ['partNumber', 'partName', 'searchKeywords', 'category', 'sizeOrSpec', 'estimatedQty', 'box2d']
+                  }
+                }
+              },
+              required: ['assemblyTitle', 'assemblySummary', 'explodedParts']
+            }
+          };
+
+          // Do not pass temperature/topP/topK to gemini-4-hydrogen
+          if (modelName !== 'gemini-4-hydrogen') {
+            requestConfig.temperature = 0.15;
+          }
+
+          geminiResponse = await ai.models.generateContent({
+            model: modelName,
+            contents: {
+              parts: [
+                { inlineData: { data: cleanBase64, mimeType: detectedMime } },
+                { text: promptText }
+              ]
+            },
+            config: requestConfig
+          });
+          if (geminiResponse?.text) break;
+        } catch (err: any) {
+          const msg = String(err?.message || err || '');
+          const isTransient =
+            err?.status === 503 ||
+            err?.status === 429 ||
+            msg.includes('503') ||
+            msg.includes('UNAVAILABLE') ||
+            msg.includes('high demand') ||
+            msg.includes('429');
+          if (!isTransient) throw err;
+          console.warn(`Gemini ${modelName} busy on /api/search-with-image, trying next model...`);
+        }
+      }
+
+      if (!geminiResponse?.text) {
+        throw new Error('Visual part analyzer is momentarily busy. Please try again in a moment.');
+      }
+
+      const rawJsonText = String(geminiResponse.text)
+        .trim()
+        .replace(/^```(?:json)?\s*/i, '')
+        .replace(/\s*```$/i, '')
+        .trim();
+      const parsed = JSON.parse(rawJsonText);
+
+      // Build catalog matcher
+      const normalizeTokens = (s: string) =>
+        s.toLowerCase().replace(/[^a-z0-9./]+/g, ' ').trim().split(/\s+/).filter((t) => t.length >= 2);
+
+      const indexedCatalog = currentCatalog.map((p) => {
+        const hay = `${p.name} ${p.baseName || ''} ${p.brand || ''} ${p.sizeLabel || ''} ${p.sku} ${p.partCode || ''} ${p.subcategory} ${p.category}`.toLowerCase();
+        return {
+          product: p,
+          skuLower: (p.sku || '').toLowerCase(),
+          partCodeLower: (p.partCode || '').toLowerCase(),
+          hay,
+          tokens: new Set(normalizeTokens(hay))
+        };
+      });
+
+      const findCatalogPartMatch = (partName: string, searchKeywords: string, sizeOrSpec: string) => {
+        const combined = `${partName} ${searchKeywords} ${sizeOrSpec !== 'Standard' ? sizeOrSpec : ''}`.trim();
+        const combinedLower = combined.toLowerCase();
+        const nameTokens = normalizeTokens(`${partName} ${searchKeywords}`);
+        if (nameTokens.length === 0) return null;
+
+        // Check exact SKU / item code match first
+        for (const entry of indexedCatalog) {
+          if (entry.skuLower && entry.skuLower.length >= 4 && combinedLower.includes(entry.skuLower)) {
+            return entry.product;
+          }
+          if (entry.partCodeLower && entry.partCodeLower.length >= 4 && combinedLower.includes(entry.partCodeLower)) {
+            return entry.product;
+          }
+        }
+
+        const partNameOnlyTokens = normalizeTokens(partName);
+        let best: Product | null = null;
+        let bestScore = 0;
+
+        for (const entry of indexedCatalog) {
+          let hits = 0;
+          for (const t of partNameOnlyTokens) {
+            if (entry.tokens.has(t) || entry.hay.includes(t)) {
+              hits += 1;
+            } else if (t.length >= 4) {
+              for (const ct of entry.tokens) {
+                if (ct.startsWith(t.slice(0, 4)) && Math.abs(ct.length - t.length) <= 3) {
+                  hits += 0.6;
+                  break;
+                }
+              }
+            }
+          }
+          const coverage = partNameOnlyTokens.length > 0 ? hits / partNameOnlyTokens.length : 0;
+          if (coverage < 0.55) continue;
+
+          let score = coverage * 100;
+          if (sizeOrSpec && sizeOrSpec !== 'Standard' && entry.hay.includes(sizeOrSpec.toLowerCase())) {
+            score += 25;
+          }
+          for (const qt of nameTokens) {
+            if (entry.tokens.has(qt)) score += 6;
+          }
+          if (score > bestScore) {
+            bestScore = score;
+            best = entry.product;
+          }
+        }
+
+        return bestScore >= 72 ? best : null;
+      };
+
+      const rawParts = Array.isArray(parsed?.explodedParts) ? parsed.explodedParts : [];
+      const enrichedParts = rawParts.slice(0, 14).map((part: any, idx: number) => {
+        const cleanName = String(part.partName || `Component ${idx + 1}`).trim();
+        const keywords = String(part.searchKeywords || cleanName).trim();
+        const sizeStr = String(part.sizeOrSpec || 'Standard').trim();
+        const matched = findCatalogPartMatch(cleanName, keywords, sizeStr);
+
+        const clampBox = (v: any, fallback: number) => {
+          const n = Number(v);
+          return Number.isFinite(n) ? Math.max(0, Math.min(1000, Math.round(n))) : fallback;
+        };
+        let ymin = clampBox(part?.box2d?.ymin, 150);
+        let xmin = clampBox(part?.box2d?.xmin, 150);
+        let ymax = clampBox(part?.box2d?.ymax, Math.min(1000, ymin + 250));
+        let xmax = clampBox(part?.box2d?.xmax, Math.min(1000, xmin + 250));
+        if (ymax <= ymin + 20) ymax = Math.min(1000, ymin + 140);
+        if (xmax <= xmin + 20) xmax = Math.min(1000, xmin + 140);
+
+        const cx = (xmin + xmax) / 2;
+        const cy = (ymin + ymax) / 2;
+        const rawDx = Number(part?.explodeDirection?.dx);
+        const rawDy = Number(part?.explodeDirection?.dy);
+        const fallbackAngle = (idx / Math.max(1, rawParts.length)) * Math.PI * 2 - Math.PI / 2;
+        const dx = Number.isFinite(rawDx) && (Math.abs(rawDx) > 0.05 || Math.abs(rawDy) > 0.05)
+          ? Math.max(-1, Math.min(1, rawDx))
+          : Number(Math.cos(fallbackAngle).toFixed(2));
+        const dy = Number.isFinite(rawDy) && (Math.abs(rawDx) > 0.05 || Math.abs(rawDy) > 0.05)
+          ? Math.max(-1, Math.min(1, rawDy))
+          : Number(Math.sin(fallbackAngle).toFixed(2));
+
+        return {
+          partNumber: idx + 1,
+          partName: cleanName,
+          searchKeywords: keywords,
+          category: String(part.category || 'hardware').toLowerCase(),
+          sizeOrSpec: sizeStr,
+          estimatedQty: Math.max(1, Math.round(Number(part.estimatedQty) || 1)),
+          shortNote: String(part.shortNote || ''),
+          box2d: { ymin, xmin, ymax, xmax, cx, cy },
+          explodeDirection: { dx, dy },
+          foundInCatalog: Boolean(matched),
+          priceOnRequest: !matched || !(matched.price > 0),
+          matchedProduct: matched ? {
+            id: matched.id,
+            name: matched.name,
+            sku: matched.sku,
+            price: matched.price,
+            originalPrice: matched.originalPrice,
+            unit: matched.unit,
+            brand: matched.brand,
+            category: matched.category,
+            subcategory: matched.subcategory,
+            image: matched.image,
+            stockStatus: matched.stockStatus,
+            stockCount: matched.stockCount,
+            description: matched.description
+          } : null
+        };
+      });
+
+      res.json({
+        success: true,
+        result: {
+          assemblyTitle: String(parsed?.assemblyTitle || 'Exploded Hardware Assembly'),
+          assemblySummary: String(parsed?.assemblySummary || 'Detected components mapped for instant ordering.'),
+          explodedParts: enrichedParts
+        }
+      });
+    } catch (error: any) {
+      console.error('Search-with-Image Error:', error);
+      res.status(500).json({
+        error: error.message || 'Failed to generate exploded view from uploaded image.'
       });
     }
   });

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, Trash2, Plus, Minus, ShoppingCart, ArrowRight, MapPin, Navigation, AlertCircle, Check, Loader2, Truck } from 'lucide-react';
 import { CartItem, StoreSettings } from '../types';
 import { fetchCurrentLocationAddress } from '../utils/distance';
+import type { VisualSearchAttachments } from './ImageSearchExplodeModal';
 
 interface CartDrawerProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface CartDrawerProps {
   storeSettings: StoreSettings;
   deliveryAddress: string;
   setDeliveryAddress: (addr: string) => void;
+  visualSearchAttachments?: VisualSearchAttachments | null;
 }
 
 export const CartDrawer: React.FC<CartDrawerProps> = ({
@@ -24,7 +26,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   onProceedToCheckout,
   storeSettings,
   deliveryAddress,
-  setDeliveryAddress
+  setDeliveryAddress,
+  visualSearchAttachments
 }) => {
   const [isLocating, setIsLocating] = useState(false);
   const [addressError, setAddressError] = useState('');
@@ -189,9 +192,15 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                       {item.product.category || 'General'} • SKU: {item.product.sku || 'N/A'}
                     </span>
                     <h4 className="text-xs font-bold text-slate-900 truncate">{item.product.name}</h4>
-                    <div className="text-xs font-mono font-bold text-amber-700 mt-0.5">
-                      ₹{price.toFixed(2)} <span className="text-[10px] text-slate-500 font-normal">/ {item.product.unit || 'ea'}</span>
-                    </div>
+                    {item.product.priceOnRequest || price <= 0 ? (
+                      <div className="mt-0.5 inline-flex items-center bg-amber-100 text-amber-900 text-[10px] font-black px-2 py-0.5 rounded">
+                        Request for Price (Quote on WhatsApp)
+                      </div>
+                    ) : (
+                      <div className="text-xs font-mono font-bold text-amber-700 mt-0.5">
+                        ₹{price.toFixed(2)} <span className="text-[10px] text-slate-500 font-normal">/ {item.product.unit || 'ea'}</span>
+                      </div>
+                    )}
 
                     <div className="flex items-center justify-between mt-2">
                       <div className="flex items-center gap-1.5 bg-white border border-slate-300 rounded-lg p-0.5">
@@ -223,6 +232,37 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                 </div>
               );
             })
+          )}
+
+          {/* Visual Search Attached Images Strip (Uploaded + Exploded) */}
+          {(visualSearchAttachments?.uploadedImage || visualSearchAttachments?.explodedImage) && validCartItems.length > 0 && (
+            <div className="bg-amber-50 border border-amber-200 rounded-xl p-2.5 space-y-2">
+              <span className="text-[10px] font-black text-amber-900 uppercase tracking-wider block">
+                Attached Visual Search Diagrams (Sent on WhatsApp)
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                {visualSearchAttachments.uploadedImage && (
+                  <div className="bg-white border border-amber-200 rounded-lg p-1.5 flex items-center gap-2">
+                    <img
+                      src={visualSearchAttachments.uploadedImage}
+                      alt="Uploaded photo"
+                      className="w-10 h-10 object-cover rounded shrink-0"
+                    />
+                    <span className="text-[10px] font-bold text-slate-700 leading-tight">Uploaded Image</span>
+                  </div>
+                )}
+                {visualSearchAttachments.explodedImage && (
+                  <div className="bg-white border border-amber-200 rounded-lg p-1.5 flex items-center gap-2">
+                    <img
+                      src={visualSearchAttachments.explodedImage}
+                      alt="Exploded diagram"
+                      className="w-10 h-10 object-cover rounded shrink-0"
+                    />
+                    <span className="text-[10px] font-bold text-slate-700 leading-tight">Exploded View</span>
+                  </div>
+                )}
+              </div>
+            </div>
           )}
         </div>
 

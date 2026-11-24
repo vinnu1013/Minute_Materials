@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { X, CheckCircle2, Truck, AlertCircle, MapPin, Navigation, User, Loader2, FileText, ArrowLeft, MessageSquare, Send } from 'lucide-react';
 import { CartItem, StoreSettings, UserAccount, UserRole } from '../types';
 import { getEstimateForAddress, fetchCurrentLocationAddress } from '../utils/distance';
+import type { VisualSearchAttachments } from './ImageSearchExplodeModal';
 
 interface CheckoutModalProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface CheckoutModalProps {
   setDeliveryAddress: (addr: string) => void;
   currentUser?: UserAccount | null;
   onOrderCompleted: () => void;
+  visualSearchAttachments?: VisualSearchAttachments | null;
 }
 
 export const CheckoutModal: React.FC<CheckoutModalProps> = ({
@@ -24,7 +26,8 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
   deliveryAddress,
   setDeliveryAddress,
   currentUser,
-  onOrderCompleted
+  onOrderCompleted,
+  visualSearchAttachments
 }) => {
   const [userRole, setUserRole] = useState<UserRole>(currentUser?.userRole || 'plumber_electrician');
   const [customerName, setCustomerName] = useState(currentUser?.name || '');
@@ -161,45 +164,25 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
       const whatsappTarget = cleanStorePhone.length === 10 ? `91${cleanStorePhone}` : cleanStorePhone;
 
       const itemsListFormatted = validItems
-        .map((i, index) => `${index + 1}. *${i.product.name}*\n   Qty: ${i.quantity} ${i.product.unit || 'unit'} | ₹${i.product.price}/unit | Line Total: ₹${(i.product.price * i.quantity).toFixed(2)}`)
+        .map((i, index) => {
+          const isRfp = i.product.priceOnRequest || i.product.price <= 0;
+          if (isRfp) {
+            return `${index + 1}. *${i.product.name}*\n   Qty: ${i.quantity} ${i.product.unit || 'unit'} | *Request for Price*`;
+          }
+          return `${index + 1}. *${i.product.name}*\n   Qty: ${i.quantity} ${i.product.unit || 'unit'} | ₹${i.product.price}/unit | Line Total: ₹${(i.product.price * i.quantity).toFixed(2)}`;
+        })
         .join('\n\n');
 
-      const whatsappMsgText = 
-`*MINUTE MATERIALS - EXPRESS ORDER*
-----------------------------------------
-*Status:* Express Order Dispatch
+      const hasRfpItems = validItems.some(i => i.product.priceOnRequest || i.product.price <= 0);
+      const hasVisualImages = Boolean(visualSearchAttachments?.uploadedImage || visualSearchAttachments?.explodedImage);
 
- *Recipient:* ${finalRecipientName} (${finalRecipientPhone})
- *Ordered By:* ${customerName.trim() || finalRecipientName} (${plumberPhone.trim() || finalRecipientPhone})
-
-📍 *Delivery Address:*
-${fullAddress || deliveryAddress.trim()}
-
-----------------------------------------
-*MATERIALS ORDERED (${validItems.length} items):*
-${itemsListFormatted}
-
-----------------------------------------
- *BILL BREAKDOWN:*
-• Subtotal: ₹${subtotal.toFixed(2)}
-• Platform Fee: ₹${platformFee.toFixed(2)}
-• Handling Fee: ₹${handlingFee.toFixed(2)}
-----------------------------------------
-*TOTAL AMOUNT PAYABLE: ₹${totalPrice.toFixed(2)}*
-----------------------------------------
-Please confirm material availability & dispatch express courier immediately!`;
-
-      // Redirect to WhatsApp with order & bill details
-      const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappTarget}&text=${encodeURIComponent(whatsappMsgText)}`;
-      setLastWhatsappUrl(whatsappUrl);
-      window.open(whatsappUrl, '_blank');
-
+      // Save booking first so both uploaded & exploded images get real shareable URLs for WhatsApp
       const response = await fetch('/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userId: effectiveUserId,
-          bookingType: 'whatsapp_order',
+          bookingType: hasVisualImages ? 'image_search' : 'whatsapp_order',
           customerName: customerName.trim(),
           userRole,
           plumberPhone: plumberPhone.trim(),
@@ -217,8 +200,11 @@ Please confirm material availability & dispatch express courier immediately!`;
             price: i?.product?.price || 0,
             quantity: i?.quantity || 1,
             category: i?.product?.category || 'general',
-            unit: i?.product?.unit || 'pc'
+            unit: i?.product?.unit || 'pc',
+            priceOnRequest: Boolean(i?.product?.priceOnRequest || (i?.product?.price || 0) <= 0)
           })),
+          imageBase64: visualSearchAttachments?.uploadedImage || undefined,
+          explodedImageBase64: visualSearchAttachments?.explodedImage || undefined,
           subtotal,
           deliveryFee,
           platformFee,
@@ -227,7 +213,6 @@ Please confirm material availability & dispatch express courier immediately!`;
           totalPrice,
           paymentMethod: 'whatsapp_order',
           paymentStatus: 'pending',
-          whatsappMessage: whatsappMsgText,
           notes,
           status: 'new'
         })
@@ -237,6 +222,57 @@ Please confirm material availability & dispatch express courier immediately!`;
       if (!response.ok) {
         throw new Error(data.error || 'Failed to submit order.');
       }
+
+      const bookingId = data?.booking?.id;
+      const origin = window.location.origin;
+      const imagesSection = hasVisualImages && bookingId
+        ? `\n\n🖼️ *ATTACHED VISUAL SEARCH IMAGES:*${
+            visualSearchAttachments?.uploadedImage
+              ? `\n1️⃣ *Uploaded Photo:* ${origin}/api/bookings/${bookingId}/image`
+              : ''
+          }${
+            visualSearchAttachments?.explodedImage
+              ? `\n2️⃣ *Exploded Annotated Diagram:* ${origin}/api/bookings/${bookingId}/exploded-image`
+              : ''
+          }`
+        : '';
+
+      const whatsappMsgText = 
+`*MINUTE MATERIALS - EXPRESS ORDER*
+----------------------------------------
+${bookingId ? `*Order Ref:* ${bookingId}\n` : ''}*Status:* Express Order Dispatch
+
+ *Recipient:* ${finalRecipientName} (${finalRecipientPhone})
+ *Ordered By:* ${customerName.trim() || finalRecipientName} (${plumberPhone.trim() || finalRecipientPhone})
+
+📍 *Delivery Address:*
+${fullAddress || deliveryAddress.trim()}
+
+----------------------------------------
+*MATERIALS ORDERED (${validItems.length} items):*
+${itemsListFormatted}
+
+----------------------------------------
+ *BILL BREAKDOWN:*
+• Subtotal: ₹${subtotal.toFixed(2)}
+• Platform Fee: ₹${platformFee.toFixed(2)}
+• Handling Fee: ₹${handlingFee.toFixed(2)}${hasRfpItems ? '\n• Quote Items: *Request for Price* items pending store quote' : ''}
+----------------------------------------
+*TOTAL AMOUNT PAYABLE: ₹${totalPrice.toFixed(2)}*${imagesSection}
+----------------------------------------
+Please confirm material availability & dispatch express courier immediately!`;
+
+      if (bookingId) {
+        fetch(`/api/bookings/${bookingId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ notes: whatsappMsgText })
+        }).catch(() => {});
+      }
+
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappTarget}&text=${encodeURIComponent(whatsappMsgText)}`;
+      setLastWhatsappUrl(whatsappUrl);
+      window.open(whatsappUrl, '_blank');
 
       setOrderSuccess(true);
       onOrderCompleted();

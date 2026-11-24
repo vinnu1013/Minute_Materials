@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MessageSquare, X, Send, Navigation, Wrench, User } from 'lucide-react';
 import { CartItem, StoreSettings, UserRole } from '../types';
 import { getEstimateForAddress, fetchCurrentLocationAddress } from '../utils/distance';
+import type { VisualSearchAttachments } from './ImageSearchExplodeModal';
 
 interface WhatsAppBookingModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface WhatsAppBookingModalProps {
   cartItems: CartItem[];
   storeSettings: StoreSettings;
   onBookingCreated: () => void;
+  visualSearchAttachments?: VisualSearchAttachments | null;
 }
 
 export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
@@ -16,7 +18,8 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
   onClose,
   cartItems,
   storeSettings,
-  onBookingCreated
+  onBookingCreated,
+  visualSearchAttachments
 }) => {
   const [userRole, setUserRole] = useState<UserRole>('plumber_electrician');
   const [customerName, setCustomerName] = useState('');
@@ -57,7 +60,14 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
   // Auto populate custom item list from cart if present
   useEffect(() => {
     if (cartItems.length > 0 && !customItemList) {
-      const formatted = cartItems.map(item => `• ${item.quantity}x ${item.product.name} (₹${item.product.price.toFixed(2)}/unit)`).join('\n');
+      const formatted = cartItems
+        .map(item => {
+          const isRfp = item.product.priceOnRequest || item.product.price <= 0;
+          return isRfp
+            ? `• ${item.quantity}x ${item.product.name} (Request for Price)`
+            : `• ${item.quantity}x ${item.product.name} (₹${item.product.price.toFixed(2)}/unit)`;
+        })
+        .join('\n');
       setCustomItemList(formatted);
     }
   }, [cartItems]);
@@ -84,7 +94,7 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
   if (!isOpen) return null;
 
   // Construct Formatted WhatsApp Message
-  const constructWhatsAppMessage = () => {
+  const constructWhatsAppMessage = (bookingId?: string) => {
     const subtotal = cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
     const minFree = storeSettings.minOrderFreeDelivery ?? 199;
     const isFree = subtotal >= minFree;
@@ -94,12 +104,34 @@ export const WhatsAppBookingModal: React.FC<WhatsAppBookingModalProps> = ({
     const total = subtotal + deliveryFee + platformFee + handlingFee;
 
     const itemsText = customItemList || (cartItems.length > 0
-      ? cartItems.map(item => `• ${item.quantity}x ${item.product.name} (₹${item.product.price.toFixed(2)})`).join('\n')
+      ? cartItems
+          .map(item => {
+            const isRfp = item.product.priceOnRequest || item.product.price <= 0;
+            return isRfp
+              ? `• ${item.quantity}x ${item.product.name} (Request for Price)`
+              : `• ${item.quantity}x ${item.product.name} (₹${item.product.price.toFixed(2)})`;
+          })
+          .join('\n')
       : '• Custom material request');
+
+    const hasRfp = cartItems.some(i => i.product.priceOnRequest || i.product.price <= 0);
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const hasImages = Boolean(visualSearchAttachments?.uploadedImage || visualSearchAttachments?.explodedImage);
+    const imageLinksBlock = hasImages && bookingId
+      ? `\n🖼️ *ATTACHED VISUAL SEARCH IMAGES:*${
+          visualSearchAttachments?.uploadedImage
+            ? `\n1️⃣ *Uploaded Photo:* ${origin}/api/bookings/${bookingId}/image`
+            : ''
+        }${
+          visualSearchAttachments?.explodedImage
+            ? `\n2️⃣ *Exploded Annotated Diagram:* ${origin}/api/bookings/${bookingId}/exploded-image`
+            : ''
+        }\n`
+      : '';
 
     return `⚡ *MINUTE MATERIALS - EXPRESS ORDER*
 ----------------------------------------
-👤 *Customer Name:* ${customerName || 'Customer'}
+${bookingId ? `🆔 *Order Ref:* ${bookingId}\n` : ''}👤 *Customer Name:* ${customerName || 'Customer'}
 🏷️ *Role:* ${userRole === 'plumber_electrician' ? 'Plumber / Electrician' : 'Customer'}
 📞 *Phone Number:* ${plumberPhone || 'Not specified'}
 📍 *Job Site Address:* ${deliveryAddress || 'Pick-up / Call for location'}
@@ -112,9 +144,9 @@ ${itemsText}
 • Subtotal: ₹${subtotal.toFixed(2)}
 • Delivery Fee: ${isFree ? 'FREE (Orders ₹199+)' : `₹${deliveryFee.toFixed(2)}`}
 • Platform Fee: ₹${platformFee.toFixed(2)}
-• Handling Charges: ₹${handlingFee.toFixed(2)}
+• Handling Charges: ₹${handlingFee.toFixed(2)}${hasRfp ? '\n• Quote Items: *Request for Price* items pending store quote' : ''}
 *TOTAL DUE: ₹${total.toFixed(2)}*
-
+${imageLinksBlock}
 💳 *PAYMENT DETAILS:*
 • UPI ID: ${storeSettings.upiId || 'mr.vinnu10@okicici'}
 • Account Name: ${storeSettings.accountHolderName || 'THappetla Vinay Kumar'}
@@ -125,12 +157,9 @@ ${itemsText}
 Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '8332869926'})`;
   };
 
-  const whatsappMessageText = constructWhatsAppMessage();
-
   // Clean WhatsApp phone number (remove +, spaces, dashes)
   const cleanPhone = (storeSettings.whatsappNumber || '8332869926').replace(/[^0-9]/g, '');
   const targetNumber = cleanPhone.startsWith('91') ? cleanPhone : `91${cleanPhone}`;
-  const whatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(whatsappMessageText)}`;
 
   const handleSendWhatsApp = async () => {
     let hasError = false;
@@ -164,30 +193,46 @@ Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '8332869
     if (hasError) return;
 
     setIsSubmitting(true);
+    let finalWhatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(constructWhatsAppMessage())}`;
     try {
-      // Save order log in backend database
-      await fetch('/api/bookings', {
+      const hasImages = Boolean(visualSearchAttachments?.uploadedImage || visualSearchAttachments?.explodedImage);
+      const res = await fetch('/api/bookings', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          bookingType: 'whatsapp_order',
+          bookingType: hasImages ? 'image_search' : 'whatsapp_order',
           customerName: customerName.trim(),
           userRole,
           plumberPhone: plumberPhone.trim(),
           deliveryAddress: deliveryAddress.trim(),
-          whatsappMessage: whatsappMessageText,
+          imageBase64: visualSearchAttachments?.uploadedImage || undefined,
+          explodedImageBase64: visualSearchAttachments?.explodedImage || undefined,
+          items: cartItems.map(i => ({
+            id: i.product.id,
+            name: i.product.name,
+            price: i.product.price,
+            quantity: i.quantity,
+            category: i.product.category,
+            unit: i.product.unit,
+            priceOnRequest: Boolean(i.product.priceOnRequest || i.product.price <= 0)
+          })),
           notes: customItemList.trim(),
           totalPrice: cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0),
           status: 'new'
         })
       });
+      const data = await res.json();
+      if (res.ok && data?.booking?.id) {
+        const msgWithImages = constructWhatsAppMessage(data.booking.id);
+        finalWhatsappUrl = `https://wa.me/${targetNumber}?text=${encodeURIComponent(msgWithImages)}`;
+      }
       onBookingCreated();
     } catch (e) {
       console.error('Failed to log whatsapp booking:', e);
     } finally {
       setIsSubmitting(false);
-      window.open(whatsappUrl, '_blank');
-    };
+      window.open(finalWhatsappUrl, '_blank');
+    }
   };
 
   return (
@@ -348,6 +393,36 @@ Sent via Minute Materials Dispatcher (${storeSettings.whatsappNumber || '8332869
               <p className="text-[11px] text-rose-600 mt-1 font-medium">{materialsError}</p>
             )}
           </div>
+
+          {(visualSearchAttachments?.uploadedImage || visualSearchAttachments?.explodedImage) && (
+            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-2.5 space-y-2">
+              <span className="text-[10px] font-black text-emerald-900 uppercase tracking-wider block">
+                Both Uploaded &amp; Exploded Images Attached for WhatsApp
+              </span>
+              <div className="grid grid-cols-2 gap-2">
+                {visualSearchAttachments.uploadedImage && (
+                  <div className="bg-white border border-emerald-200 rounded-lg p-1.5 flex items-center gap-2">
+                    <img
+                      src={visualSearchAttachments.uploadedImage}
+                      alt="Uploaded photo"
+                      className="w-10 h-10 object-cover rounded shrink-0"
+                    />
+                    <span className="text-[10px] font-bold text-slate-700">1. Uploaded Photo</span>
+                  </div>
+                )}
+                {visualSearchAttachments.explodedImage && (
+                  <div className="bg-white border border-emerald-200 rounded-lg p-1.5 flex items-center gap-2">
+                    <img
+                      src={visualSearchAttachments.explodedImage}
+                      alt="Exploded view"
+                      className="w-10 h-10 object-cover rounded shrink-0"
+                    />
+                    <span className="text-[10px] font-bold text-slate-700">2. Exploded Diagram</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
 
           <div className="flex gap-3 pt-2">
             <button

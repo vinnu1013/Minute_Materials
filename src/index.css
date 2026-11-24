@@ -51,3 +51,42 @@
   animation: shrinkProgress 3s linear forwards;
 }
 
+@keyframes modalSlideUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.985);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-modal-enter {
+  animation: modalSlideUp 0.28s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes explodeFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.animate-explode-float {
+  animation: explodeFloat 3.6s ease-in-out infinite;
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -24;
+  }
+}
+
+.animate-dash-flow {
+  animation: dashFlow 1.6s linear infinite;
+}
+
+

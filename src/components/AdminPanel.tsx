@@ -2598,14 +2598,17 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                       </div>
                     )}
 
-                    {booking.imageBase64 && (
+                    {(booking.imageBase64 || booking.explodedImageBase64) && (
                       <div className="pt-1">
                         <button
                           type="button"
                           onClick={() => setSelectedBookingForDetail(booking)}
                           className="text-cyan-700 hover:underline text-xs font-bold flex items-center gap-1"
                         >
-                          <Eye className="w-3.5 h-3.5" /> View Uploaded Material Photo
+                          <Eye className="w-3.5 h-3.5" />{' '}
+                          {booking.explodedImageBase64
+                            ? 'View Uploaded & Exploded Photos'
+                            : 'View Uploaded Material Photo'}
                         </button>
                       </div>
                     )}
@@ -4420,17 +4423,36 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
               </button>
 
               <h3 className="font-bold text-slate-900">
-                Uploaded Material Photo ({selectedBookingForDetail.id})
+                {selectedBookingForDetail.explodedImageBase64
+                  ? `Uploaded & Exploded Photos (${selectedBookingForDetail.id})`
+                  : `Uploaded Material Photo (${selectedBookingForDetail.id})`}
               </h3>
 
-              {selectedBookingForDetail.imageBase64 &&
-                selectedBookingForDetail.imageBase64.trim() !== '' && (
-                  <img
-                    src={selectedBookingForDetail.imageBase64}
-                    alt="Uploaded Job Note"
-                    className="w-full max-h-80 object-contain rounded-xl bg-slate-50 border border-slate-200"
-                  />
-                )}
+              <div className={`grid gap-3 ${selectedBookingForDetail.explodedImageBase64 ? 'grid-cols-1 sm:grid-cols-2' : 'grid-cols-1'}`}>
+                {selectedBookingForDetail.imageBase64 &&
+                  selectedBookingForDetail.imageBase64.trim() !== '' && (
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-slate-500 uppercase">Uploaded Photo</span>
+                      <img
+                        src={selectedBookingForDetail.imageBase64}
+                        alt="Uploaded Job Note"
+                        className="w-full max-h-72 object-contain rounded-xl bg-slate-50 border border-slate-200"
+                      />
+                    </div>
+                  )}
+
+                {selectedBookingForDetail.explodedImageBase64 &&
+                  selectedBookingForDetail.explodedImageBase64.trim() !== '' && (
+                    <div className="space-y-1">
+                      <span className="text-[10px] font-bold text-amber-700 uppercase">Exploded Annotated Diagram</span>
+                      <img
+                        src={selectedBookingForDetail.explodedImageBase64}
+                        alt="Exploded Parts Diagram"
+                        className="w-full max-h-72 object-contain rounded-xl bg-slate-50 border border-amber-200"
+                      />
+                    </div>
+                  )}
+              </div>
 
               <div className="bg-slate-50 border border-slate-200 p-3 rounded-xl text-xs space-y-1">
                 <p>
